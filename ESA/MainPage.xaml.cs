@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESA.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,11 @@ namespace ESA
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new VideoPlayer();
         }
     }
 }
