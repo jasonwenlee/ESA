@@ -8,23 +8,22 @@ namespace ESA.Models.VideoView
     /**
      * Author:  Douglas Hudson Walker
      * 
-     * Summary: Defines the additional properties for our video player which are not found in the 'View' class. 
+     * Summary: Android, iOS and UWP already have native video players. They are all implemented differently and there is no cross-platform video control built into 
+     * xamararin like there is for images. To implement a video player in xamarin, we need to write the classes which tell xamarin what native components we want to
+     * use (i.e. 'TextBox' in C# and UWP is 'Label' in iOS and 'TextView' in Android). To do this we extend the 'View' class, which is the heart of xamarin's cross-
+     * platform abilities. It is the building block of controls like Image, WebView, Map, and Button; which all inherit the view class and in turn it provides them 
+     * with more than 70 properties. Everything from 'BackgroundColour' to 'Id', 'Margin' and 'Width'. Inheriting the view class means we can use xamarins built in 
+     * abilities for translation and from there, we can add the additional properies we require for our VideoPlayer.
+     * When we run our application and present our custom video player, our VideoPlayer class is called. If we run our class on UWP we will find our VideoPlayer
+     * will call on the xamarin 'ViewRenderer' which is the translator for our xamarin custom components (our VideoPlayer) and UWP's native components (in this case
+     * 'MediaPlayer'). For this translator to work we need to describe which native component we wish to call and how to render it. For this reason; we also need to
+     * write a 'VideoPlayerRenderer' for each platform (iOS, Android and UWP). 
+     * https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view?view=xamarin-forms
      * 
-     * Remarks:
-     *
-     * Walkthrough: 
-     *      When we create a video view in our page (xaml) by writing <video:VideoPlayer /> the solution will follow our xmlns page reference and come here 
-     *      to build the video component as we have defined it. This class derives the majority of it's properties and features from the 'View' class. So it's
-     *      worth summarizing the view class if your unfamiliar, if not, skip the next paragraph.
-     *          
-     *      The 'View' class
-     *      In xamarin the view class is the building block of most cross platform controls like Image, WebView, Map, Button, etc. All of these controls inherit 
-     *      from the view class see https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view?view=xamarin-forms for more. 'View' provides more than 70 
-     *      properties to the classes that inherit it, including; 'BackgroundColour', 'Id', 'Margin', 'Width', 'Height', all the good stuff. It's a very useful 
-     *      class to inherit from when building a custom control.
-     *      
+     * 
+     * 
      *      So what does our Video Player have that 'View' does not?
-     *      We want to build a cross platform custom control for our xamarin project viewable in iOS, Android and UWP. Our VideoPlayer accomplishs this by 
+     *      We want to build a cross platform custom control for our xamarin project viewable in iOS, Android and UWP. Our VideoPlayer accomplishes this by 
      *      extending the View class to include properties which can then be understood by our iOS, Android and UWP projects. Our Video player extends View with 
      *      the following properties:
      *          Source: the source path or uri for the video it wants to play. 
@@ -53,7 +52,7 @@ namespace ESA.Models.VideoView
             });
         }
 
-        // AreTransportControlsEnabled property
+        // AreTransportControlsEnabled property (Transport controls are (play, pause, stop, etc.))
         public static readonly BindableProperty AreTransportControlsEnabledProperty =
             BindableProperty.Create(nameof(AreTransportControlsEnabled), typeof(bool), typeof(VideoPlayer), true);
 
@@ -63,7 +62,7 @@ namespace ESA.Models.VideoView
             get { return (bool)GetValue(AreTransportControlsEnabledProperty); }
         }
 
-        // Source property
+        // Source property (The source of the video file, uri, or embedded resource)
         public static readonly BindableProperty SourceProperty =
             BindableProperty.Create(nameof(Source), typeof(VideoSource), typeof(VideoPlayer), null);
 
@@ -74,7 +73,7 @@ namespace ESA.Models.VideoView
             get { return (VideoSource)GetValue(SourceProperty); }
         }
 
-        // AutoPlay property
+        // AutoPlay property (whether we wnat to play the video as soon as it is ready)
         public static readonly BindableProperty AutoPlayProperty =
             BindableProperty.Create(nameof(AutoPlay), typeof(bool), typeof(VideoPlayer), true);
 
@@ -84,7 +83,7 @@ namespace ESA.Models.VideoView
             get { return (bool)GetValue(AutoPlayProperty); }
         }
 
-        // Status read-only property
+        // Status read-only property (playing, paused, preparing)
         private static readonly BindablePropertyKey StatusPropertyKey =
             BindableProperty.CreateReadOnly(nameof(Status), typeof(VideoStatus), typeof(VideoPlayer), VideoStatus.NotReady);
 
@@ -101,7 +100,7 @@ namespace ESA.Models.VideoView
             get { return Status; }
         }
 
-        // Duration read-only property
+        // Duration read-only property (How long the video is)
         private static readonly BindablePropertyKey DurationPropertyKey =
             BindableProperty.CreateReadOnly(nameof(Duration), typeof(TimeSpan), typeof(VideoPlayer), new TimeSpan(),
                 propertyChanged: (bindable, oldValue, newValue) => ((VideoPlayer)bindable).SetTimeToEnd());
@@ -119,7 +118,7 @@ namespace ESA.Models.VideoView
             get { return Duration; }
         }
 
-        // Position property
+        // Position property (The current timestamp or time elapsed)
         public static readonly BindableProperty PositionProperty =
             BindableProperty.Create(nameof(Position), typeof(TimeSpan), typeof(VideoPlayer), new TimeSpan(),
                 propertyChanged: (bindable, oldValue, newValue) => ((VideoPlayer)bindable).SetTimeToEnd());
@@ -130,7 +129,7 @@ namespace ESA.Models.VideoView
             get { return (TimeSpan)GetValue(PositionProperty); }
         }
 
-        // TimeToEnd property
+        // TimeToEnd property (The amount of time remaining)
         private static readonly BindablePropertyKey TimeToEndPropertyKey =
             BindableProperty.CreateReadOnly(nameof(TimeToEnd), typeof(TimeSpan), typeof(VideoPlayer), new TimeSpan());
 

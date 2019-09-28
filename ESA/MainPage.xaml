@@ -4,11 +4,31 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ESA.MainPage">
+             x:Class="ESA.MainPage"
+             xmlns:video="clr-namespace:ESA.Models.VideoView">    <!--Add this reference to your file so that you can use the video player class-->
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Button Text="Expand Video" Clicked="Button_Clicked" />
-    </StackLayout>
+    <!--Read the documentation I have made in the VideoPlayer.cs class if you want to know how to write and implement this video player yourself-->
+    <!--Use the following xaml anywhere the video player is required-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" BackgroundColor="#0f0f0f">
+
+        </video:VideoPlayer>
+
+        <ListView ItemSelected="OnListViewItemSelected" Grid.Row="1">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Elephant's Dream</x:String>
+                    <x:String>Big Buck Bunny</x:String>
+                    <x:String>Sintel</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+        </ListView>
+    </Grid>
 
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using ESA.Views;
+﻿using ESA.Models.VideoView;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +20,14 @@ namespace ESA
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            App.Current.MainPage = new VideoPlayer();
+            if (args.SelectedItem != null)
+            {
+                string key = ((string)args.SelectedItem).Replace(" ", "").Replace("'", "");
+                videoPlayer.Source = (UriVideoSource)Application.Current.Resources[key];
+
+            }
         }
     }
 }
