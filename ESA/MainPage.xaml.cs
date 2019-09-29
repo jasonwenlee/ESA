@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESA.Views.Cassi_HyunProto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,11 @@ namespace ESA
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void Cassi_HyunProto_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPageHP());
         }
     }
 }

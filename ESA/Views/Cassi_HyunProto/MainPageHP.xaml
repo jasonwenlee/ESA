@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.Views.Cassi_HyunProto.MainPageHP">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Label Text="iVision" Margin="10" FontSize="Large" />
+                <Image Source="welcomeImage.jpg" />
+                <Label Text="Welcome to iVision Application" Margin="10,0,0,0" FontSize="Large" />
+                <Label Margin="10,0,0,10" Text="Everything you need to know about lacrimal, eyelid and orbital surgery with a focus on high quality training videos showing procedures, technique, pathology and complications." />
+
+                <Frame BackgroundColor="LightGray" Padding="10">
+                    <Label Text="Latest Videos" FontSize="Large" />
+                </Frame>
+
+                <!--First Video Thumbnail - Use Grid to make image fit to all devices?-->
+                <!--Without Grids-->
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton Source="mainPageVideo1.jpg" HeightRequest="80" Clicked="mainPageVideo1_Clicked" />
+                    <StackLayout Margin="5">
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" />
+                        <Label Text="Category: Eyelid" FontSize="Micro" />
+                        <Label Text="10 Jan 2019 uploaded" FontAttributes="Italic" FontSize="Micro" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <ImageButton Source="mainPageVideo2.jpg" HeightRequest="80" Clicked="mainPageVideo2_Clicked" />
+                    <StackLayout Margin="5">
+                        <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" />
+                        <Label Text="Category: Eyelid" FontSize="Micro" />
+                        <Label Text="10 Jan 2019 uploaded" FontAttributes="Italic" FontSize="Micro" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!--TESTING GRIDS (something in here breaks all the things-->
+
+                <!--<Grid ColumnSpacing="0" RowSpacing="0" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="**" />
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Source="mainPageVideo1.jpg" Clicked="mainPageVideo1_Clicked" Grid.Row="0" Grid.Column="0" />
+                    <StackLayout Margin="5" Grid.Row="0" Grid.Column="1" >
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" />
+                        <Label Text="Category: Eyelid" FontSize="Micro" />
+                        <Label Text="10 Jan 2019 uploaded" FontAttributes="Italic" FontSize="Micro" />
+                    </StackLayout>
+
+                    <ImageButton Source="mainPageVideo2.jpg" Clicked="mainPageVideo2_Clicked" Grid.Row="1" Grid.Column="0" />
+                    <StackLayout Margin="5" Grid.Row="1" Grid.Column="1" >
+                        <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery"/>
+                        <Label Text="Category: Eyelid" FontSize="Micro"  />
+                        <Label Text="10 Jan 2019 uploaded" FontAttributes="Italic" FontSize="Micro" />
+                    </StackLayout>
+                </Grid>-->
+
+                <Button Text="About Us" Clicked="AboutUs_Clicked" />
+                <!--ADD TAB BAR HERE-->
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

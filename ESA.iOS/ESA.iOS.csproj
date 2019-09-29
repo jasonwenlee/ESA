@@ -130,4 +130,46 @@
       <Name>ESA</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mainPageVideo2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mainPageVideo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\welcomeImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\eyelid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lacrimal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\orbital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\greenback1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\greenback2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\vimeo.png" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.Views.Cassi_HyunProto.SplashScreenHP" 
+             BackgroundColor="#34a130">
+
+    <ContentPage.Content>
+        <Grid>
+            <!--<Image Source="greenback2.jpg" Aspect="AspectFill" />-->
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+
+                <StackLayout Orientation="Horizontal" >
+                    <Image Source="lacrimal.png" HeightRequest="100" />
+                    <Image Source="eyelid.png" HeightRequest="100" />
+                    <Image Source="orbital.png" HeightRequest="100" />
+                </StackLayout>
+
+                <Label Text="iVision" FontSize="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                   TextColor="White">
+                    <!--<Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="RalewayRegular" />
+                            <On Platform="Android" Value="RalewayRegular.ttf" />
+                            <On Platform="UWP" Value="Assets/RalewayRegular.ttf" />
+                        </OnPlatform>
+                    </Label.FontFamily>-->
+                </Label>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
