@@ -16,6 +16,14 @@ namespace ESA
         public MainPage()
         {
             InitializeComponent();
+
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            listView.ItemsSource = App.ProcedureDatabase.GetListLacrimalProceduresAsync();
         }
     }
 }

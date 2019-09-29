@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.ProcedureType">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="procedureCategoryEntry" IsSpellCheckEnabled="True"  Placeholder="Enter procedure category" Completed="ProcedureCategoryEntry_Completed">
+                
+            </Entry>
+            <Entry x:Name="procedureNameEntry" Placeholder="Enter procedure name" Completed="ProcedureNameEntry_Completed">
+                
+            </Entry>
+            <Entry x:Name="procedureDetailEntry" Placeholder="Enter procedure details" Completed="ProcedureDetailEntry_Completed">
+
+            </Entry>
+            <Editor x:Name="stepsEditor" Placeholder="Enter steps" HeightRequest="300" Completed="StepsEditor_Completed">
+
+            </Editor>
+            <Button x:Name="addInformationButton" Text="Add Information" IsEnabled="False" Clicked="AddInformationButton_Clicked"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
