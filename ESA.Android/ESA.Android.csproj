@@ -104,6 +104,10 @@
       <Project>{B3CA3595-025B-40C4-A448-6CB58EE2C1C9}</Project>
       <Name>ESA</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YouTubePlayer_AndroidBindingsLibrary\YouTubePlayer_AndroidBindingsLibrary.csproj">
+      <Project>{6cbe6c65-14ad-46b6-b30d-3844b850e503}</Project>
+      <Name>YouTubePlayer_AndroidBindingsLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
