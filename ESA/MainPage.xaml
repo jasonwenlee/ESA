@@ -4,16 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ESA.MainPage">    <!--Add this reference to your file so that you can use the video player class-->
+             x:Class="ESA.MainPage"
+             Appearing="ContentPage_Appearing">
 
-    <!--Read the documentation I have made in the VideoPlayer.cs class if you want to know how to write and implement this video player yourself-->
-    <!--Use the following xaml anywhere the video player is required-->
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="200" />
+    <Grid RowSpacing="0" ColumnSpacing="0" Padding="0" Margin="0">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        
+        <WebView x:Name="browser" Grid.Row="0" Margin="0" />
     </Grid>
+
 
 </ContentPage>
