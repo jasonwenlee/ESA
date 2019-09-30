@@ -28,12 +28,12 @@ namespace ESA.Data
             path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), dbPath);
             database = new SQLiteConnection(path);
             database.Execute("PRAGMA foreign_keys = ON");
-            database.DropTable<Lacrimal>();
-            database.DropTable<Orbital>();
-            database.DropTable<Eyelid>();
-            database.DropTable<StepsModel>();
-            database.DropTable<VariationsModel>();
-            database.DropTable<KeyPointsModel>();
+            //database.DropTable<Lacrimal>();
+            //database.DropTable<Orbital>();
+            //database.DropTable<Eyelid>();
+            //database.DropTable<StepsModel>();
+            //database.DropTable<VariationsModel>();
+            //database.DropTable<KeyPointsModel>();
             
             // Create lacrimal table
             database.CreateTable<Lacrimal>();
