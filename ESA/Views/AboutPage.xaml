@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.Views.AboutPage" Title="About" IconImageSource="round_perm_identity_black_24dp.png">
+    <ContentPage.Content>
+        <ListView x:Name="ListViewAbout" ItemsSource="{Binding People}" HasUnevenRows="True" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="False">
+                        <ViewCell.View>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
+                                    <Image Source="{Binding ImageUrl}" WidthRequest="150" HeightRequest="150" VerticalOptions="Start"  />
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Orientation="Vertical">
+                                    <Label Text="{Binding PersonName}" FontSize="20" TextColor="Black"/>
+                                    <Label Text="{Binding ShortDesc}" FontSize="12" Margin="0,0,0,5" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
