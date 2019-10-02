@@ -131,4 +131,7 @@
       <Name>ESA</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Videos\eye_surgery.mp4" />
+  </ItemGroup>
 </Project>

@@ -5,40 +5,6 @@ using Xamarin.Forms;
 
 namespace ESA.Models.VideoView
 {
-    /**
-     * Author:  Douglas Hudson Walker
-     * 
-     * Summary: Android, iOS and UWP already have native video players. They are all implemented differently and there is no cross-platform video control built into 
-     * xamararin like there is for images. To implement a video player in xamarin, we need to write the classes which tell xamarin what native components we want to
-     * use (i.e. 'TextBox' in C# and UWP is 'Label' in iOS and 'TextView' in Android). To do this we extend the 'View' class, which is the heart of xamarin's cross-
-     * platform abilities. It is the building block of controls like Image, WebView, Map, and Button; which all inherit the view class and in turn it provides them 
-     * with more than 70 properties. Everything from 'BackgroundColour' to 'Id', 'Margin' and 'Width'. Inheriting the view class means we can use xamarins built in 
-     * abilities for translation and from there, we can add the additional properies we require for our VideoPlayer.
-     * When we run our application and present our custom video player, our VideoPlayer class is called. If we run our class on UWP we will find our VideoPlayer
-     * will call on the xamarin 'ViewRenderer' which is the translator for our xamarin custom components (our VideoPlayer) and UWP's native components (in this case
-     * 'MediaPlayer'). For this translator to work we need to describe which native component we wish to call and how to render it. For this reason; we also need to
-     * write a 'VideoPlayerRenderer' for each platform (iOS, Android and UWP). 
-     * https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view?view=xamarin-forms
-     * 
-     * 
-     * 
-     *      So what does our Video Player have that 'View' does not?
-     *      We want to build a cross platform custom control for our xamarin project viewable in iOS, Android and UWP. Our VideoPlayer accomplishes this by 
-     *      extending the View class to include properties which can then be understood by our iOS, Android and UWP projects. Our Video player extends View with 
-     *      the following properties:
-     *          Source: the source path or uri for the video it wants to play. 
-     *          AutoPlay: Our video could have autoplay functionality (true or false)
-     *          Status: (Playing, paused, preparing) 
-     *          Duration: The lenght of the video
-     *          Position: The current TimeStamp of the video
-     *          TimeToEnd: the time left until the end of the video
-     *          AreTransportControlsEnabled: player controls are needed (true or false)
-     *          
-     *      Along with these additional properties we also want include some additional methods for Pausing, Playing, Stopping and SettingTimeStamp. These are used
-     *      mostly with custom made transport controls, where we can define the button design and location by building the methods into our xaml 
-     *      
-     */
-
     public class VideoPlayer : View, IVideoPlayerController
     {
         public event EventHandler UpdateStatus;
