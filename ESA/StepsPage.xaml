@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+               xmlns:controls="clr-namespace:ESA.Controls;assembly=ESA"
+             x:Class="ESA.StepsPage"
+             BackgroundColor="Black">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android" Value="0" />
+            <On Platform="iOS" Value="0,20,0,0" />
+            <On Platform="UWP" Value="0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <StackLayout Spacing="0">
+        <Image Source="HughesFlap.jpeg" Aspect="AspectFill"/>
+
+        <Label
+            Margin="20,10,20,20"
+            FontSize="Medium"
+            HorizontalOptions="Start"
+            HorizontalTextAlignment="Start"
+            Text="Tarsoconjunctival (HUGHES) FLAP – STAGE 1"
+            TextColor="White" />
+        <Label
+            Margin="30,20,20,0"
+            FontSize="Small"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Start"
+            Text="This narrated video demonstrates the tarsoconjunctival (Hughes)
+            flap for reconstruction of large defects of the lower eyelid, that most commonly occur after lower lid tumour excision"
+            TextColor="White" />
+
+        <controls:SimSegmentedControl
+            x:Name="SegmentedControlView"
+            PrimaryColor="Gray"
+            SecondaryColor="White"
+            SelectedTabIndexChanged="SegmentedControlView_SelectedTabIndexChanged"
+            Tab1Text="Complications"
+            Tab2Text="Variations"
+            
+            >
+            <controls:SimSegmentedControl.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android" Value="0" />
+                    <On Platform="iOS" Value="10,0,10,10" />
+                    <On Platform="UWP" Value="0" />
+                </OnPlatform>
+            </controls:SimSegmentedControl.Padding>
+        </controls:SimSegmentedControl>
+
+        <Grid
+            BackgroundColor="Black"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Fill">
+
+            <Grid
+                x:Name="ContentView1"
+                Padding="20"
+                IsVisible="True">
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    Text="•	Upper eyelid retraction
+                          
+                      •	Conjunctiva advancing anteriorly over lid margin
+                          •	Skin advancing posteriorly over lid margin
+                          •	Lid margin granuloma
+                          •	Lid margin irregularity"
+
+
+                    TextColor="White"
+                    VerticalOptions="Start" />
+            </Grid>
+
+            <Grid
+                x:Name="ContentView2"
+                Padding="20"
+                IsVisible="False">
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Specific considerations ​
+
+
+                    Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye.​
+
+Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities: see Tarsoconjunctival flap – stage 2​
+
+Tips/pitfalls​
+
+Dissection ​
+
+It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone​
+
+Dissecting superiorly up to white line ensures that the flap is completely free and can be mobilised into the defect without tension​
+
+Suture​
+
+Suture the flap to the lid defect under tension​
+
+Allow a small amount of skin recession​
+
+​"
+                    TextColor="White"
+                    VerticalOptions="StartAndExpand" />
+            </Grid>
+           
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
+
+
+

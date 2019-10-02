@@ -130,4 +130,10 @@
       <Name>ESA</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\VideoPlayer1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HughesFlap.jpeg" />
+  </ItemGroup>
 </Project>

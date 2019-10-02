@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.Controls.SimSegmentedControl">
+    <ContentView.Content>
+        <Frame
+            x:Name="FrameView"
+            Padding="0"
+            IsClippedToBounds="True">
+            <!--  Platform specific customization values for the border  -->
+            <Frame.HasShadow>
+                <OnPlatform x:TypeArguments="x:Boolean">
+                    <On Platform="Android" Value="False" />
+                    <On Platform="iOS" Value="True" />
+                </OnPlatform>
+            </Frame.HasShadow>
+            <Frame.CornerRadius>
+                <OnPlatform x:TypeArguments="x:Single">
+                    <On Platform="Android" Value="0" />
+                    <On Platform="iOS" Value="5" />
+                </OnPlatform>
+            </Frame.CornerRadius>
+            <Frame.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="Android" Value="50" />
+                    <On Platform="iOS" Value="35" />
+                    <On Platform="UWP" Value="50" />
+                </OnPlatform>
+            </Frame.HeightRequest>
+            <!--  Platform specific customization values for the border  -->
+
+            <Grid Padding="0" ColumnSpacing="0">
+
+                <!--  Tab button 1  -->
+                <Grid Grid.Column="0" IsClippedToBounds="True">
+                    <Button
+                        x:Name="Tab1ButtonView"
+                        Margin="-2,-3,-2,-1"
+                        Clicked="Tab1Button_OnClicked" />
+                    <Label
+                        x:Name="Tab1LabelView"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="CenterAndExpand"
+                        InputTransparent="True"
+                        Text="Tab 1"
+                        VerticalOptions="CenterAndExpand" />
+                    <BoxView
+                        x:Name="Tab1BoxView"
+                        HeightRequest="2"
+                        InputTransparent="True"
+                        IsVisible="False"
+                        VerticalOptions="End" />
+                </Grid>
+                <!--  Tab button 1  -->
+
+                <!--  Tab button 2  -->
+                <Grid Grid.Column="1" IsClippedToBounds="True">
+                    <Button
+                        x:Name="Tab2ButtonView"
+                        Margin="-2,-3,-2,-1"
+                        Clicked="Tab2Button_OnClicked" />
+                    <Label
+                        x:Name="Tab2LabelView"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="CenterAndExpand"
+                        InputTransparent="True"
+                        Text="Tab 2"
+                        VerticalOptions="CenterAndExpand" />
+                    <BoxView
+                        x:Name="Tab2BoxView"
+                        HeightRequest="2"
+                        InputTransparent="True"
+                        IsVisible="False"
+                        VerticalOptions="End" />
+                </Grid>
+                <!--  Tab button 2  -->
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+        </Frame>
+    </ContentView.Content>
+    </ContentView>

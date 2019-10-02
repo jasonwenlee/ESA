@@ -17,5 +17,10 @@ namespace ESA
         {
             InitializeComponent();
         }
+
+        private void GoToStepsPage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new StepsPage());
+        }
     }
 }
