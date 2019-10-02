@@ -10,6 +10,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\about.png" />
+    <None Remove="Resources\about48.png" />
+    <None Remove="Resources\aboutph.jpg" />
+    <None Remove="Resources\close.png" />
+    <None Remove="Resources\eyelid.png" />
+    <None Remove="Resources\lacrimal.png" />
+    <None Remove="Resources\orbital.png" />
+    <None Remove="Resources\plus.png" />
+    <None Remove="Resources\search.png" />
+    <None Remove="Resources\search48.png" />
+    <None Remove="Resources\videoph.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\about.png" />
+    <EmbeddedResource Include="Resources\about48.png" />
+    <EmbeddedResource Include="Resources\aboutph.jpg" />
+    <EmbeddedResource Include="Resources\close.png" />
+    <EmbeddedResource Include="Resources\eyelid.png" />
+    <EmbeddedResource Include="Resources\orbital.png" />
+    <EmbeddedResource Include="Resources\plus.png" />
+    <EmbeddedResource Include="Resources\search.png" />
+    <EmbeddedResource Include="Resources\search48.png" />
+    <EmbeddedResource Include="Resources\videoph.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
@@ -17,6 +44,24 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\lacrimal.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CategoriesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LacrimalPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VideoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
