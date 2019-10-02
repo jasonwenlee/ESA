@@ -18,12 +18,5 @@ namespace ESA
             InitializeComponent();
 
         }
-
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-
-            listView.ItemsSource = App.ProcedureDatabase.GetListLacrimalProceduresAsync();
-        }
     }
 }

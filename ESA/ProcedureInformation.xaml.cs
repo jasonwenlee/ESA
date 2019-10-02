@@ -1,4 +1,5 @@
 ﻿using ESA.Models;
+using ESA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,57 @@ namespace ESA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProcedureInformation : ContentPage
     {
+        private LoadProcedureViewModel LoadProcVM;
+
         public ProcedureInformation()
         {
             InitializeComponent();
+            LoadProcVM = new LoadProcedureViewModel();
+            if (!LoadProcVM.IsDataLoaded)
+            {
+                LoadProcVM.LoadLacrimalData();
+                LoadProcVM.LoadOrbitalData();
+                LoadProcVM.LoadEyelidData();
+            }
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            lacrimalList.ItemsSource = App.ProcedureDatabase.GetListLacrimalProceduresAsync();
-            orbitalList.ItemsSource = App.ProcedureDatabase.GetListOrbitalProceduresAsync();
-            eyelidList.ItemsSource = App.ProcedureDatabase.GetListEyelidProceduresAsync();
+            lacrimalList.ItemsSource = LoadProcVM.LacrimalProcedures;
+            orbitalList.ItemsSource = LoadProcVM.OrbitalProcedures;
+            eyelidList.ItemsSource = LoadProcVM.EyelidProcedures;
         }
 
         private async void LacrimalList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (sender == null)
+            {
+                await DisplayAlert("No item", "Null", "ok");
+                return;
+            }
+            else
+            {
+                Procedure tappedItem = (Procedure)((ListView)sender).SelectedItem;
+                await Navigation.PushAsync(new DisplayProcedureInfo(tappedItem));
+            }
+        }
+
+        private async void OrbitalList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (sender == null)
+            {
+                await DisplayAlert("No item", "Null", "ok");
+                return;
+            }
+            else
+            {
+                Procedure tappedItem = (Procedure)((ListView)sender).SelectedItem;
+                await Navigation.PushAsync(new DisplayProcedureInfo(tappedItem));
+            }
+        }
+
+        private async void EyelidList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (sender == null)
             {

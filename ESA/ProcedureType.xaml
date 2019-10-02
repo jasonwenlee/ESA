@@ -5,22 +5,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.ProcedureType">
-    <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="procedureCategoryEntry" IsSpellCheckEnabled="True"  Placeholder="Enter procedure category" Completed="ProcedureCategoryEntry_Completed">
-                
-            </Entry>
-            <Entry x:Name="procedureNameEntry" Placeholder="Enter procedure name" Completed="ProcedureNameEntry_Completed">
-                
-            </Entry>
-            <Entry x:Name="procedureDetailEntry" Placeholder="Enter procedure details" Completed="ProcedureDetailEntry_Completed">
+    <ScrollView>
+            <StackLayout Padding="5">
 
-            </Entry>
-            <Editor x:Name="stepsEditor" Placeholder="Enter steps" HeightRequest="300" Completed="StepsEditor_Completed">
+                <Entry x:Name="procedureCategoryEntry" IsSpellCheckEnabled="True"  Placeholder="Enter procedure category" Completed="ProcedureCategoryEntry_Completed">
 
-            </Editor>
-            <Button x:Name="addInformationButton" Text="Add Information" IsEnabled="False" Clicked="AddInformationButton_Clicked"></Button>
+                </Entry>
+                <Entry x:Name="procedureNameEntry" Placeholder="Enter procedure name" Completed="ProcedureNameEntry_Completed">
+
+                </Entry>
+                <Entry x:Name="procedureDetailEntry" Placeholder="Enter procedure details" Completed="ProcedureDetailEntry_Completed">
+
+                </Entry>
+                <Frame Padding="0" CornerRadius="3" BorderColor="Black">
+                    <Editor x:Name="stepsEditor"  Placeholder="Enter steps" HeightRequest="150" Completed="StepsEditor_Completed">
+
+                    </Editor>
+                </Frame>
+                <Frame Padding="0" CornerRadius="3" BorderColor="Black">
+                    <Editor x:Name="variationsEditor"  Placeholder="Enter variations" HeightRequest="150" Completed="VariationsEditor_Completed">
+
+                    </Editor>
+                </Frame>
+                <Frame Padding="0" CornerRadius="3" BorderColor="Black">
+                    <Editor x:Name="keyPointsEditor"  Placeholder="Enter key points" HeightRequest="150" Completed="KeyPointsEditor_Completed">
+
+                    </Editor>
+                </Frame>
+
+            <!--<Button x:Name="addInformationButton" Text="Add Information" IsEnabled="False" Clicked="AddInformationButton_Clicked"></Button>-->
+            <Button x:Name="addInformationButtonMVVM" Text="Add Information MVVM" IsEnabled="False" Clicked="AddInformationButtonMVVM_Clicked"></Button>
 
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

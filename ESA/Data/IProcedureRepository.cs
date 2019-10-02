@@ -12,15 +12,20 @@ namespace ESA.Data
     // This is the interface for procedure repository
     public interface IProcedureRepository
     {
-        List<Lacrimal> GetListLacrimalProceduresAsync();
-        List<Orbital> GetListOrbitalProceduresAsync();
-        List<Eyelid> GetListEyelidProceduresAsync();
-        Lacrimal GetLacrimalProcedureAsync(int id);
-        Lacrimal GetLacrimalNameAsync(string name);
-        Orbital GetOrbitalProcedureAsync(int id);
-        Eyelid GetEyelidProcedureAsync(int id);
-        int SaveProcedureAsync(Procedure item);
-        int SaveStepsAsync(StepsModel steps, Procedure proc);
-        int DeleteProcedureAsync(Procedure item);
+        List<Lacrimal> GetListLacrimalProcedures();
+        List<Orbital> GetListOrbitalProcedures();
+        List<Eyelid> GetListEyelidProcedures();
+        Lacrimal GetLacrimalProcedure(int id);
+        Lacrimal GetLacrimalName(Lacrimal name);
+        Orbital GetOrbitalProcedure(int id);
+        Orbital GetOrbitalName(Orbital name);
+        Eyelid GetEyelidProcedure(int id);
+        Eyelid GetEyelidName(Eyelid id);
+
+        int SaveProcedure(Procedure item);
+        int SaveSteps(StepsModel steps, Procedure proc);
+        int SaveVariations(VariationsModel steps, Procedure proc);
+        int SaveKeyPoints(KeyPointsModel steps, Procedure proc);
+        int DeleteProcedure(Procedure item);
     }
 }

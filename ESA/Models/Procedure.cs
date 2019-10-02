@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESA.Models.PageModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,8 +15,8 @@ namespace ESA.Models
         // Add more properties or methods
         public abstract string Name { get; set; }
         public abstract string Details { get; set; }
-        //public abstract string Steps { get; set; }
-        //public abstract string KeyPoints { get; set; }
-        //public abstract string Variations { get; set; }
+        public abstract StepsModel Steps { get; set; }
+        public abstract KeyPointsModel KeyPoints { get; set; }
+        public abstract VariationsModel Variations { get; set; }
     }
 }

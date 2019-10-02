@@ -18,38 +18,34 @@ namespace ESA
             InitializeComponent();
             if (proc is Lacrimal)
             {
-                Lacrimal newProc = (Lacrimal)proc;
-                procedureCategoryEntry.Text = newProc.ID.ToString();
+                Lacrimal newProc = App.ProcedureDatabase.GetLacrimalName((Lacrimal)proc); 
+                procedureCategoryEntry.Text = "Lacrimal";
                 procedureNameEntry.Text = newProc.Name.ToString();
                 procedureDetailEntry.Text = newProc.Details.ToString();
+                stepsEditor.Text = newProc.Steps.content.ToString();
+                variationsEditor.Text = newProc.KeyPoints.content.ToString();
+                keyPointsEditor.Text = newProc.KeyPoints.content.ToString();
             }
             else if (proc is Orbital)
             {
-
+                Orbital newProc = App.ProcedureDatabase.GetOrbitalName((Orbital)proc);
+                procedureCategoryEntry.Text = "Orbital";
+                procedureNameEntry.Text = newProc.Name.ToString();
+                procedureDetailEntry.Text = newProc.Details.ToString();
+                stepsEditor.Text = newProc.Steps.content.ToString();
+                variationsEditor.Text = newProc.KeyPoints.content.ToString();
+                keyPointsEditor.Text = newProc.KeyPoints.content.ToString();
             }
             else if (proc is Eyelid)
             {
-
+                Eyelid newProc = App.ProcedureDatabase.GetEyelidName((Eyelid)proc);
+                procedureCategoryEntry.Text = "Eyelid";
+                procedureNameEntry.Text = newProc.Name.ToString();
+                procedureDetailEntry.Text = newProc.Details.ToString();
+                stepsEditor.Text = newProc.Steps.content.ToString();
+                variationsEditor.Text = newProc.KeyPoints.content.ToString();
+                keyPointsEditor.Text = newProc.KeyPoints.content.ToString();
             }
         }
-
-        //public DisplayProcedureInfo(Procedure proc)
-        //{
-        //    if (proc is Lacrimal)
-        //    {
-        //        Lacrimal newProc = (Lacrimal)proc;
-        //        procedureCategoryEntry.Text = newProc.ID.ToString();
-        //        procedureNameEntry.Text = newProc.Name.ToString();
-        //        procedureDetailEntry.Text = newProc.Details.ToString();
-        //    }
-        //    else if (proc is Orbital)
-        //    {
-
-        //    }
-        //    else if (proc is Eyelid)
-        //    {
-
-        //    }
-        //}
     }
 }
