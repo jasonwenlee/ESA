@@ -10,7 +10,8 @@ namespace ESA
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // MainPage = new MainPage();
+            MainPage = new NavigationPage(new SplashPage()); // REC: Using the SplashPage.cs as the initial page.
         }
 
         protected override void OnStart()

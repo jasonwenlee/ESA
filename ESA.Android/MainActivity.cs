@@ -9,7 +9,8 @@ using Android.OS;
 
 namespace ESA.Droid
 {
-    [Activity(Label = "ESA", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    // REC: Statement below to modify the App icon.
+    [Activity(Label = "ESA", Icon = "@drawable/circEye", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

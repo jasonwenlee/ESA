@@ -8,7 +8,8 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Welcome to the Oculoplastics App!" 
+               FontSize="Subtitle"
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
     </StackLayout>
