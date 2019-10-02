@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Numerics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ESA.View;
 
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ESA
 {
     public partial class App : Application
@@ -10,7 +13,8 @@ namespace ESA
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //     MainPage = new MainPage();
+            MainPage = new NavigationPage (new TasoconjuctivalFlapSteps());
         }
 
         protected override void OnStart()
