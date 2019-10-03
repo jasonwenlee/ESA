@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESA.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,11 @@ namespace ESA
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void stepsPageButtonClicked(Object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StepsPage());
         }
     }
 }

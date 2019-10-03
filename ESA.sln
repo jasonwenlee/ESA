@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESA.Android", "ESA.Android\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESA.iOS", "ESA.iOS\ESA.iOS.csproj", "{9AE7D029-CE57-41FA-A4E4-F45675FB4387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESA", "ESA\ESA.csproj", "{7B415B97-12AB-4B6A-B00F-0A241F1A16B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESA", "ESA\ESA.csproj", "{7B415B97-12AB-4B6A-B00F-0A241F1A16B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
