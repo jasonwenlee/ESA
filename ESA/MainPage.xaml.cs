@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ESA.Models.VideoView;
+using ESA.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +18,12 @@ namespace ESA
         public MainPage()
         {
             InitializeComponent();
+            
+        }
+
+        private async void Details_Page_Btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Detail());
         }
 
         private void StepsPageBtn_Clicked(object sender, EventArgs e)
