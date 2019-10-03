@@ -5,18 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.MainPage"
-             xmlns:video="clr-namespace:ESA.Models.VideoView"
-             xmlns:local="clr-namespace:ESA">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+    <!--HEADER-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Oculoplastics" />
+        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" />
+        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" />
+    </ContentPage.ToolbarItems>
+    
     <Grid HorizontalOptions="Center" VerticalOptions="Center">
         <Grid.RowDefinitions>
             <RowDefinition />
         </Grid.RowDefinitions>
-
-        <Button x:Name="Details_Page_Btn" Text="Go to Details Page"  Grid.Row="0" Clicked="Details_Page_Btn_Clicked" />
+        
+        <Button x:Name="stepsPageBtn" Text="Steps Page" Clicked="StepsPageBtn_Clicked" Grid.Row="0" />
+   
     </Grid>
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Button x:Name="stepsPageBtn" Text="Steps Page" Clicked="StepsPageBtn_Clicked" />
-    </StackLayout>
+    
 
 </ContentPage>

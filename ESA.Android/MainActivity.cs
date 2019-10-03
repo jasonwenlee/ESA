@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using System.Threading.Tasks;
 using Android.Content;
+using Xamarin.Forms;
 
 namespace ESA.Droid
 {

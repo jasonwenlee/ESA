@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ESA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StepsPage : ContentPage
+    public partial class ComplicationsView : ContentView
     {
-        public StepsPage()
+        public ComplicationsView()
         {
             InitializeComponent();
         }
