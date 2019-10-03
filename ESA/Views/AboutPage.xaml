@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.Views.AboutPage"
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"> <!--assembly reference is used to include the class(es) in the MarkupExtensions File-->
+    <ContentPage.Content>
+
+        <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout>
+                <Label Text="About Us" Margin="10" FontSize="Large" />
+
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.aboutph.jpg}" HeightRequest="80" Clicked="Saul_ReadMore" />
+                    <StackLayout Margin="5">
+                        <Label Text="Dr Saul Rajak PhD FRCOphth" />
+                        <Label Text="Director of ESV.net and ESP.net" FontAttributes="Italic"  />
+                        <Label Text="Saul is a consultant oculoplastic, orbital and lacrimal surgeon at Brighton and Sussex University Hospital, UK. " FontSize="Micro" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.aboutph.jpg}" HeightRequest="80" />
+                    <StackLayout Margin="5">
+                        <Label Text="Professor Dinesh Selva DHCS FRANZCO" />
+                        <Label Text="Dinesh has been the Foundation Chair of Ophthalmology and Visual Sciences at the University of Adelaide, Australia since 2004." FontSize="Micro" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.aboutph.jpg}" HeightRequest="80" />
+                    <StackLayout Margin="5">
+                        <Label Text="Dr Garry Davis FRANZCO" />
+                        <Label Text="Garry is a consultant oculoplastic, orbital and lacrimal surgeon at The Royal Adelaide Hospital, Australia. " FontSize="Micro" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.aboutph.jpg}" HeightRequest="80" />
+                    <StackLayout Margin="5">
+                        <Label Text="Dr Akihide Watanabe MD PhD" />
+                        <Label Text="Akihide is an assistant professor of Department of Ophthalmology, Kyoto Prefectural University of Medicine, Japan. " FontSize="Micro" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.aboutph.jpg}" HeightRequest="80" />
+                    <StackLayout Margin="5">
+                        <Label Text="Dr Valerie Juniat" />
+                        <Label Text="About Valerie" FontSize="Micro" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <!--Pop Up Saul-->
+            <!--Comment out IsVisible="False" to view in designer-->
+            <ContentView x:Name="popupImageView" BackgroundColor="#90BFBFBF" IsVisible="False" Padding="20, 0" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" >
+                    <StackLayout Orientation="Vertical" Padding="20" BackgroundColor="White" >
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.close.png}" HeightRequest="20" HorizontalOptions="End" Clicked="BackToAbout_Clicked" />
+                        <Image WidthRequest="150" HeightRequest="150" Source="{mrkupExt:ImageResource ESA.Resources.aboutph.jpg}" />
+                        <Label Text="Dr Saul Rajak PhD FRCOphth" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <Label Text="Director of ESV.net and ESP.net" FontAttributes="Italic" HorizontalTextAlignment="Center" />
+                        <Label Text="Saul is a consultant oculoplastic, orbital and lacrimal surgeon at Brighton and Sussex University Hospital, UK. Saul underwent his Ophthalmology training in London and Sussex and completed oculoplastic fellowships in Brighton, UK and Adelaide, Australia. Saul also spent four years studying trachoma in Ethiopia through the London School of Hygiene and Tropical Medicine. He was awarded his PhD for this work and continues to be very active in this field. Saul passion for teaching and in particular the use of video for surgical training led to the development of this website and it's sister site EyeSurgeryVideos.net which is a major oculoplastic video based surgical training site used by surgeons around the world." 
+                               FontSize="Micro" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.Views.LacrimalPage"
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"> 
+    <!--assembly reference is used to include the class(es) in the MarkupExtensions File-->
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+
+            <Image Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" HeightRequest="80"/>
+
+            <StackLayout Margin="5">
+                <Label Text="Lacrimal Procedures" HorizontalTextAlignment="Center"  />
+                <Label FontAttributes="Italic" FontSize="Micro" HorizontalTextAlignment="Center" Text="Welcome to the lacrimal section, which contains ultra-high quality, narrated lacrimal surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as endoscopic and external DCR, Jones tubes, nasolacrimal stenting and dacryoendoscopy. We hope they will be of benefit to even the most experienced surgeons"  />
+            </StackLayout>
+
+            <StackLayout>
+                <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
