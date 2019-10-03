@@ -10,7 +10,7 @@ namespace ESA.MarkupExtensions
 
     // Author:      Douglas Hudson Walker
 
-    // Summary:     This is the ProvideValue method. It takes a 'serviceProvider' (in this case the serviceProvider is anything that calls our class in 
+    // Summary:     This class extends our xaml to include the ProvideValue method. It takes a 'serviceProvider' (in this case the serviceProvider is anything that calls our class in 
     //              xaml (a Button or ImageButton)) and then searches for our project files or assembly for the Resource. If found, the 
     //              object (in this case an Image) is returned. 
 
