@@ -18,20 +18,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="CreateProcedure.xaml">
+    <EmbeddedResource Update="TestViews\CreateProcedure.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DisplayProcedureInfo.xaml">
+    <EmbeddedResource Update="TestViews\DisplayProcedureInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ProcedureInformation.xaml">
+    <EmbeddedResource Update="TestViews\ProcedureInformation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ProcedureType.xaml">
+    <EmbeddedResource Update="TestViews\ProcedureType.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Steps.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>
