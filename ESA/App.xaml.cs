@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ESA.Data;
+using ESA.ViewModels;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,6 +8,22 @@ namespace ESA
 {
     public partial class App : Application
     {
+        public AddProcedureViewModel AddProcVM = new AddProcedureViewModel();
+        // Initialises the database for video and procedures. 
+        private static string procedureDB { get; } = "procedureDB.sqlite";
+        static ProcedureRepository procDataBase;
+        public static IProcedureRepository ProcedureDatabase
+        {
+            get
+            {
+                if (procDataBase == null)
+                {
+                    procDataBase = new ProcedureRepository(procedureDB);
+                }
+                return procDataBase;
+            }
+        }
+
         public App()
         {
             InitializeComponent();

@@ -17,6 +17,7 @@ namespace ESA
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         private void StepsPageBtn_Clicked(object sender, EventArgs e)
@@ -51,6 +52,11 @@ namespace ESA
         private async void Search_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CategoriesPage());
+        }
+
+        private async void Database_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CreateProcedure());
         }
     }
 }
