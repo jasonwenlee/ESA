@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:video="clr-namespace:ESA.Models.VideoView"
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             mc:Ignorable="d"
+             x:Class="ESA.Views.DetailsPage"
+             x:Name="StepPage_Instance"
+             Appearing="StepPage_Instance_Appearing"
+             BackgroundColor="#222">
+    <!--HEADER-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Oculoplastics" />
+        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" />
+        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="videoPlayerRow" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+
+            <!--VIDEO-->
+            <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" BackgroundColor="#111"/> <!--Still needs fullscreen controls for Androif (not sure for iOS)-->
+
+            <!--CONTENT-->
+            <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,15,0,10" Margin="15,0">
+                <Grid VerticalOptions="Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--Video Overview information-->
+                    <StackLayout Grid.Row="0" Spacing="2" >
+                        <Label FontSize="16" Text="Tarsoconjunctical (Hughes) Flap - Stage I" TextColor="White"/>
+                        <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="This narrated video demonstrates the tarsoconjunctival (Hughes) flap for reconstruction of large defects of the lower eyelid, that most commonly occur after lower lid tumour excision." />
+                        <Label FontSize="14" Text="Eyelid / Tumor Surgery / Eyelid Reconstruction" TextColor="#3399FF" />
+                        <Label FontSize="14" Text="11th March, 2019 - 5087 Views" TextColor="#828282" />
+                    </StackLayout>
+
+                    <!--Content row This is where your view will be displayed (DO NOT PUT YOUR CODE HERE)-->
+                    <!--Use the content views i have provided to bulid your feature-->
+                    <StackLayout Grid.Row="1" x:Name="contentRow" >
+                    </StackLayout>
+
+                </Grid>
+            </ScrollView>
+
+            <!--FOOTER-->
+            <StackLayout x:Name="footer" Orientation="Horizontal" Grid.Row="2" BackgroundColor="#0F0F0F" HorizontalOptions="Fill">
+                <!--I will update this to use a style template in the future-->
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ImageButton x:Name="StepsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.steps_icon_dark_active.png}" Clicked="StepsBtn_Clicked" />
+                    <Label x:Name="StepsLbl" Text="Steps" FontSize="Small" TextColor="White" HorizontalOptions="Center" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ImageButton x:Name="KeyPointsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.keypoints_icon.png}" Clicked="KeyPointsBtn_Clicked"/>
+                    <Label x:Name="KeyPointsLbl" Text="Key Points" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ImageButton x:Name="VariationsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.variations_icon.png}" Clicked="VariationsBtn_Clicked" />
+                    <Label x:Name="VariationsLbl" Text="Variations" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ImageButton x:Name="ComplicationsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.complications_icon.png}" Clicked="ComplicationsBtn_Clicked" />
+                    <Label x:Name="ComplicationsLbl" Text="Complications" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ImageButton x:Name="InfoBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
+                    <Label x:Name="InfoLbl" Text="Info" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
