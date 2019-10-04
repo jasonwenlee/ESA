@@ -7,27 +7,34 @@
              x:Class="ESA.DisplayProcedureInfo">
     <ScrollView>
             <StackLayout Padding="5">
-            <Entry x:Name="procedureNameEntry" Placeholder="No info" IsEnabled="False"/>
-
-            <Entry x:Name="procedureDetailEntry" Placeholder="No info" IsEnabled="False"/>
-
-            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="stepsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+            <Label Text="Proc. Name"/>
+            <Entry x:Name="procedureNameEntry" Placeholder="No info" IsReadOnly="True"/>
+            <Label Text="Proc. Detail"/>
+            <Entry x:Name="procedureDetailEntry" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="variationsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+            <Label Text="Steps"/>
+            <Editor x:Name="stepsEditor"  Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="keyPointsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+            <Label Text="Variations"/>
+            <Editor x:Name="variationsEditor"  Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="complicationsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+            <Label Text="Key Points"/>
+            <Editor x:Name="keyPointsEditor"  Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="historyEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+            <Label Text="Complications"/>
+            <Editor x:Name="complicationsEditor"  Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="referencesEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+            <Label Text="History"/>
+            <Editor x:Name="historyEditor"  Placeholder="No info" IsReadOnly="True"/>
+
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Label Text="References"/>
+            <Editor x:Name="referencesEditor"  Placeholder="No info" IsReadOnly="True"/>
 
         </StackLayout>
     </ScrollView>

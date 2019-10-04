@@ -30,6 +30,7 @@ namespace ESA
             ObservableCollection<Procedure> eyes = loadOneProc.EyelidProcedures;
             foreach (var eyeProc in eyes)
             {
+                // testProc is name of label
                 if (eyeProc.Name.Equals(testProc.Text))
                 {
                     testEye = loadOneProc.LoadProcedureByName(eyeProc);
@@ -39,6 +40,7 @@ namespace ESA
 
         private void StepsPageBtn_Clicked(object sender, EventArgs e)
         {
+            // Don't think this is a good idea to push object from page to another. 
             Navigation.PushAsync(new DetailsPage(testEye));
         }
 
