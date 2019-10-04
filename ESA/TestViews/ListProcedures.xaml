@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ESA.ProcedureInformation">
+             x:Class="ESA.ListProcedures">
+
         <StackLayout>
             <Label x:Name="lacrimalLabel" Text="Lacrimal" Margin="10"/>
             <ListView x:Name="lacrimalList" ItemTapped="LacrimalList_ItemTapped">

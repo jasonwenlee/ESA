@@ -24,7 +24,7 @@ namespace ESA
 
         private async void ListButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProcedureInformation());
+            await Navigation.PushAsync(new ListProcedures());
         }
     }
 }

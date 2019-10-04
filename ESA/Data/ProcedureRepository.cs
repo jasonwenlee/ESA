@@ -35,8 +35,10 @@ namespace ESA.Data
             //database.DropTable<StepsModel>();
             //database.DropTable<VariationsModel>();
             //database.DropTable<KeyPointsModel>();
-
-            // Create lacrimal table
+            //database.DropTable<ComplicationsModel>();
+            //database.DropTable<HistoryModel>();
+            //database.DropTable<ReferencesModel>();
+            //Create lacrimal table
             database.CreateTable<Lacrimal>();
             // Create orbital table
             database.CreateTable<Orbital>();
@@ -46,6 +48,9 @@ namespace ESA.Data
             database.CreateTable<StepsModel>();
             database.CreateTable<VariationsModel>();
             database.CreateTable<KeyPointsModel>();
+            database.CreateTable<ComplicationsModel>();
+            database.CreateTable<HistoryModel>();
+            database.CreateTable<ReferencesModel>();
         }
         //-----------------------------------------------------------------------------//
         // Get list of lacrimal procedures
@@ -95,35 +100,6 @@ namespace ESA.Data
         public Eyelid GetEyelidByName(Eyelid proc)
         {
             return database.GetWithChildren<Eyelid>(proc.ID);
-        }
-
-        //-----------------------------------------------------------------------------//
-        // Delete procedure based on procedure type.
-        public int DeleteProcedure(Procedure item)
-        {
-            if (item != null)
-            {
-                if (item is Lacrimal)
-                {
-                    Lacrimal lac = (Lacrimal)item;
-                    return database.Delete(item);
-                }
-                else if (item is Orbital)
-                {
-                    Orbital orb = (Orbital)item;
-                    return database.Delete(orb);
-                }
-                else if (item is Eyelid)
-                {
-                    Eyelid eye = (Eyelid)item;
-                    return database.Delete(eye);
-                }
-                else
-                {
-                    throw new FormatException();
-                }
-            }
-            throw new ArgumentNullException();
         }
 
         //-----------------------------------------------------------------------------//
@@ -349,19 +325,19 @@ namespace ESA.Data
                     database.Update(complications);
                     if (proc is Lacrimal)
                     {
-                        complications.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        complications.LacrimalProcedure = (Lacrimal)proc;
                         database.UpdateWithChildren(complications);
                         return 1;
                     }
                     else if (proc is Orbital)
                     {
-                        complications.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        complications.OrbitalProcedure = (Orbital)proc;
                         database.UpdateWithChildren(complications);
                         return 1;
                     }
                     else if (proc is Eyelid)
                     {
-                        complications.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        complications.EyelidProcedure = (Eyelid)proc;
                         database.UpdateWithChildren(complications);
                         return 1;
                     }
@@ -371,19 +347,19 @@ namespace ESA.Data
                     database.Insert(complications);
                     if (proc is Lacrimal)
                     {
-                        complications.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        complications.LacrimalProcedure = (Lacrimal)proc;
                         database.UpdateWithChildren(complications);
                         return 1;
                     }
                     else if (proc is Orbital)
                     {
-                        complications.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        complications.OrbitalProcedure = (Orbital)proc;
                         database.UpdateWithChildren(complications);
                         return 1;
                     }
                     else if (proc is Eyelid)
                     {
-                        complications.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        complications.EyelidProcedure = (Eyelid)proc;
                         database.UpdateWithChildren(complications);
                         return 1;
                     }
@@ -403,19 +379,19 @@ namespace ESA.Data
                     database.Update(history);
                     if (proc is Lacrimal)
                     {
-                        history.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        history.LacrimalProcedure = (Lacrimal)proc;
                         database.UpdateWithChildren(history);
                         return 1;
                     }
                     else if (proc is Orbital)
                     {
-                        history.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        history.OrbitalProcedure = (Orbital)proc;
                         database.UpdateWithChildren(history);
                         return 1;
                     }
                     else if (proc is Eyelid)
                     {
-                        history.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        history.EyelidProcedure = (Eyelid)proc;
                         database.UpdateWithChildren(history);
                         return 1;
                     }
@@ -425,19 +401,19 @@ namespace ESA.Data
                     database.Insert(history);
                     if (proc is Lacrimal)
                     {
-                        history.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        history.LacrimalProcedure = (Lacrimal)proc;
                         database.UpdateWithChildren(history);
                         return 1;
                     }
                     else if (proc is Orbital)
                     {
-                        history.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        history.OrbitalProcedure = (Orbital)proc;
                         database.UpdateWithChildren(history);
                         return 1;
                     }
                     else if (proc is Eyelid)
                     {
-                        history.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        history.EyelidProcedure = (Eyelid)proc;
                         database.UpdateWithChildren(history);
                         return 1;
                     }
@@ -457,19 +433,19 @@ namespace ESA.Data
                     database.Update(references);
                     if (proc is Lacrimal)
                     {
-                        references.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        references.LacrimalProcedure = (Lacrimal)proc;
                         database.UpdateWithChildren(references);
                         return 1;
                     }
                     else if (proc is Orbital)
                     {
-                        references.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        references.OrbitalProcedure = (Orbital)proc;
                         database.UpdateWithChildren(references);
                         return 1;
                     }
                     else if (proc is Eyelid)
                     {
-                        references.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        references.EyelidProcedure = (Eyelid)proc;
                         database.UpdateWithChildren(references);
                         return 1;
                     }
@@ -479,22 +455,52 @@ namespace ESA.Data
                     database.Insert(references);
                     if (proc is Lacrimal)
                     {
-                        references.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        references.LacrimalProcedure = (Lacrimal)proc;
                         database.UpdateWithChildren(references);
                         return 1;
                     }
                     else if (proc is Orbital)
                     {
-                        references.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        references.OrbitalProcedure = (Orbital)proc;
                         database.UpdateWithChildren(references);
                         return 1;
                     }
                     else if (proc is Eyelid)
                     {
-                        references.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        references.EyelidProcedure = (Eyelid)proc;
                         database.UpdateWithChildren(references);
                         return 1;
                     }
+                }
+            }
+            throw new ArgumentNullException();
+        }
+
+        //-----------------------------------------------------------------------------//
+        // Delete procedure based on procedure type. 
+        // Note: No use yet.
+        public int DeleteProcedure(Procedure item)
+        {
+            if (item != null)
+            {
+                if (item is Lacrimal)
+                {
+                    Lacrimal lac = (Lacrimal)item;
+                    return database.Delete(item);
+                }
+                else if (item is Orbital)
+                {
+                    Orbital orb = (Orbital)item;
+                    return database.Delete(orb);
+                }
+                else if (item is Eyelid)
+                {
+                    Eyelid eye = (Eyelid)item;
+                    return database.Delete(eye);
+                }
+                else
+                {
+                    throw new FormatException();
                 }
             }
             throw new ArgumentNullException();

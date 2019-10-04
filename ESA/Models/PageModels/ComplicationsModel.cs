@@ -14,10 +14,10 @@ namespace ESA.Models.PageModels
         public string content { get; set; }
 
         [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public List<Eyelid> EyelidProcedure { get; set; }
+        public Eyelid EyelidProcedure { get; set; }
         [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public List<Lacrimal> LacrimalProcedure { get; set; }
+        public Lacrimal LacrimalProcedure { get; set; }
         [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public List<Orbital> OrbitalProcedure { get; set; }
+        public Orbital OrbitalProcedure { get; set; }
     }
 }

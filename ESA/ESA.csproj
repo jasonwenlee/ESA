@@ -137,6 +137,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="TestViews\ListProcedures.xaml.cs">
+      <DependentUpon>ListProcedures.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DetailsPage.xaml.cs">
       <DependentUpon>DetailsPage.xaml</DependentUpon>
     </Compile>

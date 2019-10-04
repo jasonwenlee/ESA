@@ -6,20 +6,13 @@ using System.Text;
 
 namespace ESA.ViewModels
 {
+    // Author: Jason Wen Lee
     public class LoadProcedureViewModel : BaseProcedureViewModel
     {
         // Property for procedures are set to private
         private ObservableCollection<Procedure> _lacrimalProcedures;
         private ObservableCollection<Procedure> _orbitalProcedures;
         private ObservableCollection<Procedure> _eyelidProcedures;
-
-        public bool IsDataLoaded { get; private set; }
-
-        public LoadProcedureViewModel()
-        {
-            _procedureRepository = App.ProcedureDatabase;
-        }
-
         // Getter for procedures. Procedures are only set in this class.
         public ObservableCollection<Procedure> LacrimalProcedures
         {
@@ -64,6 +57,14 @@ namespace ESA.ViewModels
             }
         }
 
+        public bool IsDataLoaded { get; private set; }
+
+        // Constructor
+        public LoadProcedureViewModel()
+        {
+            _procedureRepository = App.ProcedureDatabase;
+        }
+
         public void LoadLacrimalData()
         {
             LacrimalProcedures = new ObservableCollection<Procedure>(_procedureRepository.GetListLacrimalProcedures());
@@ -82,9 +83,21 @@ namespace ESA.ViewModels
             IsDataLoaded = true;
         }
 
-        // public async void LoadLacrimalByName(string name)
-        // public async void LoadOrbitalByName(string name)
-        // public async void LoadEyelidByName(string name)
-
+        public Procedure LoadProcedureByName(Procedure proc)
+        {
+            if (proc is Lacrimal)
+            {
+                return _procedureRepository.GetLacrimalByName((Lacrimal)proc);
+            }
+            else if (proc is Orbital)
+            {
+                return _procedureRepository.GetOrbitalByName((Orbital)proc);
+            }
+            else if (proc is Eyelid)
+            {
+                return _procedureRepository.GetEyelidByName((Eyelid)proc);
+            }
+            return null;
+        }
     }
 }

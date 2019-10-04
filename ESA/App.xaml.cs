@@ -8,7 +8,6 @@ namespace ESA
 {
     public partial class App : Application
     {
-        public AddProcedureViewModel AddProcVM = new AddProcedureViewModel();
         // Initialises the database for video and procedures. 
         private static string procedureDB { get; } = "procedureDB.sqlite";
         static ProcedureRepository procDataBase;

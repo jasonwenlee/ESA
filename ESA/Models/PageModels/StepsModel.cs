@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ESA.Models.PageModels
 {
-    [Table("StepsModel")]
+    [Table("Steps")]
     public class StepsModel
     {
         [PrimaryKey, AutoIncrement]

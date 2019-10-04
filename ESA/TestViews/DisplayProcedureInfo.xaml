@@ -5,29 +5,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.DisplayProcedureInfo">
-    <ContentPage.Content>
-        <StackLayout Padding="5">
-            <Entry x:Name="procedureCategoryEntry" IsSpellCheckEnabled="True"  Placeholder="Enter procedure category">
-            </Entry>
-            <Entry x:Name="procedureNameEntry" Placeholder="Enter procedure name">
-            </Entry>
-            <Entry x:Name="procedureDetailEntry" Placeholder="Enter procedure details">
-            </Entry>
-            <Frame Padding="0" CornerRadius="3" BorderColor="Black">
-                <Editor x:Name="stepsEditor"  Placeholder="Enter steps" HeightRequest="150">
+    <ScrollView>
+            <StackLayout Padding="5">
+            <Entry x:Name="procedureNameEntry" Placeholder="No info" IsEnabled="False"/>
 
-                </Editor>
-            </Frame>
-            <Frame Padding="0" CornerRadius="3" BorderColor="Black">
-                <Editor x:Name="variationsEditor"  Placeholder="Enter variations" HeightRequest="150">
+            <Entry x:Name="procedureDetailEntry" Placeholder="No info" IsEnabled="False"/>
 
-                </Editor>
-            </Frame>
-            <Frame Padding="0" CornerRadius="3" BorderColor="Black">
-                <Editor x:Name="keyPointsEditor"  Placeholder="Enter key points" HeightRequest="150">
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="stepsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
 
-                </Editor>
-            </Frame>
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="variationsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="keyPointsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="complicationsEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="historyEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="referencesEditor"  Placeholder="No info" HeightRequest="150" IsEnabled="False"/>
+
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

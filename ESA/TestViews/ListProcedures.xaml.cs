@@ -12,11 +12,11 @@ using Xamarin.Forms.Xaml;
 namespace ESA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProcedureInformation : ContentPage
+    public partial class ListProcedures : ContentPage
     {
         private LoadProcedureViewModel LoadProcVM;
 
-        public ProcedureInformation()
+        public ListProcedures()
         {
             InitializeComponent();
             LoadProcVM = new LoadProcedureViewModel();
