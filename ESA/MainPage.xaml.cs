@@ -17,6 +17,7 @@ namespace ESA
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         private void StepsPageBtn_Clicked(object sender, EventArgs e)
