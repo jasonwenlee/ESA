@@ -32,6 +32,21 @@
 
                     </Editor>
                 </Frame>
+                <Frame Padding="0" CornerRadius="3" BorderColor="Black">
+                    <Editor x:Name="complicationsEditor"  Placeholder="Enter complications" HeightRequest="150" Completed="ComplicationsEditor_Completed">
+
+                    </Editor>
+                </Frame>
+                <Frame Padding="0" CornerRadius="3" BorderColor="Black">
+                    <Editor x:Name="historyEditor"  Placeholder="Enter history" HeightRequest="150" Completed="HistoryEditor_Completed">
+
+                    </Editor>
+                </Frame>
+                <Frame Padding="0" CornerRadius="3" BorderColor="Black">
+                    <Editor x:Name="referencesEditor"  Placeholder="Enter references" HeightRequest="150" Completed="ReferencesEditor_Completed">
+
+                    </Editor>
+                </Frame>
 
             <!--<Button x:Name="addInformationButton" Text="Add Information" IsEnabled="False" Clicked="AddInformationButton_Clicked"></Button>-->
             <Button x:Name="addInformationButtonMVVM" Text="Add Information MVVM" IsEnabled="False" Clicked="AddInformationButtonMVVM_Clicked"></Button>

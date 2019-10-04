@@ -20,6 +20,7 @@ namespace ESA.Data
         readonly SQLiteConnection database;
         string path;
 
+        // Author: Jason Wen Lee
         // Constructor creates path to database with a given name then establishes connection to it. 
         // A table containing Video objects is then created.
         public ProcedureRepository(string dbPath)
@@ -46,58 +47,57 @@ namespace ESA.Data
             database.CreateTable<VariationsModel>();
             database.CreateTable<KeyPointsModel>();
         }
-
+        //-----------------------------------------------------------------------------//
         // Get list of lacrimal procedures
         public List<Lacrimal>GetListLacrimalProcedures()
         {
             return database.Table<Lacrimal>().ToList();
         }
-
         // Get list of orbital procedures
         public List<Orbital> GetListOrbitalProcedures()
         {
             return database.Table<Orbital>().ToList();
         }
-
         // Get list of eyelid procedures
         public List<Eyelid> GetListEyelidProcedures()
         {
             return database.Table<Eyelid>().ToList();
         }
-
+        //-----------------------------------------------------------------------------//
         // Get a lacrimal procedure based on id
-        public Lacrimal GetLacrimalProcedure(int id)
+        public Lacrimal GetLacrimalByID(int id)
         {
             return database.Table<Lacrimal>().Where(i => i.ID == id).FirstOrDefault();
         }
-
-        public Lacrimal GetLacrimalName(Lacrimal proc)
-        {
-            return database.GetWithChildren<Lacrimal>(proc.ID);
-        }
-
-        public Orbital GetOrbitalName(Orbital proc)
-        {
-            return database.GetWithChildren<Orbital>(proc.ID);
-        }
-
-        public Eyelid GetEyelidName(Eyelid proc)
-        {
-            return database.GetWithChildren<Eyelid>(proc.ID);
-        }
-
         // Get a orbital procedure based on id
-        public Orbital GetOrbitalProcedure(int id)
+        public Orbital GetOrbitalByID(int id)
         {
             return database.Table<Orbital>().Where(i => i.ID == id).FirstOrDefault();
         }
-
         // Get a eyelid procedure based on id
-        public Eyelid GetEyelidProcedure(int id)
+        public Eyelid GetEyelidByID(int id)
         {
             return database.Table<Eyelid>().Where(i => i.ID == id).FirstOrDefault();
         }
 
+        //-----------------------------------------------------------------------------//
+        // Get a lacrimal procedure based on name
+        public Lacrimal GetLacrimalByName(Lacrimal proc)
+        {
+            return database.GetWithChildren<Lacrimal>(proc.ID);
+        }
+        // Get a orbital procedure based on name
+        public Orbital GetOrbitalByName(Orbital proc)
+        {
+            return database.GetWithChildren<Orbital>(proc.ID);
+        }
+        // Get a eyelid procedure based on name
+        public Eyelid GetEyelidByName(Eyelid proc)
+        {
+            return database.GetWithChildren<Eyelid>(proc.ID);
+        }
+
+        //-----------------------------------------------------------------------------//
         // Delete procedure based on procedure type.
         public int DeleteProcedure(Procedure item)
         {
@@ -126,6 +126,7 @@ namespace ESA.Data
             throw new ArgumentNullException();
         }
 
+        //-----------------------------------------------------------------------------//
         // Save procedure based on procedure type.
         public int SaveProcedure(Procedure item)
         {
@@ -174,7 +175,8 @@ namespace ESA.Data
             }
             throw new ArgumentNullException();
         }
-       
+
+        //-----------------------------------------------------------------------------//
         // Save steps with additional procedure type.
         public int SaveSteps(StepsModel steps, Procedure proc)
         {
@@ -228,6 +230,7 @@ namespace ESA.Data
             throw new ArgumentNullException();
         }
 
+        //-----------------------------------------------------------------------------//
         // Save variations with additional procedure type.
         public int SaveVariations(VariationsModel variations, Procedure proc)
         {
@@ -281,6 +284,7 @@ namespace ESA.Data
             throw new ArgumentNullException();
         }
 
+        //-----------------------------------------------------------------------------//
         // Save key points with additional procedures
         public int SaveKeyPoints(KeyPointsModel keyPoints, Procedure proc)
         {
@@ -327,6 +331,168 @@ namespace ESA.Data
                     {
                         keyPoints.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
                         database.UpdateWithChildren(keyPoints);
+                        return 1;
+                    }
+                }
+            }
+            throw new ArgumentNullException();
+        }
+
+        //-----------------------------------------------------------------------------//
+        // Save key points with additional procedures
+        public int SaveComplications(ComplicationsModel complications, Procedure proc)
+        {
+            if (complications != null)
+            {
+                if (complications.ID != 0)
+                {
+                    database.Update(complications);
+                    if (proc is Lacrimal)
+                    {
+                        complications.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        database.UpdateWithChildren(complications);
+                        return 1;
+                    }
+                    else if (proc is Orbital)
+                    {
+                        complications.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        database.UpdateWithChildren(complications);
+                        return 1;
+                    }
+                    else if (proc is Eyelid)
+                    {
+                        complications.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        database.UpdateWithChildren(complications);
+                        return 1;
+                    }
+                }
+                else
+                {
+                    database.Insert(complications);
+                    if (proc is Lacrimal)
+                    {
+                        complications.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        database.UpdateWithChildren(complications);
+                        return 1;
+                    }
+                    else if (proc is Orbital)
+                    {
+                        complications.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        database.UpdateWithChildren(complications);
+                        return 1;
+                    }
+                    else if (proc is Eyelid)
+                    {
+                        complications.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        database.UpdateWithChildren(complications);
+                        return 1;
+                    }
+                }
+            }
+            throw new ArgumentNullException();
+        }        
+        
+        //-----------------------------------------------------------------------------//
+        // Save key points with additional procedures
+        public int SaveHistory(HistoryModel history, Procedure proc)
+        {
+            if (history != null)
+            {
+                if (history.ID != 0)
+                {
+                    database.Update(history);
+                    if (proc is Lacrimal)
+                    {
+                        history.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        database.UpdateWithChildren(history);
+                        return 1;
+                    }
+                    else if (proc is Orbital)
+                    {
+                        history.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        database.UpdateWithChildren(history);
+                        return 1;
+                    }
+                    else if (proc is Eyelid)
+                    {
+                        history.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        database.UpdateWithChildren(history);
+                        return 1;
+                    }
+                }
+                else
+                {
+                    database.Insert(history);
+                    if (proc is Lacrimal)
+                    {
+                        history.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        database.UpdateWithChildren(history);
+                        return 1;
+                    }
+                    else if (proc is Orbital)
+                    {
+                        history.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        database.UpdateWithChildren(history);
+                        return 1;
+                    }
+                    else if (proc is Eyelid)
+                    {
+                        history.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        database.UpdateWithChildren(history);
+                        return 1;
+                    }
+                }
+            }
+            throw new ArgumentNullException();
+        }        
+        
+        //-----------------------------------------------------------------------------//
+        // Save key points with additional procedures
+        public int SaveReferences(ReferencesModel references, Procedure proc)
+        {
+            if (references != null)
+            {
+                if (references.ID != 0)
+                {
+                    database.Update(references);
+                    if (proc is Lacrimal)
+                    {
+                        references.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        database.UpdateWithChildren(references);
+                        return 1;
+                    }
+                    else if (proc is Orbital)
+                    {
+                        references.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        database.UpdateWithChildren(references);
+                        return 1;
+                    }
+                    else if (proc is Eyelid)
+                    {
+                        references.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        database.UpdateWithChildren(references);
+                        return 1;
+                    }
+                }
+                else
+                {
+                    database.Insert(references);
+                    if (proc is Lacrimal)
+                    {
+                        references.LacrimalProcedure = new List<Lacrimal> { (Lacrimal)proc };
+                        database.UpdateWithChildren(references);
+                        return 1;
+                    }
+                    else if (proc is Orbital)
+                    {
+                        references.OrbitalProcedure = new List<Orbital> { (Orbital)proc };
+                        database.UpdateWithChildren(references);
+                        return 1;
+                    }
+                    else if (proc is Eyelid)
+                    {
+                        references.EyelidProcedure = new List<Eyelid> { (Eyelid)proc };
+                        database.UpdateWithChildren(references);
                         return 1;
                     }
                 }

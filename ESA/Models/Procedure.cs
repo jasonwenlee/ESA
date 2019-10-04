@@ -18,5 +18,8 @@ namespace ESA.Models
         public abstract StepsModel Steps { get; set; }
         public abstract KeyPointsModel KeyPoints { get; set; }
         public abstract VariationsModel Variations { get; set; }
+        public abstract ComplicationsModel Complications { get; set; }
+        public abstract HistoryModel History { get; set; }
+        public abstract ReferencesModel References { get; set; }
     }
 }

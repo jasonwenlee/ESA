@@ -7,6 +7,7 @@ using System.Text;
 
 namespace ESA.Models
 {
+    [Table("Orbital")]
     // Class for orbital procedure. This inherits from Procedure superclass.
     public class Orbital : Procedure
     {
@@ -19,6 +20,12 @@ namespace ESA.Models
         public int VariationsID_FK { get; set; }
         [ForeignKey(typeof(KeyPointsModel))]
         public int KeyPointsID_FK { get; set; }
+        [ForeignKey(typeof(ComplicationsModel))]
+        public int ComplicationsID_FK { get; set; }
+        [ForeignKey(typeof(HistoryModel))]
+        public int HistoryID_FK { get; set; }
+        [ForeignKey(typeof(ReferencesModel))]
+        public int ReferencesID_FK { get; set; }
 
         public override string Name { get; set; }
         public override string Details { get; set; }
@@ -29,5 +36,11 @@ namespace ESA.Models
         public override VariationsModel Variations { get; set; }
         [ManyToOne]
         public override KeyPointsModel KeyPoints { get; set; }
+        [OneToOne]
+        public override ComplicationsModel Complications { get; set; }
+        [OneToOne]
+        public override HistoryModel History { get; set; }
+        [OneToOne]
+        public override ReferencesModel References { get; set; }
     }
 }

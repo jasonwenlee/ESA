@@ -6,6 +6,7 @@ using System.Text;
 
 namespace ESA.Models.PageModels
 {
+    [Table("KeyPoints")]
     public class KeyPointsModel
     {
         [PrimaryKey, AutoIncrement]

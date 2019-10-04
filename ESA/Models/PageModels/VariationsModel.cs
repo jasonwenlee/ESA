@@ -6,6 +6,7 @@ using System.Text;
 
 namespace ESA.Models.PageModels
 {
+    [Table("Variations")]
     public class VariationsModel
     {
         [PrimaryKey, AutoIncrement]

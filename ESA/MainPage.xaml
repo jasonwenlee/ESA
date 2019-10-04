@@ -12,6 +12,7 @@
         <ToolbarItem Text="Oculoplastics" />
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" Clicked="AboutUs_Clicked" />
         <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" Clicked="Search_Clicked" />
+        <ToolbarItem x:Name="Database" Text="DB" Clicked="Database_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
