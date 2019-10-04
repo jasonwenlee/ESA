@@ -65,19 +65,19 @@ namespace ESA.ViewModels
             _procedureRepository = App.ProcedureDatabase;
         }
 
-        public void LoadLacrimalData()
+        public void LoadLacrimalList()
         {
             LacrimalProcedures = new ObservableCollection<Procedure>(_procedureRepository.GetListLacrimalProcedures());
             IsDataLoaded = true;
         }
 
-        public void LoadOrbitalData()
+        public void LoadOrbitalList()
         {
             OrbitalProcedures = new ObservableCollection<Procedure>(_procedureRepository.GetListOrbitalProcedures());
             IsDataLoaded = true;
         }
 
-        public void LoadEyelidData()
+        public void LoadEyelidList()
         {
             EyelidProcedures = new ObservableCollection<Procedure>(_procedureRepository.GetListEyelidProcedures());
             IsDataLoaded = true;
@@ -96,6 +96,23 @@ namespace ESA.ViewModels
             else if (proc is Eyelid)
             {
                 return _procedureRepository.GetEyelidByName((Eyelid)proc);
+            }
+            return null;
+        }
+
+        public Procedure LoadProcedureByID(Procedure procedureType, int ID)
+        {
+            if (procedureType is Lacrimal)
+            {
+                return _procedureRepository.GetLacrimalByID(ID);
+            }
+            else if (procedureType is Orbital)
+            {
+                return _procedureRepository.GetOrbitalByID(ID);
+            }
+            else if (procedureType is Eyelid)
+            {
+                return _procedureRepository.GetEyelidByID(ID);
             }
             return null;
         }

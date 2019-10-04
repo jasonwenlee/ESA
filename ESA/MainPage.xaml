@@ -57,7 +57,7 @@
                                 <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Start">
                                     <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.videoph.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
                                     <!--<Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" HorizontalOptions="Center" FontSize="Micro"/>-->
-                                    <Label Text="Tarsoconjunctival (Hughes) flap – Stage 1" HorizontalOptions="Center" FontSize="Micro" BackgroundColor="LawnGreen"/>
+                                    <Label x:Name="testProc" Text="Tarsoconjunctival (Hughes) flap – Stage 1" HorizontalOptions="Center" FontSize="Micro" BackgroundColor="LawnGreen"/>
                                 </StackLayout>
                             </StackLayout>
 

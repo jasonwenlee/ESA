@@ -6,11 +6,16 @@
              mc:Ignorable="d"
              x:Class="ESA.InfoView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-    <ContentView.Content>
-        <!--Put whatever layout you need in here-->
-        <StackLayout>
-            <Label Text="InfoView" TextColor="White"/>
-            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains4.jpg}" />
-        </StackLayout>
-    </ContentView.Content>
+    <StackLayout Margin="5">
+
+        <Button x:Name="historyButton" Text="History" HeightRequest="50" Clicked="HistoryButton_Clicked"/>
+        <ContentView x:Name="historyView" IsVisible="False">
+            <Editor x:Name="historyEditor" IsReadOnly="True" TextColor="White"/>
+        </ContentView>
+
+        <Button x:Name="referencesButton" Text="References" HeightRequest="50" Clicked="ReferencesButton_Clicked"/>
+        <ContentView x:Name="referencesView" IsVisible="False">
+            <Editor x:Name="referencesEditor" IsReadOnly="True" TextColor="White"/>
+        </ContentView>
+    </StackLayout>
 </ContentView>

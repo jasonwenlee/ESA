@@ -12,15 +12,17 @@ namespace ESA.Data
 {
     // Author: Wen Loong Lee, Rodrigo Echeverria
 
-    // This class handles the database controller for Lacrimal procedures. The controller can grab a list of Lacrimal
-    // procedures or a procedure based on ID. It can also delete lacrimal procedure or save new procedure.
+    // This class contains the database controller for all procedures. These procedures are categorised into
+    // Lacrimal, Orbital, and Eyelid. The controller can do the following:
+    // - Get a list of lacrimal procedure, a list of orbital procedure, or a list of eyelid procedure
+    // - Get a lacrimal procedure, an orbital procedure, or an eyelid procedure based on name or ID
+    // - Save a procedure with its category, name, and description
+    // - Save complications, history, key points, references, steps, and variations
 
     public class ProcedureRepository : IProcedureRepository
     {
         readonly SQLiteConnection database;
         string path;
-
-        // Author: Jason Wen Lee
         // Constructor creates path to database with a given name then establishes connection to it. 
         // A table containing Video objects is then created.
         public ProcedureRepository(string dbPath)
@@ -68,8 +70,9 @@ namespace ESA.Data
         {
             return database.Table<Eyelid>().ToList();
         }
+
         //-----------------------------------------------------------------------------//
-        // Get a lacrimal procedure based on id
+        // Get a lacrimal procedure based on id. 
         public Lacrimal GetLacrimalByID(int id)
         {
             return database.Table<Lacrimal>().Where(i => i.ID == id).FirstOrDefault();

@@ -34,11 +34,11 @@ namespace ESA
                 || procedureCategory.ToLower().Equals("orbital")
                 || procedureCategory.ToLower().Equals("eyelid"))
             {
-                addInformationButtonMVVM.IsEnabled = true;
+                addInformationButton.IsEnabled = true;
             }
             else
             {
-                addInformationButtonMVVM.IsEnabled = false;
+                addInformationButton.IsEnabled = false;
             }
         }
 

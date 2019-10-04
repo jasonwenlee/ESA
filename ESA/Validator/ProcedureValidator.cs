@@ -6,6 +6,8 @@ using System.Text;
 
 namespace ESA.Validator
 {
+    // Author: Jason Wen Lee
+    // Validate empty field. Not sure if this is needed.
     public class ProcedureValidator : AbstractValidator<Procedure>
     {
         public ProcedureValidator()

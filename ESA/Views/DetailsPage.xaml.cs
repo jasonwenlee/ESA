@@ -1,4 +1,5 @@
 ﻿using ESA.MarkupExtensions;
+using ESA.Models;
 using ESA.Models.VideoView;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,12 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailsPage : ContentPage
     {
-        public DetailsPage()
+        Procedure holdProcedure;
+
+        public DetailsPage(Procedure proc)
         {
             InitializeComponent();
+            holdProcedure = proc;
         }
 
         private void StepPage_Instance_Appearing(object sender, EventArgs e)
@@ -94,7 +98,7 @@ namespace ESA.Views
             if (!(contentRow.Children.First() == null || contentRow.Children.First() is InfoView))
             {
                 contentRow.Children.Clear();
-                contentRow.Children.Add(new InfoView());
+                contentRow.Children.Add(new InfoView(holdProcedure));
                 refreshIcons("info");
             }
         }

@@ -80,7 +80,7 @@
                     </StackLayout>
                     <StackLayout Grid.Column="4" VerticalOptions="CenterAndExpand">
                         <ImageButton x:Name="InfoBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
-                        <Label x:Name="InfoLbl" Text="Info" FontSize="Micro" TextColor="Gray" HorizontalOptions="Center" />
+                        <Label x:Name="InfoLbl" Text="Misc Info" FontSize="Micro" TextColor="Gray" HorizontalOptions="Center" />
                     </StackLayout>
                 </Grid>
                 <!--I will update this to use a style template in the future-->

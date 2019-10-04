@@ -22,9 +22,9 @@ namespace ESA
             LoadProcVM = new LoadProcedureViewModel();
             if (!LoadProcVM.IsDataLoaded)
             {
-                LoadProcVM.LoadLacrimalData();
-                LoadProcVM.LoadOrbitalData();
-                LoadProcVM.LoadEyelidData();
+                LoadProcVM.LoadLacrimalList();
+                LoadProcVM.LoadOrbitalList();
+                LoadProcVM.LoadEyelidList();
             }
         }
 
