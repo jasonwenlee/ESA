@@ -137,4 +137,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\Videos\eye_surgery.mp4" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Videos\Brain_Eyes_Vid.mp4" />
+  </ItemGroup>
 </Project>

@@ -98,14 +98,12 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\about.png" />
-    <EmbeddedResource Include="Resources\about48.png" />
     <EmbeddedResource Include="Resources\aboutph.jpg" />
     <EmbeddedResource Include="Resources\close.png" />
     <EmbeddedResource Include="Resources\eyelid.png" />
     <EmbeddedResource Include="Resources\orbital.png" />
     <EmbeddedResource Include="Resources\plus.png" />
     <EmbeddedResource Include="Resources\search.png" />
-    <EmbeddedResource Include="Resources\search48.png" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
   </ItemGroup>
 

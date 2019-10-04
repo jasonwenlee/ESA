@@ -31,13 +31,16 @@ namespace ESA.Views
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    source.Path = "Videos/eye_surgery.mp4";
+                    // source.Path = "Videos/eye_surgery.mp4";
+                    source.Path = "Videos/Brain_Eyes_Vid.mp4";                    
                     break;
                 case Device.Android:
-                    source.Path = "eye_surgery.mp4";
+                    // source.Path = "eye_surgery.mp4";
+                    source.Path = "Brain_Eyes_Vid.mp4";
                     break;
                 case Device.UWP:
-                    source.Path = "Videos/eye_surgery.mp4";
+                    // source.Path = "Videos/eye_surgery.mp4";
+                    source.Path = "Videos/Brain_Eyes_Vid.mp4";
                     break;
             }
 

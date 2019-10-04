@@ -19,6 +19,11 @@ namespace ESA
             InitializeComponent();
         }
 
+        private void StepsPageBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DetailsPage());
+        }
+
         private async void AboutUs_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AboutPage());
