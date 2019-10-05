@@ -19,7 +19,6 @@ namespace ESA
         public ListProcedures()
         {
             InitializeComponent();
-            LoadProcVM = new LoadProcedureViewModel();
             if (!LoadProcVM.IsDataLoaded)
             {
                 LoadProcVM.LoadLacrimalList();
@@ -31,6 +30,7 @@ namespace ESA
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            LoadProcVM = new LoadProcedureViewModel();
             lacrimalList.ItemsSource = LoadProcVM.LacrimalProcedures;
             orbitalList.ItemsSource = LoadProcVM.OrbitalProcedures;
             eyelidList.ItemsSource = LoadProcVM.EyelidProcedures;

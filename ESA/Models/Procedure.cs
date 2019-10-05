@@ -13,6 +13,7 @@ namespace ESA.Models
     public abstract class Procedure
     {
         // Add more properties or methods
+        public abstract int ID { get; set; }
         public abstract string Name { get; set; }
         public abstract string Details { get; set; }
         public abstract StepsModel Steps { get; set; }

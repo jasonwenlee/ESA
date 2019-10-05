@@ -12,7 +12,7 @@ namespace ESA.Models
     public class Lacrimal : Procedure
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public override int ID { get; set; }
 
         [ForeignKey(typeof(StepsModel))]
         public int StepsID_FK { get; set; }

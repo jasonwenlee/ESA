@@ -26,14 +26,21 @@ namespace ESA
 
         private void HistoryButton_Clicked(object sender, EventArgs e)
         {
+
             if (historyView.IsVisible == false)
             {
                 historyView.IsVisible = true;
-                historyEditor.Text = extractInfo.History.content.ToString();
                 if (!referenceOpen)
                 {
                     referencesView.IsVisible = false;
                 }
+                if (extractInfo == null)
+                {
+                    historyEditor.Text = "Empty";
+                    return;
+                }
+                historyEditor.Text = extractInfo.History.content.ToString();
+
             }
             else if (historyView.IsVisible == true)
             {
@@ -46,11 +53,17 @@ namespace ESA
             if (referencesView.IsVisible == false)
             {
                 referencesView.IsVisible = true;
-                referencesEditor.Text = extractInfo.References.content.ToString();
                 if (!historyOpen)
                 {
                     historyView.IsVisible = false;
                 }
+                if (extractInfo == null)
+                {
+                    referencesEditor.Text = "Empty";
+                    return;
+                }
+                referencesEditor.Text = extractInfo.References.content.ToString();
+
             }
             else if (referencesView.IsVisible == true)
             {

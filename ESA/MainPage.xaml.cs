@@ -26,6 +26,10 @@ namespace ESA
             // Test for only one eyelid procedure. Will change/remove when more procedures are added.
             // This procedure loads after mainpage is initialised.
             loadOneProc = new LoadProcedureViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             loadOneProc.LoadEyelidList();
             ObservableCollection<Procedure> eyes = loadOneProc.EyelidProcedures;
             foreach (var eyeProc in eyes)
