@@ -89,13 +89,33 @@ namespace ESA.Views
             }
         }
 
-        private void InfoBtn_Clicked(object sender, EventArgs e)
+        //private void InfoBtn_Clicked(object sender, EventArgs e)
+        //{
+        //    if (!(contentRow.Children.First() == null || contentRow.Children.First() is InfoView))
+        //    {
+        //        contentRow.Children.Clear();
+        //        contentRow.Children.Add(new InfoView());
+        //        refreshIcons("info");
+        //    }
+        //}
+
+        private void InfoBtn_1_Clicked(object sender, EventArgs e)
         {
             if (!(contentRow.Children.First() == null || contentRow.Children.First() is InfoView))
             {
                 contentRow.Children.Clear();
                 contentRow.Children.Add(new InfoView());
-                refreshIcons("info");
+                refreshIcons("info_1");
+            }
+        }
+
+        private void InfoBtn_2_Clicked(object sender, EventArgs e)
+        {
+            if (!(contentRow.Children.First() == null || contentRow.Children.First() is InfoView))
+            {
+                contentRow.Children.Clear();
+                contentRow.Children.Add(new InfoView());
+                refreshIcons("info_2");
             }
         }
 
@@ -110,8 +130,12 @@ namespace ESA.Views
             VariationsLbl.TextColor = Color.Gray;
             ComplicationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.complications_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
             ComplicationsLbl.TextColor = Color.Gray;
-            InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-            InfoLbl.TextColor = Color.Gray;
+            //InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+            //InfoLbl.TextColor = Color.Gray;
+            InfoBtn_1.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+            InfoLbl_1.TextColor = Color.Gray;
+            InfoBtn_2.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+            InfoLbl_2.TextColor = Color.Gray;
 
             switch (page)
             {
@@ -131,9 +155,21 @@ namespace ESA.Views
                     ComplicationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.complications_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
                     ComplicationsLbl.TextColor = Color.White;
                     break;
+                //case "info":
+                //    InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                //    InfoLbl.TextColor = Color.White;
+                //    break;
                 case "info":
-                    InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-                    InfoLbl.TextColor = Color.White;
+                    InfoBtn_1.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    InfoLbl_1.TextColor = Color.White;
+                    break;
+                case "info_1":
+                    InfoBtn_2.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    InfoLbl_2.TextColor = Color.White;
+                    break;
+                case "info_2":
+                    InfoBtn_2.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    InfoLbl_2.TextColor = Color.White;
                     break;
             }
 
@@ -141,7 +177,9 @@ namespace ESA.Views
             KeyPointsBtn.HeightRequest = 35;
             VariationsBtn.HeightRequest = 35;
             ComplicationsBtn.HeightRequest = 35;
-            InfoBtn.HeightRequest = 35;
+            //InfoBtn.HeightRequest = 35;
+            InfoBtn_1.HeightRequest = 35;
+            InfoBtn_2.HeightRequest = 35;
 
         }
     }

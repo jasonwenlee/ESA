@@ -71,9 +71,17 @@
                     <ImageButton x:Name="ComplicationsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.complications_icon.png}" Clicked="ComplicationsBtn_Clicked" />
                     <Label x:Name="ComplicationsLbl" Text="Complications" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
                 </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <!--<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                     <ImageButton x:Name="InfoBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
                     <Label x:Name="InfoLbl" Text="Info" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
+                </StackLayout>-->
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ImageButton x:Name="InfoBtn_1" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_1_Clicked" />
+                    <Label x:Name="InfoLbl_1" Text="History" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ImageButton x:Name="InfoBtn_2" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_2_Clicked" />
+                    <Label x:Name="InfoLbl_2" Text="References" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
                 </StackLayout>
             </StackLayout>
 

@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <None Remove="Resources\history.png" />
-    <None Remove="Resources\Icons\back_icon.png" />
+    <None Remove="Resources\Icons\bacack_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
     <None Remove="Resources\Icons\back_icon_light_active.png" />
     <None Remove="Resources\Icons\book_icon.png" />
