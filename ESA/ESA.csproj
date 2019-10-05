@@ -45,6 +45,10 @@
     <None Remove="Resources\mountains2.jpg" />
     <None Remove="Resources\mountains3.jpg" />
     <None Remove="Resources\mountains4.jpg" />
+    <None Remove="Resources\variationImage1.png" />
+    <None Remove="Resources\variationImage2.png" />
+    <None Remove="Resources\variationImage3.png" />
+    <None Remove="Resources\variationImage4.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -104,6 +108,10 @@
     <EmbeddedResource Include="Resources\orbital.png" />
     <EmbeddedResource Include="Resources\plus.png" />
     <EmbeddedResource Include="Resources\search.png" />
+    <EmbeddedResource Include="Resources\variationImage1.png" />
+    <EmbeddedResource Include="Resources\variationImage2.png" />
+    <EmbeddedResource Include="Resources\variationImage3.png" />
+    <EmbeddedResource Include="Resources\variationImage4.png" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
   </ItemGroup>
 
@@ -125,10 +133,6 @@
     <EmbeddedResource Update="Views\StepsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
