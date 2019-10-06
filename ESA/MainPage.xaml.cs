@@ -52,5 +52,9 @@ namespace ESA
         {
             await Navigation.PushAsync(new CategoriesPage());
         }
+        private async void Lacrimal_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LacrimalPage());
+        }
     }
 }

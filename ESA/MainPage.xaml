@@ -17,6 +17,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="4">
+
+<!--Header Section, Listing Main areas-->
                 <Frame BackgroundColor="LightGray">
                     <StackLayout Orientation="Vertical" Margin="4" HeightRequest="140" Spacing="10" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
 
@@ -51,7 +53,65 @@
                         </StackLayout>-->
                     </StackLayout>
                 </Frame>
+                
+<!--Body Section, Listing Main areas--> 
+                <StackLayout>
 
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.eyelid.png}" 
+                             HeightRequest="80" Clicked="Lacrimal_Clicked" />
+
+                        <StackLayout Margin="5">
+                            <Label Text="Eyelid" />
+                            <Label Text="The Eyelid section contains ultra-high quality, narrated eyelid surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as ptosis and blepharoplasty correction, eyelid tumour excision and reconstruction and entropion and ectropion surgery" FontAttributes="Italic" FontSize="Micro" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.orbital.png}" 
+                             HeightRequest="80" Clicked="Lacrimal_Clicked" />
+
+                        <StackLayout Margin="5">
+                            <Label Text="Orbital" />
+                            <Label Text="The orbital section contains ultra-high quality, narrated orbital surgery videos. These videos demonstrate and explore the relevant anatomy, techniques and complications of a wide range of surgical procedures such as eye removal surgery (enucleation, evisceration and exenteration), orbital decompression (external and endoscopic) and tumour excision surgery" FontAttributes="Italic" FontSize="Micro" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" 
+                             HeightRequest="80" Clicked="Lacrimal_Clicked" />
+
+                        <StackLayout Margin="5">
+                            <Label Text="Lacrimal" />
+                            <Label Text="The Lacrimal section contains ultra-high quality, narrated lacrimal surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as endoscopic and external DCR, Jones tubes, nasolacrimal stenting and dacryoendoscopy" FontAttributes="Italic" FontSize="Micro" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+
+                    <!--<StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.plus.png}" 
+                             HeightRequest="80" />
+
+                        <StackLayout Margin="5">
+                            <Label Text="More Videos" />
+                            <Label Text="10.2K Viewers" FontSize="Micro" />
+                            <Label Text="Surgery/Details" FontAttributes="Italic" FontSize="Micro" />
+                        </StackLayout>
+                    </StackLayout>-->
+                </StackLayout>
+
+<!--Footer Section, Listing Last seen Procedures-->
                 <!-- LATEST PROCEDURES-->
 
                 <Label Text="Latest Procedures" FontSize="Medium" />
@@ -84,8 +144,9 @@
                             </StackLayout>
                         </StackLayout>
                     </ScrollView>
-
-                    <!-- ALL PROCEDURES-->
+                    
+                    <!--<Label></Label>
+                    --><!-- ALL PROCEDURES--><!--
 
                     <Label Text="All Procedures" FontSize="Medium" />
                     <StackLayout>
@@ -113,7 +174,7 @@
                         </StackLayout>
                     </StackLayout>
 
-                    <!-- LACRIMAL PROCEDURES-->
+                    --><!-- LACRIMAL PROCEDURES--><!--
 
                     <Label Text="Lacimal Procedures" FontSize="Medium" />
                     <StackLayout>
@@ -141,7 +202,7 @@
                         </StackLayout>
                     </StackLayout>
 
-                    <!-- ORBITAL PROCEDURES-->
+                    --><!-- ORBITAL PROCEDURES--><!--
 
                     <Label Text="Orbital Procedures" FontSize="Medium" />
                     <StackLayout>
@@ -167,7 +228,7 @@
                                 <Label Text="Direct excision of lower lid festoons and lateral canthopexy" HorizontalOptions="Center" FontSize="Micro"/>
                             </StackLayout>
                         </StackLayout>
-                    </StackLayout>
+                    </StackLayout>-->
                 </StackLayout>
             </StackLayout>
         </ScrollView>

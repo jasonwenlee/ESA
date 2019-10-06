@@ -10,7 +10,8 @@
     <ContentPage.Content>
         <StackLayout Margin="5">
 
-            <Image Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" HeightRequest="80"/>
+            <Image Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" 
+                   HeightRequest="80"/>
 
             <StackLayout Margin="5">
                 <Label Text="Lacrimal Procedures" HorizontalTextAlignment="Center"  />

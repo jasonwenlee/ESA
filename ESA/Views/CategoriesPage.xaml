@@ -11,7 +11,8 @@
         <StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.eyelid.png}" HeightRequest="80" Clicked="Lacrimal_Clicked" />
+                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.eyelid.png}" 
+                             HeightRequest="80" Clicked="Lacrimal_Clicked" />
 
                 <StackLayout Margin="5">
                     <Label Text="Eyelid" />
@@ -24,7 +25,8 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.orbital.png}" HeightRequest="80" Clicked="Lacrimal_Clicked" />
+                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.orbital.png}" 
+                             HeightRequest="80" Clicked="Lacrimal_Clicked" />
 
                 <StackLayout Margin="5">
                     <Label Text="Orbital" />
@@ -37,7 +39,8 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" HeightRequest="80" Clicked="Lacrimal_Clicked" />
+                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" 
+                             HeightRequest="80" Clicked="Lacrimal_Clicked" />
 
                 <StackLayout Margin="5">
                     <Label Text="Lacrimal" />
@@ -50,7 +53,8 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.plus.png}" HeightRequest="80" />
+                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.plus.png}" 
+                             HeightRequest="80" />
 
                 <StackLayout Margin="5">
                     <Label Text="More Videos" />
