@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+<<<<<<< HEAD
 using Xamarin.Forms;
 using System.Text;
 using ESA.Views;
 using System.Reflection;
+=======
+using System.Text;
+using ESA.Views;
+>>>>>>> 02dfbfbaf2c2eb6ccb1906750facd2baf29c3e8e
 
 namespace ESA.Models
 {
@@ -13,11 +18,16 @@ namespace ESA.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Details { get; set; }
+<<<<<<< HEAD
          public string VariationImage { get; set; }
+=======
+        public string VariationImage { get; set; }
+>>>>>>> 02dfbfbaf2c2eb6ccb1906750facd2baf29c3e8e
 
         public List<VariationPageModel> GetVariationList()
 
         {
+<<<<<<< HEAD
             List<VariationPageModel> variationView = new List<VariationPageModel>()
                 {
                     new VariationPageModel() { Name = "Tarsoconjunctival Hughes Flap – Stage 2" , Details = "Narrated division of the Stage 2 Hughes Tarsonconjunctival flap  10th March 2016 - 1,213 Views",
@@ -34,6 +44,19 @@ namespace ESA.Models
         }
 
     }
+=======
+                List<VariationPageModel> variationView = new List<VariationPageModel>()
+                {
+                    new VariationPageModel() { Name = "Tarsoconjunctival Hughes Flap – Stage 2" , VariationImage = "C:/Dhammika/StepsPage2/ESA/ESA/Resources/variationImage1.png"},
+                     new VariationPageModel() { Name = "Sliding Tarsoconjunctival Flap Reconstruction" , VariationImage = "ESA.Resources.variationImage2.png"},
+                        new VariationPageModel() { Name = "Fornix Reconstruction with Omnigen" , VariationImage = "variationImage3.png"},
+                           new VariationPageModel() { Name = "Nasofacial sulcus island Pedicle (V to Y) Flap" , VariationImage = "C:/Dhammika/StepsPage2/ESA/ESA/Resources/variationImage4.png"}
+                };
+                return variationView;
+            }
+
+        }
+>>>>>>> 02dfbfbaf2c2eb6ccb1906750facd2baf29c3e8e
 
     }
     
