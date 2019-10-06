@@ -10,18 +10,18 @@ namespace ESA.Models
     // This might make searching for all procedures easier. Not sure.
     // Will change or remove if need to :)
 
-    public abstract class Procedure
+    public class Procedure
     {
         // Add more properties or methods
-        public abstract int ID { get; set; }
-        public abstract string Category { get; set; }
-        public abstract string Name { get; set; }
-        public abstract string Details { get; set; }
-        public abstract string Steps { get; set; }
-        public abstract string KeyPoints { get; set; }
-        public abstract string Variations { get; set; }
-        public abstract string Complications { get; set; }
-        public abstract string History { get; set; }
-        public abstract string References { get; set; }
+        public int ID { get; set; }
+        public string Category { get; set; }
+        public string Name { get; set; }
+        public string Details { get; set; }
+        public string Steps { get; set; }
+        public string KeyPoints { get; set; }
+        public string Variations { get; set; }
+        public string Complications { get; set; }
+        public string History { get; set; }
+        public string References { get; set; }
     }
 }

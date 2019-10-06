@@ -12,15 +12,16 @@ namespace ESA.Models
     public class Lacrimal : Procedure
     {
         [PrimaryKey, AutoIncrement]
-        public override int ID { get; set; }
-        public override string Category { get; set; }
-        public override string Name { get; set; }
-        public override string Details { get; set; }
-        public override string Steps { get; set; }
-        public override string Variations { get; set; }
-        public override string KeyPoints { get; set; }
-        public override string Complications { get; set; }
-        public override string History { get; set; }
-        public override string References { get; set; }
+        public new int ID { get; set; }
+        public new string Category { get; set; }
+        public new string Name { get; set; }
+        public new string Details { get; set; }
+        public new string Steps { get; set; }
+        public new string Variations { get; set; }
+        public new string KeyPoints { get; set; }
+        public new string Complications { get; set; }
+        public new string History { get; set; }
+        public new string References { get; set; }
     }
 }
+

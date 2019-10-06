@@ -12,8 +12,9 @@ namespace ESA.Validator
     {
         public ProcedureValidator()
         {
-            RuleFor(x => x.Name).NotNull();
-            RuleFor(x => x.Details).NotNull();
+            RuleFor(x => x.Category).NotNull().WithMessage("Procedure category required");
+            RuleFor(x => x.Name).NotNull().WithMessage("Procedure name required");
+            RuleFor(x => x.Details).NotNull().WithMessage("Procedure details required");
         }
     }
 }

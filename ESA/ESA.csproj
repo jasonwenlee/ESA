@@ -122,6 +122,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="TestViews\TestView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ComplicationsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

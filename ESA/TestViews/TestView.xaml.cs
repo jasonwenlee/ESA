@@ -1,6 +1,4 @@
-﻿using ESA.Models;
-using ESA.Models.PageModels;
-using ESA.ViewModels;
+﻿using ESA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +8,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ESA
+namespace ESA.TestViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProcedureType : ContentPage
+    public partial class TestView : TemplatedView
     {
-        public ProcedureType()
+        public TestView()
         {
             InitializeComponent();
             BindingContext = new AddProcedureViewModel(Navigation);

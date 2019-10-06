@@ -34,25 +34,12 @@ namespace ESA.Data
             database.DropTable<Lacrimal>();
             database.DropTable<Orbital>();
             database.DropTable<Eyelid>();
-            database.DropTable<StepsModel>();
-            database.DropTable<VariationsModel>();
-            database.DropTable<KeyPointsModel>();
-            database.DropTable<ComplicationsModel>();
-            database.DropTable<HistoryModel>();
-            database.DropTable<ReferencesModel>();
             //Create lacrimal table
             database.CreateTable<Lacrimal>();
             // Create orbital table
             database.CreateTable<Orbital>();
             // Create eyelid table
             database.CreateTable<Eyelid>();
-
-            //database.CreateTable<StepsModel>();
-            //database.CreateTable<VariationsModel>();
-            //database.CreateTable<KeyPointsModel>();
-            //database.CreateTable<ComplicationsModel>();
-            //database.CreateTable<HistoryModel>();
-            //database.CreateTable<ReferencesModel>();
         }
 
         //-----------------------------------------------------------------------------//

@@ -19,27 +19,27 @@
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Steps"/>
-            <Editor x:Name="stepsEditor" Text="{Binding Steps.content}" Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="stepsEditor" Text="{Binding Steps}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Variations"/>
-            <Editor x:Name="variationsEditor" Text="{Binding Variations.content}" Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="variationsEditor" Text="{Binding Variations}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Key Points"/>
-            <Editor x:Name="keyPointsEditor" Text="{Binding KeyPoints.content}" Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="keyPointsEditor" Text="{Binding KeyPoints}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Complications"/>
-            <Editor x:Name="complicationsEditor" Text="{Binding Complications.content}" Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="complicationsEditor" Text="{Binding Complications}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="History"/>
-            <Editor x:Name="historyEditor" Text="{Binding History.content}" Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="historyEditor" Text="{Binding History}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="References"/>
-            <Editor x:Name="referencesEditor" Text="{Binding References.content}" Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="referencesEditor" Text="{Binding References}" Placeholder="No info" IsReadOnly="True"/>
 
         </StackLayout>
     </ScrollView>
