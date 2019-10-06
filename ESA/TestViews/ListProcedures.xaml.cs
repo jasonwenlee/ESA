@@ -19,18 +19,18 @@ namespace ESA
         public ListProcedures()
         {
             InitializeComponent();
+            LoadProcVM = new LoadProcedureViewModel();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             if (!LoadProcVM.IsDataLoaded)
             {
                 LoadProcVM.LoadLacrimalList();
                 LoadProcVM.LoadOrbitalList();
                 LoadProcVM.LoadEyelidList();
             }
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            LoadProcVM = new LoadProcedureViewModel();
             lacrimalList.ItemsSource = LoadProcVM.LacrimalProcedures;
             orbitalList.ItemsSource = LoadProcVM.OrbitalProcedures;
             eyelidList.ItemsSource = LoadProcVM.EyelidProcedures;

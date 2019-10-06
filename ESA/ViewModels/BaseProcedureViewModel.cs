@@ -20,6 +20,7 @@ namespace ESA.ViewModels
         public Procedure _procedure;
         public IProcedureRepository _procedureRepository; // To access Procedure Table
         public IValidator _procedureValidator;
+        public INavigation _navigation;
 
         public string Name
         {

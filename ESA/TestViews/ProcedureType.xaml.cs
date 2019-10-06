@@ -15,31 +15,12 @@ namespace ESA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProcedureType : ContentPage
     {
-        string procedureCategory;
         private AddProcedureViewModel AddProcVM;
 
         public ProcedureType()
         {
             InitializeComponent();
             AddProcVM = new AddProcedureViewModel();
-        }
-
-        private async void ProcedureCategoryEntry_Completed(object sender, EventArgs e)
-        {
-            Entry steps = (Entry)sender;
-
-            procedureCategory = steps.Text; //cast sender to access the properties of the Entry
-
-            if (procedureCategory.ToLower().Equals("lacrimal")
-                || procedureCategory.ToLower().Equals("orbital")
-                || procedureCategory.ToLower().Equals("eyelid"))
-            {
-                addInformationButton.IsEnabled = true;
-            }
-            else
-            {
-                addInformationButton.IsEnabled = false;
-            }
         }
 
         private async void AddInformationButtonMVVM_Clicked(object sender, EventArgs e)
@@ -49,21 +30,21 @@ namespace ESA
                 await DisplayAlert("Alert", "Empty fields", "OK");
                 return;
             }
-            try
+
+            if (procedureCategoryEntry.Text.ToLower().Equals("lacrimal")
+                || procedureCategoryEntry.Text.ToLower().Equals("orbital")
+                || procedureCategoryEntry.Text.ToLower().Equals("eyelid"))
             {
-                AddProcVM.AddNewProcedure(procedureCategory.ToLower(), procedureNameEntry.Text, procedureDetailEntry.Text);
+                AddProcVM.AddNewProcedure(procedureCategoryEntry.Text.ToLower(), procedureNameEntry.Text, procedureDetailEntry.Text);
                 AddProcVM.AddNewSteps(stepsEditor.Text);
                 AddProcVM.AddKeyPoints(keyPointsEditor.Text);
                 AddProcVM.AddNewVariations(variationsEditor.Text);
                 AddProcVM.AddComplications(complicationsEditor.Text);
                 AddProcVM.AddHistory(historyEditor.Text);
                 AddProcVM.AddReferences(referencesEditor.Text);
+                await Navigation.PopAsync();
+                await DisplayAlert("Cool", "Please proceed", "OK");
             }
-            catch (Exception)
-            {
-                //await DisplayAlert("Error", "Oh no! Error", "OK");
-            }
-            await DisplayAlert("Cool", "Please proceed", "OK");
         }
 
         private async void StepsEditor_Completed(object sender, EventArgs e)

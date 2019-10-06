@@ -7,31 +7,31 @@
              x:Class="ESA.ProcedureType">
     <ScrollView>
         <StackLayout Padding="5">
-            <Entry x:Name="procedureCategoryEntry" IsSpellCheckEnabled="True"  Placeholder="Enter procedure category" Completed="ProcedureCategoryEntry_Completed"/>
+            <Entry x:Name="procedureCategoryEntry" IsSpellCheckEnabled="True" Placeholder="Enter procedure category"/>
 
-            <Entry x:Name="procedureNameEntry" Placeholder="Enter procedure name" Completed="ProcedureNameEntry_Completed"/>
+            <Entry x:Name="procedureNameEntry" Placeholder="Enter procedure name" />
 
-            <Entry x:Name="procedureDetailEntry" Placeholder="Enter procedure details" Completed="ProcedureDetailEntry_Completed"/>
-
-            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="stepsEditor"  Placeholder="Enter steps" HeightRequest="150" Completed="StepsEditor_Completed"/>
+            <Entry x:Name="procedureDetailEntry" Placeholder="Enter procedure details" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="variationsEditor"  Placeholder="Enter variations" HeightRequest="150" Completed="VariationsEditor_Completed"/>
+            <Editor x:Name="stepsEditor" Placeholder="Enter steps" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="keyPointsEditor"  Placeholder="Enter key points" HeightRequest="150" Completed="KeyPointsEditor_Completed"/>
+            <Editor x:Name="variationsEditor" Placeholder="Enter variations" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="complicationsEditor"  Placeholder="Enter complications" HeightRequest="150" Completed="ComplicationsEditor_Completed"/>
+            <Editor x:Name="keyPointsEditor" Placeholder="Enter key points" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="historyEditor"  Placeholder="Enter history" HeightRequest="150" Completed="HistoryEditor_Completed"/>
+            <Editor x:Name="complicationsEditor" Placeholder="Enter complications" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="referencesEditor"  Placeholder="Enter references" HeightRequest="150" Completed="ReferencesEditor_Completed"/>
+            <Editor x:Name="historyEditor" Placeholder="Enter history" AutoSize="TextChanges" />
 
-            <Button x:Name="addInformationButton" Text="Add Information MVVM" IsEnabled="False" Clicked="AddInformationButtonMVVM_Clicked"/>
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="referencesEditor" Placeholder="Enter references" AutoSize="TextChanges" />
+
+            <Button x:Name="addInformationButton" Text="Add Information MVVM" Clicked="AddInformationButtonMVVM_Clicked"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

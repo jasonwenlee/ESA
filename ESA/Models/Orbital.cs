@@ -26,6 +26,7 @@ namespace ESA.Models
         [ForeignKey(typeof(ReferencesModel))]
         public int ReferencesID_FK { get; set; }
 
+        public override string Category { get; set; }
         public override string Name { get; set; }
         public override string Details { get; set; }
 

@@ -11,34 +11,35 @@
                 <Button x:Name="editButton" Text="Edit" Clicked="EditButton_Clicked"/>
                 <Button x:Name="saveButton" Text="Save" Clicked="SaveButton_Clicked"/>
             </StackLayout>
+            
             <Label Text="Proc. Name"/>
-            <Entry x:Name="procedureNameEntry" Placeholder="No info" IsReadOnly="True"/>
+            <Entry x:Name="procedureNameEntry" Text="{Binding Name}" Placeholder="No info" IsReadOnly="True"/>
             <Label Text="Proc. Detail"/>
-            <Entry x:Name="procedureDetailEntry" Placeholder="No info" IsReadOnly="True"/>
+            <Entry x:Name="procedureDetailEntry" Text="{Binding Details}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Steps"/>
-            <Editor x:Name="stepsEditor"  Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="stepsEditor" Text="{Binding Steps.content}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Variations"/>
-            <Editor x:Name="variationsEditor"  Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="variationsEditor" Text="{Binding Variations.content}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Key Points"/>
-            <Editor x:Name="keyPointsEditor"  Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="keyPointsEditor" Text="{Binding KeyPoints.content}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="Complications"/>
-            <Editor x:Name="complicationsEditor"  Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="complicationsEditor" Text="{Binding Complications.content}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="History"/>
-            <Editor x:Name="historyEditor"  Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="historyEditor" Text="{Binding History.content}" Placeholder="No info" IsReadOnly="True"/>
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Label Text="References"/>
-            <Editor x:Name="referencesEditor"  Placeholder="No info" IsReadOnly="True"/>
+            <Editor x:Name="referencesEditor" Text="{Binding References.content}" Placeholder="No info" IsReadOnly="True"/>
 
         </StackLayout>
     </ScrollView>

@@ -18,7 +18,6 @@ namespace ESA
     {
         LoadProcedureViewModel LoadProcVM;
         UpdateProcedureViewModel UpdateProcedureVM;
-        Procedure loadedProcedure;
 
         public DisplayProcedureInfo(Procedure proc)
         {
@@ -30,15 +29,7 @@ namespace ESA
 
         private void LoadChosenProcedure(Procedure proc)
         {
-            loadedProcedure = LoadProcVM.LoadProcedureByName(proc);
-            procedureNameEntry.Text = loadedProcedure.Name.ToString();
-            procedureDetailEntry.Text = loadedProcedure.Details.ToString();
-            stepsEditor.Text = loadedProcedure.Steps.content.ToString();
-            variationsEditor.Text = loadedProcedure.Variations.content.ToString();
-            keyPointsEditor.Text = loadedProcedure.KeyPoints.content.ToString();
-            complicationsEditor.Text = loadedProcedure.Complications.content.ToString();
-            historyEditor.Text = loadedProcedure.History.content.ToString();
-            referencesEditor.Text = loadedProcedure.References.content.ToString();
+            BindingContext = LoadProcVM.LoadProcedureByName(proc);
         }
 
         private void EditButton_Clicked(object sender, EventArgs e)
@@ -55,13 +46,13 @@ namespace ESA
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            UpdateProcedureVM.UpdateExistingProcedure(loadedProcedure, procedureNameEntry.Text, procedureDetailEntry.Text);
-            UpdateProcedureVM.UpdateExistingSteps(loadedProcedure.Steps, stepsEditor.Text);
-            UpdateProcedureVM.UpdateExistingVariations(loadedProcedure.Variations, variationsEditor.Text);
-            UpdateProcedureVM.UpdateExistingKeyPoints(loadedProcedure.KeyPoints, keyPointsEditor.Text);
-            UpdateProcedureVM.UpdateExistingComplications(loadedProcedure.Complications, complicationsEditor.Text);
-            UpdateProcedureVM.UpdateExistingHistory(loadedProcedure.History, historyEditor.Text);
-            UpdateProcedureVM.UpdateExistingReferences(loadedProcedure.References, referencesEditor.Text);
+            //UpdateProcedureVM.UpdateExistingProcedure(loadedProcedure, procedureNameEntry.Text, procedureDetailEntry.Text);
+            //UpdateProcedureVM.UpdateExistingSteps(loadedProcedure.Steps, stepsEditor.Text);
+            //UpdateProcedureVM.UpdateExistingVariations(loadedProcedure.Variations, variationsEditor.Text);
+            //UpdateProcedureVM.UpdateExistingKeyPoints(loadedProcedure.KeyPoints, keyPointsEditor.Text);
+            //UpdateProcedureVM.UpdateExistingComplications(loadedProcedure.Complications, complicationsEditor.Text);
+            //UpdateProcedureVM.UpdateExistingHistory(loadedProcedure.History, historyEditor.Text);
+            //UpdateProcedureVM.UpdateExistingReferences(loadedProcedure.References, referencesEditor.Text);
         }
     }
 }

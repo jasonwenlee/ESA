@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -23,8 +24,17 @@ namespace ESA.ViewModels
         // Constructor 
         public AddProcedureViewModel()
         {
+            //_navigation = navigation;
             _procedureValidator = new ProcedureValidator();
             _procedureRepository = App.ProcedureDatabase;
+
+            //AddProcedureCommand = new Command(async () => await AddAllInformation());
+        }
+
+        async Task AddAllInformation()
+        {
+            //await AddNewProcedure(_procedure.Category, _procedure.Name, _procedure.Details);
+
         }
 
         internal void AddNewProcedure(string procCategory, string name, string details)
