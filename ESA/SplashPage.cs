@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
-using Xamarin.Forms; // REC: Neede for extending as a ContentPage
+using Xamarin.Forms; // REC: Needed for extending as a ContentPage
 
 
 // REC: Reference: https://www.youtube.com/watch?v=y8ce7OyAgYU

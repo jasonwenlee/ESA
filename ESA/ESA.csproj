@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\About_plus.png" />
+    <None Remove="Resources\Akihide.PNG" />
+    <None Remove="Resources\Dinesh.PNG" />
+    <None Remove="Resources\Garry.PNG" />
     <None Remove="Resources\history.png" />
     <None Remove="Resources\Icons\bacack_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
@@ -40,15 +44,23 @@
     <None Remove="Resources\Icons\steps_icon_light_active.png" />
     <None Remove="Resources\Icons\variations_icon.png" />
     <None Remove="Resources\Icons\variations_icon_dark_active.png" />
+    <None Remove="Resources\iV.png" />
     <None Remove="Resources\mountains.jpg" />
     <None Remove="Resources\mountains1.jpg" />
     <None Remove="Resources\mountains2.jpg" />
     <None Remove="Resources\mountains3.jpg" />
     <None Remove="Resources\mountains4.jpg" />
+    <None Remove="Resources\Saul.PNG" />
+    <None Remove="Resources\Search_plus.png" />
+    <None Remove="Resources\VJ.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\about48.png" />
+    <EmbeddedResource Include="Resources\About_plus.png" />
+    <EmbeddedResource Include="Resources\Akihide.PNG" />
+    <EmbeddedResource Include="Resources\Dinesh.PNG" />
+    <EmbeddedResource Include="Resources\Garry.PNG" />
     <EmbeddedResource Include="Resources\history.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_dark_active.png" />
@@ -74,11 +86,13 @@
     <EmbeddedResource Include="Resources\Icons\steps_icon_light_active.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon_dark_active.png" />
+    <EmbeddedResource Include="Resources\iV.png" />
     <EmbeddedResource Include="Resources\mountains.jpg" />
     <EmbeddedResource Include="Resources\mountains1.jpg" />
     <EmbeddedResource Include="Resources\mountains2.jpg" />
     <EmbeddedResource Include="Resources\mountains3.jpg" />
     <EmbeddedResource Include="Resources\mountains4.jpg" />
+    <EmbeddedResource Include="Resources\Saul.PNG" />
     <EmbeddedResource Include="Resources\search48.png" />
   </ItemGroup>
 
@@ -104,7 +118,9 @@
     <EmbeddedResource Include="Resources\orbital.png" />
     <EmbeddedResource Include="Resources\plus.png" />
     <EmbeddedResource Include="Resources\search.png" />
+    <EmbeddedResource Include="Resources\Search_plus.png" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
+    <EmbeddedResource Include="Resources\VJ.png" />
   </ItemGroup>
 
   <ItemGroup>

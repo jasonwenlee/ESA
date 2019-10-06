@@ -48,13 +48,25 @@ namespace ESA
             await Navigation.PushAsync(new CategoriesPage());
         }
 
-        private async void Search_Clicked(object sender, EventArgs e)
+        private void Search_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CategoriesPage());
+            DisplayAlert("Alert", "Search functionality to be added in the 2nd phase of the project", "OK");
         }
-        private async void Lacrimal_Clicked(object sender, EventArgs e)
+
+        // REC: When all the procedures are properly available, it will not be possible to navigate
+        // to the Details Page. This method is just to make the user awar of clicking the right spot.
+        private void Lacrimal_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LacrimalPage());
+            // await Navigation.PushAsync(new LacrimalPage()); // REC: The LacrimalPage has no use anymore. Left just i case...
+            DisplayAlert("Alert", "Make sure to use 'Click here' to open the list of procedures", "OK");
+        }
+
+        // REC: Atm the below method works to call the only Hughes procedure that we have, however once
+        // we add more procedures, the "Object" Procedure with the right information should be called.
+        // More Details @ Xamarin.Forms Guide "Responding to item selection" p.1059.
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DetailsPage());
         }
     }
 }

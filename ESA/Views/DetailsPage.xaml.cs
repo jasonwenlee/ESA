@@ -32,15 +32,15 @@ namespace ESA.Views
             {
                 case Device.iOS:
                     // source.Path = "Videos/eye_surgery.mp4";
-                    source.Path = "Videos/Brain_Eyes_Vid.mp4";                    
+                    source.Path = "Videos/Brain_Eyes_Vid.mp4"; // REC: Temporary, to keep App low in memory.                    
                     break;
                 case Device.Android:
                     // source.Path = "eye_surgery.mp4";
-                    source.Path = "Brain_Eyes_Vid.mp4";
+                    source.Path = "Brain_Eyes_Vid.mp4"; // REC: Temporary, to keep App low in memory.
                     break;
                 case Device.UWP:
                     // source.Path = "Videos/eye_surgery.mp4";
-                    source.Path = "Videos/Brain_Eyes_Vid.mp4";
+                    source.Path = "Videos/Brain_Eyes_Vid.mp4"; // REC: Temporary, to keep App low in memory.
                     break;
             }
 
@@ -181,6 +181,22 @@ namespace ESA.Views
             InfoBtn_1.HeightRequest = 35;
             InfoBtn_2.HeightRequest = 35;
 
+        }
+
+        // REC: Programing navigation to App level.
+        private void Search_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Alert", "Search functionality to be added in the 2nd phase of the project", "OK");
+        }
+
+        private async void Home_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        private async void AboutUs_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
         }
     }
 }

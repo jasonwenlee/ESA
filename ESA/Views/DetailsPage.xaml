@@ -12,9 +12,12 @@
              BackgroundColor="#222">
     <!--HEADER-->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Oculoplastics" />
-        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" />
-        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" />
+        <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.About_plus.png}" 
+                     Clicked="AboutUs_Clicked" />
+        <ToolbarItem Name="Home"  Text="                   BACK HOME                    " 
+                     Clicked="Home_Clicked" />
+        <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Search_plus.png}" 
+                     Clicked="Search_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

@@ -7,7 +7,7 @@
              x:Class="ESA.Views.VideoPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Pretend this is a video"
+            <Label Text="This page can display recently added procedures, favorites, etc."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
