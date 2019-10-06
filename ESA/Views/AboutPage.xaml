@@ -17,10 +17,13 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
-                                    <Image Source="{Binding ImageUrl}" WidthRequest="150" HeightRequest="150" VerticalOptions="Start"  />
+                                    <!--REC: The line below is useful only if the image comes from a URL-->
+                                    <!--<Image Source="{Binding ImageUrl}" WidthRequest="150" HeightRequest="150" VerticalOptions="Start"  />-->
+                                    <!--REC: The line below brings the embbeded image-->
+                                    <Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150" VerticalOptions="Start"  />
                                 </StackLayout>
                                 <StackLayout Grid.Column="1" Orientation="Vertical">
-                                    <Label Text="{Binding PersonName}" FontSize="20" TextColor="Black"/>
+                                    <Label Text="{Binding PersonName}" FontSize="18" TextColor="Black"/>
                                     <Label Text="{Binding ShortDesc}" FontSize="12" Margin="0,0,0,5" />
                                 </StackLayout>
                             </Grid>
