@@ -13,8 +13,7 @@ namespace ESA.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Details { get; set; }
-        public string UploadDate { get; set; }
-        public string VariationImage { get; set; }
+         public string VariationImage { get; set; }
 
         public List<VariationPageModel> GetVariationList()
 
