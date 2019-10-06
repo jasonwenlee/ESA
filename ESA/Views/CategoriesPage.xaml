@@ -8,56 +8,101 @@
                           xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
     <!--assembly reference is used to include the class(es) in the MarkupExtensions File-->
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+            <StackLayout Margin="5">
 
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.eyelid.png}" HeightRequest="80" Clicked="Lacrimal_Clicked" />
-
-                <StackLayout Margin="5">
-                    <Label Text="Eyelid" />
-                    <Label Text="The Eyelid section contains ultra-high quality, narrated eyelid surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as ptosis and blepharoplasty correction, eyelid tumour excision and reconstruction and entropion and ectropion surgery" FontAttributes="Italic" FontSize="Micro" />
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout>
-                <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.orbital.png}" HeightRequest="80" Clicked="Lacrimal_Clicked" />
+                <!--LACRIMAL PROCEDURES-->
+                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" HeightRequest="80" Clicked="Lacrimal_Clicked"/>
 
                 <StackLayout Margin="5">
-                    <Label Text="Orbital" />
-                    <Label Text="The orbital section contains ultra-high quality, narrated orbital surgery videos. These videos demonstrate and explore the relevant anatomy, techniques and complications of a wide range of surgical procedures such as eye removal surgery (enucleation, evisceration and exenteration), orbital decompression (external and endoscopic) and tumour excision surgery" FontAttributes="Italic" FontSize="Micro" />
+                    <Label Text="Lacrimal Procedures" HorizontalTextAlignment="Center"  />
+                    <Label FontAttributes="Italic" FontSize="Micro" HorizontalTextAlignment="Center" Text="Welcome to the lacrimal section, which contains ultra-high quality, narrated lacrimal surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as endoscopic and external DCR, Jones tubes, nasolacrimal stenting and dacryoendoscopy. We hope they will be of benefit to even the most experienced surgeons"  />
                 </StackLayout>
-            </StackLayout>
 
-            <StackLayout>
-                <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" HeightRequest="80" Clicked="Lacrimal_Clicked" />
+                <ContentView x:Name="LacrimalSubCat" IsVisible="False">
+                    <StackLayout>
+                        <Label Text="DCR" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Jones Tube" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Stenting" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Rhinology" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="ALL LACRIMAL PROCEDURES" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </ContentView>
+
+                <!--EYELID PROCEDURES-->
+                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.eyelid.png}" HeightRequest="80" Clicked="Eyelid_Clicked"/>
 
                 <StackLayout Margin="5">
-                    <Label Text="Lacrimal" />
-                    <Label Text="The Lacrimal section contains ultra-high quality, narrated lacrimal surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as endoscopic and external DCR, Jones tubes, nasolacrimal stenting and dacryoendoscopy" FontAttributes="Italic" FontSize="Micro" />
+                    <Label Text="Eyelid Procedures" HorizontalTextAlignment="Center"  />
+                    <Label FontAttributes="Italic" FontSize="Micro" HorizontalTextAlignment="Center" Text="Welcome to the eyelid section, which contains ultra-high quality, narrated lacrimal surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as endoscopic and external DCR, Jones tubes, nasolacrimal stenting and dacryoendoscopy. We hope they will be of benefit to even the most experienced surgeons"  />
                 </StackLayout>
-            </StackLayout>
 
-            <StackLayout>
-                <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
+                <ContentView x:Name="EyelidSubCat" IsVisible="False">
+                    <StackLayout>
+                        <Label Text="DCR" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Jones Tube" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Stenting" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Rhinology" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="ALL EYELID PROCEDURES" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </ContentView>
+
+                <!--ORBITAL PROCEDURES-->
+                <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.orbital.png}" HeightRequest="80" Clicked="Orbital_Clicked"/>
+
+                <StackLayout Margin="5">
+                    <Label Text="Orbital Procedures" HorizontalTextAlignment="Center"  />
+                    <Label FontAttributes="Italic" FontSize="Micro" HorizontalTextAlignment="Center" Text="Welcome to the eyelid section, which contains ultra-high quality, narrated lacrimal surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as endoscopic and external DCR, Jones tubes, nasolacrimal stenting and dacryoendoscopy. We hope they will be of benefit to even the most experienced surgeons"  />
+                </StackLayout>
+
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <ContentView x:Name="OrbitalSubCat" IsVisible="False">
+                    <StackLayout>
+                        <Label Text="DCR" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Jones Tube" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Stenting" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Rhinology" HorizontalTextAlignment="Center" />
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                        <Label Text="ALL ORBITAL PROCEDURES" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </ContentView>
+
+                <!--ALL PROCEDURES-->
                 <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.plus.png}" HeightRequest="80" />
 
                 <StackLayout Margin="5">
-                    <Label Text="More Videos" />
-                    <Label Text="10.2K Viewers" FontSize="Micro" />
-                    <Label Text="Surgery/Details" FontAttributes="Italic" FontSize="Micro" />
+                    <Label Text="All Procedures" HorizontalTextAlignment="Center"  />
+                    <Label FontAttributes="Italic" FontSize="Micro" HorizontalTextAlignment="Center" Text="Welcome to the All Procedures section, which contains ultra-high quality, narrated lacrimal, orbital and eyelid surgery videos. These videos demonstrate and explore the relevant anatomy, techniques, complications of a wide range of surgical procedures such as endoscopic and external DCR, Jones tubes, nasolacrimal stenting and dacryoendoscopy. We hope they will be of benefit to even the most experienced surgeons"  />
                 </StackLayout>
+
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

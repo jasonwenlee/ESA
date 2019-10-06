@@ -14,6 +14,9 @@
                 <Label Text="About Us" Margin="10" FontSize="Large" />
 
                 <StackLayout Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Saul_ReadMore" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
                     <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.aboutph.jpg}" HeightRequest="80" Clicked="Saul_ReadMore" />
                     <StackLayout Margin="5">
                         <Label Text="Dr Saul Rajak PhD FRCOphth" />

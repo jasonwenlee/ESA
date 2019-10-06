@@ -13,13 +13,18 @@
     <None Remove="Resources\about.png" />
     <None Remove="Resources\about48.png" />
     <None Remove="Resources\aboutph.jpg" />
+    <None Remove="Resources\akihide.jpg" />
     <None Remove="Resources\close.png" />
+    <None Remove="Resources\Dinesh.jpg" />
     <None Remove="Resources\eyelid.png" />
+    <None Remove="Resources\garry.jpg" />
     <None Remove="Resources\lacrimal.png" />
     <None Remove="Resources\orbital.png" />
     <None Remove="Resources\plus.png" />
+    <None Remove="Resources\Saul.jpg" />
     <None Remove="Resources\search.png" />
     <None Remove="Resources\search48.png" />
+    <None Remove="Resources\valerie.jpg" />
     <None Remove="Resources\videoph.jpg" />
   </ItemGroup>
 
@@ -27,12 +32,17 @@
     <EmbeddedResource Include="Resources\about.png" />
     <EmbeddedResource Include="Resources\about48.png" />
     <EmbeddedResource Include="Resources\aboutph.jpg" />
+    <EmbeddedResource Include="Resources\akihide.jpg" />
     <EmbeddedResource Include="Resources\close.png" />
+    <EmbeddedResource Include="Resources\Dinesh.jpg" />
     <EmbeddedResource Include="Resources\eyelid.png" />
+    <EmbeddedResource Include="Resources\garry.jpg" />
     <EmbeddedResource Include="Resources\orbital.png" />
     <EmbeddedResource Include="Resources\plus.png" />
+    <EmbeddedResource Include="Resources\Saul.jpg" />
     <EmbeddedResource Include="Resources\search.png" />
     <EmbeddedResource Include="Resources\search48.png" />
+    <EmbeddedResource Include="Resources\valerie.jpg" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
   </ItemGroup>
 
@@ -55,9 +65,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CategoriesPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\LacrimalPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\VideoPage.xaml">

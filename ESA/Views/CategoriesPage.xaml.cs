@@ -17,9 +17,40 @@ namespace ESA.Views
             InitializeComponent();
         }
 
-        private async void Lacrimal_Clicked(object sender, EventArgs e)
+        private void Lacrimal_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LacrimalPage());
+            if (LacrimalSubCat.IsVisible == false)
+            {
+                LacrimalSubCat.IsVisible = true;
+            }
+            else if (LacrimalSubCat.IsVisible == true)
+            {
+                LacrimalSubCat.IsVisible = false;
+            }
+        }
+
+        private void Eyelid_Clicked(object sender, EventArgs e)
+        {
+            if (EyelidSubCat.IsVisible == false)
+            {
+                EyelidSubCat.IsVisible = true;
+            }
+            else if (EyelidSubCat.IsVisible == true)
+            {
+                EyelidSubCat.IsVisible = false;
+            }
+        }
+
+        private void Orbital_Clicked(object sender, EventArgs e)
+        {
+            if (OrbitalSubCat.IsVisible == false)
+            {
+                OrbitalSubCat.IsVisible = true;
+            }
+            else if (OrbitalSubCat.IsVisible == true)
+            {
+                OrbitalSubCat.IsVisible = false;
+            }
         }
     }
 }
