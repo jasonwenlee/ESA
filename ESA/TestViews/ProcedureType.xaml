@@ -7,31 +7,33 @@
              x:Class="ESA.ProcedureType">
     <ScrollView>
         <StackLayout Padding="5">
-            <Entry x:Name="procedureCategoryEntry" IsSpellCheckEnabled="True" Placeholder="Enter procedure category"/>
+            <Entry x:Name="procedureCategoryEntry" Text="{Binding Category}" IsSpellCheckEnabled="True" Placeholder="Enter procedure category"/>
 
-            <Entry x:Name="procedureNameEntry" Placeholder="Enter procedure name" />
+            <Entry x:Name="procedureNameEntry" Text="{Binding Name}" Placeholder="Enter procedure name" />
 
-            <Entry x:Name="procedureDetailEntry" Placeholder="Enter procedure details" />
-
-            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="stepsEditor" Placeholder="Enter steps" AutoSize="TextChanges" />
+            <Entry x:Name="procedureDetailEntry" Text="{Binding Details}" Placeholder="Enter procedure details" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="variationsEditor" Placeholder="Enter variations" AutoSize="TextChanges" />
+            <Editor x:Name="stepsEditor" Text="{Binding Steps}" Placeholder="Enter steps" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="keyPointsEditor" Placeholder="Enter key points" AutoSize="TextChanges" />
+            <Editor x:Name="variationsEditor" Text="{Binding Variations}" Placeholder="Enter variations" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="complicationsEditor" Placeholder="Enter complications" AutoSize="TextChanges" />
+            <Editor x:Name="keyPointsEditor" Text="{Binding KeyPoints}" Placeholder="Enter key points" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="historyEditor" Placeholder="Enter history" AutoSize="TextChanges" />
+            <Editor x:Name="complicationsEditor" Text="{Binding Complications}" Placeholder="Enter complications" AutoSize="TextChanges" />
 
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
-            <Editor x:Name="referencesEditor" Placeholder="Enter references" AutoSize="TextChanges" />
+            <Editor x:Name="historyEditor" Text="{Binding History}" Placeholder="Enter history" AutoSize="TextChanges" />
 
-            <Button x:Name="addInformationButton" Text="Add Information MVVM" Clicked="AddInformationButtonMVVM_Clicked"/>
+            <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
+            <Editor x:Name="referencesEditor" Text="{Binding References}" Placeholder="Enter references" AutoSize="TextChanges" />
+
+            <Button x:Name="addInfoBinding" Command="{Binding AddProcedureCommand}" Text="Add Info Bind"/>
+            <!--<Button x:Name="addInformationButton" Text="Add Information MVVM" Clicked="AddInformationButtonMVVM_Clicked"/>-->
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

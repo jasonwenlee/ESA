@@ -39,7 +39,7 @@ namespace ESA
                     historyEditor.Text = "Empty";
                     return;
                 }
-                historyEditor.Text = extractInfo.History.content.ToString();
+                historyEditor.Text = extractInfo.History;
 
             }
             else if (historyView.IsVisible == true)
@@ -62,7 +62,7 @@ namespace ESA
                     referencesEditor.Text = "Empty";
                     return;
                 }
-                referencesEditor.Text = extractInfo.References.content.ToString();
+                referencesEditor.Text = extractInfo.References;
 
             }
             else if (referencesView.IsVisible == true)

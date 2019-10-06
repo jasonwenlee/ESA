@@ -13,15 +13,15 @@ namespace ESA.Models
     public abstract class Procedure
     {
         // Add more properties or methods
-        public abstract string Category { get; set; }
         public abstract int ID { get; set; }
+        public abstract string Category { get; set; }
         public abstract string Name { get; set; }
         public abstract string Details { get; set; }
-        public abstract StepsModel Steps { get; set; }
-        public abstract KeyPointsModel KeyPoints { get; set; }
-        public abstract VariationsModel Variations { get; set; }
-        public abstract ComplicationsModel Complications { get; set; }
-        public abstract HistoryModel History { get; set; }
-        public abstract ReferencesModel References { get; set; }
+        public abstract string Steps { get; set; }
+        public abstract string KeyPoints { get; set; }
+        public abstract string Variations { get; set; }
+        public abstract string Complications { get; set; }
+        public abstract string History { get; set; }
+        public abstract string References { get; set; }
     }
 }

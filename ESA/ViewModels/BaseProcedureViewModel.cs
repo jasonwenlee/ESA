@@ -22,6 +22,16 @@ namespace ESA.ViewModels
         public IValidator _procedureValidator;
         public INavigation _navigation;
 
+        public string Category
+        {
+            get => _procedure.Category;
+            set
+            {
+                _procedure.Category = value;
+                NotifyPropertyChanged("Name");
+            }
+        }
+
         public string Name
         {
             get => _procedure.Name;
@@ -42,7 +52,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public StepsModel Steps
+        public string Steps
         {
             get => _procedure.Steps;
             set
@@ -52,7 +62,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public KeyPointsModel KeyPoints
+        public string KeyPoints
         {
             get => _procedure.KeyPoints;
             set
@@ -62,13 +72,43 @@ namespace ESA.ViewModels
             }
         }
 
-        public VariationsModel Variations
+        public string Variations
         {
             get => _procedure.Variations;
             set
             {
                 _procedure.Variations = value;
                 NotifyPropertyChanged("Variations");
+            }
+        }
+
+        public string Complications
+        {
+            get => _procedure.Complications;
+            set
+            {
+                _procedure.Complications = value;
+                NotifyPropertyChanged("Complications");
+            }
+        }
+
+        public string History
+        {
+            get => _procedure.History;
+            set
+            {
+                _procedure.History = value;
+                NotifyPropertyChanged("History");
+            }
+        }
+
+        public string References
+        {
+            get => _procedure.References;
+            set
+            {
+                _procedure.References = value;
+                NotifyPropertyChanged("References");
             }
         }
 

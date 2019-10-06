@@ -47,12 +47,12 @@ namespace ESA.Data
             // Create eyelid table
             database.CreateTable<Eyelid>();
 
-            database.CreateTable<StepsModel>();
-            database.CreateTable<VariationsModel>();
-            database.CreateTable<KeyPointsModel>();
-            database.CreateTable<ComplicationsModel>();
-            database.CreateTable<HistoryModel>();
-            database.CreateTable<ReferencesModel>();
+            //database.CreateTable<StepsModel>();
+            //database.CreateTable<VariationsModel>();
+            //database.CreateTable<KeyPointsModel>();
+            //database.CreateTable<ComplicationsModel>();
+            //database.CreateTable<HistoryModel>();
+            //database.CreateTable<ReferencesModel>();
         }
 
         //-----------------------------------------------------------------------------//
