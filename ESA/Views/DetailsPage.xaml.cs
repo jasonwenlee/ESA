@@ -51,71 +51,89 @@ namespace ESA.Views
 
         private void StepsBtn_Clicked(object sender, EventArgs e)
         {
-            if (!(contentRow.Children.First() == null || contentRow.Children.First() is StepsView))
+            IList<View> content = contentRow.Children;
+            if (!(content.First() == null || content.First() is StepsView))
             {
-                contentRow.Children.Clear();
-                contentRow.Children.Add(new StepsView());
-                refreshIcons("steps");
+                refreshIcons("step", content.First().GetType().Name);
+                content.Clear();
+                content.Add(new StepsView());
             }
         }
 
         private void KeyPointsBtn_Clicked(object sender, EventArgs e)
         {
-            if (!(contentRow.Children.First() == null || contentRow.Children.First() is KeyPointsView))
+            IList<View> content = contentRow.Children;
+            if (!(content.First() == null || content.First() is KeyPointsView))
             {
-                contentRow.Children.Clear();
-                contentRow.Children.Add(new KeyPointsView());
-                refreshIcons("keyp");
+                refreshIcons("keyp", content.First().GetType().Name);
+                content.Clear();
+                content.Add(new KeyPointsView());
             }
         }
 
         private void VariationsBtn_Clicked(object sender, EventArgs e)
         {
-            if (!(contentRow.Children.First() == null || contentRow.Children.First() is VariationsView))
+            IList<View> content = contentRow.Children;
+            if (!(content.First() == null || content.First() is VariationsView))
             {
-                contentRow.Children.Clear();
-                contentRow.Children.Add(new VariationsView());
-                refreshIcons("vari");
+                refreshIcons("vari", content.First().GetType().Name);
+                content.Clear();
+                content.Add(new VariationsView());
             }
         }
 
         private void ComplicationsBtn_Clicked(object sender, EventArgs e)
         {
-            if (!(contentRow.Children.First() == null || contentRow.Children.First() is ComplicationsView))
+            IList<View> content = contentRow.Children;
+            if (!(content.First() == null || content.First() is ComplicationsView))
             {
-                contentRow.Children.Clear();
-                contentRow.Children.Add(new ComplicationsView());
-                refreshIcons("comp");
+                refreshIcons("comp", content.First().GetType().Name);
+                content.Clear();
+                content.Add(new ComplicationsView());
             }
         }
 
         private void InfoBtn_Clicked(object sender, EventArgs e)
         {
-            if (!(contentRow.Children.First() == null || contentRow.Children.First() is InfoView))
+            IList<View> content = contentRow.Children;
+            if (!(content.First() == null || content.First() is InfoView))
             {
-                contentRow.Children.Clear();
-                contentRow.Children.Add(new InfoView());
-                refreshIcons("info");
+                refreshIcons("info", content.First().GetType().Name);
+                content.Clear();
+                content.Add(new InfoView());
             }
         }
 
         // Definetly no the best way to do this but for no it gets the point across
-        private void refreshIcons(string page)
+        private void refreshIcons(string page, string prevView)
         {
-            StepsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.steps_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-            StepsLbl.TextColor = Color.Gray;
-            KeyPointsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.keypoints_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-            KeyPointsLbl.TextColor = Color.Gray;
-            VariationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.variations_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-            VariationsLbl.TextColor = Color.Gray;
-            ComplicationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.complications_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-            ComplicationsLbl.TextColor = Color.Gray;
-            InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-            InfoLbl.TextColor = Color.Gray;
+            switch (prevView)
+            {
+                case "StepsView":
+                    StepsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.steps_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    StepsLbl.TextColor = Color.Gray;
+                    break;
+                case "KeyPointsView":
+                    KeyPointsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.keypoints_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    KeyPointsLbl.TextColor = Color.Gray;
+                    break;
+                case "VariationsView":
+                    VariationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.variations_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    VariationsLbl.TextColor = Color.Gray;
+                    break;
+                case "ComplicationsView":
+                    ComplicationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.complications_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    ComplicationsLbl.TextColor = Color.Gray;
+                    break;
+                case "InfoView":
+                    InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    InfoLbl.TextColor = Color.Gray;
+                    break;
+            }
 
             switch (page)
             {
-                case "steps":
+                case "step":
                     StepsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.steps_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
                     StepsLbl.TextColor = Color.White;
                     break;
@@ -136,13 +154,6 @@ namespace ESA.Views
                     InfoLbl.TextColor = Color.White;
                     break;
             }
-
-            StepsBtn.HeightRequest = 35;
-            KeyPointsBtn.HeightRequest = 35;
-            VariationsBtn.HeightRequest = 35;
-            ComplicationsBtn.HeightRequest = 35;
-            InfoBtn.HeightRequest = 35;
-
         }
     }
 }

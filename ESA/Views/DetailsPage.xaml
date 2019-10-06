@@ -53,30 +53,50 @@
             </ScrollView>
 
             <!--FOOTER-->
-            <StackLayout x:Name="footer" Orientation="Horizontal" Grid.Row="2" BackgroundColor="#0F0F0F" HorizontalOptions="Fill">
-                <!--I will update this to use a style template in the future-->
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <ImageButton x:Name="StepsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.steps_icon_dark_active.png}" Clicked="StepsBtn_Clicked" />
-                    <Label x:Name="StepsLbl" Text="Steps" FontSize="Small" TextColor="White" HorizontalOptions="Center" />
-                </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <ImageButton x:Name="KeyPointsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.keypoints_icon.png}" Clicked="KeyPointsBtn_Clicked"/>
-                    <Label x:Name="KeyPointsLbl" Text="Key Points" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
-                </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <ImageButton x:Name="VariationsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.variations_icon.png}" Clicked="VariationsBtn_Clicked" />
-                    <Label x:Name="VariationsLbl" Text="Variations" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
-                </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <ImageButton x:Name="ComplicationsBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.complications_icon.png}" Clicked="ComplicationsBtn_Clicked" />
-                    <Label x:Name="ComplicationsLbl" Text="Complications" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
-                </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <ImageButton x:Name="InfoBtn" BackgroundColor="Transparent" HeightRequest="35"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
-                    <Label x:Name="InfoLbl" Text="Info" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />
-                </StackLayout>
-            </StackLayout>
+            <Grid x:Name="footer"  Grid.Row="2" BackgroundColor="#0F0F0F" HorizontalOptions="Fill" ColumnSpacing="0" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <ImageButton x:Name="StepsBtn" Grid.Column="0" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.steps_icon_dark_active.png}" Clicked="StepsBtn_Clicked"/>
+                <Label x:Name="StepsLbl" Grid.Column="0" Grid.Row="1" Text="Steps" Style="{StaticResource FooterLabel}" />
+
+                <ImageButton x:Name="KeyPointsBtn" Grid.Column="1" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.keypoints_icon.png}" Clicked="KeyPointsBtn_Clicked"/>
+                <Label x:Name="KeyPointsLbl" Grid.Column="1" Grid.Row="1" Text="Key Points" Style="{StaticResource FooterLabel}" />
+
+                <ImageButton x:Name="VariationsBtn" Grid.Column="2" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.variations_icon.png}" Clicked="VariationsBtn_Clicked" />
+                <Label x:Name="VariationsLbl" Grid.Column="2" Grid.Row="1" Text="Variations" Style="{StaticResource FooterLabel}" />
+
+                <ImageButton x:Name="ComplicationsBtn" Grid.Column="3" Grid.Row="0" Style="{StaticResource FooterButton}" Source="{mrkupExt:ImageResource ESA.Resources.Icons.complications_icon.png}" Clicked="ComplicationsBtn_Clicked" />
+                <Label x:Name="ComplicationsLbl" Grid.Column="3" Grid.Row="1" Text="Complications" Style="{StaticResource FooterLabel}" />
+
+                <ImageButton x:Name="InfoBtn" Grid.Column="4" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
+                <Label x:Name="InfoLbl" Grid.Column="4" Grid.Row="1" Text="Info" Style="{StaticResource FooterLabel}" />
+            </Grid>
 
         </Grid>
     </ContentPage.Content>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FooterButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+            </Style>
+            <Style x:Key="FooterLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 </ContentPage>
