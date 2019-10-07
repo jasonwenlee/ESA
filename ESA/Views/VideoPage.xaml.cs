@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESA.Models.VideoView;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,25 @@ namespace ESA.Views
         public VideoPage()
         {
             InitializeComponent();
+
+            ResourceVideoSource source = new ResourceVideoSource();
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    // source.Path = "Videos/eye_surgery.mp4";
+                    source.Path = "Videos/Brain_Eyes_Vid.mp4";
+                    break;
+                case Device.Android:
+                    // source.Path = "eye_surgery.mp4";
+                    source.Path = "Brain_Eyes_Vid.mp4";
+                    break;
+                case Device.UWP:
+                    // source.Path = "Videos/eye_surgery.mp4";
+                    source.Path = "Videos/Brain_Eyes_Vid.mp4";
+                    break;
+            }
+
+            videoPlayer.Source = source;
         }
     }
 }

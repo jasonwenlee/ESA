@@ -9,7 +9,7 @@
              x:Class="ESA.Views.DetailsPage"
              x:Name="StepPage_Instance"
              Appearing="StepPage_Instance_Appearing"
-             BackgroundColor="#222">
+             BackgroundColor="#191919">
     <!--HEADER-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Oculoplastics" />
@@ -26,7 +26,7 @@
             </Grid.RowDefinitions>
 
             <!--VIDEO-->
-            <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" BackgroundColor="#111"/> <!--Still needs fullscreen controls for Androif (not sure for iOS)-->
+            <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0"/> <!--Still needs fullscreen controls for Androif (not sure for iOS)-->
 
             <!--CONTENT-->
             <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,15,0,10" Margin="15,0">
@@ -89,11 +89,11 @@
         <ResourceDictionary>
             <Style x:Key="FooterButton" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="40" />
                 <Setter Property="Margin" Value="0,5,0,0" />
             </Style>
             <Style x:Key="FooterLabel" TargetType="Label">
-                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontSize" Value="12" />
                 <Setter Property="TextColor" Value="Gray" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>

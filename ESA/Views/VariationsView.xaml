@@ -6,13 +6,11 @@
              mc:Ignorable="d"
              x:Class="ESA.Views.VariationsView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-  <ContentView.Content>
-        <!--Put whatever layout you need in here-->
+    <ContentView.Content>
         <StackLayout>
             <StackLayout>
-          <Label Text="Variations!" TextColor="White" />
-     <!--       <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" /> -->
-            <Label Text="&#x2022; Wider flap may need a straighter horizontal incision without vertical relieving incisions." TextColor="White" />
+                <Label Text="Variations!" TextColor="White" />
+                <Label Text="&#x2022; Wider flap may need a straighter horizontal incision without vertical relieving incisions." TextColor="White" />
             <Label Text="&#x2022; Tarsoconjunctival-based or Tars conjunctival-Muller based flaps; Conjunctival and Muller together allow better vascularisation of the flap." TextColor="White" />
             <Label Text="&#x2022; If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post-operative eyelid retraction than advancing conjunctiva alone." TextColor="White" />
         </StackLayout>

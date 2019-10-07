@@ -52,7 +52,10 @@ namespace ESA.Views
 
             videoPlayer.Source = source;
 
-            contentRow.Children.Add(new StepsView());
+            // Load steps View
+            StepsView view = new StepsView();
+            view.LoadStepsView();
+            contentRow.Children.Add(view);
         }
 
         private void StepsBtn_Clicked(object sender, EventArgs e)
