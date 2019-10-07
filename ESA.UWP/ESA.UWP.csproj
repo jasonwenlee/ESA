@@ -104,8 +104,11 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Assets\Complication01.jpeg" />
     <Content Include="Assets\Complication02.jpeg" />
+    <Content Include="Assets\Complication03.jpeg" />
+    <Content Include="Assets\eyeLidGranuloma04.jpg" />
+    <Content Include="Assets\eyeLidMarginIrregularity05.jpg" />
+    <Content Include="Assets\eyeRetraction01.jpeg" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
@@ -130,6 +133,8 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\thumbnail_irregular lid margin.jpg" />
+    <Content Include="Assets\thumbnail_lid granuloma.jpg" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />

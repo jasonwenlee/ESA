@@ -12,10 +12,10 @@
         <!--CONTENT-->
        
             <StackLayout>
-                <Label Text="Complications" TextColor="White"/>
+                <Label Text="Complications:" TextColor="White"/>
 
-                <ListView x:Name="contentListView"
-                      ItemsSource="{Binding Complications}"
+                <ListView x:Name="ComplicationList"
+                      ItemsSource="{Binding  ComplicationList}"
                       HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -31,7 +31,7 @@
                                     </Grid.ColumnDefinitions>
                                    
                                     <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
-                                    <Image Source="{mrkupExt:ImageResource ESA.Resources.Complication01.jpeg }"
+                                    <Image Source="{Binding ImageUrl}"
                                            Grid.RowSpan="2"
                                         
                                        Aspect="AspectFill"

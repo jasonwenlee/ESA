@@ -14,9 +14,27 @@
             <StackLayout Grid.Row="0" Spacing="2" >
                 <Label FontSize="16" Text="Specific considerations:" FontAttributes="Bold" TextColor="White"/>
                 <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye." />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities:"/>
+             
 
-                <Label FontSize="14" Text="see Tarsoconjunctival flap – stage 2"  TextColor="Blue" />
+              
+
+                <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="#BDBDBD" Text="&#x2022; Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities,see: "/>
+                            <Span Text="Tarsoconjunctival flap – stage 2" TextColor="Blue" TextDecorations="Underline">
+
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                          CommandParameter="https://oculoplastic.eyesurgeryvideos.net/propeller-flap-tarsal-graft-periosteal-flap" />
+                                </Span.GestureRecognizers>
+                            </Span>
+     
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+
                 <Label FontSize="16" Text="Tips/pitfalls:" FontAttributes="Bold" TextColor="White"/>
                 <Label FontSize="14" Text="Dissection" TextDecorations="Underline"  TextColor="White" FontAttributes="Bold" />
                 <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone." />
