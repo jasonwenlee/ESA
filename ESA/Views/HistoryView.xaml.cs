@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ESA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LacrimalPage : ContentPage
+    public partial class HistoryView : ContentView
     {
-        public LacrimalPage()
+        public HistoryView()
         {
             InitializeComponent();
         }

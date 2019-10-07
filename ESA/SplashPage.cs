@@ -40,8 +40,8 @@ namespace ESA
             base.OnAppearing();
             
             await splashImage.ScaleTo(1.5, 1000); // REC: Setting up the initial size of the Icon. 
-            await splashImage.ScaleTo(0.8, 2000, Easing.Linear); // REC: Animation effect: reducing image
-            await splashImage.ScaleTo(3.0, 2000, Easing.Linear); // REC: Animation effect: augmenting image
+            await splashImage.ScaleTo(0.8, 1000, Easing.Linear); // REC: Animation effect: reducing image
+            await splashImage.ScaleTo(3.5, 1000, Easing.Linear); // REC: Animation effect: augmenting image
 
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }

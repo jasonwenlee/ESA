@@ -34,20 +34,6 @@ namespace ESA
             await Navigation.PushAsync(new VideoPage());
         }
 
-        private async void Lacrimal_Click(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CategoriesPage());
-        }
-        private async void Orbital_Click(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CategoriesPage());
-        }
-
-        private async void Eyelid_Click(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CategoriesPage());
-        }
-
         private void Search_Clicked(object sender, EventArgs e)
         {
             DisplayAlert("Alert", "Search functionality to be added in the 2nd phase of the project", "OK");
