@@ -146,4 +146,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\Videos\Brain_Eyes_Vid.mp4" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Complication01.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Complication02.jpeg" />
+  </ItemGroup>
 </Project>
