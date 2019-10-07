@@ -42,18 +42,12 @@
     <EmbeddedResource Include="Resources\Saul.jpg" />
     <EmbeddedResource Include="Resources\search.png" />
     <EmbeddedResource Include="Resources\search48.png" />
-    <EmbeddedResource Include="Resources\valerie.jpg" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
