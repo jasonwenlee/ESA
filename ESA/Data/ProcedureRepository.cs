@@ -1,5 +1,4 @@
 ﻿using ESA.Models;
-using ESA.Models.PageModels;
 using SQLite;
 using SQLiteNetExtensions.Extensions;
 using System;
@@ -93,78 +92,12 @@ namespace ESA.Data
         {
             return database.Insert(proc);
         }
-        public void SaveSteps(StepsModel steps)
-        {
-            database.Insert(steps);
-            database.UpdateWithChildren(steps);
-        }
-        public void SaveVariations(VariationsModel variations)
-        {
-            database.Insert(variations);
-            database.UpdateWithChildren(variations);
-        }
-        public void SaveKeyPoints(KeyPointsModel keyPoints)
-        {
-            database.Insert(keyPoints);
-            database.UpdateWithChildren(keyPoints);
-        }
-        public void SaveComplications(ComplicationsModel complications)
-        {
-            database.Insert(complications);
-            database.UpdateWithChildren(complications);
-        }
-        public void SaveHistory(HistoryModel history)
-        {
-            database.Insert(history);
-            database.UpdateWithChildren(history);
-        }
-        public void SaveReferences(ReferencesModel references)
-        {
-            database.Insert(references);
-            database.UpdateWithChildren(references);
-        }
 
         //-----------------------------------------------------------------------------//
         // The following functions perform updating on exising procedure
         public int UpdateProcedure(Procedure proc)
         {
             return database.Update(proc);
-        }
-
-        public void UpdateSteps(StepsModel steps)
-        {
-            database.Update(steps);
-            database.UpdateWithChildren(steps);
-        }
-
-        public void UpdateVariations(VariationsModel variations)
-        {
-            database.Update(variations);
-            database.UpdateWithChildren(variations);
-        }
-
-        public void UpdateKeyPoints(KeyPointsModel keyPoints)
-        {
-            database.Update(keyPoints);
-            database.UpdateWithChildren(keyPoints);
-        }
-
-        public void UpdateComplications(ComplicationsModel complications)
-        {
-            database.Update(complications);
-            database.UpdateWithChildren(complications);
-        }
-
-        public void UpdateHistory(HistoryModel history)
-        {
-            database.Update(history);
-            database.UpdateWithChildren(history);
-        }
-
-        public void UpdateReferences(ReferencesModel references)
-        {
-            database.Update(references);
-            database.UpdateWithChildren(references);
         }
 
         //-----------------------------------------------------------------------------//

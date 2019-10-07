@@ -17,35 +17,40 @@ namespace ESA
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        LoadProcedureViewModel loadOneProc;
-        Procedure testEye;
+        // Don't remove:)
+        //LoadProcedureViewModel loadOneProc;
+        //Procedure testEye;
 
         public MainPage()
         {
             InitializeComponent();
             // Test for only one eyelid procedure. Will change/remove when more procedures are added.
             // This procedure loads after mainpage is initialised.
-            loadOneProc = new LoadProcedureViewModel();
+            // Don't remove:)
+            //loadOneProc = new LoadProcedureViewModel();
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            loadOneProc.LoadEyelidList();
-            ObservableCollection<Procedure> eyes = loadOneProc.EyelidProcedures;
-            foreach (var eyeProc in eyes)
-            {
-                // testProc is name of label
-                if (eyeProc.Name.Equals(testProc.Text))
-                {
-                    testEye = loadOneProc.LoadProcedureByName(eyeProc);
-                }
-            }
+            // Don't remove:)
+            //loadOneProc.LoadEyelidList();
+            //ObservableCollection<Procedure> eyes = loadOneProc.EyelidProcedures;
+            //foreach (var eyeProc in eyes)
+            //{
+            //    // testProc is name of label
+            //    if (eyeProc.Name.Equals(testProc.Text))
+            //    {
+            //        testEye = loadOneProc.LoadProcedureByName(eyeProc);
+            //    }
+            //}
         }
 
         private void StepsPageBtn_Clicked(object sender, EventArgs e)
         {
-            // Don't think this is a good idea to push object from page to another. 
-            Navigation.PushAsync(new DetailsPage(testEye));
+            // Don't think this is a good idea to push object from page to another. Don't remove :)
+            //Navigation.PushAsync(new DetailsPage(testEye));
+
+            Navigation.PushAsync(new DetailsPage());
         }
 
         private async void AboutUs_Clicked(object sender, EventArgs e)

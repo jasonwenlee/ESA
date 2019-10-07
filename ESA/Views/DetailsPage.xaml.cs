@@ -16,12 +16,14 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailsPage : ContentPage
     {
-        Procedure holdProcedure;
+        // Don't remove :)
+        //Procedure holdProcedure;
 
-        public DetailsPage(Procedure proc)
+        public DetailsPage()
         {
             InitializeComponent();
-            holdProcedure = proc;
+            // Don't remove :)
+            //holdProcedure = proc;
         }
 
         private void StepPage_Instance_Appearing(object sender, EventArgs e)
@@ -98,7 +100,9 @@ namespace ESA.Views
             if (!(contentRow.Children.First() == null || contentRow.Children.First() is InfoView))
             {
                 contentRow.Children.Clear();
-                contentRow.Children.Add(new InfoView(holdProcedure));
+                // Don't remove :)
+                //contentRow.Children.Add(new InfoView(holdProcedure));
+                contentRow.Children.Add(new InfoView());
                 refreshIcons("info");
             }
         }
