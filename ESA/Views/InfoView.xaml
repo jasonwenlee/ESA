@@ -9,8 +9,25 @@
     <ContentView.Content>
         <!--Put whatever layout you need in here-->
         <StackLayout>
-            <Label Text="InfoView" TextColor="White"/>
-            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains4.jpg}" />
+            <!--<Label Text="InfoView" TextColor="White"/>
+            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains4.jpg}" />-->
+            <!-- HISTORY INFORMATION -->
+            <Label FontSize="Title" TextDecorations="Underline" Text="History" TextColor="White" />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Dr Wendel Hughes, an ophthalmologist who contributed to the field of oculoplastic surgery, published his first paper on tarsoconjunctival flaps in 1937. [1,2] " />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Further modifications to the technique by Hughes and others occurred throughout subsequent decades. [3-6] Significant developments included using full-thickness skin grafting of the tarsoconjunctival flap, sparing of the marginal upper lid tarsus, and removal of the levator muscle complex from the tarsoconjunctival flap. This led to the reduction in upper lid complications, such as upper lid retraction,  entropion, and trichiasis." />            <Image  Source="{mrkupExt:ImageResource ESA.Resources.history.png}" HorizontalOptions="Center" />
+            <Label  TextColor="#AAA" LineBreakMode="WordWrap" FontSize="Caption" Text="Fig 1. Blood supply of the eyelid. ADT=anterior deep temporal artery; DN=dorsal nasal artery; F=facial artery; IO=infraorbital artery; L=lacrimal artery; OA=ophthalmic artery; SO=supraorbital artery; ST=supratrochlear artery." />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Traditionally, flap division occurred 3 to 4 months after the initial stage.  Currently the standard time to flap division is frequently 2 weeks, but can be carried out from 7 days with good outcome. [7,8]" />
+            <!-- REFERENCES INFORMATION -->
+            <Label FontSize="Title" TextDecorations="Underline" Text="References and External Links" TextColor="White" />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="1. McClellan WT, Rawson AE.  Wendell L. Hughes' life and contributions to plastic surgery. Plast Reconstr Surg 2011; 128(6):765e-72e." />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="2. Hughes, Wendell L.  A new method for rebuilding a lower lid: report of a case.  Arch Ophthalmol 1937;17(6):1008-1017 " />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="3. Rohrich RJ, Zbar R I. The evolution of the Hughes tarsoconjunctival flap for the lower eyelid reconstruction. B Plast Reconstr Surg 1999;104(2): 518-22" />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="4. Hughes, Wendell L. Reconstruction of the lids. Am J Ophthalmol 1945;28(11): 1203-1211 " />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="5. Cies WA, Bartlett RE. Modification of the Mustardé and Hughes methods of reconstructing the lower lid.  Ann Ophthalmol 1975; 7(11):1497-1502." />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="6. Hughes WL. Total lower lid reconstruction: technical details. Trans Am Ophthalmol Soc1976; 74:321-9." />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="7. McNab, AA, Martin P,  Benger R, O'Donnell B, Kourt G.  A prospective randomized study comparing division of the pedicle of modified hughes flaps at two or four weeks. Ophthalmic Plast Reconstr Surg 2001;17(5): 317-9 " />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="8. Leibovitch I, Selva D. Modified Hughes flap: division at 7 days. Ophthalmology. 2004;111(12):2164-2167" />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" FontAttributes="Bold, Italic"  TextDecorations="Underline" Text="External links to related videos on other websites e.g. Ric Caesar, Richard Allen" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>
