@@ -5,15 +5,67 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.StepsView"
+             xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
   <ContentView.Content>
         <!--Put whatever layout you need in here, this is just an example-->
         <StackLayout>
-            <Label Text="History" TextColor="White" />
-            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Dr Wendel Hughes, an ophthalmologist who contributed to the field of oculoplastic surgery, published his first paper on tarsoconjunctival flaps in 1937. [1,2] Further modifications to the technique by Hughes and others occurred throughout subsequent decades. [3-6] Significant developments included using full-thickness skin grafting of the tarsoconjunctival flap, sparing of the marginal upper lid tarsus, and removal of the levator muscle complex from the tarsoconjunctival flap. This led to the reduction in upper lid complications, such as upper lid retraction,  entropion, and trichiasis. " />
-            <Image  Source="{mrkupExt:ImageResource ESA.Resources.history.png}" HorizontalOptions="Center" />
-            <Label  TextColor="#AAA" LineBreakMode="WordWrap" Text="Fig 1. Blood supply of the eyelid. ADT=anterior deep temporal artery; DN=dorsal nasal artery; F=facial artery; IO=infraorbital artery; L=lacrimal artery; OA=ophthalmic artery; SO=supraorbital artery; ST=supratrochlear artery." />
-            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Traditionally, flap division occurred 3 to 4 months after the initial stage.  Currently the standard time to flap division is frequently 2 weeks, but can be carried out from 7 days with good outcome. [7,8]" />
+            <expandable:ExpandableView>
+                <expandable:ExpandableView.PrimaryView>
+                    <StackLayout Orientation="Vertical">
+                        <Grid ColumnSpacing="0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Step 1" TextColor="White" Grid.Row="0" Grid.Column="0"/>
+                            <Label TextColor="White" Text="Pass a 4-0 silk traction suture through the grey line to evert the upper eyelid over a Desmarres retractor" Grid.Row="1" Grid.Column="0" />
+                            <Image Source="{mrkupExt:ImageResource ESA.Resources.whitearrow.jpg}" Grid.Row="1" Grid.Column="1" />
+                        </Grid>
+                    </StackLayout>
+                </expandable:ExpandableView.PrimaryView>
+                <expandable:ExpandableView.SecondaryViewTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" HeightRequest="300" />
+                        </StackLayout>
+                    </DataTemplate>
+                </expandable:ExpandableView.SecondaryViewTemplate>
+            </expandable:ExpandableView>
+
+            <expandable:ExpandableView>
+            <expandable:ExpandableView.PrimaryView>
+                    <StackLayout Orientation="Vertical">
+                        <Grid ColumnSpacing="0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Step 2" TextColor="White" Grid.Row="0" Grid.Column="0"/>
+                            <Label TextColor="White" Text="Assess width of lower lid defect by stretching the remaining lower lid edges centrally using forceps.  " Grid.Row="1" Grid.Column="0" />
+                            <Image Source="{mrkupExt:ImageResource ESA.Resources.whitearrow.jpg}" Grid.Row="1" Grid.Column="1" />
+                        </Grid>
+                    </StackLayout>
+                </expandable:ExpandableView.PrimaryView>
+                <expandable:ExpandableView.SecondaryViewTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains2.jpg}" HeightRequest="300" />
+                        </StackLayout>
+                    </DataTemplate>
+                </expandable:ExpandableView.SecondaryViewTemplate>
+
+            </expandable:ExpandableView>
+            
+            
         </StackLayout>
     </ContentView.Content>
 </ContentView>
