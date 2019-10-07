@@ -9,9 +9,38 @@
   <ContentView.Content>
         <!--Put whatever layout you need in here-->
         <StackLayout>
+            <StackLayout>
           <Label Text="Variations!" TextColor="White" />
-           <!-- <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" />-->
-            
+     <!--       <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" /> -->
+            <Label Text="&#x2022; Wider flap may need a straighter horizontal incision without vertical relieving incisions." TextColor="White" />
+            <Label Text="&#x2022; Tarsoconjunctival-based or Tars conjunctival-Muller based flaps; Conjunctival and Muller together allow better vascularisation of the flap." TextColor="White" />
+            <Label Text="&#x2022; If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post-operative eyelid retraction than advancing conjunctiva alone." TextColor="White" />
         </StackLayout>
-  </ContentView.Content>
+            <StackLayout>
+                <ListView  x:Name="VariationList" ItemsSource="{Binding VariationList}" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="False">
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
+                                            <Image Source="{Binding VariationImage}" WidthRequest="150" HeightRequest="150" VerticalOptions="Start"  />
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                                            <Label Text="{Binding Name}" FontSize="20" TextColor="White"/>
+                                            <Label Text="{Binding Details}" FontSize="12" Margin="0,0,0,5" />
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
 </ContentView>

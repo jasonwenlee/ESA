@@ -135,5 +135,17 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Complication02.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\variationImage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\variationImage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\variationImage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\variationImage4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
