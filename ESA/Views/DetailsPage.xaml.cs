@@ -133,7 +133,7 @@ namespace ESA.Views
                     ComplicationsLbl.TextColor = Color.Gray;
                     break;
                 case "HistoryView":
-                    HistBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.history_Icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    HistBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.history_icon.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
                     HIstLbl.TextColor = Color.Gray;
                     break;
                 case "InfoView":
@@ -161,7 +161,7 @@ namespace ESA.Views
                     ComplicationsLbl.TextColor = Color.White;
                     break;
                 case "hist":
-                    HistBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.history_Icon_white.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    HistBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.history_icon_white.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
                     HIstLbl.TextColor = Color.White;
                     break;
                 case "info":

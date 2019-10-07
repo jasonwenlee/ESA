@@ -12,10 +12,13 @@
              >
     <!--HEADER BackgroundColor="#222"-->
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="OCULOPLASTICS"/>
+        <ToolbarItem Name="Home" IconImageSource="{mrkupExt:ImageResource ESA.Resources.home.png}" 
+                     Clicked="Home_Clicked" />
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.About_plus.png}" 
                      Clicked="AboutUs_Clicked" />
-        <ToolbarItem Name="Home"  Text="                   BACK HOME                    " 
-                     Clicked="Home_Clicked" />
+        <!--<ToolbarItem Name="Home"  Text="                   BACK HOME                    " 
+                     Clicked="Home_Clicked" />-->
         <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Search_plus.png}" 
                      Clicked="Search_Clicked" />
     </ContentPage.ToolbarItems>
@@ -30,7 +33,7 @@
 
             <!--VIDEO-->
             <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" BackgroundColor="#111"/>
-            <!--Still needs fullscreen controls for Androif (not sure for iOS)-->
+            <!--Still needs fullscreen controls for Android (not sure for iOS)-->
 
             <!--CONTENT-->
             <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,15,0,10" Margin="15,0">
@@ -83,7 +86,7 @@
                 <ImageButton x:Name="ComplicationsBtn" Grid.Column="3" Grid.Row="0" Style="{StaticResource FooterButton}" Source="{mrkupExt:ImageResource ESA.Resources.Icons.complications_icon.png}" Clicked="ComplicationsBtn_Clicked" />
                 <Label x:Name="ComplicationsLbl" Grid.Column="3" Grid.Row="1" Text="Complications" Style="{StaticResource FooterLabel}" />
 
-                <ImageButton x:Name="HistBtn" Grid.Column="4" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.history_Icon.png}" Clicked="HistBtn_Clicked" />
+                <ImageButton x:Name="HistBtn" Grid.Column="4" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.history_icon.png}" Clicked="HistBtn_Clicked" />
                 <Label x:Name="HIstLbl" Grid.Column="4" Grid.Row="1" Text="History" Style="{StaticResource FooterLabel}" />
                 
                 <ImageButton x:Name="InfoBtn" Grid.Column="5" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
@@ -101,20 +104,10 @@
                 <Setter Property="Margin" Value="0,5,0,0" />
             </Style>
             <Style x:Key="FooterLabel" TargetType="Label">
-                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontSize" Value="Micro" />
                 <Setter Property="TextColor" Value="Gray" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 </ContentPage>
-
-
-
-
-<!--<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-    --><!--<ImageButton x:Name="InfoBtn_1" BackgroundColor="Transparent" HeightRequest="28"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_1_Clicked" />--><!--
-    <ImageButton x:Name="HistBtn" BackgroundColor="Transparent" HeightRequest="28"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.history_Icon_white.png}" Clicked="HistBtn_Clicked" />
-    --><!--<Label x:Name="InfoLbl_1" Text="History" FontSize="Small" TextColor="Gray" HorizontalOptions="Center" />--><!--
-    <Label x:Name="HistLbl" Text="History" FontSize="Micro" TextColor="Gray" HorizontalOptions="Center" />
-</StackLayout>-->

@@ -15,6 +15,7 @@
     <None Remove="Resources\dinesh.png" />
     <None Remove="Resources\garry.png" />
     <None Remove="Resources\history.png" />
+    <None Remove="Resources\home.png" />
     <None Remove="Resources\Icons\bacack_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
     <None Remove="Resources\Icons\back_icon_light_active.png" />
@@ -24,9 +25,9 @@
     <None Remove="Resources\Icons\complications_icon.png" />
     <None Remove="Resources\Icons\complications_icon_dark_active.png" />
     <None Remove="Resources\Icons\history_icon.png" />
-    <None Remove="Resources\Icons\history_Icon_black.png" />
-    <None Remove="Resources\Icons\history_Icon_blue.png" />
-    <None Remove="Resources\Icons\history_Icon_white.png" />
+    <None Remove="Resources\Icons\history_icon_black.png" />
+    <None Remove="Resources\Icons\history_icon_blue.png" />
+    <None Remove="Resources\Icons\history_icon_white.png" />
     <None Remove="Resources\Icons\home_icon.png" />
     <None Remove="Resources\Icons\home_icon_dark_active.png" />
     <None Remove="Resources\Icons\home_icon_light_active.png" />
@@ -66,6 +67,7 @@
     <EmbeddedResource Include="Resources\dinesh.png" />
     <EmbeddedResource Include="Resources\garry.png" />
     <EmbeddedResource Include="Resources\history.png" />
+    <EmbeddedResource Include="Resources\home.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_light_active.png" />
@@ -75,9 +77,9 @@
     <EmbeddedResource Include="Resources\Icons\complications_icon.png" />
     <EmbeddedResource Include="Resources\Icons\complications_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\history_icon.png" />
-    <EmbeddedResource Include="Resources\Icons\history_Icon_black.png" />
-    <EmbeddedResource Include="Resources\Icons\history_Icon_blue.png" />
-    <EmbeddedResource Include="Resources\Icons\history_Icon_white.png" />
+    <EmbeddedResource Include="Resources\Icons\history_icon_black.png" />
+    <EmbeddedResource Include="Resources\Icons\history_icon_blue.png" />
+    <EmbeddedResource Include="Resources\Icons\history_icon_white.png" />
     <EmbeddedResource Include="Resources\Icons\image_icon.png" />
     <EmbeddedResource Include="Resources\Icons\image_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\image_icon_light_active.png" />

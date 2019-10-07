@@ -10,9 +10,11 @@
 
     <!--Top toolbar-->
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="OCULOPLASTICS"/>
+        <ToolbarItem Name="Home" IconImageSource="{mrkupExt:ImageResource ESA.Resources.home.png}"/>
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.About_plus.png}" 
                      Clicked="AboutUs_Clicked" />
-        <ToolbarItem Text="                     HOME PAGE                      "/>
+        <!--<ToolbarItem Text="                     HOME PAGE                      "/>-->        
         <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Search_plus.png}" Clicked="Search_Clicked" />
     </ContentPage.ToolbarItems>
 
