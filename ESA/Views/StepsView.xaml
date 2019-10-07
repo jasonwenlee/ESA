@@ -6,14 +6,36 @@
              mc:Ignorable="d"
              x:Class="ESA.StepsView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-  <ContentView.Content>
+    <ContentView.Content>
         <!--Put whatever layout you need in here, this is just an example-->
-        <StackLayout>
-            <Label Text="History" TextColor="White" />
-            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Dr Wendel Hughes, an ophthalmologist who contributed to the field of oculoplastic surgery, published his first paper on tarsoconjunctival flaps in 1937. [1,2] Further modifications to the technique by Hughes and others occurred throughout subsequent decades. [3-6] Significant developments included using full-thickness skin grafting of the tarsoconjunctival flap, sparing of the marginal upper lid tarsus, and removal of the levator muscle complex from the tarsoconjunctival flap. This led to the reduction in upper lid complications, such as upper lid retraction,  entropion, and trichiasis. " />
-            <Image  Source="{mrkupExt:ImageResource ESA.Resources.history.png}" HorizontalOptions="Center" />
-            <Label  TextColor="#AAA" LineBreakMode="WordWrap" Text="Fig 1. Blood supply of the eyelid. ADT=anterior deep temporal artery; DN=dorsal nasal artery; F=facial artery; IO=infraorbital artery; L=lacrimal artery; OA=ophthalmic artery; SO=supraorbital artery; ST=supratrochlear artery." />
-            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Traditionally, flap division occurred 3 to 4 months after the initial stage.  Currently the standard time to flap division is frequently 2 weeks, but can be carried out from 7 days with good outcome. [7,8]" />
-        </StackLayout>
+        <ListView  x:Name="MyListView" Grid.Row="1" Margin="3,5,5,5" Header="Steps List"
+         GroupDisplayBinding="{Binding Title}" HasUnevenRows="True" SeparatorVisibility="None" IsGroupingEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="250">
+                        <Frame BorderColor="Black" CornerRadius="0" HasShadow="False" Padding="10,10,10,10">
+                            <ScrollView>
+                                <StackLayout>
+                                    <Label TextColor="Green" VerticalTextAlignment="Start" Text="{Binding Description}"   />
+                                </StackLayout>
+                            </ScrollView>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell Height="50">
+                        <Frame BorderColor="Black" CornerRadius="0" HasShadow="False" Padding="10,10,10,10">
+                            <StackLayout>
+                                <Label TextColor="Green" VerticalTextAlignment="Start" Text="{Binding Title}"   />
+                                <Button HorizontalOptions="EndAndExpand" Image="{Binding StateIcon}" VerticalOptions="CenterAndExpand" BackgroundColor="Black" BorderColor="Transparent" BorderWidth="5"
+                                        Clicked="HeaderTapped"  CommandParameter="{Binding .}" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+        </ListView>
     </ContentView.Content>
 </ContentView>
