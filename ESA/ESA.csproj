@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Complication01.jpeg" />
     <None Remove="Resources\history.png" />
     <None Remove="Resources\Icons\back_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
@@ -49,6 +50,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\about48.png" />
+    <EmbeddedResource Include="Resources\Complication01.jpeg" />
     <EmbeddedResource Include="Resources\history.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_dark_active.png" />

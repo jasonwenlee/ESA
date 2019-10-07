@@ -10,7 +10,8 @@
         <!--Put whatever layout you need in here-->
         <StackLayout>
           <Label Text="Variations!" TextColor="White" />
-            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" />
+           <!-- <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" />-->
+            
         </StackLayout>
   </ContentView.Content>
 </ContentView>

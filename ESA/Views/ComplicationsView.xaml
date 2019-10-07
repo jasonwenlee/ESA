@@ -4,13 +4,59 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ESA.Views.ComplicationsView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+             x:Class="ESA.Views.ComplicationsView" 
+    xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
   <ContentView.Content>
         <!--Put whatever layout you need in here-->
-        <StackLayout>
-            <Label Text="Complications" TextColor="White"/>
-            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains2.jpg}" />
-        </StackLayout>
-  </ContentView.Content>
+
+        <!--CONTENT-->
+       
+            <StackLayout>
+                <Label Text="Complications" TextColor="White"/>
+
+                <ListView x:Name="contentListView"
+                      ItemsSource="{Binding Complications}"
+                      HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="False">
+                                <Grid Padding="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                   
+                                    <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
+                                    <Image Source="{mrkupExt:ImageResource ESA.Resources.Complication01.jpeg }"
+                                           Grid.RowSpan="2"
+                                        
+                                       Aspect="AspectFill"
+                                       HeightRequest="60"
+                                       WidthRequest="60" />
+                                    </StackLayout>
+                               
+                                <StackLayout Grid.Column="1" Orientation="Vertical"   VerticalOptions="Center"  >
+                                    <Label Grid.Row="1"
+                                    VerticalTextAlignment="Center" 
+                                          
+                                       FontSize="13"
+                                       TextColor="White"
+                                       Grid.Column="1"
+                                       Text="{Binding DescPhotoText}"/>
+
+                                </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+      
+    </ContentView.Content>
 </ContentView>
