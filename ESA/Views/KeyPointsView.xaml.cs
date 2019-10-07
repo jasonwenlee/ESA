@@ -16,5 +16,10 @@ namespace ESA.Views
         {
             InitializeComponent();
         }
+
+        private void ProcedureLink_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DetailsPage());
+        }
     }
 }

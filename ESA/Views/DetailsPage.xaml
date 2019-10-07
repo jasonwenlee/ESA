@@ -29,7 +29,7 @@
             <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0"/> <!--Still needs fullscreen controls for Androif (not sure for iOS)-->
 
             <!--CONTENT-->
-            <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,15,0,10" Margin="15,0">
+            <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,10" Margin="15,0">
                 <Grid VerticalOptions="Start">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

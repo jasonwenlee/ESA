@@ -15,7 +15,37 @@
             <Style TargetType="video:VideoPlayer">
                 <Setter Property="BackgroundColor" Value="#111"/>
             </Style>
-
+            <!--View Title-->
+            <Style x:Key="ViewTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+            <Style x:Key="Subtitle" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <!--Point-->
+            <Style x:Key="Point" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="#BDBDBD" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="WidthRequest" Value="20" />
+                <Setter Property="Margin" Value="0,0,5,0" />
+            </Style>
+            <Style x:Key="KeyPoint" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="TextColor" Value="#BDBDBD" />
+            </Style>
+            <Style x:Key="ProcedureLink" TargetType="Button">
+                <Setter Property="TextColor" Value="#3399FF" />
+                <Setter Property="Margin" Value="32,0,0,0" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HeightRequest" Value="18" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -3,31 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers"
              mc:Ignorable="d"
-             x:Class="ESA.Views.KeyPointsView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-  <ContentView.Content>
-      <!--Put whatever layout you need in here-->
-      <StackLayout>
-            <Label Text="Key Points:" TextColor="White" FontAttributes="Bold"/>
-           <!-- <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains3.jpg}" />-->
-            <StackLayout Grid.Row="0" Spacing="2" >
-                <Label FontSize="16" Text="Specific considerations:" FontAttributes="Bold" TextColor="White"/>
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye." />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities:"/>
+             x:Class="ESA.Views.KeyPointsView">
+    <ContentView.Content>
+        <StackLayout>
+            <Label Text="Key Points" Style="{StaticResource ViewTitle}"/>
+            <StackLayout Spacing="2" >
+                <Label  Text="Specific considerations" Style="{StaticResource Subtitle}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#x2022;" Style="{StaticResource Point}"/>
+                    <Label Style="{StaticResource KeyPoint}" Text="Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye." />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#x2022;" Style="{StaticResource Point}"/>
+                    <Label Style="{StaticResource KeyPoint}" Text="Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities." />
+                </StackLayout>
+                <customButton:CustomButton Style="{StaticResource ProcedureLink}" Text="See Tarsoconjunctival flap – stage 2" Clicked="ProcedureLink_Clicked" />
+                <Label Text="Tips/pitfalls" Style="{StaticResource Subtitle}"/>
 
-                <Label FontSize="14" Text="see Tarsoconjunctival flap – stage 2"  TextColor="Blue" />
-                <Label FontSize="16" Text="Tips/pitfalls:" FontAttributes="Bold" TextColor="White"/>
-                <Label FontSize="14" Text="Dissection" TextDecorations="Underline"  TextColor="White" FontAttributes="Bold" />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone." />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Dissecting superiorly up to white line ensures that the flap is completely free and can be mobilised into the defect without tension." />
-                <Label FontSize="14" Text="Suture:" FontAttributes="Bold" TextColor="White"/>
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Suture the flap to the lid defect under tension." />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Allow a small amount of skin recession." />
-
-
+                <Label Text="Dissection:" Style="{StaticResource KeyTertiaryTitle}" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#x2022;" Style="{StaticResource Point}"/>
+                    <Label Style="{StaticResource KeyPoint}" Text="It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone." />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#x2022;" Style="{StaticResource Point}"/>
+                    <Label Style="{StaticResource KeyPoint}" Text="Dissecting superiorly up to white line ensures that the flap is completely free and can be mobilised into the defect without tension." />
+                </StackLayout>
+                <Label Text="Suture:" Style="{StaticResource KeyTertiaryTitle}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#x2022;" Style="{StaticResource Point}"/>
+                    <Label Style="{StaticResource KeyPoint}" Text="Suture the flap to the lid defect under tension." />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#x2022;" Style="{StaticResource Point}"/>
+                    <Label Style="{StaticResource KeyPoint}" Text="Allow a small amount of skin recession." />
+                </StackLayout>
             </StackLayout>
-
         </StackLayout>
   </ContentView.Content>
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="KeyTertiaryTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Italic" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
 </ContentView>

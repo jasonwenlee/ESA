@@ -63,9 +63,12 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is StepsView))
             {
-                refreshIcons("step", content.First().GetType().Name);
+                RefreshView("step", content.First().GetType().Name);
                 content.Clear();
-                content.Add(new StepsView());
+                // Load steps View
+                StepsView view = new StepsView();
+                view.LoadStepsView();
+                content.Add(view);
             }
         }
 
@@ -74,7 +77,7 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is KeyPointsView))
             {
-                refreshIcons("keyp", content.First().GetType().Name);
+                RefreshView("keyp", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new KeyPointsView());
             }
@@ -85,7 +88,7 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is VariationsView))
             {
-                refreshIcons("vari", content.First().GetType().Name);
+                RefreshView("vari", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new VariationsView());
             }
@@ -96,7 +99,7 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is ComplicationsView))
             {
-                refreshIcons("comp", content.First().GetType().Name);
+                RefreshView("comp", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new ComplicationsView());
             }
@@ -107,7 +110,7 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is InfoView))
             {
-                refreshIcons("info", content.First().GetType().Name);
+                RefreshView("info", content.First().GetType().Name);
                 content.Clear();
                 // Don't remove :)
                 //contentRow.Children.Add(new InfoView(holdProcedure));
@@ -115,7 +118,7 @@ namespace ESA.Views
             }
         }
 
-        private void refreshIcons(string page, string prevView)
+        private void RefreshView(string page, string prevView)
         {
             switch (prevView)
             {
@@ -164,6 +167,8 @@ namespace ESA.Views
                     InfoLbl.TextColor = Color.White;
                     break;
             }
+
+            scrollView.ScrollToAsync(0, 0, false);
         }
     }
 }
