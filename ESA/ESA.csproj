@@ -45,6 +45,7 @@
     <None Remove="Resources\mountains2.jpg" />
     <None Remove="Resources\mountains3.jpg" />
     <None Remove="Resources\mountains4.jpg" />
+    <None Remove="Resources\whitearrow.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -105,6 +106,7 @@
     <EmbeddedResource Include="Resources\plus.png" />
     <EmbeddedResource Include="Resources\search.png" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
+    <EmbeddedResource Include="Resources\whitearrow.jpg" />
   </ItemGroup>
 
   <ItemGroup>

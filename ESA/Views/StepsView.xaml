@@ -10,62 +10,126 @@
   <ContentView.Content>
         <!--Put whatever layout you need in here, this is just an example-->
         <StackLayout>
-            <expandable:ExpandableView>
-                <expandable:ExpandableView.PrimaryView>
-                    <StackLayout Orientation="Vertical">
-                        <Grid ColumnSpacing="0" RowSpacing="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="4*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Step 1" TextColor="White" Grid.Row="0" Grid.Column="0"/>
-                            <Label TextColor="White" Text="Pass a 4-0 silk traction suture through the grey line to evert the upper eyelid over a Desmarres retractor" Grid.Row="1" Grid.Column="0" />
-                            <Image Source="{mrkupExt:ImageResource ESA.Resources.whitearrow.jpg}" Grid.Row="1" Grid.Column="1" />
-                        </Grid>
-                    </StackLayout>
-                </expandable:ExpandableView.PrimaryView>
-                <expandable:ExpandableView.SecondaryViewTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" HeightRequest="300" />
+            <!-- Step Grid Framework -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <!-- Step Numbers in first column -->
+                <Label TextColor="White" FontSize="18" Text="Step" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label TextColor="White" FontSize="16" Text="1" Grid.Row="1" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="2" Grid.Row="2" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="3" Grid.Row="3" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="4" Grid.Row="4" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="5" Grid.Row="5" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="6" Grid.Row="6" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="7" Grid.Row="7" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="8" Grid.Row="8" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="9" Grid.Row="9" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="10" Grid.Row="10" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="11" Grid.Row="11" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="12" Grid.Row="12" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="13" Grid.Row="13" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="14" Grid.Row="14" Grid.Column="0"/>
+                <Label TextColor="White" FontSize="16" Text="15" Grid.Row="15" Grid.Column="0"/>
+                <!-- Steps Here Hardcoded for now -->
+                <!-- Step 1 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Pass a 4-0 silk traction suture through the grey line to evert the upper eyelid over a Desmarres retractor" Grid.Row="1" Grid.Column="1"/>
+                <!-- Step 2 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Assess width of lower lid defect by stretching the remaining lower lid edges centrally using forceps." Grid.Row="2" Grid.Column="1"/>
+                <!-- Step 3 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Mark the horizontal incision line 4mm above the lid margin, following the curve of the lid margin​" Grid.Row="3" Grid.Column="1"/>
+                <!-- Step 4 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Make a full thickness cut through the conjunctiva and the tarsus at the incision line with a no 15 Bard Parker blade" Grid.Row="4" Grid.Column="1"/>
+                <!-- Step 5 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Make two vertical relieving incisions at the ends of the horizontal incision line (unless a full width flap is required, where the relieving incisions are not needed)" Grid.Row="5" Grid.Column="1"/>
+                <!-- Step 6 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Raise the tarsus from the overlying orbicularis using Westcott spring scissors" Grid.Row="6" Grid.Column="1"/>
+                <!-- Step 7 -->
+                <expandable:ExpandableView Grid.Row="7" Grid.Column="1" Margin="0,0,0,0">
+                    <expandable:ExpandableView.PrimaryView>
+                        <StackLayout Orientation="Vertical">
+                            <Grid ColumnSpacing="0" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Text="For tarsoconjunctival-based flap: Dissect in plane between conjunctiva and Muller" Grid.Row="0" Grid.Column="0" />
+                                <Image Source="{mrkupExt:ImageResource ESA.Resources.whitearrow.jpg}" Grid.Row="0" Grid.Column="1" HeightRequest="20" WidthRequest="20" Aspect="AspectFit"/>
+                            </Grid>
                         </StackLayout>
-                    </DataTemplate>
-                </expandable:ExpandableView.SecondaryViewTemplate>
-            </expandable:ExpandableView>
-
-            <expandable:ExpandableView>
+                    </expandable:ExpandableView.PrimaryView>
+                    <expandable:ExpandableView.SecondaryViewTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" HeightRequest="200" Aspect="AspectFit"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </expandable:ExpandableView.SecondaryViewTemplate>
+                </expandable:ExpandableView>
+                <!-- Step 8 -->
+            <expandable:ExpandableView Grid.Row="8" Grid.Column="1" Margin="0,0,0,0">
             <expandable:ExpandableView.PrimaryView>
                     <StackLayout Orientation="Vertical">
                         <Grid ColumnSpacing="0" RowSpacing="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="4*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Step 2" TextColor="White" Grid.Row="0" Grid.Column="0"/>
-                            <Label TextColor="White" Text="Assess width of lower lid defect by stretching the remaining lower lid edges centrally using forceps.  " Grid.Row="1" Grid.Column="0" />
-                            <Image Source="{mrkupExt:ImageResource ESA.Resources.whitearrow.jpg}" Grid.Row="1" Grid.Column="1" />
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label TextColor="White" LineBreakMode="WordWrap" FontSize="16" Text="For tarsoconjunctival-Muller-based flap: Dissect in plane between Mullers and levator " Grid.Row="0" Grid.Column="0" />
+                                <Image Source="{mrkupExt:ImageResource ESA.Resources.whitearrow.jpg}" Grid.Row="0" Grid.Column="1" HeightRequest="20" WidthRequest="20" Aspect="AspectFit"/>
                         </Grid>
                     </StackLayout>
                 </expandable:ExpandableView.PrimaryView>
                 <expandable:ExpandableView.SecondaryViewTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains2.jpg}" HeightRequest="300" />
+                            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains2.jpg}" HeightRequest="200" Aspect="AspectFit"/>
                         </StackLayout>
                     </DataTemplate>
                 </expandable:ExpandableView.SecondaryViewTemplate>
-
             </expandable:ExpandableView>
-            
-            
+                <!-- Step 9 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Continue to dissect superiorly up to the white line." Grid.Row="9" Grid.Column="1"/>
+                <!-- Step 10 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Mobilise the tarsoconjunctival flap into the lower lid defect" Grid.Row="10" Grid.Column="1"/>
+                <!-- Step 11 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Suture each corner of the tarsal edges of the flap into the corresponding corners of the lower lid tarsus with partial thickness, interrupted vicryl 6-0 sutures" Grid.Row="11" Grid.Column="1"/>
+                <!-- Step 12 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Suture the inferior edge of the tarsal flap to the lower lid conjunctival edge with continuous vicryl 6-0 suture." Grid.Row="12" Grid.Column="1"/>
+                <!-- Step 13 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Anterior lamella can be constructed using an advancement flap or a free skin graft" Grid.Row="13" Grid.Column="1"/>
+                <!-- Step 14 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="Pressure pad" Grid.Row="14" Grid.Column="1"/>
+                <!-- Step 15 -->
+                <Label TextColor="White" FontSize="16" LineBreakMode="WordWrap" Margin="0,0,0,26" Text="The flap is divided in a secondary procedure: see Tarsoconjunctival flap – stage 2" Grid.Row="15" Grid.Column="1"/>
+                
+            </Grid>
         </StackLayout>
     </ContentView.Content>
 </ContentView>
