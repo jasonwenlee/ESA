@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,8 +22,7 @@ namespace ESA
         public InfoView()
         {
             InitializeComponent();
-            // Don't remove :)
-            //extractInfo = getProcInfo;
+            BindingContext = new InfoViewModel(Navigation);
         }
 
         private void HistoryButton_Clicked(object sender, EventArgs e)
@@ -67,14 +66,14 @@ namespace ESA
                 //    referencesEditor.Text = "Empty";
                 //    return;
                 //}
-                referencesEditor.Text = "McClellan WT, Rawson AE.  Wendell L. Hughes' life and contributions to plastic surgery. Plast Reconstr Surg 2011; 128(6):765e-72e.\n" +
-                    "\nHughes, Wendell L.  A new method for rebuilding a lower lid: report of a case.  Arch Ophthalmol 1937; 17(6):1008 - 1017\n" +
-                    "\nRohrich RJ, Zbar R I. The evolution of the Hughes tarsoconjunctival flap for the lower eyelid reconstruction.B Plast Reconstr Surg 1999; 104(2): 518 - 22\n" +
-                    "\nHughes, Wendell L. Reconstruction of the lids. Am J Ophthalmol 1945; 28(11): 1203 - 1211\n" +
-                    "\nCies WA, Bartlett RE.Modification of the Mustardé and Hughes methods of reconstructing the lower lid.  Ann Ophthalmol 1975; 7(11):1497 - 1502.\n" +
-                    "\nHughes WL. Total lower lid reconstruction: technical details. Trans Am Ophthalmol Soc1976; 74:321 - 9.\n" +
-                    "\nMcNab, AA, Martin P, Benger R, O'Donnell B, Kourt G.  A prospective randomized study comparing division of the pedicle of modified hughes flaps at two or four weeks. Ophthalmic Plast Reconstr Surg 2001;17(5): 317-9\n" +
-                    "\nLeibovitch I, Selva D.Modified Hughes flap: division at 7 days.Ophthalmology. 2004; 111(12):2164 - 2167\n";
+                //referencesEditor.Text = "McClellan WT, Rawson AE.  Wendell L. Hughes' life and contributions to plastic surgery. Plast Reconstr Surg 2011; 128(6):765e-72e.\n" +
+                //    "\nHughes, Wendell L.  A new method for rebuilding a lower lid: report of a case.  Arch Ophthalmol 1937; 17(6):1008 - 1017\n" +
+                //    "\nRohrich RJ, Zbar R I. The evolution of the Hughes tarsoconjunctival flap for the lower eyelid reconstruction.B Plast Reconstr Surg 1999; 104(2): 518 - 22\n" +
+                //    "\nHughes, Wendell L. Reconstruction of the lids. Am J Ophthalmol 1945; 28(11): 1203 - 1211\n" +
+                //    "\nCies WA, Bartlett RE.Modification of the Mustardé and Hughes methods of reconstructing the lower lid.  Ann Ophthalmol 1975; 7(11):1497 - 1502.\n" +
+                //    "\nHughes WL. Total lower lid reconstruction: technical details. Trans Am Ophthalmol Soc1976; 74:321 - 9.\n" +
+                //    "\nMcNab, AA, Martin P, Benger R, O'Donnell B, Kourt G.  A prospective randomized study comparing division of the pedicle of modified hughes flaps at two or four weeks. Ophthalmic Plast Reconstr Surg 2001;17(5): 317-9\n" +
+                //    "\nLeibovitch I, Selva D.Modified Hughes flap: division at 7 days.Ophthalmology. 2004; 111(12):2164 - 2167\n";
 
             }
             else if (referencesView.IsVisible == true)

@@ -6,16 +6,112 @@
              mc:Ignorable="d"
              x:Class="ESA.InfoView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-    <StackLayout Margin="5">
-
-        <Button x:Name="historyButton" Text="History" HeightRequest="50" Clicked="HistoryButton_Clicked"/>
-        <ContentView x:Name="historyView" IsVisible="False">
-            <Editor x:Name="historyEditor" IsReadOnly="True" TextColor="White"/>
-        </ContentView>
-
-        <Button x:Name="referencesButton" Text="References" HeightRequest="50" Clicked="ReferencesButton_Clicked"/>
-        <ContentView x:Name="referencesView" IsVisible="False">
-            <Editor x:Name="referencesEditor" IsReadOnly="True" TextColor="White"/>
-        </ContentView>
+    
+    <!--OLD-->
+    <StackLayout>
+        
+        <!--BUTTONS-->
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="historyButton" Text="History" HeightRequest="50" Clicked="HistoryButton_Clicked"/>
+                <Button Grid.Column="1" x:Name="referencesButton" Text="References" HeightRequest="50" Clicked="ReferencesButton_Clicked"/>
+            </Grid>
+        </StackLayout>
+        <!--CONTENT-->
+        <StackLayout>
+            <ContentView x:Name="historyView" IsVisible="False">
+                <Editor x:Name="historyEditor" IsReadOnly="True" TextColor="White"/>
+            </ContentView>
+            <ContentView x:Name="referencesView" IsVisible="False">
+                <Editor x:Name="referencesEditor" IsReadOnly="True" TextColor="White"/>
+            </ContentView>
+        </StackLayout>
+        <!--EXTERNAL LINKS-->
+        <StackLayout>
+            <ContentView HorizontalOptions="Center">
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Oculoplastic Info"
+                            TextColor="Cyan"
+                            TextDecorations="Underline"
+                                  FontSize="Title">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                          CommandParameter="https://www.oculoplastic.info/" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </ContentView>
+            <ContentView HorizontalOptions="Center">
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Oculoplastic Surgery Techniques"
+                            TextColor="Cyan"
+                            TextDecorations="Underline"
+                                  FontSize="Title">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                          CommandParameter="https://webeye.ophth.uiowa.edu/eyeforum/video/plastics/plastics.htm" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </ContentView>
+        </StackLayout>
+        
     </StackLayout>
+
+    
+    <!--NEW-->
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Steps" TextColor="White" FontSize="16" />
+            <StackLayout Grid.Row="1" x:Name="Content"/>
+        </Grid>
+    </ContentView.Content>
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StepNumber" TargetType="Label">
+                <Setter Property="TextColor" Value="#BDBDBD" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="MinimumWidthRequest" Value="30" />
+                <Setter Property="Margin" Value="0,0,5,0" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="StepContent" TargetType="Label">
+                <Setter Property="TextColor" Value="#BDBDBD" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="StepDiagram" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="IsVisible" Value="False" />
+            </Style>
+            <Style x:Key="DiagramText" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#828282" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HeightRequest" Value="25" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
 </ContentView>
