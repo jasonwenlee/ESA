@@ -24,17 +24,22 @@ namespace ESA.ViewModels
             LoadReferencesCommand = new Command(async () => await LoadReferences());
         }
 
-        //private Task LoadReferences()
-        //{
-        //    StackLayout StepLayout = new StackLayout();
-        //    StackLayout ContentLayout = new StackLayout();
-        //    Label NumberLbl = new Label();
-        //    Label ContentLbl = new Label();
-        //    foreach (var reference in references.RefList)
-        //    {
-                
-        //    }
-        //}
+        private Task LoadReferences()
+        {
+            StackLayout StepLayout = new StackLayout();
+            StackLayout ContentLayout = new StackLayout();
+            Label NumberLbl = new Label();
+            Label ContentLbl = new Label();
+            foreach (var reference in references.RefList)
+            {
+                // Number
+                NumberLbl.Text = reference.Number.ToString();
+                NumberLbl.Style = (Style)Resources["StepNumber"];
+                // Content
+                ContentLbl.Text = reference.Ref;
+                ContentLbl.Style = (Style)Resources["StepContent"];
+            }
+        }
 
         public void LoadStepsView()
         {
