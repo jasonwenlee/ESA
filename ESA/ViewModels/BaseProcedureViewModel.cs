@@ -27,7 +27,7 @@ namespace ESA.ViewModels
             set
             {
                 _procedure.Category = value;
-                NotifyPropertyChanged("Name");
+                NotifyPropertyChanged("Category");
             }
         }
 

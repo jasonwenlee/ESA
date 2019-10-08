@@ -9,7 +9,7 @@
     
     <!--OLD-->
     <StackLayout>
-        
+
         <!--BUTTONS-->
         <StackLayout>
             <Grid>
@@ -23,11 +23,44 @@
         </StackLayout>
         <!--CONTENT-->
         <StackLayout>
-            <ContentView x:Name="historyView" IsVisible="False">
-                <Editor x:Name="historyEditor" IsReadOnly="True" TextColor="White"/>
+            <ContentView x:Name="historyView" IsVisible="True">
+                <Label HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand" TextColor="White" FontSize="Subtitle"> 
+                    <Label.FormattedText>
+                        <FormattedString x:Name="historyText">
+                            <Span Text="Dr Wendel Hughes, an ophthalmologist who contributed to the field of oculoplastic surgery, published his first paper on tarsoconjunctival flaps in 1937." />
+                            <Span x:Name="ref1" Text="[1, 2]"
+                                    TextColor="Cyan"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    <!--<TapGestureRecognizer Command="{Binding RefCommand}"/>-->
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" Further modifications to the technique by Hughes and others occurred throughout subsequent decades." />
+                            <Span x:Name="ref3" Text="[3 - 6]"
+                                    TextColor="Cyan"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    <!--<TapGestureRecognizer Command="{Binding RefCommand}"/>-->
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" Significant developments included using full-thickness skin grafting of the tarsoconjunctival flap, sparing of the marginal upper lid tarsus, and removal of the levator muscle complex from the tarsoconjunctival flap. This led to the reduction in upper lid complications, such as upper lid retraction, entropion, and trichiasis. Traditionally, flap division occurred 3 to 4 months after the initial stage.Currently the standard time to flap division is frequently 2 weeks, but can be carried out from 7 days with good outcome." />
+                            <Span x:Name="ref7" Text="[7, 8]"
+                                    TextColor="Cyan"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    <!--<TapGestureRecognizer Command="{Binding RefCommand}"/>-->
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </ContentView>
             <ContentView x:Name="referencesView" IsVisible="False">
-                <Editor x:Name="referencesEditor" IsReadOnly="True" TextColor="White"/>
+                <Editor x:Name="referencesEditor" IsReadOnly="True" TextColor="White" FontSize="Subtitle"/>
             </ContentView>
         </StackLayout>
         <!--EXTERNAL LINKS-->
@@ -67,51 +100,6 @@
                 </Label>
             </ContentView>
         </StackLayout>
-        
+
     </StackLayout>
-
-    
-    <!--NEW-->
-    <ContentView.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Steps" TextColor="White" FontSize="16" />
-            <StackLayout Grid.Row="1" x:Name="Content"/>
-        </Grid>
-    </ContentView.Content>
-
-    <ContentView.Resources>
-        <ResourceDictionary>
-            <Style x:Key="StepNumber" TargetType="Label">
-                <Setter Property="TextColor" Value="#BDBDBD" />
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="WidthRequest" Value="30" />
-                <Setter Property="MinimumWidthRequest" Value="30" />
-                <Setter Property="Margin" Value="0,0,5,0" />
-                <Setter Property="VerticalOptions" Value="Start" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
-            <Style x:Key="StepContent" TargetType="Label">
-                <Setter Property="TextColor" Value="#BDBDBD" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="LineBreakMode" Value="WordWrap" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            </Style>
-            <Style x:Key="StepDiagram" TargetType="ImageButton">
-                <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="IsVisible" Value="False" />
-            </Style>
-            <Style x:Key="DiagramText" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#828282" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HeightRequest" Value="25" />
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            </Style>
-        </ResourceDictionary>
-    </ContentView.Resources>
 </ContentView>
