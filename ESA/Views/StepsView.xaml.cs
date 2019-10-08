@@ -43,7 +43,7 @@ namespace ESA
                     steps.StepsItems = group.Count;
                     if (group.Expanded)
                     {
-                        foreach (StepsPageModel step in group)
+                        foreach (StepsModel step in group)
                         {
                             steps.Add(step);
                         }

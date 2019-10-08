@@ -13,14 +13,14 @@ namespace ESA.Views
     public partial class ComplicationsView : ContentView
     {
 
-        public IList<Complications> Complications { get; set; }
+        public IList<ComplicationsModel> Complications { get; set; }
         public ComplicationsView()
         {
             InitializeComponent();
 
-            Complications = new List<Complications>();
+            Complications = new List<ComplicationsModel>();
            
-            Complications.Add(new Models.Complications
+            Complications.Add(new Models.ComplicationsModel
 
             {
                 DescPhotoText = "• Upper eyelid retraction",
@@ -28,7 +28,7 @@ namespace ESA.Views
 
 
             });
-            Complications.Add(new Models.Complications
+            Complications.Add(new Models.ComplicationsModel
 
             {
                 DescPhotoText = "• Conjunctiva advancing anteriorly over lid margin",
@@ -36,7 +36,7 @@ namespace ESA.Views
 
 
             });
-            Complications.Add(new Models.Complications
+            Complications.Add(new Models.ComplicationsModel
 
             {
                 DescPhotoText = "• Skin advancing posteriorly over lid margin​",
@@ -45,7 +45,7 @@ namespace ESA.Views
 
             });
 
-            Complications.Add(new Models.Complications
+            Complications.Add(new Models.ComplicationsModel
 
             {
                 DescPhotoText = "• Lid margin granuloma ​",
@@ -54,7 +54,7 @@ namespace ESA.Views
 
             });
 
-            Complications.Add(new Models.Complications
+            Complications.Add(new Models.ComplicationsModel
 
             {
                 DescPhotoText = "• Lid margin irregularity ​ ​",

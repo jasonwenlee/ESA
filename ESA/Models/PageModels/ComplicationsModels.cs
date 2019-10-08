@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ESA.Models
 {
-    public class Complications
+    public class ComplicationsModel
     {
         public string DescPhotoText { get; set; }
         public string ImageUrl { get; set; }

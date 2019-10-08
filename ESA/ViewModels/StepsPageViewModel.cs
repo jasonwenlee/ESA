@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ESA.ViewModels
 {
-    public class StepsPageViewModel : ObservableCollection<StepsPageModel>, INotifyPropertyChanged
+    public class StepsPageViewModel : ObservableCollection<StepsModel>, INotifyPropertyChanged
     {
         private bool _expanded;
 
@@ -44,19 +44,14 @@ namespace ESA.ViewModels
             ObservableCollection<StepsPageViewModel> Items = new ObservableCollection<StepsPageViewModel>
         {
             new StepsPageViewModel("Step1"){
-            new StepsPageModel {Description = "More details about this step 1 comes here ,  and more about step1"
+            new StepsModel {Description = "More details about this step 1 comes here ,  and more about step1"
             }},
              new StepsPageViewModel("Step2"){
-            new StepsPageModel {Description = "More details about this step2 comes here ,  and more about step 2"
+            new StepsModel {Description = "More details about this step2 comes here ,  and more about step 2"
             }},
             new StepsPageViewModel("Step3"){
-            new StepsPageModel {Description = "More details about this step3 comes here ,  and more about step 3"
+            new StepsModel {Description = "More details about this step3 comes here ,  and more about step 3"
             }}
-
-
-
-
-
              };
             Contents = Items;
         }
