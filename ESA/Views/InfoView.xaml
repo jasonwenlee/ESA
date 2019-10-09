@@ -75,7 +75,7 @@
                                   FontSize="Title">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://www.oculoplastic.info/" />
+                                          CommandParameter="http://oculoplastics.info/" />
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
