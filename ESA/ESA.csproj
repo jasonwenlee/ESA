@@ -164,6 +164,9 @@
     <EmbeddedResource Update="Views\ComplicationsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\DetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\InfoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -179,9 +182,6 @@
     <Compile Update="TestViews\ListProcedures.xaml.cs">
       <DependentUpon>ListProcedures.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\DetailsPage.xaml.cs">
-      <DependentUpon>DetailsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\InfoView.xaml.cs">
       <DependentUpon>InfoView.xaml</DependentUpon>
     </Compile>
@@ -191,9 +191,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\DetailsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\VariationsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

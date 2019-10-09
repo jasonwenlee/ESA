@@ -184,18 +184,19 @@ namespace ESA.Views
             double collapsableHeight = 42;
             double videoDeltaY = (-videoPlayer.Height);
             double videoAspectHeight = Width * 0.57;
-            
+
 
             PlayButtonAnimation(sender);
             if (!ControlsAreCollapsed) // Keep Expanded
             {
                 //Collapsable
                 collapsablePlayer.IsVisible = false;
-                
+
             }
             else // Keep Collapsed
             {
                 Rectangle videoCollapsedLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 videoPlayer.LayoutTo(videoCollapsedLocation, animationSpeed, Easing.Linear);
                 VideoControls.FadeTo(0, animationSpeed, Easing.Linear);
                 VideoControls.TranslateTo(0, -videoAspectHeight, animationSpeed, Easing.Linear);
@@ -208,10 +209,12 @@ namespace ESA.Views
                 collapsablePlayer.IsVisible = true;
                 collapsablePlayer.HeightRequest = collapsableHeight;
                 collapsablePlayer.FadeTo(0, 0, null);
+
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 await collapsablePlayer.FadeTo(1, animationSpeed, Easing.Linear);
                 ControlsAreCollapsed = true;
                 // Video Player
-                
+
             }
         }
 
@@ -241,7 +244,7 @@ namespace ESA.Views
             uint animationSpeed = 500;
             double newControlHeight = 42;
             double videoDeltaY = (-videoPlayer.Height);
-            double videoAspectHeight = Width *0.57;
+            double videoAspectHeight = Width * 0.57;
             Rectangle scrollViewCollapseLocation = new Rectangle(scrollView.X, newControlHeight, scrollView.Width, scrollView.Height + (videoPlayer.Height - newControlHeight));
             Rectangle videoCollapsedLocation = new Rectangle(newControlHeight, 0, newControlHeight * 1.77778, newControlHeight);
 
@@ -249,7 +252,7 @@ namespace ESA.Views
             if (ControlsAreCollapsed) // Expand
             {
                 // Video Player
-
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 Rectangle videoExpandLocation = new Rectangle(0, 0, Width, videoAspectHeight);
                 videoPlayer.LayoutTo(videoExpandLocation, animationSpeed, Easing.Linear);
                 VideoControls.FadeTo(1, animationSpeed, Easing.Linear);
@@ -258,14 +261,16 @@ namespace ESA.Views
                 collapsablePlayer.IsVisible = false;
                 collapsablePlayer.FadeTo(0, animationSpeed, Easing.Linear);
                 ControlsAreCollapsed = false;
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 // Scroll View
                 Rectangle scrollViewExpandLocation = new Rectangle(scrollView.X, videoAspectHeight, scrollView.Width, scrollView.Height - videoAspectHeight + newControlHeight);
                 await scrollView.LayoutTo(scrollViewExpandLocation, animationSpeed, Easing.Linear);
-                
+
             }
             else // Collapse
             {
                 // Scroll View
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 scrollView.LayoutTo(scrollViewCollapseLocation, animationSpeed, Easing.Linear);
                 //Collapsable
                 collapsablePlayer.IsVisible = true;
@@ -276,6 +281,7 @@ namespace ESA.Views
                 // Video Player
                 videoPlayer.LayoutTo(videoCollapsedLocation, animationSpeed, Easing.Linear);
                 VideoControls.FadeTo(0, animationSpeed, Easing.Linear);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 await VideoControls.TranslateTo(0, videoDeltaY, animationSpeed, Easing.Linear);
             }
         }
