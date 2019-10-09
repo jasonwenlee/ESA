@@ -170,5 +170,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\eyeRetraction01.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\Diagram.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

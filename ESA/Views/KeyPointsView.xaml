@@ -4,48 +4,66 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+                    xmlns:videoPlayer="clr-namespace:ESA.Models.VideoView"
+         xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
              x:Class="ESA.Views.KeyPointsView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-  <ContentView.Content>
-      <!--Put whatever layout you need in here-->
-      <StackLayout>
-            <Label Text="Key Points:" TextColor="White" FontAttributes="Bold"/>
-           <!-- <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains3.jpg}" />-->
+    <ContentView.Content>
+        <!--Put whatever layout you need in here-->
+        <StackLayout>
+            <Label Text="Key Points:" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+            <!-- <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains3.jpg}" />-->
             <StackLayout Grid.Row="0" Spacing="2" >
-                <Label FontSize="16" Text="Specific considerations:" FontAttributes="Bold" TextColor="White"/>
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye." />
-             
+                <Label FontSize="15" Text="Specific considerations:" FontAttributes="Bold" TextColor="White"/>
+                <Label LineBreakMode="WordWrap" FontSize="15" TextColor="#BDBDBD" Text="&#x2022; Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye." />
+                <Label LineBreakMode="WordWrap" FontSize="15" TextColor="White" Text="Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities." />
 
+                <Label Text="See Tarsoconjunctival flap – stage 2 (coming soon)" x:Name="lblClick" TextDecorations="Underline" TextColor="#3399FF" />
+               
+                <Label FontSize="16" Text="Tips/pitfalls:" FontAttributes="Bold" />
+
+                <!-- Expandable Dessection  -->   
+                
               
 
-                <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span TextColor="#BDBDBD" Text="&#x2022; Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities,see: "/>
-                            <Span Text="Tarsoconjunctival flap – stage 2" TextColor="Blue" TextDecorations="Underline">
+                <expandable:ExpandableView Grid.Row="7" Grid.Column="1" Margin="0,0,0,0">
+                    <expandable:ExpandableView.PrimaryView>
+                        <StackLayout Orientation="Vertical">
+                            <Grid ColumnSpacing="0" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label TextColor="#3399FF" FontSize="16" LineBreakMode="WordWrap" Text="Dissection" Grid.Row="0" Grid.Column="0" TextDecorations="Underline" FontAttributes="Bold" />
+                               
 
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://oculoplastic.eyesurgeryvideos.net/propeller-flap-tarsal-graft-periosteal-flap" />
-                                </Span.GestureRecognizers>
-                            </Span>
-     
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                            </Grid>
+                        </StackLayout>
+                    </expandable:ExpandableView.PrimaryView>
+                    <expandable:ExpandableView.SecondaryViewTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Image Source="{mrkupExt:ImageResource ESA.Resources.Diagram.jpeg}" HeightRequest="200" Aspect="AspectFit"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </expandable:ExpandableView.SecondaryViewTemplate>
+                </expandable:ExpandableView>
 
 
-                <Label FontSize="16" Text="Tips/pitfalls:" FontAttributes="Bold" TextColor="White"/>
-                <Label FontSize="14" Text="Dissection" TextDecorations="Underline"  TextColor="White" FontAttributes="Bold" />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone." />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Dissecting superiorly up to white line ensures that the flap is completely free and can be mobilised into the defect without tension." />
+
+
+                <Label LineBreakMode="WordWrap" FontSize="15" TextColor="#BDBDBD" Text="&#x2022; It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone." />
+                <Label LineBreakMode="WordWrap" FontSize="15" TextColor="#BDBDBD" Text="&#x2022; Dissecting superiorly up to white line ensures that the flap is completely free and can be mobilised into the defect without tension." />
                 <Label FontSize="14" Text="Suture:" FontAttributes="Bold" TextColor="White"/>
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Suture the flap to the lid defect under tension." />
-                <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="&#x2022; Allow a small amount of skin recession." />
+                <Label LineBreakMode="WordWrap" FontSize="15" TextColor="#BDBDBD" Text="&#x2022; Suture the flap to the lid defect under tension." />
+                <Label LineBreakMode="WordWrap" FontSize="15" TextColor="#BDBDBD" Text="&#x2022; Allow a small amount of skin recession." />
 
 
             </StackLayout>
 
         </StackLayout>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>

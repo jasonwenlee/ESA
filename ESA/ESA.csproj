@@ -16,9 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ExpandableView" Version="1.0.9" />
     <PackageReference Include="FluentValidation" Version="8.5.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+    <None Remove="Resources\Diagram.jpeg" />
     <None Remove="Resources\history.png" />
     <None Remove="Resources\Icons\back_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
@@ -28,6 +30,7 @@
     <None Remove="Resources\Icons\book_icon_light_active.png" />
     <None Remove="Resources\Icons\complications_icon.png" />
     <None Remove="Resources\Icons\complications_icon_dark_active.png" />
+    <None Remove="Resources\Icons\Diagram.jpeg" />
     <None Remove="Resources\Icons\expand_less.png" />
     <None Remove="Resources\Icons\expand_more.png" />
     <None Remove="Resources\Icons\home_icon.png" />
@@ -64,10 +67,12 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\about48.png" />
+    <EmbeddedResource Include="Resources\Diagram.jpeg" />
     <EmbeddedResource Include="Resources\history.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_light_active.png" />
+    <EmbeddedResource Include="Resources\Icons\Diagram.jpeg" />
     <EmbeddedResource Include="Resources\Icons\expand_less.png" />
     <EmbeddedResource Include="Resources\Icons\expand_more.png" />
     <EmbeddedResource Include="Resources\Icons\book_icon.png" />
