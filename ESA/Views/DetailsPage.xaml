@@ -9,27 +9,102 @@
              x:Class="ESA.Views.DetailsPage"
              x:Name="StepPage_Instance"
              Appearing="StepPage_Instance_Appearing"
-             BackgroundColor="#191919"
-             Title="Oculoplastics">
-    <!--HEADER-->
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" />
-        <ToolbarItem IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" />
-    </ContentPage.ToolbarItems>
+             BackgroundColor="#222">
 
     <ContentPage.Content>
-        <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid RowSpacing="0" ColumnSpacing="0" BindingContext="{x:Reference videoPlayer}">
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="videoPlayerRow" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="70" />
             </Grid.RowDefinitions>
-
+            <!--COLLAPSABLE-->
+            <Grid x:Name="collapsablePlayer" Grid.Row="0" IsVisible="False" HeightRequest="42" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="32" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                </Grid.RowDefinitions>
+                <BoxView BackgroundColor="#111" Grid.ColumnSpan="5" HeightRequest="42"/>
+                <ImageButton x:Name="BackCollapsedButton" Grid.Column="0" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.back.png}" Clicked="BackButton_Clicked" Style="{StaticResource VideoControlsTop}"  />
+                <Label x:Name="PositionCollapsedLabel" Grid.Column="2" Text="{Binding Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0" />
+                <ImageButton x:Name="PlayPauseCollapsedButton" Grid.Column="3" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.pause.png}" Clicked="PlayPauseButton_Clicked" Style="{StaticResource VideoControlsTop}"  />
+                <ImageButton x:Name="ExpandButton" Grid.Column="4" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.expand.png}" Clicked="CollapseButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+            </Grid>
             <!--VIDEO-->
-            <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0"/> <!--Still needs fullscreen controls for Androif (not sure for iOS)-->
+            <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" AreTransportControlsEnabled="False">
+                <video:VideoPlayer.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="VideoPlayer_Tapped" />
+                </video:VideoPlayer.GestureRecognizers>
+            </video:VideoPlayer>
+            <!--CONTROLS-->
+            <Grid x:Name="VideoControls" RowSpacing="0" ColumnSpacing="0" Grid.Row="0" Margin="5" IsVisible="False" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="32" />
+                </Grid.RowDefinitions>
+                <!--TOP-->
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="32" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="32" />
+                        <ColumnDefinition Width="32" />
+                        <ColumnDefinition Width="32" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                    </Grid.RowDefinitions>
+                    <ImageButton x:Name="BackButton" Grid.Column="0" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.back.png}" Clicked="BackButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                    <ImageButton x:Name="ShareButton" Grid.Column="2" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.share.png}" Clicked="ShareButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                    <ImageButton x:Name="FavouriteButton" Grid.Column="3" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.favourite.png}" Clicked="FavouriteButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                    <ImageButton x:Name="CollapseButton" Grid.Column="4" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.collapse.png}" Clicked="CollapseButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                </Grid>
+                <!--MIDDLE-->
+                <Grid Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="42" />
+                        <ColumnDefinition Width="42" />
+                        <ColumnDefinition Width="42" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="42" />
+                    </Grid.RowDefinitions>
+                    <ImageButton x:Name="StepBackwardsButton" Grid.Column="1" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.backward.png}" Clicked="StepBackwardsButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                    <ImageButton x:Name="PlayPauseButton" Grid.Column="2" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.pause.png}" Clicked="PlayPauseButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                    <ImageButton x:Name="StepForwardButton" Grid.Column="3" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.forward.png}" Clicked="StepForwardButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                </Grid>
+                <!--BOTTOM-->
+                <Grid Grid.Row="2" ColumnSpacing="0" RowSpacing="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="PositionLabel"  Grid.Column="0" Text="{Binding Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0"/>
+                    <video:PositionSlider x:Name="VideoSlider" Grid.Column="1" Duration="{Binding Duration}" Position="{Binding Position}" ThumbColor="#3399FF" DragStarted="VideoSlider_DragStarted" DragCompleted="VideoSlider_DragCompleted"/>
+                    <Label x:Name="TimeToEndLabel" Text="{Binding Path=TimeToEnd, StringFormat='{0:h\\:mm\\:ss}'}" Grid.Column="2" TextColor="White" VerticalOptions="Center" Margin="0,0,5,0"/>
+                    <ImageButton x:Name="EnlargeButton" Grid.Column="3" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.enlarge.png}" Clicked="EnlargeButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                </Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="VideoControls_Tapped" />
+                </Grid.GestureRecognizers>
+            </Grid>
 
             <!--CONTENT-->
-            <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,10" Margin="15,0">
+            <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,15,0,10" Margin="15,0">
                 <Grid VerticalOptions="Start">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -89,7 +164,7 @@
         <ResourceDictionary>
             <Style x:Key="FooterButton" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="Margin" Value="0,5,0,0" />
             </Style>
             <Style x:Key="FooterLabel" TargetType="Label">
@@ -97,6 +172,13 @@
                 <Setter Property="TextColor" Value="Gray" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
+            <Style x:Key="VideoControlsTop" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="32" />
+                <Setter Property="WidthRequest" Value="32" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+
         </ResourceDictionary>
     </ContentPage.Resources>
 </ContentPage>

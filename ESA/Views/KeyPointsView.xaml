@@ -7,7 +7,8 @@
                     xmlns:videoPlayer="clr-namespace:ESA.Models.VideoView"
          xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
              x:Class="ESA.Views.KeyPointsView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
     <ContentView.Content>
         <!--Put whatever layout you need in here-->
         <StackLayout>
@@ -17,15 +18,10 @@
                 <Label FontSize="15" Text="Specific considerations:" FontAttributes="Bold" TextColor="White"/>
                 <Label LineBreakMode="WordWrap" FontSize="15" TextColor="#BDBDBD" Text="&#x2022; Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye." />
                 <Label LineBreakMode="WordWrap" FontSize="15" TextColor="White" Text="Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities." />
-
-                <Label Text="See Tarsoconjunctival flap – stage 2 (coming soon)" x:Name="lblClick" TextDecorations="Underline" TextColor="#3399FF" />
-               
-                <Label FontSize="16" Text="Tips/pitfalls:" FontAttributes="Bold" />
+                <customButton:CustomButton Text="See Tarsoconjunctival flap – stage 2" HeightRequest="30" BackgroundColor="Transparent" TextColor="#3399FF" HorizontalOptions="Start" Margin="5,0,0,0"/>
+                <Label FontSize="16" Text="Tips/pitfalls:" TextColor="White" FontAttributes="Bold" />
 
                 <!-- Expandable Dessection  -->   
-                
-              
-
                 <expandable:ExpandableView Grid.Row="7" Grid.Column="1" Margin="0,0,0,0">
                     <expandable:ExpandableView.PrimaryView>
                         <StackLayout Orientation="Vertical">
