@@ -1,4 +1,5 @@
 ﻿using ESA.Models;
+using ESA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,63 +14,23 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VariationsView : ContentView
     {
-        public IList<VariationPageModel> VariationPageModels { get; set; }
         //    VariationPageViewModel vm;
         public VariationsView()
         {
             InitializeComponent();
-            VariationPageModels = new List<VariationPageModel>();
+            BindingContext = new VariationPageViewModel();
+            //          vm = new VariationPageViewModel();
 
-            VariationPageModels.Add(new Models.VariationPageModel
+            //       VariationList.ItemsSource = vm.VariationsView;
 
-            {
-                Title = "• Upper eyelid retraction",
-                Details = "ESA.Resources.Complication01.jpeg"
-
-
-            });
-            VariationPageModels.Add(new Models.VariationPageModel
-
-            {
-                Title = "• Conjunctiva advancing anteriorly over lid margin",
-                Details = "ESA.Resources.Complication02.jpeg"
-
-
-            });
-            VariationPageModels.Add(new Models.VariationPageModel
-
-            {
-                Title = "• Skin advancing posteriorly over lid margin​",
-                Details = "ESA.Resources.Complication03.jpeg"
-
-
-            });
-
-            VariationPageModels.Add(new Models.VariationPageModel
-
-            {
-                Title = "• Lid margin granuloma ​",
-                Details = "ESA.Resources.Complication04.jpeg"
-
-
-            });
-
-            
-            BindingContext = this;
-
+            //        BindingContext = vm;
         }
-        //BindingContext = new VariationPageViewModel();
-        //          vm = new VariationPageViewModel();
 
-        //       VariationList.ItemsSource = vm.VariationsView;
+        ListView HeaderList = new ListView()
+        {
+            Header = "Related Procedure",
+            Footer = "Footer"
+        };
 
-        //        BindingContext = vm;
     }
-
-        //ListView HeaderList = new ListView()
-        //{
-        //    Header = "Related Procedure",
-        //    Footer = "Footer"
-        //};
-    
 }
