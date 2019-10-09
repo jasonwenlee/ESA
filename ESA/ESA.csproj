@@ -61,6 +61,17 @@
     <None Remove="Resources\variationImage2.png" />
     <None Remove="Resources\variationImage3.png" />
     <None Remove="Resources\variationImage4.png" />
+    <None Remove="Resources\VideoPlayer\back.png" />
+    <None Remove="Resources\VideoPlayer\backward.png" />
+    <None Remove="Resources\VideoPlayer\collapse.png" />
+    <None Remove="Resources\VideoPlayer\enlarge.png" />
+    <None Remove="Resources\VideoPlayer\expand.png" />
+    <None Remove="Resources\VideoPlayer\favourite.png" />
+    <None Remove="Resources\VideoPlayer\forward.png" />
+    <None Remove="Resources\VideoPlayer\pause.png" />
+    <None Remove="Resources\VideoPlayer\play.png" />
+    <None Remove="Resources\VideoPlayer\share.png" />
+    <None Remove="Resources\VideoPlayer\unfavourite.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -128,6 +139,17 @@
     <EmbeddedResource Include="Resources\variationImage3.png" />
     <EmbeddedResource Include="Resources\variationImage4.png" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
+    <EmbeddedResource Include="Resources\VideoPlayer\back.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\backward.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\collapse.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\enlarge.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\expand.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\favourite.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\forward.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\pause.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\play.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\share.png" />
+    <EmbeddedResource Include="Resources\VideoPlayer\unfavourite.png" />
   </ItemGroup>
 
   <ItemGroup>

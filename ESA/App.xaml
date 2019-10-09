@@ -12,6 +12,9 @@
                 <Setter Property="BarBackgroundColor" Value="#0F0F0F"/>
                 <Setter Property="BarTextColor" Value="White"/>
             </Style>
+            <Style TargetType="video:VideoPlayer">
+                <Setter Property="BackgroundColor" Value="#111"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
