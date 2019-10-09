@@ -21,6 +21,7 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <None Remove="Resources\Diagram.jpeg" />
+    <None Remove="Resources\diagram.png" />
     <None Remove="Resources\dinesh.png" />
     <None Remove="Resources\garry.png" />
     <None Remove="Resources\history.png" />
@@ -94,6 +95,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\about48.png" />
     <EmbeddedResource Include="Resources\akihide.png" />
+    <EmbeddedResource Include="Resources\diagram.png" />
     <EmbeddedResource Include="Resources\dinesh.png" />
     <EmbeddedResource Include="Resources\garry.png" />
     <EmbeddedResource Include="Resources\history.png" />
