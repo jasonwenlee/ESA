@@ -21,6 +21,8 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <None Remove="Resources\Diagram.jpeg" />
+    <None Remove="Resources\dinesh.png" />
+    <None Remove="Resources\garry.png" />
     <None Remove="Resources\history.png" />
     <None Remove="Resources\Icons\back_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
@@ -54,6 +56,7 @@
     <None Remove="Resources\Icons\steps_icon_light_active.png" />
     <None Remove="Resources\Icons\variations_icon.png" />
     <None Remove="Resources\Icons\variations_icon_dark_active.png" />
+    <None Remove="Resources\ivision.png" />
     <None Remove="Resources\mountains.jpg" />
     <None Remove="Resources\mountains1.jpg" />
     <None Remove="Resources\mountains2.jpg" />
@@ -69,6 +72,8 @@
     <None Remove="Resources\Thumbnails\orb1.jpg" />
     <None Remove="Resources\Thumbnails\orb2.jpg" />
     <None Remove="Resources\Thumbnails\orb3.jpg" />
+    <None Remove="Resources\saul.png" />
+    <None Remove="Resources\valerie.png" />
     <None Remove="Resources\variationImage1.png" />
     <None Remove="Resources\variationImage2.png" />
     <None Remove="Resources\variationImage3.png" />
@@ -88,7 +93,10 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\about48.png" />
-    <EmbeddedResource Include="Resources\Diagram.jpeg" />
+    <EmbeddedResource Include="Resources\akihide.png" />
+    <EmbeddedResource Include="Resources\Complication01.jpeg" />
+    <EmbeddedResource Include="Resources\dinesh.png" />
+    <EmbeddedResource Include="Resources\garry.png" />
     <EmbeddedResource Include="Resources\history.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_dark_active.png" />
@@ -117,11 +125,13 @@
     <EmbeddedResource Include="Resources\Icons\steps_icon_light_active.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon_dark_active.png" />
+    <EmbeddedResource Include="Resources\ivision.png" />
     <EmbeddedResource Include="Resources\mountains.jpg" />
     <EmbeddedResource Include="Resources\mountains1.jpg" />
     <EmbeddedResource Include="Resources\mountains2.jpg" />
     <EmbeddedResource Include="Resources\mountains3.jpg" />
     <EmbeddedResource Include="Resources\mountains4.jpg" />
+    <EmbeddedResource Include="Resources\saul.png" />
     <EmbeddedResource Include="Resources\search48.png" />
   </ItemGroup>
 
@@ -157,6 +167,11 @@
     <EmbeddedResource Include="Resources\Thumbnails\orb1.jpg" />
     <EmbeddedResource Include="Resources\Thumbnails\orb2.jpg" />
     <EmbeddedResource Include="Resources\Thumbnails\orb3.jpg" />
+    <EmbeddedResource Include="Resources\valerie.png" />
+    <EmbeddedResource Include="Resources\variationImage1.png" />
+    <EmbeddedResource Include="Resources\variationImage2.png" />
+    <EmbeddedResource Include="Resources\variationImage3.png" />
+    <EmbeddedResource Include="Resources\variationImage4.png" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
     <EmbeddedResource Include="Resources\VideoPlayer\back.png" />
     <EmbeddedResource Include="Resources\VideoPlayer\backward.png" />
