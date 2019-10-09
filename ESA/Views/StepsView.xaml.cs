@@ -42,7 +42,7 @@ namespace ESA
                 // Content
                 ContentLbl.Text = step.Content;
                 ContentLbl.Style = (Style)Resources["StepContent"];
-                if(step.Number == currentStep)
+                if (step.Number == currentStep)
                 {
                     NumberLbl.TextColor = Color.White;
                     ContentLbl.TextColor = Color.White;
@@ -83,7 +83,7 @@ namespace ESA
         {
             // get the current step
             Step prevStep = viewModel.Steps.First(s => s.Number == this.currentStep);
-            
+
             // get the step clicked
             Step currStep = viewModel.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)sender).Children.First()).Text));
             this.currentStep = currStep.Number;

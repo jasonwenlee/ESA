@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="ESA.StepsView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-    
+
     <ContentView.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -17,7 +17,7 @@
             <StackLayout Grid.Row="1" x:Name="Content"/>
         </Grid>
     </ContentView.Content>
-    
+
     <ContentView.Resources>
         <ResourceDictionary>
             <Style x:Key="StepNumber" TargetType="Label">
