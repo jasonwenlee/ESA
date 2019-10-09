@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ESA.MainPage" Title="Oculoplastics" 
+              x:Class="ESA.MainPage" Title="Oculoplastics" 
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
              BackgroundColor="#222">
     <!--assembly reference is used to include the class(es) in the MarkupExtensions File-->
@@ -16,197 +16,215 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Margin="10" Padding="0,0,0,20">
+            <StackLayout>
                 <!--CATEGORIES HEADING-->
                 <Grid BackgroundColor="#333333">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="30" Padding="30">
-                        <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" Clicked="Lacrimal_Click" BackgroundColor="Transparent" />
-                            <Label Text="Lacrimal" HorizontalOptions="Center" TextColor="White"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.lacrimal.png}" Clicked="Lacrimal_Click" BackgroundColor="Transparent" />
+                        <Label Text="Lacrimal" HorizontalOptions="Center" TextColor="White"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.orbital.png}" Clicked="Orbital_Click" BackgroundColor="Transparent" />
-                            <Label Text="Orbital" HorizontalOptions="Center" TextColor="White"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="2" VerticalOptions="Center">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.orbital.png}" Clicked="Orbital_Click" BackgroundColor="Transparent" />
+                        <Label Text="Orbital" HorizontalOptions="Center" TextColor="White"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.eyelid.png}" Clicked="Eyelid_Click" BackgroundColor="Transparent" />
-                            <Label Text="Eyelid" HorizontalOptions="Center" TextColor="White"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="3" VerticalOptions="Center">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.eyelid.png}" Clicked="Eyelid_Click" BackgroundColor="Transparent" />
+                        <Label Text="Eyelid" HorizontalOptions="Center" TextColor="White"/>
                     </StackLayout>
                 </Grid>
 
                 <!--LATEST PROCEDURES-->
-                <Label Text="Latest Procedures" TextColor="White" FontSize="Medium" />
-                <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                <StackLayout Margin="10,0">
+                    <Label Text="Latest Procedures" TextColor="White" FontSize="Medium" />
+                    <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
 
-                <Grid>
+                <Grid Margin="10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Horizontal" Grid.Row="0">
-                        <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb3.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small" />
-                        </StackLayout>
+                    <StackLayout Grid.Column="0">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}" />
+                    </StackLayout>
 
+                    <StackLayout Grid.Column="1">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.hughes.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Tarsoconjunctival (Hughes) flap – Stage 1" Style="{StaticResource ProcedureLabel}"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.hughes.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Tarsoconjunctival (Hughes) flap – Stage 1" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
-                        </StackLayout>
-
-                        <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb2.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="2">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                     </StackLayout>
                 </Grid>
 
                 <!--ALL PROCEDURES-->
-                <Label Text="All Procedures" TextColor="White" FontSize="Medium" />
-                <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                <StackLayout Margin="10,0">
+                    <Label Text="All Procedures" TextColor="White" FontSize="Medium" />
+                    <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
 
-                <Grid>
+                <Grid Margin="10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Horizontal" Grid.Row="0">
-                        <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye2.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small" />
-                        </StackLayout>
+                    <StackLayout Grid.Column="0">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}" />
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac3.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb1.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="2">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                     </StackLayout>
                 </Grid>
 
                 <!-- LACRIMAL PROCEDURES-->
-                <Label Text="Lacrimal Procedures" TextColor="White" FontSize="Medium"/>
-                <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                <StackLayout Margin="10,0">
+                    <Label Text="Lacrimal Procedures" TextColor="White" FontSize="Medium"/>
+                    <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
 
-                <Grid>
+                <Grid Margin="10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
                     <StackLayout Orientation="Horizontal" Grid.Row="0">
                         <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac1.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small" />
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}" />
                         </StackLayout>
 
                         <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac2.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac3.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
                     </StackLayout>
                 </Grid>
 
                 <!-- ORBITAL PROCEDURES-->
-                <Label Text="Orbital Procedures" TextColor="White" FontSize="Medium" />
-                <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                <StackLayout Margin="10,0">
+                    <Label Text="Orbital Procedures" TextColor="White" FontSize="Medium" />
+                    <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
 
-                <Grid>
+                <Grid Margin="10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
                     <StackLayout Orientation="Horizontal" Grid.Row="0">
                         <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb1.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small" />
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb2.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb3.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
                     </StackLayout>
                 </Grid>
 
                 <!-- EYELID PROCEDURES-->
-                <Label Text="Eyelid Procedures" TextColor="White" FontSize="Medium" />
-                <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                <StackLayout Margin="10,0">
+                    <Label Text="Eyelid Procedures" TextColor="White" FontSize="Medium" />
+                    <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
 
-                <Grid>
+
+                <Grid Margin="10,0,0,10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
                     <StackLayout Orientation="Horizontal" Grid.Row="0">
                         <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye1.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small" />
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye2.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye3.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" TextColor="White" HorizontalOptions="Center" FontSize="Small"/>
+                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                         </StackLayout>
                     </StackLayout>
                 </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Thumbnail" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+            <Style x:Key="ProcedureLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#BDBDBD" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Margin" Value="3,0,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 </ContentPage>
