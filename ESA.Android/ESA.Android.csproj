@@ -103,7 +103,6 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
-    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ESA\ESA.csproj">
@@ -128,9 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\Brain_Eyes_Vid.mp4" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\Complication01.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Complication02.jpeg" />
@@ -158,6 +154,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\drawable\expand_more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Complication03.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\eyeLidGranuloma04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\eyeLidMarginIrregularity05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\eyeRetraction01.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\eyeRetraction01.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\Diagram.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
