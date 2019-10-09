@@ -30,6 +30,12 @@ namespace ESA
 
         public void LoadStepsView()
         {
+            TitleStack.Children.Clear();
+            Content.Children.Clear();
+            // Title
+            Label title = new Label() { Text = "Steps", TextColor = Color.White, FontSize = 16 };
+            TitleStack.Children.Add(title);
+            // Steps
             foreach (Step step in viewModel.Steps)
             {
                 StackLayout StepLayout = new StackLayout();

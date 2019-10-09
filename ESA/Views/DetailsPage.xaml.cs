@@ -18,10 +18,25 @@ namespace ESA.Views
     {
         // Don't remove :)
         //Procedure holdProcedure;
+        bool VideoControlsVisible = false;
+        bool ControlsAreCollapsed = false;
 
         public DetailsPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+
+            //Device.StartTimer(TimeSpan.FromMilliseconds(2000), () =>
+            //{
+            //    //UpdateStatus?.Invoke(this, EventArgs.Empty);
+            //    //return true;
+            //});
+
+            StepsView view = new StepsView();
+            view.LoadStepsView();
+            contentRow.Children.Clear();
+            contentRow.Children.Add(view);
+
             // Don't remove :)
             //holdProcedure = proc;
         }
@@ -37,25 +52,22 @@ namespace ESA.Views
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    // source.Path = "Videos/eye_surgery.mp4";
-                    source.Path = "Videos/Brain_Eyes_Vid.mp4";                    
+                    source.Path = "Videos/eye_surgery.mp4";
+                    //source.Path = "Videos/Brain_Eyes_Vid.mp4";                    
                     break;
                 case Device.Android:
-                    // source.Path = "eye_surgery.mp4";
-                    source.Path = "Brain_Eyes_Vid.mp4";
+                    source.Path = "eye_surgery.mp4";
+                    //source.Path = "Brain_Eyes_Vid.mp4";
                     break;
                 case Device.UWP:
-                    // source.Path = "Videos/eye_surgery.mp4";
-                    source.Path = "Videos/Brain_Eyes_Vid.mp4";
+                    source.Path = "Videos/eye_surgery.mp4";
+                    //source.Path = "Videos/Brain_Eyes_Vid.mp4";
                     break;
             }
 
             videoPlayer.Source = source;
 
-            // Load steps View
-            StepsView view = new StepsView();
-            view.LoadStepsView();
-            contentRow.Children.Add(view);
+            contentRow.Children.Add(new StepsView());
         }
 
         private void StepsBtn_Clicked(object sender, EventArgs e)
@@ -63,12 +75,12 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is StepsView))
             {
-                RefreshView("step", content.First().GetType().Name);
-                content.Clear();
-                // Load steps View
+                refreshIcons("step", content.First().GetType().Name);
                 StepsView view = new StepsView();
                 view.LoadStepsView();
+                content.Clear();
                 content.Add(view);
+                AdjustViews(sender);
             }
         }
 
@@ -77,9 +89,10 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is KeyPointsView))
             {
-                RefreshView("keyp", content.First().GetType().Name);
+                refreshIcons("keyp", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new KeyPointsView());
+                AdjustViews(sender);
             }
         }
 
@@ -88,9 +101,10 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is VariationsView))
             {
-                RefreshView("vari", content.First().GetType().Name);
+                refreshIcons("vari", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new VariationsView());
+                AdjustViews(sender);
             }
         }
 
@@ -99,9 +113,10 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is ComplicationsView))
             {
-                RefreshView("comp", content.First().GetType().Name);
+                refreshIcons("comp", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new ComplicationsView());
+                AdjustViews(sender);
             }
         }
 
@@ -110,15 +125,16 @@ namespace ESA.Views
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is InfoView))
             {
-                RefreshView("info", content.First().GetType().Name);
+                refreshIcons("info", content.First().GetType().Name);
                 content.Clear();
                 // Don't remove :)
                 //contentRow.Children.Add(new InfoView(holdProcedure));
                 content.Add(new InfoView());
+                AdjustViews(sender);
             }
         }
 
-        private void RefreshView(string page, string prevView)
+        private void refreshIcons(string page, string prevView)
         {
             switch (prevView)
             {
@@ -167,6 +183,7 @@ namespace ESA.Views
                     InfoLbl.TextColor = Color.White;
                     break;
             }
+        }
 
         private async void AdjustViews(object sender)
         {
@@ -186,7 +203,6 @@ namespace ESA.Views
             else // Keep Collapsed
             {
                 Rectangle videoCollapsedLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 videoPlayer.LayoutTo(videoCollapsedLocation, animationSpeed, Easing.Linear);
                 VideoControls.FadeTo(0, animationSpeed, Easing.Linear);
                 VideoControls.TranslateTo(0, -videoAspectHeight, animationSpeed, Easing.Linear);
@@ -199,8 +215,6 @@ namespace ESA.Views
                 collapsablePlayer.IsVisible = true;
                 collapsablePlayer.HeightRequest = collapsableHeight;
                 collapsablePlayer.FadeTo(0, 0, null);
-
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 await collapsablePlayer.FadeTo(1, animationSpeed, Easing.Linear);
                 ControlsAreCollapsed = true;
                 // Video Player
@@ -242,7 +256,7 @@ namespace ESA.Views
             if (ControlsAreCollapsed) // Expand
             {
                 // Video Player
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+
                 Rectangle videoExpandLocation = new Rectangle(0, 0, Width, videoAspectHeight);
                 videoPlayer.LayoutTo(videoExpandLocation, animationSpeed, Easing.Linear);
                 VideoControls.FadeTo(1, animationSpeed, Easing.Linear);
@@ -251,7 +265,6 @@ namespace ESA.Views
                 collapsablePlayer.IsVisible = false;
                 collapsablePlayer.FadeTo(0, animationSpeed, Easing.Linear);
                 ControlsAreCollapsed = false;
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 // Scroll View
                 Rectangle scrollViewExpandLocation = new Rectangle(scrollView.X, videoAspectHeight, scrollView.Width, scrollView.Height - videoAspectHeight + newControlHeight);
                 await scrollView.LayoutTo(scrollViewExpandLocation, animationSpeed, Easing.Linear);
@@ -260,7 +273,6 @@ namespace ESA.Views
             else // Collapse
             {
                 // Scroll View
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 scrollView.LayoutTo(scrollViewCollapseLocation, animationSpeed, Easing.Linear);
                 //Collapsable
                 collapsablePlayer.IsVisible = true;
@@ -271,7 +283,6 @@ namespace ESA.Views
                 // Video Player
                 videoPlayer.LayoutTo(videoCollapsedLocation, animationSpeed, Easing.Linear);
                 VideoControls.FadeTo(0, animationSpeed, Easing.Linear);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 await VideoControls.TranslateTo(0, videoDeltaY, animationSpeed, Easing.Linear);
             }
         }

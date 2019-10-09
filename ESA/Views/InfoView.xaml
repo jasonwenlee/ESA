@@ -30,7 +30,7 @@
                         <FormattedString x:Name="historyText">
                             <Span Text="Dr Wendel Hughes, an ophthalmologist who contributed to the field of oculoplastic surgery, published his first paper on tarsoconjunctival flaps in 1937." />
                             <Span x:Name="ref1" Text="[1, 2]"
-                                    TextColor="Cyan"
+                                    TextColor="#3399FF"
                                     TextDecorations="Underline">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
@@ -39,7 +39,7 @@
                             </Span>
                             <Span Text=" Further modifications to the technique by Hughes and others occurred throughout subsequent decades." />
                             <Span x:Name="ref3" Text="[3 - 6]"
-                                    TextColor="Cyan"
+                                    TextColor="#3399FF"
                                     TextDecorations="Underline">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
@@ -48,7 +48,7 @@
                             </Span>
                             <Span Text=" Significant developments included using full-thickness skin grafting of the tarsoconjunctival flap, sparing of the marginal upper lid tarsus, and removal of the levator muscle complex from the tarsoconjunctival flap. This led to the reduction in upper lid complications, such as upper lid retraction, entropion, and trichiasis. Traditionally, flap division occurred 3 to 4 months after the initial stage.Currently the standard time to flap division is frequently 2 weeks, but can be carried out from 7 days with good outcome." />
                             <Span x:Name="ref7" Text="[7, 8]"
-                                    TextColor="Cyan"
+                                    TextColor="#3399FF"
                                     TextDecorations="Underline">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
@@ -70,7 +70,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Oculoplastic Info"
-                            TextColor="Cyan"
+                            TextColor="#3399FF"
                             TextDecorations="Underline"
                                   FontSize="Title">
                                 <Span.GestureRecognizers>
@@ -87,7 +87,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Oculoplastic Surgery Techniques"
-                            TextColor="Cyan"
+                            TextColor="#3399FF"
                             TextDecorations="Underline"
                                   FontSize="Title">
                                 <Span.GestureRecognizers>
