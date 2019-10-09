@@ -12,12 +12,12 @@ namespace ESA.ViewModels
     {
         //      public ObservableCollection<VariationPageModel> VariationList { get; set; }
 
-        public List<VariationPageModel> VariationList { get; set; }
+        public List<VariationsModel> VariationList { get; set; }
 
 
         public VariationPageViewModel()
         {
-            VariationList = new VariationPageModel().GetVariationList();
+            VariationList = new VariationsModel().GetVariationList();
 
         }
 

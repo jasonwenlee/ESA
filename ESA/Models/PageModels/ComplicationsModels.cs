@@ -15,34 +15,34 @@ namespace ESA.Models
         public string ImageUrl { get; set; }
 
 
-        public  List<Complications> GetComplicationsList()
+        public  List<ComplicationsModel> GetComplicationsList()
         {
-            List<Complications> complicationView = new List<Complications>()
+            List<ComplicationsModel> complicationView = new List<ComplicationsModel>()
             {
-                new Complications()
+                new ComplicationsModel()
                 {
                     DescPhotoText = "1. Upper eyelid retraction",
                     ImageUrl = "eyeRetraction01.jpeg"
                 },
-                new Complications()
+                new ComplicationsModel()
                 {
                      DescPhotoText = "2. Conjunctiva advancing anteriorly over lid margin",
                     ImageUrl = "Complication02.jpeg"
                 },
 
-                new Complications()
+                new ComplicationsModel()
                 {
                     DescPhotoText = "3. Skin advancing posteriorly over lid margin",
                     ImageUrl = "Complication03.jpeg"
                 },
 
                 
-                  new Complications()
+                  new ComplicationsModel()
                 {
                      DescPhotoText = "4. Lid margin granuloma",
                     ImageUrl = "eyeLidGranuloma04.jpg"
                 },
-                    new Complications()
+                    new ComplicationsModel()
                 {
                      DescPhotoText = "5. Lid margin irregularity",
                     ImageUrl = "eyeLidMarginIrregularity05.jpg"
