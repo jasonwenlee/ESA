@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.CreateProcedure">
-    <StackLayout>
+    <StackLayout BackgroundColor="#333333">
         <Button x:Name="createButton" Text="Create Procedure" Clicked="CreateButton_Clicked"></Button>
         <Button x:Name="listButton" Text="List Procedure" Clicked="ListButton_Clicked"></Button>
     </StackLayout>

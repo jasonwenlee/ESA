@@ -9,6 +9,7 @@ using Android.OS;
 using System.Threading.Tasks;
 using Android.Content;
 using Android.Views.InputMethods;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace ESA.Droid
 {
@@ -26,6 +27,7 @@ namespace ESA.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            Xamarin.Forms.Application.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
         }
 
 

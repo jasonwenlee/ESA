@@ -31,7 +31,7 @@
             <Frame Padding="0" CornerRadius="3" BorderColor="Black"/>
             <Editor x:Name="referencesEditor" Text="{Binding References}" Placeholder="Enter references" AutoSize="TextChanges" />
 
-            <Button x:Name="addInfoBinding" Command="{Binding AddProcedureCommand}" Text="Add Info Bind"/>
+            <Button x:Name="addInfoBinding" Command="{Binding AddProcedureCommand}" Text="Save procedure"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

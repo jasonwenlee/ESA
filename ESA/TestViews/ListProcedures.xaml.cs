@@ -49,7 +49,22 @@ namespace ESA
             {
                 Procedure tappedItem = (Procedure)((ListView)sender).SelectedItem;
                 await Navigation.PushAsync(new DisplayProcedureInfo(tappedItem));
+                allList.SelectedItem = null;
+
+                if (tappedItem is Lacrimal)
+                {
+                    lacrimalList.SelectedItem = null;
+                }
+                else if (tappedItem is Orbital)
+                {
+                    orbitalList.SelectedItem = null;
+                }
+                else if (tappedItem is Eyelid)
+                {
+                    eyelidList.SelectedItem = null;
+                }
             }
+
         }
     }
 }

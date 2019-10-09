@@ -64,7 +64,7 @@
             </ContentView>
         </StackLayout>
         <!--EXTERNAL LINKS-->
-        <StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <ContentView HorizontalOptions="Center">
                 <Label HorizontalOptions="Center">
                     <Label.FormattedText>
@@ -72,7 +72,7 @@
                             <Span Text="Oculoplastic Info"
                             TextColor="#3399FF"
                             TextDecorations="Underline"
-                                  FontSize="Title">
+                                  FontSize="20">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ClickCommand}"
                                           CommandParameter="http://oculoplastics.info/" />
@@ -83,13 +83,13 @@
                 </Label>
             </ContentView>
             <ContentView HorizontalOptions="Center">
-                <Label HorizontalOptions="Center">
+                <Label HorizontalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Oculoplastic Surgery Techniques"
                             TextColor="#3399FF"
                             TextDecorations="Underline"
-                                  FontSize="Title">
+                                  FontSize="20">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ClickCommand}"
                                           CommandParameter="https://webeye.ophth.uiowa.edu/eyeforum/video/plastics/plastics.htm" />

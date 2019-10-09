@@ -15,8 +15,8 @@
         <Grid RowSpacing="0" ColumnSpacing="0" BindingContext="{x:Reference videoPlayer}">
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="videoPlayerRow" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="70" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="6*" />
             </Grid.RowDefinitions>
             <!--COLLAPSABLE-->
             <Grid x:Name="collapsablePlayer" Grid.Row="0" IsVisible="False" HeightRequest="42" >
@@ -128,7 +128,7 @@
             </ScrollView>
 
             <!--FOOTER-->
-            <Grid x:Name="footer"  Grid.Row="2" BackgroundColor="#0F0F0F" HorizontalOptions="Fill" ColumnSpacing="0" RowSpacing="0">
+            <Grid x:Name="footer"  Grid.Row="2" BackgroundColor="#0F0F0F" HorizontalOptions="Fill" ColumnSpacing="0" RowSpacing="0" Padding="0" Margin="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -137,8 +137,8 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <ImageButton x:Name="StepsBtn" Grid.Column="0" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.steps_icon_dark_active.png}" Clicked="StepsBtn_Clicked"/>
@@ -168,7 +168,7 @@
                 <Setter Property="Margin" Value="0,5,0,0" />
             </Style>
             <Style x:Key="FooterLabel" TargetType="Label">
-                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontSize" Value="Micro" />
                 <Setter Property="TextColor" Value="Gray" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
