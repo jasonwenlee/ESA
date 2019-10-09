@@ -5,17 +5,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.InfoView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-    <StackLayout Margin="5">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
+    <StackLayout>
 
-        <Button x:Name="historyButton" Text="History" HeightRequest="50" Clicked="HistoryButton_Clicked"/>
+        <customButton:CustomButton x:Name="historyButton" Text="History" Style="{StaticResource infoBtn}" Clicked="HistoryButton_Clicked" />
         <ContentView x:Name="historyView" IsVisible="False">
-            <Editor x:Name="historyEditor" IsReadOnly="True" TextColor="White"/>
+            <Editor x:Name="historyEditor" Style="{StaticResource infoText}" />
         </ContentView>
 
-        <Button x:Name="referencesButton" Text="References" HeightRequest="50" Clicked="ReferencesButton_Clicked"/>
+        <customButton:CustomButton x:Name="referencesButton" Text="References" Style="{StaticResource infoBtn}" Clicked="ReferencesButton_Clicked"/>
         <ContentView x:Name="referencesView" IsVisible="False">
-            <Editor x:Name="referencesEditor" IsReadOnly="True" TextColor="White"/>
+            <Editor x:Name="referencesEditor" Style="{StaticResource infoText}" />
         </ContentView>
     </StackLayout>
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="infoBtn" TargetType="customButton:CustomButton">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HeightRequest" Value="35" />
+                <Setter Property="BackgroundColor" Value="#8B8B8B" />
+            </Style>
+            <Style x:Key="infoText" TargetType="Editor">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="IsReadOnly" Value="True" />
+                <Setter Property="IsSpellCheckEnabled" Value="False" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
 </ContentView>

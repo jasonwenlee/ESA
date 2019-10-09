@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:videoPlayer="clr-namespace:ESA.Models.VideoView"
              mc:Ignorable="d"
              x:Class="ESA.Views.VideoPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Pretend this is a video"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <videoPlayer:VideoPlayer x:Name="videoPlayer" Grid.Row="0" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
