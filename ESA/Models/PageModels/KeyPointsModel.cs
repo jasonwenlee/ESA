@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace ESA.Models
 {
-  public  class KeyPointsClass
+  public  class KeyPointsModel
     {
         
     }

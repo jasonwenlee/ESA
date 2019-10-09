@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ESA.Models
 {
- public   class StepsPageModel
+ public   class StepsModel
     {
         public string Name { get; set; }
         public string Description { get; set; }

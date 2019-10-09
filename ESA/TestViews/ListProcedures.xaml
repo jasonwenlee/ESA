@@ -8,7 +8,7 @@
 
         <StackLayout>
             <Label x:Name="lacrimalLabel" Text="Lacrimal" Margin="10"/>
-            <ListView x:Name="lacrimalList" ItemTapped="LacrimalList_ItemTapped">
+            <ListView x:Name="lacrimalList" ItemTapped="LacrimalList_ItemTapped" BackgroundColor="Cyan">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}"/>

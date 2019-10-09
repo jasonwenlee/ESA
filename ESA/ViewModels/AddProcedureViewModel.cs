@@ -17,7 +17,7 @@ namespace ESA.ViewModels
     // added to the database based on procedure category.
     public class AddProcedureViewModel : BaseProcedureViewModel
     {
-        public ICommand AddProcedureCommand { get; private set; } // For save procedure button click event. No use yet.
+        public ICommand AddProcedureCommand { get; private set; } // For save procedure button click event
         public ICommand ViewAllProceduresCommand { get; private set; } // View all procedure button click event. No use yet.
 
         // Constructor 

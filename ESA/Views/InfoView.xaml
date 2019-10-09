@@ -5,34 +5,101 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.InfoView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
-             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+    
+    <!--OLD-->
     <StackLayout>
 
-        <customButton:CustomButton x:Name="historyButton" Text="History" Style="{StaticResource infoBtn}" Clicked="HistoryButton_Clicked" />
-        <ContentView x:Name="historyView" IsVisible="False">
-            <Editor x:Name="historyEditor" Style="{StaticResource infoText}" />
-        </ContentView>
+        <!--BUTTONS-->
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="historyButton" Text="History" HeightRequest="50" Clicked="HistoryButton_Clicked"/>
+                <Button Grid.Column="1" x:Name="referencesButton" Text="References" HeightRequest="50" Clicked="ReferencesButton_Clicked"/>
+            </Grid>
+        </StackLayout>
+        <!--CONTENT-->
+        <StackLayout>
+            <ContentView x:Name="historyView" IsVisible="True">
+                <Label HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand" TextColor="White" FontSize="Subtitle"> 
+                    <Label.FormattedText>
+                        <FormattedString x:Name="historyText">
+                            <Span Text="Dr Wendel Hughes, an ophthalmologist who contributed to the field of oculoplastic surgery, published his first paper on tarsoconjunctival flaps in 1937." />
+                            <Span x:Name="ref1" Text="[1, 2]"
+                                    TextColor="Cyan"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    <!--<TapGestureRecognizer Command="{Binding RefCommand}"/>-->
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" Further modifications to the technique by Hughes and others occurred throughout subsequent decades." />
+                            <Span x:Name="ref3" Text="[3 - 6]"
+                                    TextColor="Cyan"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    <!--<TapGestureRecognizer Command="{Binding RefCommand}"/>-->
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" Significant developments included using full-thickness skin grafting of the tarsoconjunctival flap, sparing of the marginal upper lid tarsus, and removal of the levator muscle complex from the tarsoconjunctival flap. This led to the reduction in upper lid complications, such as upper lid retraction, entropion, and trichiasis. Traditionally, flap division occurred 3 to 4 months after the initial stage.Currently the standard time to flap division is frequently 2 weeks, but can be carried out from 7 days with good outcome." />
+                            <Span x:Name="ref7" Text="[7, 8]"
+                                    TextColor="Cyan"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    <!--<TapGestureRecognizer Command="{Binding RefCommand}"/>-->
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </ContentView>
+            <ContentView x:Name="referencesView" IsVisible="False">
+                <Editor x:Name="referencesEditor" IsReadOnly="True" TextColor="White" FontSize="Subtitle"/>
+            </ContentView>
+        </StackLayout>
+        <!--EXTERNAL LINKS-->
+        <StackLayout>
+            <ContentView HorizontalOptions="Center">
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Oculoplastic Info"
+                            TextColor="Cyan"
+                            TextDecorations="Underline"
+                                  FontSize="Title">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                          CommandParameter="http://oculoplastics.info/" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </ContentView>
+            <ContentView HorizontalOptions="Center">
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Oculoplastic Surgery Techniques"
+                            TextColor="Cyan"
+                            TextDecorations="Underline"
+                                  FontSize="Title">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                          CommandParameter="https://webeye.ophth.uiowa.edu/eyeforum/video/plastics/plastics.htm" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </ContentView>
+        </StackLayout>
 
-        <customButton:CustomButton x:Name="referencesButton" Text="References" Style="{StaticResource infoBtn}" Clicked="ReferencesButton_Clicked"/>
-        <ContentView x:Name="referencesView" IsVisible="False">
-            <Editor x:Name="referencesEditor" Style="{StaticResource infoText}" />
-        </ContentView>
     </StackLayout>
-
-    <ContentView.Resources>
-        <ResourceDictionary>
-            <Style x:Key="infoBtn" TargetType="customButton:CustomButton">
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="HeightRequest" Value="35" />
-                <Setter Property="BackgroundColor" Value="#8B8B8B" />
-            </Style>
-            <Style x:Key="infoText" TargetType="Editor">
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="IsReadOnly" Value="True" />
-                <Setter Property="IsSpellCheckEnabled" Value="False" />
-            </Style>
-        </ResourceDictionary>
-    </ContentView.Resources>
 </ContentView>
