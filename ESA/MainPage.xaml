@@ -126,21 +126,20 @@
                         <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Horizontal" Grid.Row="0">
-                        <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}" />
-                        </StackLayout>
 
-                        <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="0">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}" />
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.lac3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                     </StackLayout>
                 </Grid>
 
@@ -160,21 +159,19 @@
                         <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Horizontal" Grid.Row="0">
-                        <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="0">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="2">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.orb3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                     </StackLayout>
                 </Grid>
 
@@ -195,21 +192,19 @@
                         <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Horizontal" Grid.Row="0">
-                        <StackLayout Grid.Column="0">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="0">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye1.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="1">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye2.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" Style="{StaticResource ProcedureLabel}"/>
+                    </StackLayout>
 
-                        <StackLayout Grid.Column="2">
-                            <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
-                            <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
-                        </StackLayout>
+                    <StackLayout Grid.Column="2">
+                        <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.Thumbnails.eye3.jpg}" Style="{StaticResource Thumbnail}" Clicked="StepsPageBtn_Clicked" />
+                        <Label Text="Direct excision of lower lid festoons and lateral canthopexy" Style="{StaticResource ProcedureLabel}"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>
