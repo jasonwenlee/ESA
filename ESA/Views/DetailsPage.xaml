@@ -26,41 +26,43 @@
     <ContentPage.Content>
         <Grid RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition x:Name="videoPlayerRow" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition x:Name="videoPlayerRow" Height="200" />
+                <RowDefinition x:Name="videoInfoRow" Height="100" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="70" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <!--VIDEO-->
-            <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" BackgroundColor="#111"/>
+            <!--FIRST GRID ROW: PROCEDURE AND VIDEO SWITCH SECTION-->
+            <StackLayout Grid.Row="0">
+                <Label FontSize="Medium" Text="Tarsoconjunctical (Hughes) Flap - Stage I" TextColor="#3399FF" HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label FontSize="Small" Text="Toggle to Hide/Display video" TextColor="#3399FF"/>
+                    <Switch HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand" IsToggled="True"
+                    Toggled="Switch_Toggled"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!--SECOND GRID ROW: VIDEO AND ITS INFO SECTION-->
             <!--Still needs fullscreen controls for Android (not sure for iOS)-->
+            <video:VideoPlayer x:Name="videoPlayer"  BackgroundColor="#111" Grid.Row="1"/>
 
-            <!--CONTENT-->
-            <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="1" VerticalOptions="Start" Padding="0,15,0,10" Margin="15,0">
-                <Grid VerticalOptions="Start">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+            <!--THIRD GRID ROW: VIDEO INFO-->
+            <StackLayout Grid.Row="2">
+                <Label x:Name="videoInfo1" LineBreakMode="WordWrap" FontSize="14" Text="This narrated video demonstrates the tarsoconjunctival (Hughes) flap for reconstruction of large defects of the lower eyelid, that most commonly occur after lower lid tumour excision." />
+                <Label x:Name="videoInfo2" FontSize="14" Text="Eyelid / Tumor Surgery / Eyelid Reconstruction" TextColor="#3399FF" Margin="0,-4" />
+                <Label x:Name="videoInfo3" FontSize="14" Text="11th March, 2019 - 5087 Views" />
+            </StackLayout>
 
-                    <!--Video Overview information-->
-                    <StackLayout Grid.Row="0" Spacing="2" >
-                        <Label FontSize="16" Text="Tarsoconjunctical (Hughes) Flap - Stage I" TextColor="White"/>
-                        <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="This narrated video demonstrates the tarsoconjunctival (Hughes) flap for reconstruction of large defects of the lower eyelid, that most commonly occur after lower lid tumour excision." />
-                        <Label FontSize="14" Text="Eyelid / Tumor Surgery / Eyelid Reconstruction" TextColor="#3399FF" />
-                        <Label FontSize="14" Text="11th March, 2019 - 5087 Views" TextColor="#828282" />
-                    </StackLayout>
-
-                    <!--Content row This is where your view will be displayed (DO NOT PUT YOUR CODE HERE)-->
-                    <!--Use the content views i have provided to bulid your feature-->
-                    <StackLayout Grid.Row="1" x:Name="contentRow" >
-                    </StackLayout>
-
-                </Grid>
+            <!--FOURTH GRID ROW: CONTENT-->
+            <ScrollView x:Name="scrollView" Orientation="Vertical" Grid.Row="3" VerticalOptions="Start" Padding="4" Margin="4">
+                <StackLayout x:Name="contentRow" >
+                </StackLayout>
             </ScrollView>
 
-            <!--FOOTER-->
-            <Grid x:Name="footer"  Grid.Row="2" BackgroundColor="#0F0F0F" HorizontalOptions="Fill" ColumnSpacing="0" RowSpacing="0">
+            <!--FIFTH GRID ROW: FOOTER CONTROLS-->
+            <Grid x:Name="footer" Grid.Row="4" BackgroundColor="#0F0F0F" HorizontalOptions="Fill" ColumnSpacing="0" RowSpacing="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -88,11 +90,10 @@
 
                 <ImageButton x:Name="HistBtn" Grid.Column="4" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.history_icon.png}" Clicked="HistBtn_Clicked" />
                 <Label x:Name="HIstLbl" Grid.Column="4" Grid.Row="1" Text="History" Style="{StaticResource FooterLabel}" />
-                
+
                 <ImageButton x:Name="InfoBtn" Grid.Column="5" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
                 <Label x:Name="InfoLbl" Grid.Column="5" Grid.Row="1" Text="Info" Style="{StaticResource FooterLabel}" />
             </Grid>
-
         </Grid>
     </ContentPage.Content>
 
@@ -100,7 +101,7 @@
         <ResourceDictionary>
             <Style x:Key="FooterButton" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="40" />
                 <Setter Property="Margin" Value="0,5,0,0" />
             </Style>
             <Style x:Key="FooterLabel" TargetType="Label">

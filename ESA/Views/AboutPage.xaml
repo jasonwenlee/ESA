@@ -12,19 +12,19 @@
                     <ViewCell IsEnabled="False">
                         <ViewCell.View>
                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="150"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="4" HorizontalOptions="Center">
                                     <!--REC: The line below is useful only if the image comes from a URL-->
                                     <!--<Image Source="{Binding ImageUrl}" WidthRequest="150" HeightRequest="150" VerticalOptions="Start"  />-->
                                     <!--REC: The line below brings the embedded image-->
-                                    <Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150" VerticalOptions="Start"  />
+                                    <Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150" />
                                 </StackLayout>
-                                <StackLayout Grid.Column="1" Orientation="Vertical">
-                                    <Label Text="{Binding PersonName}" FontSize="20" TextColor="Black"/>
-                                    <Label Text="{Binding ShortDesc}" FontSize="12" Margin="0,0,0,5" />
+                                <StackLayout Grid.Row="1" Orientation="Vertical">
+                                    <Label Text="{Binding PersonName}" FontSize="20" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding ShortDesc}" FontSize="14" TextColor="Black" Margin="10,0,10,0" HorizontalTextAlignment="Center"  />
                                 </StackLayout>
                             </Grid>
                         </ViewCell.View>

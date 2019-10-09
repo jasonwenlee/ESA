@@ -12,10 +12,12 @@
   <ItemGroup>
     <None Remove="Resources\About_plus.png" />
     <None Remove="Resources\akihide.png" />
+    <None Remove="Resources\diagram.png" />
     <None Remove="Resources\dinesh.png" />
     <None Remove="Resources\garry.png" />
     <None Remove="Resources\history.png" />
     <None Remove="Resources\home.png" />
+    <None Remove="Resources\hughes_ph.png" />
     <None Remove="Resources\Icons\bacack_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
     <None Remove="Resources\Icons\back_icon_light_active.png" />
@@ -37,6 +39,7 @@
     <None Remove="Resources\Icons\info_icon.png" />
     <None Remove="Resources\Icons\info_icon_dark_active.png" />
     <None Remove="Resources\Icons\info_icon_light_active.png" />
+    <None Remove="Resources\Icons\ivision_logo.png" />
     <None Remove="Resources\Icons\keypoints_icon.png" />
     <None Remove="Resources\Icons\keypoints_icon_dark_active.png" />
     <None Remove="Resources\Icons\ref_icon.png" />
@@ -64,10 +67,12 @@
     <EmbeddedResource Include="Resources\about48.png" />
     <EmbeddedResource Include="Resources\About_plus.png" />
     <EmbeddedResource Include="Resources\akihide.png" />
+    <EmbeddedResource Include="Resources\diagram.png" />
     <EmbeddedResource Include="Resources\dinesh.png" />
     <EmbeddedResource Include="Resources\garry.png" />
     <EmbeddedResource Include="Resources\history.png" />
     <EmbeddedResource Include="Resources\home.png" />
+    <EmbeddedResource Include="Resources\hughes_ph.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_light_active.png" />
@@ -86,6 +91,7 @@
     <EmbeddedResource Include="Resources\Icons\info_icon.png" />
     <EmbeddedResource Include="Resources\Icons\info_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\info_icon_light_active.png" />
+    <EmbeddedResource Include="Resources\Icons\ivision_logo.png" />
     <EmbeddedResource Include="Resources\Icons\keypoints_icon.png" />
     <EmbeddedResource Include="Resources\Icons\keypoints_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\ref_icon.png" />
@@ -157,10 +163,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Views\DetailsPage.xaml.cs">
       <DependentUpon>DetailsPage.xaml</DependentUpon>
     </Compile>
@@ -176,9 +178,6 @@
     <EmbeddedResource Update="Views\DetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\VariationsView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -188,6 +187,9 @@
   <ItemGroup>
     <EmbeddedResource Update="Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VariationsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\VideoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

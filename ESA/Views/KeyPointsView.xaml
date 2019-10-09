@@ -6,11 +6,28 @@
              mc:Ignorable="d"
              x:Class="ESA.Views.KeyPointsView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-  <ContentView.Content>
-      <!--Put whatever layout you need in here-->
-      <StackLayout>
-            <Label Text="Key Points!" TextColor="White"/>
-            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains3.jpg}" />
+    <ContentView.Content>
+        <!--Put whatever layout you need in here-->
+        <StackLayout>
+            <Label Text="Key Points:"  FontAttributes="Bold"/>
+            <!-- <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains3.jpg}" />-->
+            <StackLayout Grid.Row="0" Spacing="2" >
+                <Label FontSize="16" Text="Specific considerations:" FontAttributes="Bold" />
+                <Label LineBreakMode="WordWrap" FontSize="14"  Text="&#x2022; Only eye: this technique creates a bridging flap that obscures the patient's vision before the flap is divided in the second stage.  This may not be suited for patients if it affects their only seeing eye." />
+                <Label LineBreakMode="WordWrap" FontSize="14"  Text="&#x2022; Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities:"/>
+
+                <Label FontSize="14" Text="see Tarsoconjunctival flap – stage 2"  TextColor="Blue" />
+                <Label FontSize="16" Text="Tips/pitfalls:" FontAttributes="Bold" />
+                <Label FontSize="14" Text="Dissection" TextDecorations="Underline"   FontAttributes="Bold" />
+                <Label LineBreakMode="WordWrap" FontSize="14"  Text="&#x2022; It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone." />
+                <Label LineBreakMode="WordWrap" FontSize="14"  Text="&#x2022; Dissecting superiorly up to white line ensures that the flap is completely free and can be mobilised into the defect without tension." />
+                <Label FontSize="14" Text="Suture:" FontAttributes="Bold" />
+                <Label LineBreakMode="WordWrap" FontSize="14"  Text="&#x2022; Suture the flap to the lid defect under tension." />
+                <Label LineBreakMode="WordWrap" FontSize="14"  Text="&#x2022; Allow a small amount of skin recession." />
+
+
+            </StackLayout>
+
         </StackLayout>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>

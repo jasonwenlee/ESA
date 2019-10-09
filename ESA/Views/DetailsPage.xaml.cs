@@ -202,5 +202,29 @@ namespace ESA.Views
         {
             await Navigation.PushAsync(new AboutPage());
         }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            string val = e.Value ? "ON" : "OFF";
+            if (val == "OFF")
+            {
+                videoPlayer.IsVisible = false;
+                videoInfo1.IsVisible = false;
+                videoInfo2.IsVisible = false;
+                videoInfo3.IsVisible = false;
+                videoPlayerRow.Height = 0;
+                videoInfoRow.Height = 0;
+            }
+            else
+            {
+                videoPlayer.IsVisible = true;
+                videoInfo1.IsVisible = true;
+                videoInfo2.IsVisible = true;
+                videoInfo3.IsVisible = true;
+                videoPlayerRow.Height = 200;
+                videoInfoRow.Height = 100;
+            }
+            
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<!--<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,7 +7,7 @@
              x:Class="ESA.StepsView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
   <ContentView.Content>
-        <!--Put whatever layout you need in here, this is just an example-->
+        --><!--Put whatever layout you need in here, this is just an example--><!--
         <StackLayout>
             <Label Text="History" TextColor="White" />
             <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Dr Wendel Hughes, an ophthalmologist who contributed to the field of oculoplastic surgery, published his first paper on tarsoconjunctival flaps in 1937. [1,2] Further modifications to the technique by Hughes and others occurred throughout subsequent decades. [3-6] Significant developments included using full-thickness skin grafting of the tarsoconjunctival flap, sparing of the marginal upper lid tarsus, and removal of the levator muscle complex from the tarsoconjunctival flap. This led to the reduction in upper lid complications, such as upper lid retraction,  entropion, and trichiasis. " />
@@ -16,4 +16,101 @@
             <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Traditionally, flap division occurred 3 to 4 months after the initial stage.  Currently the standard time to flap division is frequently 2 weeks, but can be carried out from 7 days with good outcome. [7,8]" />
         </StackLayout>
     </ContentView.Content>
+</ContentView>-->
+
+
+<!--<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.StepsView"
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+    <ContentView.Content>
+        --><!--Put whatever layout you need in here, this is just an example--><!--
+        <ListView  x:Name="MyListView" Grid.Row="1" Margin="3,5,5,5" Header="Steps List"
+         GroupDisplayBinding="{Binding Title}" HasUnevenRows="True" SeparatorVisibility="None" IsGroupingEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="250">
+                        <Frame BorderColor="Black" CornerRadius="0" HasShadow="False" Padding="10,10,10,10">
+                            <ScrollView>
+                                <StackLayout>
+                                    <Label TextColor="Green" VerticalTextAlignment="Start" Text="{Binding Description}"   />
+                                </StackLayout>
+                            </ScrollView>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell Height="50">
+                        <Frame BorderColor="Black" CornerRadius="0" HasShadow="False" Padding="10,10,10,10">
+                            <StackLayout>
+                                <Label TextColor="Green" VerticalTextAlignment="Start" Text="{Binding Title}"   />
+                                <Button HorizontalOptions="EndAndExpand" Image="{Binding StateIcon}" VerticalOptions="CenterAndExpand" BackgroundColor="Black" BorderColor="Transparent" BorderWidth="5"
+                                        Clicked="HeaderTapped"  CommandParameter="{Binding .}" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+        </ListView>
+    </ContentView.Content>
+</ContentView>-->
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.StepsView"
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Steps" TextColor="Black" FontSize="16" />
+            <StackLayout Grid.Row="1" x:Name="Content"/>
+        </Grid>
+    </ContentView.Content>
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StepNumber" TargetType="Label">
+                <!--<Setter Property="TextColor" Value="#BDBDBD" />-->
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="MinimumWidthRequest" Value="30" />
+                <Setter Property="Margin" Value="0,0,5,0" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="StepContent" TargetType="Label">
+                <!--<Setter Property="TextColor" Value="#BDBDBD" />-->
+                <Setter Property="TextColor" Value="#275C5C" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="StepDiagram" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="IsVisible" Value="False" />
+            </Style>
+            <Style x:Key="DiagramText" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#828282" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HeightRequest" Value="25" />
+                <!--<Setter Property="TextColor" Value="White" />-->
+                <Setter Property="TextColor" Value="#275C5C" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
 </ContentView>

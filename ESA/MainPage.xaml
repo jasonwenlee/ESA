@@ -178,9 +178,9 @@
 
                             <StackLayout>
                                 <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Start">
-                                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.videoph.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
+                                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.hughes_ph.png}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
                                     <!--<Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" HorizontalOptions="Center" FontSize="Small"/>-->
-                                    <Label Text="Tarsoconjunctival (Hughes) flap – Stage_1" HorizontalOptions="Center" FontSize="Small" BackgroundColor="LawnGreen"
+                                    <Label Text="Tarsoconjunctival (Hughes) flap – Stage_1" HorizontalOptions="Center" FontSize="Small"
                                            HorizontalTextAlignment="Center"/>
                                 </StackLayout>
                             </StackLayout>
@@ -214,9 +214,9 @@
 
                             <StackLayout>
                                 <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Start">
-                                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.videoph.jpg}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
+                                    <ImageButton Source="{mrkupExt:ImageResource ESA.Resources.hughes_ph.png}" HeightRequest="80" Clicked="StepsPageBtn_Clicked" />
                                     <!--<Label Text="Inferomedial orbital strut removal in endoscopic medial wall surgery" HorizontalOptions="Center" FontSize="Small"/>-->
-                                    <Label Text="Tarsoconjunctival (Hughes) flap – Stage_1" HorizontalOptions="Center" FontSize="Small" BackgroundColor="LawnGreen"
+                                    <Label Text="Tarsoconjunctival (Hughes) flap – Stage_1" HorizontalOptions="Center" FontSize="Small"
                                         HorizontalTextAlignment="Center"/>
                                 </StackLayout>
                             </StackLayout>
