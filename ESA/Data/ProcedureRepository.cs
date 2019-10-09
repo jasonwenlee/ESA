@@ -15,8 +15,7 @@ namespace ESA.Data
     // Lacrimal, Orbital, and Eyelid. The controller can do the following:
     // - Get a list of lacrimal procedure, a list of orbital procedure, or a list of eyelid procedure
     // - Get a lacrimal procedure, an orbital procedure, or an eyelid procedure based on name or ID
-    // - Save a procedure with its category, name, and description
-    // - Save complications, history, key points, references, steps, and variations
+    // - Save a procedure with its category, name, description, complications, history, key points, references, steps, and variations
 
     public class ProcedureRepository : IProcedureRepository
     {
@@ -30,9 +29,9 @@ namespace ESA.Data
             path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), dbPath);
             database = new SQLiteConnection(path);
             database.Execute("PRAGMA foreign_keys = ON");
-            database.DropTable<Lacrimal>();
-            database.DropTable<Orbital>();
-            database.DropTable<Eyelid>();
+            //database.DropTable<Lacrimal>();
+            //database.DropTable<Orbital>();
+            //database.DropTable<Eyelid>();
             //Create lacrimal table
             database.CreateTable<Lacrimal>();
             // Create orbital table

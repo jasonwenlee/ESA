@@ -7,10 +7,10 @@
              x:Class="ESA.DisplayProcedureInfo">
     <ScrollView>
         <StackLayout Padding="5">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button x:Name="editButton" Text="Edit" Clicked="EditButton_Clicked"/>
                 <Button x:Name="saveButton" Text="Save" Clicked="SaveButton_Clicked"/>
-            </StackLayout>
+            </StackLayout>-->
             
             <Label Text="Proc. Name"/>
             <Entry x:Name="procedureNameEntry" Text="{Binding Name}" Placeholder="No info" IsReadOnly="True"/>

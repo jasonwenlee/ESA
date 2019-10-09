@@ -36,7 +36,8 @@ namespace ESA.ViewModels
             var validationResults = _procedureValidator.Validate(_procedure);
             if (validationResults.IsValid)
             {
-                CategoriseProcedure(_procedure.Category);
+                //await Task.Run(async() => await CategoriseProcedureAsync(_procedure.Category));
+                await CategoriseProcedureAsync(_procedure.Category);
             }
             else
             {
@@ -44,7 +45,7 @@ namespace ESA.ViewModels
             }
         }
 
-        internal void CategoriseProcedure(string Category)
+        internal async Task CategoriseProcedureAsync(string Category)
         {
             if (Category.ToLower().Trim().Equals("lacrimal"))
             {
@@ -61,6 +62,8 @@ namespace ESA.ViewModels
                     thisProcedure.History = _procedure.History;
                     thisProcedure.References = _procedure.References;
                     _procedureRepository.SaveProcedure(thisProcedure);
+                    await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Lacrimal", "Ok");
+                    await _navigation.PopAsync();
                 }
             }
             else if (Category.ToLower().Trim().Equals("orbital"))
@@ -78,6 +81,8 @@ namespace ESA.ViewModels
                     thisProcedure.History = _procedure.History;
                     thisProcedure.References = _procedure.References;
                     _procedureRepository.SaveProcedure(thisProcedure);
+                    await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Orbital", "Ok");
+                    await _navigation.PopAsync();
                 }
             }
             else if (Category.ToLower().Trim().Equals("eyelid"))
@@ -95,6 +100,8 @@ namespace ESA.ViewModels
                     thisProcedure.History = _procedure.History;
                     thisProcedure.References = _procedure.References;
                     _procedureRepository.SaveProcedure(thisProcedure);
+                    await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Eyelid", "Ok");
+                    await _navigation.PopAsync();
                 }
             }
         }

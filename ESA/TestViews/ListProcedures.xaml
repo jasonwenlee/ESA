@@ -8,7 +8,7 @@
 
         <StackLayout>
             <Label x:Name="allLabel" Text="All" Margin="10"/>
-        <ListView x:Name="allList" ItemTapped="List_ItemTapped" BackgroundColor="Cyan">
+        <ListView x:Name="allList" ItemTapped="List_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}"/>
