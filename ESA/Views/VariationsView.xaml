@@ -10,13 +10,64 @@
         <!--Put whatever layout you need in here-->
         <StackLayout>
             <StackLayout>
-          <Label Text="Variations!" TextColor="White" />
+          <Label Text="Variations" TextColor="White" />
      <!--       <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" /> -->
-            <Label Text="&#x2022; Wider flap may need a straighter horizontal incision without vertical relieving incisions." TextColor="White" />
-            <Label Text="&#x2022; Tarsoconjunctival-based or Tars conjunctival-Muller based flaps; Conjunctival and Muller together allow better vascularisation of the flap." TextColor="White" />
-            <Label Text="&#x2022; If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post-operative eyelid retraction than advancing conjunctiva alone." TextColor="White" />
-        </StackLayout>
+                <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Variations in steps" FontAttributes="Bold" FontSize="Body"/>
+                <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Size of flap" FontAttributes="Bold"/>
+                <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="&#x2022;  Wider flap may need a straighter horizonal incision without vertical relieving incisions" />
+                <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap" FontAttributes="Bold"/>
+                <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="&#x2022;  Conjunctiva and Mullers together allow better vascularsation of the flap" />
+                <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="&#x2022;  If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction than advancing conjunctiva alone" />
+                <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Related procedures" FontAttributes="Bold" FontSize="Body"/>
+                <Label  TextColor="#1569C7" LineBreakMode="WordWrap" Text="Tarsoconjunctival flap - stage 2" TextDecorations="Underline" FontAttributes="Bold"/>
+                <Label  TextColor="#1569C7" LineBreakMode="WordWrap" Text="Hewes flap" FontAttributes="Bold" TextDecorations="Underline"/>
+            </StackLayout>
             <StackLayout>
+                <ListView x:Name="contentListView"
+                      ItemsSource="{Binding VariationPageModel}"
+                      HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="False">
+                                <Grid Padding="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
+                                        <Image Source="{mrkupExt:ImageResource ESA.Resources.variationImage1.png }"
+                                           Grid.RowSpan="2"
+                                        
+                                       Aspect="AspectFill"
+                                       HeightRequest="60"
+                                       WidthRequest="60" />
+                                    </StackLayout>
+
+                                    <StackLayout Grid.Column="1" Orientation="Vertical"   VerticalOptions="Center"  >
+                                        <Label Grid.Row="1"
+                                    VerticalTextAlignment="Center" 
+                                          
+                                       FontSize="13"
+                                       TextColor="White"
+                                       Grid.Column="1"
+                                       Text="{Binding Title}"/>
+
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </StackLayout>
+        <!--<StackLayout>
                 <ListView  x:Name="VariationList" ItemsSource="{Binding VariationList}" HasUnevenRows="true">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -41,6 +92,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-        </StackLayout>
+        </StackLayout>-->
     </ContentView.Content>
 </ContentView>
