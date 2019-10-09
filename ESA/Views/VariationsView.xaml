@@ -10,7 +10,16 @@
         <!--Put whatever layout you need in here-->
         <StackLayout>
           <Label Text="Variations!" TextColor="White" />
-            <Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" />
+            <!--<Image Source="{mrkupExt:ImageResource ESA.Resources.mountains1.jpg}" />-->
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Variations in steps" FontAttributes="Bold" FontSize="Body"/>
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Size of flap" FontAttributes="Bold"/>
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="- Wider flap may need a straighter horizonal incision without vertical relieving incisions" />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap" FontAttributes="Bold"/>
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="- Conjunctiva and Mullers together allow better vascularsation of the flap" />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="- If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction than advancing conjunctiva alone" />
+            <Label  TextColor="#BDBDBD" LineBreakMode="WordWrap" Text="Related procedures" FontAttributes="Bold" FontSize="Body"/>
+            <Label  TextColor="#1569C7" LineBreakMode="WordWrap" Text="Tarsoconjunctival flap - stage 2" TextDecorations="Underline" FontAttributes="Bold"/>
+            <Label  TextColor="#1569C7" LineBreakMode="WordWrap" Text="Hewes flap" FontAttributes="Bold" TextDecorations="Underline"/>
         </StackLayout>
   </ContentView.Content>
 </ContentView>
