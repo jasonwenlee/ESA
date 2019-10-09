@@ -45,6 +45,16 @@
     <None Remove="Resources\mountains2.jpg" />
     <None Remove="Resources\mountains3.jpg" />
     <None Remove="Resources\mountains4.jpg" />
+    <None Remove="Resources\Thumbnails\eye1.jpg" />
+    <None Remove="Resources\Thumbnails\eye2.jpg" />
+    <None Remove="Resources\Thumbnails\eye3.jpg" />
+    <None Remove="Resources\Thumbnails\hughes.jpg" />
+    <None Remove="Resources\Thumbnails\lac1.jpg" />
+    <None Remove="Resources\Thumbnails\lac2.jpg" />
+    <None Remove="Resources\Thumbnails\lac3.jpg" />
+    <None Remove="Resources\Thumbnails\orb1.jpg" />
+    <None Remove="Resources\Thumbnails\orb2.jpg" />
+    <None Remove="Resources\Thumbnails\orb3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -104,6 +114,16 @@
     <EmbeddedResource Include="Resources\orbital.png" />
     <EmbeddedResource Include="Resources\plus.png" />
     <EmbeddedResource Include="Resources\search.png" />
+    <EmbeddedResource Include="Resources\Thumbnails\eye1.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\eye2.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\eye3.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\hughes.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\lac1.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\lac2.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\lac3.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\orb1.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\orb2.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\orb3.jpg" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
   </ItemGroup>
 
