@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace ESA.ViewModels
@@ -13,6 +14,8 @@ namespace ESA.ViewModels
         private ObservableCollection<Procedure> _lacrimalProcedures;
         private ObservableCollection<Procedure> _orbitalProcedures;
         private ObservableCollection<Procedure> _eyelidProcedures;
+        private ObservableCollection<Procedure> _allProcedures;
+
         // Getter for procedures. Procedures are only set in this class.
         public ObservableCollection<Procedure> LacrimalProcedures
         {
@@ -56,6 +59,21 @@ namespace ESA.ViewModels
                 }
             }
         }
+        public ObservableCollection<Procedure> AllProcedures
+        {
+            get
+            {
+                return _allProcedures;
+            }
+            set
+            {
+                if (value != _eyelidProcedures)
+                {
+                    _allProcedures = value;
+                }
+            }
+        }
+
 
         public bool IsDataLoaded { get; private set; }
 
@@ -65,24 +83,29 @@ namespace ESA.ViewModels
             _procedureRepository = App.ProcedureDatabase;
         }
 
+        public void LoadAllProcedureList()
+        {
+            LoadLacrimalList();
+            LoadOrbitalList();
+            LoadEyelidList();
+            var shadowCopy = new ObservableCollection<Procedure>(LacrimalProcedures.Concat(OrbitalProcedures).Concat(EyelidProcedures));
+            AllProcedures = shadowCopy;
+        }
         public void LoadLacrimalList()
         {
             LacrimalProcedures = new ObservableCollection<Procedure>(_procedureRepository.GetListLacrimalProcedures());
             IsDataLoaded = true;
         }
-
         public void LoadOrbitalList()
         {
             OrbitalProcedures = new ObservableCollection<Procedure>(_procedureRepository.GetListOrbitalProcedures());
             IsDataLoaded = true;
         }
-
         public void LoadEyelidList()
         {
             EyelidProcedures = new ObservableCollection<Procedure>(_procedureRepository.GetListEyelidProcedures());
             IsDataLoaded = true;
         }
-
         public Procedure LoadProcedureByName(Procedure proc)
         {
             if (proc is Lacrimal)
@@ -99,7 +122,6 @@ namespace ESA.ViewModels
             }
             return null;
         }
-
         public Procedure LoadProcedureByID(Procedure procedureType, int ID)
         {
             if (procedureType is Lacrimal)

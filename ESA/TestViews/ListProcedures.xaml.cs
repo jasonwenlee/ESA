@@ -27,44 +27,18 @@ namespace ESA
             base.OnAppearing();
             if (!LoadProcVM.IsDataLoaded)
             {
+                LoadProcVM.LoadAllProcedureList();
                 LoadProcVM.LoadLacrimalList();
                 LoadProcVM.LoadOrbitalList();
                 LoadProcVM.LoadEyelidList();
             }
+            allList.ItemsSource = LoadProcVM.AllProcedures;
             lacrimalList.ItemsSource = LoadProcVM.LacrimalProcedures;
             orbitalList.ItemsSource = LoadProcVM.OrbitalProcedures;
             eyelidList.ItemsSource = LoadProcVM.EyelidProcedures;
         }
 
-        private async void LacrimalList_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (sender == null)
-            {
-                await DisplayAlert("No item", "Null", "ok");
-                return;
-            }
-            else
-            {
-                Procedure tappedItem = (Procedure)((ListView)sender).SelectedItem;
-                await Navigation.PushAsync(new DisplayProcedureInfo(tappedItem));
-            }
-        }
-
-        private async void OrbitalList_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (sender == null)
-            {
-                await DisplayAlert("No item", "Null", "ok");
-                return;
-            }
-            else
-            {
-                Procedure tappedItem = (Procedure)((ListView)sender).SelectedItem;
-                await Navigation.PushAsync(new DisplayProcedureInfo(tappedItem));
-            }
-        }
-
-        private async void EyelidList_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void List_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (sender == null)
             {

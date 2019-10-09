@@ -32,8 +32,6 @@
             <Editor x:Name="referencesEditor" Text="{Binding References}" Placeholder="Enter references" AutoSize="TextChanges" />
 
             <Button x:Name="addInfoBinding" Command="{Binding AddProcedureCommand}" Text="Add Info Bind"/>
-            <!--<Button x:Name="addInformationButton" Text="Add Information MVVM" Clicked="AddInformationButtonMVVM_Clicked"/>-->
-
         </StackLayout>
     </ScrollView>
 </ContentPage>

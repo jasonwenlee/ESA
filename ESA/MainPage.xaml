@@ -13,7 +13,7 @@
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" Clicked="AboutUs_Clicked" />
         <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" Clicked="Search_Clicked" />
         <!--Don't remove this db toolbar item please :)-->
-        <!--<ToolbarItem x:Name="Database" Text="DB" Clicked="Database_Clicked"/>-->
+        <ToolbarItem x:Name="Database" Text="Login" Clicked="Database_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

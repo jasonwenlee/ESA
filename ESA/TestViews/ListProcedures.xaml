@@ -7,8 +7,16 @@
              x:Class="ESA.ListProcedures">
 
         <StackLayout>
+            <Label x:Name="allLabel" Text="All" Margin="10"/>
+        <ListView x:Name="allList" ItemTapped="List_ItemTapped" BackgroundColor="Cyan">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Label x:Name="lacrimalLabel" Text="Lacrimal" Margin="10"/>
-            <ListView x:Name="lacrimalList" ItemTapped="LacrimalList_ItemTapped" BackgroundColor="Cyan">
+            <ListView x:Name="lacrimalList" ItemTapped="List_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}"/>
@@ -16,7 +24,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Label x:Name="orbitalLabel" Text="Orbital" Margin="10"/>
-            <ListView x:Name="orbitalList" ItemTapped="OrbitalList_ItemTapped">
+            <ListView x:Name="orbitalList" ItemTapped="List_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}"/>
@@ -24,7 +32,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Label x:Name="eyelidLabel" Text="Eyelid" Margin="10"/>
-            <ListView x:Name="eyelidList" ItemTapped="EyelidList_ItemTapped">
+            <ListView x:Name="eyelidList" ItemTapped="List_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}"/>
