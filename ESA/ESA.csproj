@@ -94,7 +94,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\about48.png" />
     <EmbeddedResource Include="Resources\akihide.png" />
-    <EmbeddedResource Include="Resources\Complication01.jpeg" />
     <EmbeddedResource Include="Resources\dinesh.png" />
     <EmbeddedResource Include="Resources\garry.png" />
     <EmbeddedResource Include="Resources\history.png" />
