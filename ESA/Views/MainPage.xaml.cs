@@ -1,20 +1,90 @@
-﻿using System;
+﻿using ESA.Models;
+using ESA.ViewModels;
+using ESA.Views;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-namespace ESA.Views
+namespace ESA
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : TabbedPage
+    // Learn more about making custom code visible in the Xamarin.Forms previewer
+    // by visiting https://aka.ms/xamarinforms-previewer
+    [DesignTimeVisible(false)]
+    public partial class MainPage : ContentPage
     {
+        // Don't remove:)
+        //LoadProcedureViewModel loadOneProc;
+        //Procedure testEye;
+
         public MainPage()
         {
             InitializeComponent();
+            // Test for only one eyelid procedure. Will change/remove when more procedures are added.
+            // This procedure loads after mainpage is initialised.
+            // Don't remove:)
+            //loadOneProc = new LoadProcedureViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            // Don't remove:)
+            //loadOneProc.LoadEyelidList();
+            //ObservableCollection<Procedure> eyes = loadOneProc.EyelidProcedures;
+            //foreach (var eyeProc in eyes)
+            //{
+            //    // testProc is name of label
+            //    if (eyeProc.Name.Equals(testProc.Text))
+            //    {
+            //        testEye = loadOneProc.LoadProcedureByName(eyeProc);
+            //    }
+            //}
+        }
+
+        private void StepsPageBtn_Clicked(object sender, EventArgs e)
+        {
+            // Don't think this is a good idea to push object from page to another. Don't remove :)
+            //Navigation.PushAsync(new DetailsPage(testEye));
+
+            Navigation.PushAsync(new DetailsPage());
+        }
+
+        private async void AboutUs_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
+
+        private async void Video_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new VideoPage());
+        }
+
+        private async void Lacrimal_Click(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CategoriesPage());
+        }
+        private async void Orbital_Click(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CategoriesPage());
+        }
+
+        private async void Eyelid_Click(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CategoriesPage());
+        }
+
+        private async void Search_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CategoriesPage());
+        }
+
+        private async void Database_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CreateProcedure());
         }
     }
 }
