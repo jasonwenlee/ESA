@@ -16,7 +16,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="videoPlayerRow" />
                 <RowDefinition Height="50*" />
-                <RowDefinition Height="6*" />
+                <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <!--COLLAPSABLE-->
             <Grid x:Name="collapsablePlayer" Grid.Row="0" IsVisible="False" HeightRequest="42" >
@@ -128,7 +128,7 @@
             </ScrollView>
 
             <!--FOOTER-->
-            <Grid x:Name="footer"  Grid.Row="2" BackgroundColor="#0F0F0F" HorizontalOptions="Fill" ColumnSpacing="0" RowSpacing="0" Padding="0" Margin="0">
+            <Grid x:Name="footer" Style="{StaticResource Footer}" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -137,31 +137,93 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-
-                <ImageButton x:Name="StepsBtn" Grid.Column="0" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.steps_icon_dark_active.png}" Clicked="StepsBtn_Clicked"/>
-                <Label x:Name="StepsLbl" Grid.Column="0" Grid.Row="1" Text="Steps" Style="{StaticResource FooterLabel}" />
-
-                <ImageButton x:Name="KeyPointsBtn" Grid.Column="1" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.keypoints_icon.png}" Clicked="KeyPointsBtn_Clicked"/>
-                <Label x:Name="KeyPointsLbl" Grid.Column="1" Grid.Row="1" Text="Key Points" Style="{StaticResource FooterLabel}" />
-
-                <ImageButton x:Name="VariationsBtn" Grid.Column="2" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.variations_icon.png}" Clicked="VariationsBtn_Clicked" />
-                <Label x:Name="VariationsLbl" Grid.Column="2" Grid.Row="1" Text="Variations" Style="{StaticResource FooterLabel}" />
-
-                <ImageButton x:Name="ComplicationsBtn" Grid.Column="3" Grid.Row="0" Style="{StaticResource FooterButton}" Source="{mrkupExt:ImageResource ESA.Resources.Icons.complications_icon.png}" Clicked="ComplicationsBtn_Clicked" />
-                <Label x:Name="ComplicationsLbl" Grid.Column="3" Grid.Row="1" Text="Complications" Style="{StaticResource FooterLabel}" />
-
-                <ImageButton x:Name="InfoBtn" Grid.Column="4" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" Clicked="InfoBtn_Clicked" />
-                <Label x:Name="InfoLbl" Grid.Column="4" Grid.Row="1" Text="Info" Style="{StaticResource FooterLabel}" />
+                <!--Steps-->
+                <Grid Grid.Column="0" Style="{StaticResource FooterButtonGrid}">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="StepsBtn_Clicked"/>
+                    </Grid.GestureRecognizers>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="StepsBtn" Grid.Row="0" Style="{StaticResource FooterButton}" Source="{mrkupExt:ImageResource ESA.Resources.Icons.steps_icon_light_active.png}"/>
+                    <Label x:Name="StepsLbl" Grid.Row="1" Text="Steps" TextColor="#3399FF" Style="{StaticResource FooterLabel}" />
+                </Grid>
+                <!--Key Points-->
+                <Grid Grid.Column="1" Style="{StaticResource FooterButtonGrid}">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="KeyPointsBtn_Clicked"/>
+                    </Grid.GestureRecognizers>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="KeyPointsBtn" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.keypoints_icon.png}"/>
+                    <Label x:Name="KeyPointsLbl" Grid.Row="1" Text="Key Points" Style="{StaticResource FooterLabel}" />
+                </Grid>
+                <!--Variations-->
+                <Grid Grid.Column="2" Style="{StaticResource FooterButtonGrid}">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="VariationsBtn_Clicked"/>
+                    </Grid.GestureRecognizers>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="VariationsBtn" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.variations_icon.png}" />
+                    <Label x:Name="VariationsLbl" Grid.Row="1" Text="Variations" Style="{StaticResource FooterLabel}" />
+                </Grid>
+                <!--Complications-->
+                <Grid Grid.Column="3" Style="{StaticResource FooterButtonGrid}" >
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ComplicationsBtn_Clicked"/>
+                    </Grid.GestureRecognizers>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="ComplicationsBtn" Grid.Row="0" Style="{StaticResource FooterButton}" Source="{mrkupExt:ImageResource ESA.Resources.Icons.complications_icon.png}" />
+                    <Label x:Name="ComplicationsLbl" Grid.Row="1" Text="Complications" Style="{StaticResource FooterLabel}" />
+                </Grid>
+                <!--Info-->
+                <Grid Grid.Column="4" Style="{StaticResource FooterButtonGrid}" >
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="InfoBtn_Clicked"/>
+                    </Grid.GestureRecognizers>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="InfoBtn" Grid.Row="0" Style="{StaticResource FooterButton}"  Source="{mrkupExt:ImageResource ESA.Resources.Icons.info_icon.png}" />
+                    <Label x:Name="InfoLbl" Grid.Row="1" Text="Info" Style="{StaticResource FooterLabel}" />
+                </Grid>
             </Grid>
-
         </Grid>
     </ContentPage.Content>
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style x:Key="VideoControlsTop" TargetType="Image">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="32" />
+                <Setter Property="WidthRequest" Value="32" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style x:Key="Footer" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
+            <Style x:Key="FooterButtonGrid" TargetType="Grid">
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
             <Style x:Key="FooterButton" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HeightRequest" Value="30" />
@@ -171,14 +233,8 @@
                 <Setter Property="FontSize" Value="Micro" />
                 <Setter Property="TextColor" Value="Gray" />
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
             </Style>
-            <Style x:Key="VideoControlsTop" TargetType="ImageButton">
-                <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="HeightRequest" Value="32" />
-                <Setter Property="WidthRequest" Value="32" />
-                <Setter Property="Margin" Value="5" />
-            </Style>
-
         </ResourceDictionary>
     </ContentPage.Resources>
 </ContentPage>

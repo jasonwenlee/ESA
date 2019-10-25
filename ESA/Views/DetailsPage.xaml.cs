@@ -163,24 +163,24 @@ namespace ESA.Views
             switch (page)
             {
                 case "step":
-                    StepsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.steps_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-                    StepsLbl.TextColor = Color.White;
+                    StepsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.steps_icon_light_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    StepsLbl.TextColor = Color.FromHex("#3399FF");
                     break;
                 case "keyp":
-                    KeyPointsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.keypoints_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-                    KeyPointsLbl.TextColor = Color.White;
+                    KeyPointsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.keypoints_icon_light_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    KeyPointsLbl.TextColor = Color.FromHex("#3399FF");
                     break;
                 case "vari":
-                    VariationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.variations_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-                    VariationsLbl.TextColor = Color.White;
+                    VariationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.variations_icon_light_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    VariationsLbl.TextColor = Color.FromHex("#3399FF");
                     break;
                 case "comp":
-                    ComplicationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.complications_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-                    ComplicationsLbl.TextColor = Color.White;
+                    ComplicationsBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.complications_icon_light_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    ComplicationsLbl.TextColor = Color.FromHex("#3399FF");
                     break;
                 case "info":
-                    InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.info_icon_dark_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
-                    InfoLbl.TextColor = Color.White;
+                    InfoBtn.Source = ImageSource.FromResource("ESA.Resources.Icons.book_icon_light_active.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                    InfoLbl.TextColor = Color.FromHex("#3399FF");
                     break;
             }
         }
@@ -372,8 +372,8 @@ namespace ESA.Views
         }
         public async void PlayButtonAnimation(object sender)
         {
-            await ((ImageButton)sender).FadeTo(0.5, 100, Easing.Linear);
-            await ((ImageButton)sender).FadeTo(1, 100, Easing.Linear);
+            await ((View)sender).FadeTo(0.5, 150, Easing.CubicInOut);
+            await ((View)sender).FadeTo(1, 150, Easing.CubicInOut);
         }
     }
 }
