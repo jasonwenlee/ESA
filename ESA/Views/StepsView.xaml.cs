@@ -31,7 +31,7 @@ namespace ESA
         public void LoadStepsView()
         {
             TitleStack.Children.Clear();
-            Content.Children.Clear();
+            ViewContent.Children.Clear();
             // Title
             Label title = new Label() { Text = "Steps", TextColor = Color.White, FontSize = 16 };
             TitleStack.Children.Add(title);
@@ -81,7 +81,7 @@ namespace ESA
                     StepLayout.Children.Add(diagramThumbnail);
                 }
                 // Add to view
-                Content.Children.Add(StepLayout);
+                ViewContent.Children.Add(StepLayout);
             }
         }
 
@@ -95,13 +95,13 @@ namespace ESA
             this.currentStep = currStep.Number;
 
             // Set the previous step labels to gray
-            StackLayout prevStepLayout = ((StackLayout)Content.Children.ElementAt(prevStep.Number - 1));
+            StackLayout prevStepLayout = ((StackLayout)ViewContent.Children.ElementAt(prevStep.Number - 1));
             StackLayout prevStepContentLayout = ((StackLayout)prevStepLayout.Children.First());
             ((Label)prevStepContentLayout.Children.First()).TextColor = Color.FromHex("#BDBDBD");
             ((Label)prevStepContentLayout.Children.Last()).TextColor = Color.FromHex("#BDBDBD");
 
             // set the current step labels to white
-            StackLayout currentStepLayout = ((StackLayout)Content.Children.ElementAt(currStep.Number - 1));
+            StackLayout currentStepLayout = ((StackLayout)ViewContent.Children.ElementAt(currStep.Number - 1));
             StackLayout currentStepContentLayout = ((StackLayout)currentStepLayout.Children.First());
             ((Label)currentStepContentLayout.Children.First()).TextColor = Color.White;
             ((Label)currentStepContentLayout.Children.Last()).TextColor = Color.White;
