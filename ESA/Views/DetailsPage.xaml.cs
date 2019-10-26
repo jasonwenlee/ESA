@@ -80,6 +80,7 @@ namespace ESA.Views
             }
 
             videoPlayer.Source = source;
+            UpdateVideoPlayerLayout();
         }
 
         protected override void OnSizeAllocated(double width, double height)
