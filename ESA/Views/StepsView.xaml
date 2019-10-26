@@ -14,7 +14,6 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Vertical">
-                            
                             <StackLayout Orientation="Horizontal" >
                                 <!--Step Text-->
                                 <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>

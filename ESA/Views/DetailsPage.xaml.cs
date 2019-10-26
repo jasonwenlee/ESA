@@ -93,7 +93,7 @@ namespace ESA.Views
             collapsableHeight = 42;
             playerHeight = Width * 0.57;
             playerExpandLocation = new Rectangle(0, 0, Width, playerHeight);
-            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, scrollView.Height - playerHeight + collapsableHeight);
+            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, (Height - (videoPlayer.Height)) - 50);
             scrollViewCollapseLocation = new Rectangle(scrollView.X, collapsableHeight, scrollView.Width, scrollView.Height + (videoPlayer.Height - collapsableHeight));
             playerCollapseLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
         }
@@ -116,6 +116,7 @@ namespace ESA.Views
                 // Controls
                 videoControls.FadeTo(0, animationSpeed, Easing.Linear);
                 videoControls.TranslateTo(0, (-videoPlayer.Height), animationSpeed, Easing.Linear);
+                videoControls.IsVisible = false;
                 // Scroll View
                 scrollView.LayoutTo(scrollViewCollapseLocation, animationSpeed, Easing.Linear);
                 //Collapsable
@@ -167,22 +168,22 @@ namespace ESA.Views
             controlsAreCollapsed = true;
             // Video Player
             videoPlayer.LayoutTo(playerCollapseLocation, 500, Easing.Linear);
+            // controls
             videoControls.FadeTo(0, 500, Easing.Linear);
-
             videoControls.TranslateTo(0, (-videoPlayer.Height), 500, Easing.Linear);
             scrollView.Layout(scrollViewCollapseLocation);
         }
 
         private void playerExpand()
         {
-            // Video Player
-            videoControls.IsVisible = true;
-            videoPlayer.IsVisible = true;
-            
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            // Video Player
+            videoPlayer.IsVisible = true;
             videoPlayer.LayoutTo(playerExpandLocation, 500, Easing.Linear);
+            // Video Controls
             videoControls.FadeTo(1, 500, Easing.Linear);
             videoControls.TranslateTo(0, 0, 500, Easing.Linear);
+            videoControls.IsVisible = true;
             //Collapsable
             collapsablePlayer.IsVisible = false;
             collapsablePlayer.FadeTo(0, 500, Easing.Linear);

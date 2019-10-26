@@ -83,6 +83,7 @@ namespace ESA
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {
+
             Navigation.PushAsync(new VideoPage());
         }
     }
