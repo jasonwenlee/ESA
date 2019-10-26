@@ -122,7 +122,6 @@
                         <Label LineBreakMode="WordWrap" FontSize="14" TextColor="#BDBDBD" Text="This narrated video demonstrates the tarsoconjunctival (Hughes) flap for reconstruction of large defects of the lower eyelid, that most commonly occur after lower lid tumour excision." />
                         <Label FontSize="14" Text="Eyelid / Tumor Surgery / Eyelid Reconstruction" TextColor="#3399FF" />
                         <Label FontSize="14" Text="11th March, 2019 - 5087 Views" TextColor="#828282" />
-                        <Button Text="Click me!" Clicked="Button_Clicked"/>
                     </StackLayout>
 
                     <!--Content row This is where your view will be displayed (DO NOT PUT YOUR CODE HERE)-->

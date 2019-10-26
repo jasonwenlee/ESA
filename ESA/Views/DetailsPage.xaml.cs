@@ -42,7 +42,7 @@ namespace ESA.Views
             //});
 
             StepsView view = new StepsView();
-            view.LoadStepsView();
+            //view.LoadStepsView();
             contentRow.Children.Clear();
             contentRow.Children.Add(view);
 
@@ -72,8 +72,6 @@ namespace ESA.Views
             }
 
             videoPlayer.Source = source;
-
-            contentRow.Children.Add(new StepsView());
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -322,7 +320,7 @@ namespace ESA.Views
             {
                 refreshIcons("step", content.First().GetType().Name);
                 StepsView view = new StepsView();
-                view.LoadStepsView();
+                //view.LoadStepsView();
                 content.Clear();
                 content.Add(view);
 

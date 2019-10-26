@@ -24,65 +24,8 @@ namespace ESA
         {
             InitializeComponent();
             viewModel = new StepsViewModel();
+            BindingContext = viewModel;
             currentStep = 1;
-            BindingContext = viewModel.Steps;
-        }
-
-        public void LoadStepsView()
-        {
-            TitleStack.Children.Clear();
-            ViewContent.Children.Clear();
-            // Title
-            Label title = new Label() { Text = "Steps", TextColor = Color.White, FontSize = 16 };
-            TitleStack.Children.Add(title);
-            // Steps
-            foreach (Step step in viewModel.Steps)
-            {
-                StackLayout StepLayout = new StackLayout();
-                StackLayout ContentLayout = new StackLayout();
-                Label NumberLbl = new Label();
-                Label ContentLbl = new Label();
-                // Number
-                NumberLbl.Text = step.Number.ToString();
-                NumberLbl.Style = (Style)Resources["StepNumber"];
-                // Content
-                ContentLbl.Text = step.Content;
-                ContentLbl.Style = (Style)Resources["StepContent"];
-                if (step.Number == currentStep)
-                {
-                    NumberLbl.TextColor = Color.White;
-                    ContentLbl.TextColor = Color.White;
-                }
-
-                ContentLayout.Orientation = StackOrientation.Horizontal;
-
-                ContentLayout.Children.Add(NumberLbl);
-                ContentLayout.Children.Add(ContentLbl);
-                // Tap Event Handler
-                var tapRecognizer = new TapGestureRecognizer();
-                tapRecognizer.Tapped += StepsContent_TapEventHandler;
-                ContentLayout.GestureRecognizers.Add(tapRecognizer);
-
-                StepLayout.Children.Add(ContentLayout);
-                // Diagram
-                if (step.Diagram != null)
-                {
-                    ImageButton diagramThumbnail = new ImageButton();
-                    diagramThumbnail.Source = step.Diagram.Thumbnail;
-                    diagramThumbnail.Style = (Style)Resources["StepDiagram"];
-                    diagramThumbnail.Clicked += DiagramThumbnail_Clicked; ;
-
-                    CustomButton seeMoreBtn = new CustomButton();
-                    seeMoreBtn.Text = "See Diagram";
-                    seeMoreBtn.Style = (Style)Resources["DiagramText"];
-                    seeMoreBtn.Clicked += SeeMoreBtn_Clicked;
-
-                    StepLayout.Children.Add(seeMoreBtn);
-                    StepLayout.Children.Add(diagramThumbnail);
-                }
-                // Add to view
-                ViewContent.Children.Add(StepLayout);
-            }
         }
 
         private void StepsContent_TapEventHandler(object sender, EventArgs e)
@@ -95,16 +38,16 @@ namespace ESA
             this.currentStep = currStep.Number;
 
             // Set the previous step labels to gray
-            StackLayout prevStepLayout = ((StackLayout)ViewContent.Children.ElementAt(prevStep.Number - 1));
+            StackLayout prevStepLayout = ((StackLayout)stepsFlexLayout.Children.ElementAt(prevStep.Number - 1));
             StackLayout prevStepContentLayout = ((StackLayout)prevStepLayout.Children.First());
             ((Label)prevStepContentLayout.Children.First()).TextColor = Color.FromHex("#BDBDBD");
-            ((Label)prevStepContentLayout.Children.Last()).TextColor = Color.FromHex("#BDBDBD");
+            ((Label)prevStepContentLayout.Children.ElementAt(1)).TextColor = Color.FromHex("#BDBDBD");
 
             // set the current step labels to white
-            StackLayout currentStepLayout = ((StackLayout)ViewContent.Children.ElementAt(currStep.Number - 1));
-            StackLayout currentStepContentLayout = ((StackLayout)currentStepLayout.Children.First());
+            StackLayout currStepLayout = ((StackLayout)stepsFlexLayout.Children.ElementAt(currStep.Number - 1));
+            StackLayout currentStepContentLayout = ((StackLayout)currStepLayout.Children.First());
             ((Label)currentStepContentLayout.Children.First()).TextColor = Color.White;
-            ((Label)currentStepContentLayout.Children.Last()).TextColor = Color.White;
+            ((Label)currentStepContentLayout.Children.ElementAt(1)).TextColor = Color.White;
 
             // Move Video transport position
 

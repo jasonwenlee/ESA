@@ -8,18 +8,35 @@
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
 
     <ContentView.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <StackLayout Grid.Row="0" x:Name="TitleStack"/>
-            <StackLayout Grid.Row="1" x:Name="ViewContent"/>
-        </Grid>
+        <StackLayout>
+            <Label Text="Steps" Style="{StaticResource ViewTitle}"/>
+            <FlexLayout x:Name="stepsFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Steps}" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="0">
+                            <StackLayout Orientation="Horizontal" >
+                                <!--Step Text-->
+                                <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
+                                <Label Text="{Binding Content}" Style="{StaticResource StepContent}"/>
+                                <!--Timestamp Tap-->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="StepsContent_TapEventHandler" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </StackLayout>
     </ContentView.Content>
 
     <ContentView.Resources>
         <ResourceDictionary>
+            <Style x:Key="FlexLayout" TargetType="FlexLayout">
+                <Setter Property="Direction" Value="Row" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Wrap" Value="Wrap" />
+            </Style>
             <Style x:Key="StepNumber" TargetType="Label">
                 <Setter Property="TextColor" Value="#BDBDBD" />
                 <Setter Property="FontSize" Value="16" />
@@ -38,7 +55,6 @@
             </Style>
             <Style x:Key="StepDiagram" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="IsVisible" Value="False" />
             </Style>
             <Style x:Key="DiagramText" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#828282" />
@@ -50,3 +66,26 @@
         </ResourceDictionary>
     </ContentView.Resources>
 </ContentView>
+
+<!--if (step.Number == currentStep)
+                {
+                    NumberLbl.TextColor = Color.White;
+                    ContentLbl.TextColor = Color.White;
+                }-->
+
+<!--// Diagram
+                if (step.Diagram != null)
+                {
+                    ImageButton diagramThumbnail = new ImageButton();
+                    diagramThumbnail.Source = step.Diagram.Thumbnail;
+                    diagramThumbnail.Style = (Style)Resources["StepDiagram"];
+                    diagramThumbnail.Clicked += DiagramThumbnail_Clicked; ;
+
+                    CustomButton seeMoreBtn = new CustomButton();
+                    seeMoreBtn.Text = "See Diagram";
+                    seeMoreBtn.Style = (Style)Resources["DiagramText"];
+                    seeMoreBtn.Clicked += SeeMoreBtn_Clicked;
+
+                    StepLayout.Children.Add(seeMoreBtn);
+                    StepLayout.Children.Add(diagramThumbnail);
+                }-->

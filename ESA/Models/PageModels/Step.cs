@@ -8,13 +8,14 @@ namespace ESA.Models
     {
         public int Number { get; set; }
         public string Content { get; set; }
+        public bool HasDiagram { get; set; }
         public Diagram Diagram { get; set; }
         //public double TimeStamp { get; set; }
 
         public List<Step> GetSteps()
         {
             List<Diagram> diagrams = new Diagram().GetDiagrams();
-            return new List<Step>()
+            List<Step> steps =  new List<Step>()
             {
                 new Step() { Number = 1, Content = "Pass a 4-0 silk traction suture through the grey line to evert the upper eyelid over a Desmarres retractor.", Diagram = null },
                 new Step() { Number = 2, Content = "Assess width of lower lid defect by stretching the remaining lower lid edges centrally using forceps.", Diagram = null },
@@ -32,6 +33,15 @@ namespace ESA.Models
                 new Step() { Number = 14, Content = "Pressure Pad.", Diagram = null },
                 new Step() { Number = 15, Content = "The flap is divided in a secondary procedure; see Tarsoconjuntival flap - stage 2", Diagram = null }
             };
+            foreach(Step step in steps)
+            {
+                step.HasDiagram = false;
+                if (step.Diagram != null)
+                {
+                    step.HasDiagram = true;
+                }
+            }
+            return steps;
         }
     }
 }
