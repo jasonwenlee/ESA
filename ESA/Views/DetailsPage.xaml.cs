@@ -7,8 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading.Tasks;
-
+using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,8 +18,10 @@ namespace ESA.Views
     {
         // Don't remove :)
         //Procedure holdProcedure;
-        bool videoControlsVisible = false;
+        bool videoControlsVisible = true;
         bool controlsAreCollapsed = false;
+
+        Timer fadeTimer = new Timer();
 
         // Video Player Animation Variables
         double collapsableHeight;
@@ -35,17 +36,24 @@ namespace ESA.Views
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
-            //Device.StartTimer(TimeSpan.FromMilliseconds(2000), () =>
-            //{
-            //    //UpdateStatus?.Invoke(this, EventArgs.Empty);
-            //    //return true;
-            //});
+            fadeTimer.Interval = 2000;
+            fadeTimer.Elapsed += (s, e) =>
+            {
+                Device.BeginInvokeOnMainThread(() => { VideoControls_Tapped(s, e); });
+            };
+            fadeTimer.Enabled = true;
+
+            fadeTimer.Start();
 
             StepsView view = new StepsView();
             //view.LoadStepsView();
             contentRow.Children.Clear();
             contentRow.Children.Add(view);
 
+            contentRow.LayoutChanged += (s,e) =>
+            {
+                UpdateVideoPlayerLayout();
+            };
             // Don't remove :)
             //holdProcedure = proc;
         }
@@ -90,11 +98,11 @@ namespace ESA.Views
             playerCollapseLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
         }
 
-        private async void AdjustViews(object sender)
+        public async void AdjustViews()
         {
             uint animationSpeed = 500;
 
-
+            #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             if (!controlsAreCollapsed) // Keep Expanded
             {
                 //Collapsable
@@ -103,23 +111,20 @@ namespace ESA.Views
             }
             else // Keep Collapsed
             {
-                Rectangle videoCollapsedLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                videoPlayer.LayoutTo(videoCollapsedLocation, animationSpeed, Easing.Linear);
+                // Video Player
+                videoPlayer.LayoutTo(playerCollapseLocation, animationSpeed, Easing.Linear);
+                // Controls
                 videoControls.FadeTo(0, animationSpeed, Easing.Linear);
                 videoControls.TranslateTo(0, (-videoPlayer.Height), animationSpeed, Easing.Linear);
-                // Video Player
-
                 // Scroll View
-                Rectangle scrollViewCollapseLocation = new Rectangle(scrollView.X, collapsableHeight, scrollView.Width, scrollView.Height + (playerHeight - collapsableHeight));
                 scrollView.LayoutTo(scrollViewCollapseLocation, animationSpeed, Easing.Linear);
                 //Collapsable
                 collapsablePlayer.IsVisible = true;
                 collapsablePlayer.HeightRequest = collapsableHeight;
                 collapsablePlayer.FadeTo(0, 0, null);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 await collapsablePlayer.FadeTo(1, animationSpeed, Easing.Linear);
             }
+            #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
 
@@ -135,6 +140,7 @@ namespace ESA.Views
                 scrollView.Layout(scrollViewCollapseLocation);
                 // Collapsable
                 collapsablePlayer.IsVisible = true;
+                AdjustViews();
             }
             else
             {
@@ -209,6 +215,7 @@ namespace ESA.Views
                 btn.Source = ImageSource.FromResource("ESA.Resources.VideoPlayer.pause.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
             }
 
+            ResetFadeTimer();
         }
 
         private async void BackButton_Clicked(object sender, EventArgs e)
@@ -220,11 +227,15 @@ namespace ESA.Views
         //private void ShareButton_Clicked(object sender, EventArgs e)
         //{
         //    PlayButtonAnimation(sender);
+
+        //ResetFadeTimer();
         //}
 
         //private void FavouriteButton_Clicked(object sender, EventArgs e)
         //{
         //    PlayButtonAnimation(sender);
+
+        //ResetFadeTimer();
         //}
 
         private void CollapseButton_Clicked(object sender, EventArgs e)
@@ -238,32 +249,43 @@ namespace ESA.Views
             {
                 playerCollapse();
             }
+
+            ResetFadeTimer();
         }
 
         private void StepForwardButton_Clicked(object sender, EventArgs e)
         {
             videoPlayer.Position = videoPlayer.Position.Add(TimeSpan.FromSeconds(10));
+
+            ResetFadeTimer();
         }
 
         private void StepBackwardsButton_Clicked(object sender, EventArgs e)
         {
             videoPlayer.Position = videoPlayer.Position.Add(TimeSpan.FromSeconds(-10));
+
+            ResetFadeTimer();
         }
 
         private void VideoSlider_DragStarted(object sender, EventArgs e)
         {
             videoPlayer.Pause();
             playPauseButton.Source = ImageSource.FromResource("ESA.Resources.VideoPlayer.play.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+
+            ResetFadeTimer();
         }
 
         private void VideoSlider_DragCompleted(object sender, EventArgs e)
         {
             videoPlayer.Play();
             playPauseButton.Source = ImageSource.FromResource("ESA.Resources.VideoPlayer.pause.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+
+            ResetFadeTimer();
         }
 
         private void EnlargeButton_Clicked(object sender, EventArgs e)
         {
+            ResetFadeTimer();
             //videoPlayer.IsVisible = false;
             //videoControls.TranslateTo(0, ((videoPlayer.Height) - 42), 0, null);
             //scrollView.IsVisible = false;
@@ -280,18 +302,24 @@ namespace ESA.Views
                 await videoControls.FadeTo(0, 500, Easing.Linear);
                 videoControlsVisible = false;
                 UpdateVideoControls();
+
+                fadeTimer.Stop();
             }
             else
             {
                 await videoControls.FadeTo(100, 0, Easing.Linear);
                 videoControlsVisible = true;
                 UpdateVideoControls();
+
+                fadeTimer.Start();
             }
+            
         }
-        private void VideoPlayer_Tapped(object sender, EventArgs e)
+
+        private void ResetFadeTimer()
         {
-            videoControls.IsVisible = true;
-            videoControlsVisible = true;
+            fadeTimer.Stop();
+            fadeTimer.Start();
         }
 
         public void UpdateVideoControls()
@@ -351,7 +379,7 @@ namespace ESA.Views
                 refreshIcons("vari", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new VariationsView());
-                AdjustViews(sender);
+                AdjustViews();
             }
         }
 
@@ -363,7 +391,7 @@ namespace ESA.Views
                 refreshIcons("comp", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new ComplicationsView());
-                AdjustViews(sender);
+                AdjustViews();
             }
         }
 
@@ -377,7 +405,7 @@ namespace ESA.Views
                 // Don't remove :)
                 //contentRow.Children.Add(new InfoView(holdProcedure));
                 content.Add(new InfoView());
-                AdjustViews(sender);
+                AdjustViews();
             }
         }
 

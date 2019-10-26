@@ -40,14 +40,26 @@ namespace ESA
             // Set the previous step labels to gray
             StackLayout prevStepLayout = ((StackLayout)stepsFlexLayout.Children.ElementAt(prevStep.Number - 1));
             StackLayout prevStepContentLayout = ((StackLayout)prevStepLayout.Children.First());
-            ((Label)prevStepContentLayout.Children.First()).TextColor = Color.FromHex("#BDBDBD");
-            ((Label)prevStepContentLayout.Children.ElementAt(1)).TextColor = Color.FromHex("#BDBDBD");
+            ((Label)prevStepContentLayout.Children.First()).TextColor = Color.FromHex("#3f3f3f");
+            ((Label)prevStepContentLayout.Children.ElementAt(1)).TextColor = Color.FromHex("#3f3f3f");
 
             // set the current step labels to white
             StackLayout currStepLayout = ((StackLayout)stepsFlexLayout.Children.ElementAt(currStep.Number - 1));
             StackLayout currentStepContentLayout = ((StackLayout)currStepLayout.Children.First());
-            ((Label)currentStepContentLayout.Children.First()).TextColor = Color.White;
-            ((Label)currentStepContentLayout.Children.ElementAt(1)).TextColor = Color.White;
+            ((Label)currentStepContentLayout.Children.First()).TextColor = Color.FromHex("#00BF9D");
+            ((Label)currentStepContentLayout.Children.ElementAt(1)).TextColor = Color.FromHex("#00BF9D");
+
+            // Diagram drop down
+            if (currStep.HasDiagram)
+            {
+                ImageButton btn = ((ImageButton)currStepLayout.Children.Last());
+                bool visibility = true;
+
+                if (btn.IsVisible)
+                    visibility = false;
+
+                btn.IsVisible = visibility;
+            }
 
             // Move Video transport position
 

@@ -10,35 +10,36 @@
     <ContentView.Content>
         <StackLayout>
             <Label Text="Steps" Style="{StaticResource ViewTitle}"/>
-            <FlexLayout x:Name="stepsFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Steps}" >
+            <StackLayout x:Name="stepsFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Steps}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Spacing="0">
+                        <StackLayout Spacing="0" Orientation="Vertical">
+                            
                             <StackLayout Orientation="Horizontal" >
                                 <!--Step Text-->
                                 <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
                                 <Label Text="{Binding Content}" Style="{StaticResource StepContent}"/>
+                                <Label Text="^" Style="{StaticResource StepContent}"/>
                                 <!--Timestamp Tap-->
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="StepsContent_TapEventHandler" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
+                            <ImageButton x:Name="diagramBtn" Style="{StaticResource StepDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-            </FlexLayout>
+            </StackLayout>
         </StackLayout>
     </ContentView.Content>
 
     <ContentView.Resources>
         <ResourceDictionary>
-            <Style x:Key="FlexLayout" TargetType="FlexLayout">
-                <Setter Property="Direction" Value="Row" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Wrap" Value="Wrap" />
+            <Style x:Key="FlexLayout" TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
             <Style x:Key="StepNumber" TargetType="Label">
-                <Setter Property="TextColor" Value="#BDBDBD" />
+                <Setter Property="TextColor" Value="#3f3f3f" />
                 <Setter Property="FontSize" Value="16" />
                 <Setter Property="WidthRequest" Value="30" />
                 <Setter Property="MinimumWidthRequest" Value="30" />
@@ -48,13 +49,15 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
             <Style x:Key="StepContent" TargetType="Label">
-                <Setter Property="TextColor" Value="#BDBDBD" />
+                <Setter Property="TextColor" Value="#3f3f3f" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
             <Style x:Key="StepDiagram" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="IsVisible" Value="False" />
+                <Setter Property="Margin" Value="0,10" />
             </Style>
             <Style x:Key="DiagramText" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#828282" />
