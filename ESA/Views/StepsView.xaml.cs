@@ -17,12 +17,14 @@ namespace ESA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StepsView : ContentView
     {
+        public DetailViewModel detailViewModel;
         public StepsViewModel viewModel;
         public int currentStep;
 
-        public StepsView()
+        public StepsView(DetailViewModel dvm)
         {
             InitializeComponent();
+            detailViewModel  = dvm;
             viewModel = new StepsViewModel();
             BindingContext = viewModel;
             currentStep = 1;
@@ -32,7 +34,6 @@ namespace ESA
         {
             // get the current step
             Step prevStep = viewModel.Steps.First(s => s.Number == this.currentStep);
-
             // get the step clicked
             Step currStep = viewModel.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)sender).Children.First()).Text));
             this.currentStep = currStep.Number;
@@ -56,10 +57,23 @@ namespace ESA
                 bool visibility = true;
 
                 if (btn.IsVisible)
+                {
+                    // Rotate expandable icon
+                    currentStepContentLayout.Children.Last().RotateTo(0, 500, Easing.CubicInOut);
                     visibility = false;
+                    
+                }
+                else
+                {
+                    // Rotate expandable icon
+                    currentStepContentLayout.Children.Last().RotateTo(-180, 500, Easing.CubicInOut);
+                }
+                
 
                 btn.IsVisible = visibility;
             }
+
+            
 
             // Move Video transport position
 
@@ -83,8 +97,11 @@ namespace ESA
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {
-
-            Navigation.PushAsync(new VideoPage());
+            detailViewModel.videoName = "Brain_Eyes_Vid.mp4";
+            detailViewModel.videoIsProcedure = false;
+            Navigation.PushAsync(new VideoPage(detailViewModel));
+            //source.Path = "eye_surgery.mp4";
+            //source.Path = "Brain_Eyes_Vid.mp4";
         }
     }
 }

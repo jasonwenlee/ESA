@@ -38,7 +38,7 @@
                 <ImageButton x:Name="BackCollapsedButton" Grid.Column="1" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.back.png}" Clicked="BackButton_Clicked" Style="{StaticResource VideoControlsCollapse}"  />
                 <Label Text="Tarsonconjunctival..." Grid.Column="3" TextColor="White" VerticalOptions="Center"/>
                 <Label x:Name="PositionCollapsedLabel" Grid.Column="4" Text="{Binding Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0" />
-                <ImageButton x:Name="PlayPauseCollapsedButton" Grid.Column="6" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.pause.png}" Clicked="PlayPauseButton_Clicked" Style="{StaticResource VideoControlsCollapse}"  />
+                <ImageButton x:Name="playPauseCollapsedButton" Grid.Column="6" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.pause.png}" Clicked="PlayPauseButton_Clicked" Style="{StaticResource VideoControlsCollapse}"  />
                 <ImageButton x:Name="ExpandButton" Grid.Column="7" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.expand.png}" Clicked="CollapseButton_Clicked" Style="{StaticResource VideoControlsCollapse}" />
             </Grid>
             <!--VIDEO-->
@@ -206,18 +206,6 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="VideoControlsTop" TargetType="Image">
-                <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="HeightRequest" Value="32" />
-                <Setter Property="WidthRequest" Value="32" />
-                <Setter Property="Margin" Value="5" />
-            </Style>
-            <Style x:Key="VideoControlsCollapse" TargetType="Image">
-                <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="HeightRequest" Value="32" />
-                <Setter Property="WidthRequest" Value="32" />
-                <Setter Property="Margin" Value="5, 10" />
-            </Style>
             <Style x:Key="Footer" TargetType="Grid">
                 <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="Fill" />

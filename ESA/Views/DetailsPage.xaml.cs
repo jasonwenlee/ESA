@@ -1,6 +1,7 @@
 ﻿using ESA.MarkupExtensions;
 using ESA.Models;
 using ESA.Models.VideoView;
+using ESA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,15 @@ namespace ESA.Views
     {
         // Don't remove :)
         //Procedure holdProcedure;
-        bool videoControlsVisible = true;
-        bool controlsAreCollapsed = false;
 
+        // DetailViewModel
+        DetailViewModel detailViewModel;
+
+        // Video Control bools
+        private bool videoControlsVisible = true;
+        private bool controlsAreCollapsed = false;
+
+        // Video Controls Fade Timer
         Timer fadeTimer = new Timer();
 
         // Video Player Animation Variables
@@ -36,21 +43,23 @@ namespace ESA.Views
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
+            // View Model
+            detailViewModel = new DetailViewModel();
+
+            // Fade Timer
             fadeTimer.Interval = 2000;
             fadeTimer.Elapsed += (s, e) =>
             {
                 Device.BeginInvokeOnMainThread(() => { VideoControls_Tapped(s, e); });
             };
             fadeTimer.Enabled = true;
-
             fadeTimer.Start();
 
-            StepsView view = new StepsView();
-            //view.LoadStepsView();
+            // Content Row
+            StepsView view = new StepsView(detailViewModel);
             contentRow.Children.Clear();
             contentRow.Children.Add(view);
-
-            contentRow.LayoutChanged += (s,e) =>
+            contentRow.LayoutChanged += (s, e) =>
             {
                 UpdateVideoPlayerLayout();
             };
@@ -81,6 +90,8 @@ namespace ESA.Views
 
             videoPlayer.Source = source;
             UpdateVideoPlayerLayout();
+
+            videoPlayer.Position = detailViewModel.videoPosition;
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -89,6 +100,7 @@ namespace ESA.Views
 
             // Video Player
             videoPlayerRow.Height = this.Width * 0.57;
+            UpdatePlayPauseButton();
 
             // Video Player Animation Variables
             collapsableHeight = 42;
@@ -103,7 +115,7 @@ namespace ESA.Views
         {
             uint animationSpeed = 500;
 
-            #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             if (!controlsAreCollapsed) // Keep Expanded
             {
                 //Collapsable
@@ -126,7 +138,7 @@ namespace ESA.Views
                 collapsablePlayer.FadeTo(0, 0, null);
                 await collapsablePlayer.FadeTo(1, animationSpeed, Easing.Linear);
             }
-            #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
 
@@ -191,7 +203,7 @@ namespace ESA.Views
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             controlsAreCollapsed = false;
             // Scroll View
-            
+
             scrollView.LayoutTo(scrollViewExpandLocation, 500, Easing.Linear);
             scrollView.Layout(scrollViewExpandLocation);
             // Set Video Player new position
@@ -246,12 +258,14 @@ namespace ESA.Views
             if (controlsAreCollapsed)
             {
                 playerExpand();
+
             }
             else
             {
                 playerCollapse();
             }
 
+            UpdatePlayPauseButton();
             ResetFadeTimer();
         }
 
@@ -287,14 +301,11 @@ namespace ESA.Views
 
         private void EnlargeButton_Clicked(object sender, EventArgs e)
         {
-            ResetFadeTimer();
-            //videoPlayer.IsVisible = false;
-            //videoControls.TranslateTo(0, ((videoPlayer.Height) - 42), 0, null);
-            //scrollView.IsVisible = false;
-
-            //videoPlayer.IsVisible = true;
-            //videoControls.IsVisible = true;
-            //scrollView.IsVisible = true;
+            videoPlayer.Stop();
+            detailViewModel.videoPosition = videoPlayer.Position;
+            detailViewModel.videoIsProcedure = true;
+            detailViewModel.videoName = "eye_surgery.mp4";
+            Navigation.PushAsync(new VideoPage(detailViewModel));
         }
 
         private async void VideoControls_Tapped(object sender, EventArgs e)
@@ -315,7 +326,7 @@ namespace ESA.Views
 
                 fadeTimer.Start();
             }
-            
+
         }
 
         private void ResetFadeTimer()
@@ -336,12 +347,22 @@ namespace ESA.Views
             videoSlider.IsEnabled = videoControlsVisible;
             enlargeButton.IsEnabled = videoControlsVisible;
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
+        private void UpdatePlayPauseButton()
         {
-            UpdateVideoPlayerLayout();
-        }
+            ImageButton playButton;
+            // Select the right play/pause button
+            if (controlsAreCollapsed)
+                playButton = playPauseCollapsedButton;
+            else
+                playButton = playPauseButton;
+            // Select the right image
+            if (videoPlayer.Status == VideoStatus.Paused)
+                playButton.Source = ImageSource.FromResource("ESA.Resources.VideoPlayer.play.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+            else
+                playButton.Source = ImageSource.FromResource("ESA.Resources.VideoPlayer.pause.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
+
+        }
         // Footer
         private void StepsBtn_Clicked(object sender, EventArgs e)
         {
@@ -349,7 +370,7 @@ namespace ESA.Views
             if (!(content.First() == null || content.First() is StepsView))
             {
                 refreshIcons("step", content.First().GetType().Name);
-                StepsView view = new StepsView();
+                StepsView view = new StepsView(detailViewModel);
                 //view.LoadStepsView();
                 content.Clear();
                 content.Add(view);
@@ -367,9 +388,9 @@ namespace ESA.Views
                 refreshIcons("keyp", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new KeyPointsView());
-                
+
                 PlayButtonAnimation(sender);
-                UpdateVideoPlayerLayout();   
+                UpdateVideoPlayerLayout();
             }
         }
 

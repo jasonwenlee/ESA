@@ -133,5 +133,12 @@ namespace ESA.Models.VideoView
         {
             StopRequested?.Invoke(this, EventArgs.Empty);
         }
+
+        public event EventHandler RefreshRequested;
+
+        public void Refresh()
+        {
+            RefreshRequested?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

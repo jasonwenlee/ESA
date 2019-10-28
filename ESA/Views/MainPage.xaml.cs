@@ -58,9 +58,9 @@ namespace ESA
             await Navigation.PushAsync(new AboutPage());
         }
 
-        private async void Video_Clicked(object sender, EventArgs e)
+        private void Video_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new VideoPage());
+            //await Navigation.PushAsync(new VideoPage("eye_surgery.mp4", TimeSpan.Zero));
         }
 
         private async void Lacrimal_Click(object sender, EventArgs e)

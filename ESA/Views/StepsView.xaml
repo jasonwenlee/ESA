@@ -18,7 +18,13 @@
                                 <!--Step Text-->
                                 <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
                                 <Label Text="{Binding Content}" Style="{StaticResource StepContent}"/>
-                                <Label Text="^" Style="{StaticResource StepContent}"/>
+                                <Image Source="{mrkupExt:ImageResource ESA.Resources.Icons.expand_more.png}" Style="{StaticResource StepDropImage}" >
+                                    <Image.Triggers>
+                                        <DataTrigger TargetType="Image" Binding="{Binding HasDiagram}" Value="False">
+                                            <Setter Property="IsVisible" Value="False" />
+                                        </DataTrigger>
+                                    </Image.Triggers>
+                                </Image>
                                 <!--Timestamp Tap-->
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="StepsContent_TapEventHandler" />
@@ -53,9 +59,15 @@
                 <Setter Property="LineBreakMode" Value="WordWrap" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
+            <Style x:Key="StepDropImage" TargetType="Image">
+                <Setter Property="WidthRequest" Value="20" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Fill" />
+            </Style>
             <Style x:Key="StepDiagram" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="IsVisible" Value="False" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="Margin" Value="0,10" />
             </Style>
             <Style x:Key="DiagramText" TargetType="Button">
@@ -68,26 +80,3 @@
         </ResourceDictionary>
     </ContentView.Resources>
 </ContentView>
-
-<!--if (step.Number == currentStep)
-                {
-                    NumberLbl.TextColor = Color.White;
-                    ContentLbl.TextColor = Color.White;
-                }-->
-
-<!--// Diagram
-                if (step.Diagram != null)
-                {
-                    ImageButton diagramThumbnail = new ImageButton();
-                    diagramThumbnail.Source = step.Diagram.Thumbnail;
-                    diagramThumbnail.Style = (Style)Resources["StepDiagram"];
-                    diagramThumbnail.Clicked += DiagramThumbnail_Clicked; ;
-
-                    CustomButton seeMoreBtn = new CustomButton();
-                    seeMoreBtn.Text = "See Diagram";
-                    seeMoreBtn.Style = (Style)Resources["DiagramText"];
-                    seeMoreBtn.Clicked += SeeMoreBtn_Clicked;
-
-                    StepLayout.Children.Add(seeMoreBtn);
-                    StepLayout.Children.Add(diagramThumbnail);
-                }-->

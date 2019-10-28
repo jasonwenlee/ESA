@@ -8,7 +8,7 @@
              x:Class="ESA.App">
     <Application.Resources>
         <ResourceDictionary>
-            
+            <!--Common-->
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="#0F0F0F"/>
                 <Setter Property="BarTextColor" Value="White"/>
@@ -46,9 +46,9 @@
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
-            <!--Point-->
+            <!--Key Point-->
             <Style x:Key="Point" TargetType="Label">
-                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontSize" Value="Small" />
                 <Setter Property="TextColor" Value="#3d3d3d" />
                 <Setter Property="HorizontalOptions" Value="Fill" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
@@ -56,7 +56,7 @@
                 <Setter Property="Margin" Value="0,0,5,0" />
             </Style>
             <Style x:Key="KeyPoint" TargetType="Label">
-                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontSize" Value="Small" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
                 <Setter Property="TextColor" Value="#3d3d3d" />
             </Style>
@@ -64,9 +64,22 @@
                 <Setter Property="TextColor" Value="#3399FF" />
                 <Setter Property="Margin" Value="32,0,0,0" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontSize" Value="Small" />
                 <Setter Property="HeightRequest" Value="18" />
                 <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+            <!--Video Player-->
+            <Style x:Key="VideoControlsTop" TargetType="Image">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="32" />
+                <Setter Property="WidthRequest" Value="32" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style x:Key="VideoControlsCollapse" TargetType="Image">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="32" />
+                <Setter Property="WidthRequest" Value="32" />
+                <Setter Property="Margin" Value="5, 10" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

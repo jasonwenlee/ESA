@@ -59,6 +59,7 @@ namespace ESA.Droid.VideoView
                 args.NewElement.PlayRequested += OnPlayRequested;
                 args.NewElement.PauseRequested += OnPauseRequested;
                 args.NewElement.StopRequested += OnStopRequested;
+                args.NewElement.RefreshRequested += OnRefreshRequested;
             }
 
             if (args.OldElement != null)
@@ -67,6 +68,7 @@ namespace ESA.Droid.VideoView
                 args.OldElement.PlayRequested -= OnPlayRequested;
                 args.OldElement.PauseRequested -= OnPauseRequested;
                 args.OldElement.StopRequested -= OnStopRequested;
+                args.OldElement.RefreshRequested -= OnRefreshRequested;
             }
         }
 
@@ -207,6 +209,11 @@ namespace ESA.Droid.VideoView
         void OnStopRequested(object sender, EventArgs args)
         {
             videoView.StopPlayback();
+        }
+
+        void OnRefreshRequested(object sender, EventArgs args)
+        {
+            videoView.RefreshDrawableState();
         }
     }
 }
