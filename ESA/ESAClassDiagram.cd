@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ESA.Models.Model.Procedure">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <AssociationLine Name="Complications" Type="ESA.Models.Model.Complication" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="5.375" />
+        <Point X="9" Y="5.375" />
+        <Point X="9" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="History" Type="ESA.Models.Model.History" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="5.062" />
+        <Point X="11.5" Y="5.062" />
+        <Point X="11.5" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="KeyPoints" Type="ESA.Models.Model.KeyPoint" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="5.312" />
+        <Point X="4" Y="5.312" />
+        <Point X="4" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="References" Type="ESA.Models.Model.Reference" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="4.625" />
+        <Point X="13.5" Y="4.625" />
+        <Point X="13.5" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Steps" Type="ESA.Models.Model.Step" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="5.125" />
+        <Point X="1.5" Y="5.125" />
+        <Point X="1.5" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAADAAACAIEBAAAAAAAAIABCAAAQAIAAAAACAABAAAA=</HashCode>
+      <FileName>Models\Model\Procedure.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Details" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Complications" />
+      <Property Name="History" />
+      <Property Name="KeyPoints" />
+      <Property Name="References" />
+      <Property Name="Steps" />
+      <Property Name="Variations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ESA.Models.Model.Detail">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgBAAAAAAAAAAAAACAEAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Model\Detail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Categories" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ESA.Models.Model.Complication">
+    <Position X="8.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Model\Complication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESA.Models.Model.History">
+    <Position X="10.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAgQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Model\History.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESA.Models.Model.KeyPoint">
+    <Position X="3.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAgAAAACAAAAQIAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Models\Model\KeyPoint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Diagram" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ESA.Models.Model.Reference">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEABAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Model\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESA.Models.Model.Step">
+    <Position X="0.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAoAAAAAAAEAAAAQAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Models\Model\Step.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Diagram" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ESA.Models.Model.Variation">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAABAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Model\Variation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESA.Models.Model.Diagram">
+    <Position X="2" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAIAQAAA=</HashCode>
+      <FileName>Models\Model\Diagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESA.Models.Model.Category">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAQAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Model\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
