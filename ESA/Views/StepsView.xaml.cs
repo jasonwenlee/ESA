@@ -1,4 +1,4 @@
-﻿using ESA.Models;
+﻿using ESA.Models.Model;
 using ESA.Models.CustomRenderers;
 using ESA.ViewModels;
 using ESA.Views;
@@ -17,25 +17,26 @@ namespace ESA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StepsView : ContentView
     {
+        public ProcedureViewModel procedureViewModel;
         public DetailViewModel detailViewModel;
         public StepsViewModel viewModel;
         public int currentStep;
 
-        public StepsView(DetailViewModel dvm)
+        public StepsView(DetailViewModel dvm, ProcedureViewModel pvm)
         {
             InitializeComponent();
             detailViewModel  = dvm;
-            viewModel = new StepsViewModel();
-            BindingContext = viewModel;
+            procedureViewModel = pvm;
+            BindingContext = procedureViewModel.Procedure;
             currentStep = 1;
         }
 
         private void StepsContent_TapEventHandler(object sender, EventArgs e)
         {
             // get the current step
-            Step prevStep = viewModel.Steps.First(s => s.Number == this.currentStep);
+            Step prevStep = procedureViewModel.Procedure.Steps.First(s => s.Number == this.currentStep);
             // get the step clicked
-            Step currStep = viewModel.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)sender).Children.First()).Text));
+            Step currStep = procedureViewModel.Procedure.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)sender).Children.First()).Text));
             this.currentStep = currStep.Number;
 
             // Set the previous step labels to gray

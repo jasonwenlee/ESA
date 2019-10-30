@@ -75,11 +75,20 @@
                 <Setter Property="WidthRequest" Value="32" />
                 <Setter Property="Margin" Value="5" />
             </Style>
+            <Style x:Key="VideoCollapseTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
             <Style x:Key="VideoControlsCollapse" TargetType="Image">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HeightRequest" Value="32" />
                 <Setter Property="WidthRequest" Value="32" />
                 <Setter Property="Margin" Value="5, 10" />
+            </Style>
+            <Style x:Key="VideoCollapsePosition" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="5,0,0,0" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

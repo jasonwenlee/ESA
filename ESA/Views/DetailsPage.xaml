@@ -12,7 +12,7 @@
              Style="{StaticResource DetailsPage}">
 
     <ContentPage.Content>
-        <Grid RowSpacing="0" ColumnSpacing="0" BindingContext="{x:Reference videoPlayer}">
+        <Grid RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="videoPlayerRow" />
                 <RowDefinition Height="*" />
@@ -35,11 +35,11 @@
                     <RowDefinition Height="42" />
                 </Grid.RowDefinitions>
                 <BoxView BackgroundColor="#111" Grid.ColumnSpan="9" HeightRequest="42"/>
-                <ImageButton x:Name="BackCollapsedButton" Grid.Column="1" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.back.png}" Clicked="BackButton_Clicked" Style="{StaticResource VideoControlsCollapse}"  />
-                <Label Text="Tarsonconjunctival..." Grid.Column="3" TextColor="White" VerticalOptions="Center"/>
-                <Label x:Name="PositionCollapsedLabel" Grid.Column="4" Text="{Binding Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0" />
-                <ImageButton x:Name="playPauseCollapsedButton" Grid.Column="6" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.pause.png}" Clicked="PlayPauseButton_Clicked" Style="{StaticResource VideoControlsCollapse}"  />
-                <ImageButton x:Name="ExpandButton" Grid.Column="7" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.expand.png}" Clicked="CollapseButton_Clicked" Style="{StaticResource VideoControlsCollapse}" />
+                <ImageButton x:Name="BackCollapsedButton" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.back.png}" Clicked="BackButton_Clicked" Style="{StaticResource VideoControlsCollapse}"  Grid.Column="1" />
+                <Label  Text="{Binding Procedure.ShortName}" Style="{StaticResource VideoCollapseTitle}" Grid.Column="3"/>
+                <Label x:Name="PositionCollapsedLabel" Text="{Binding Source={x:Reference videoPlayer}, Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" Style="{StaticResource VideoCollapsePosition}" Grid.Column="4" />
+                <ImageButton x:Name="playPauseCollapsedButton" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.pause.png}" Clicked="PlayPauseButton_Clicked" Style="{StaticResource VideoControlsCollapse}" Grid.Column="6" />
+                <ImageButton x:Name="ExpandButton" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.expand.png}" Clicked="CollapseButton_Clicked" Style="{StaticResource VideoControlsCollapse}" Grid.Column="7" />
             </Grid>
             <!--VIDEO-->
             <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" AreTransportControlsEnabled="False" />
@@ -94,9 +94,9 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="32" />
                     </Grid.RowDefinitions>
-                    <Label x:Name="PositionLabel"  Grid.Column="0" Text="{Binding Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0"/>
-                    <video:PositionSlider x:Name="videoSlider" Grid.Column="1" Duration="{Binding Duration}" Position="{Binding Position}" ThumbColor="#3399FF" DragStarted="VideoSlider_DragStarted" DragCompleted="VideoSlider_DragCompleted"/>
-                    <Label x:Name="TimeToEndLabel" Text="{Binding Path=TimeToEnd, StringFormat='{0:h\\:mm\\:ss}'}" Grid.Column="2" TextColor="White" VerticalOptions="Center" Margin="0,0,5,0"/>
+                    <Label x:Name="PositionLabel"  Grid.Column="0" Text="{Binding Source={x:Reference videoPlayer}, Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0"/>
+                    <video:PositionSlider x:Name="videoSlider" Grid.Column="1" Duration="{Binding Source={x:Reference videoPlayer}, Path=Duration}" Position="{Binding Position}" ThumbColor="#3399FF" DragStarted="VideoSlider_DragStarted" DragCompleted="VideoSlider_DragCompleted"/>
+                    <Label x:Name="TimeToEndLabel" Text="{Binding Source={x:Reference videoPlayer}, Path=TimeToEnd, StringFormat='{0:h\\:mm\\:ss}'}" Grid.Column="2" TextColor="White" VerticalOptions="Center" Margin="0,0,5,0"/>
                     <ImageButton x:Name="enlargeButton" Grid.Column="3" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.enlarge.png}" Clicked="EnlargeButton_Clicked" Style="{StaticResource VideoControlsTop}" />
                 </Grid>
                 <Grid.GestureRecognizers>
@@ -114,10 +114,21 @@
 
                     <!--Video Overview information-->
                     <StackLayout Grid.Row="0" Spacing="2" >
-                        <Label Style="{StaticResource ProcedureTitle}" Text="Tarsoconjunctical (Hughes) Flap - Stage I" />
-                        <Label Style="{StaticResource ProcedureDescription}" Text="This narrated video demonstrates the tarsoconjunctival (Hughes) flap for reconstruction of large defects of the lower eyelid, that most commonly occur after lower lid tumour excision." />
-                        <Label Style="{StaticResource ProcedureCategories}" Text="Eyelid / Tumor Surgery / Eyelid Reconstruction" />
-                        <Label Style="{StaticResource ProcedureInfo}" Text="11th March, 2019 - 5087 Views" />
+                        <Label Style="{StaticResource ProcedureTitle}" Text="{Binding Procedure.LongName}" />
+                        <Label Style="{StaticResource ProcedureDescription}" Text="{Binding Procedure.Details.Description}" />
+                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Procedure.Details.Categories}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Style="{StaticResource ProcedureCategories}" Text="{Binding Name}" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Style="{StaticResource ProcedureInfo}" Text="{Binding Procedure.Details.UploadDate, StringFormat='{}{0:dd MMM, yyyy  - }'}" />
+                            <Label Style="{StaticResource ProcedureInfo}" Text="{Binding Procedure.Details.ViewCount, StringFormat='{}{0:n0} views'}"/>
+                            <!--Text="{Binding Procedure.Details.ViewCount, StringFormat='{} Views'}" />-->
+                        </StackLayout>
+                        
                     </StackLayout>
 
                     <!--Content row This is where your view will be displayed (DO NOT PUT YOUR CODE HERE)-->

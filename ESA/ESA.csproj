@@ -20,6 +20,10 @@
     <PackageReference Include="FluentValidation" Version="8.5.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+    <None Remove="Resources\Complications\LidMarginGranuloma.jpg" />
+    <None Remove="Resources\Complications\LidMarginIrregularity.jpg" />
+    <None Remove="Resources\Complications\SkinAdvancingOver.jpeg" />
+    <None Remove="Resources\Complications\UpperEyelidRetraction.jpeg" />
     <None Remove="Resources\Diagram.jpeg" />
     <None Remove="Resources\diagram.png" />
     <None Remove="Resources\dinesh.png" />
@@ -101,6 +105,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\about48.png" />
     <EmbeddedResource Include="Resources\akihide.png" />
+    <EmbeddedResource Include="Resources\Complications\LidMarginGranuloma.jpg" />
+    <EmbeddedResource Include="Resources\Complications\LidMarginIrregularity.jpg" />
+    <EmbeddedResource Include="Resources\Complications\SkinAdvancingOver.jpeg" />
+    <EmbeddedResource Include="Resources\Complications\UpperEyelidRetraction.jpeg" />
     <EmbeddedResource Include="Resources\diagram.png" />
     <EmbeddedResource Include="Resources\dinesh.png" />
     <EmbeddedResource Include="Resources\garry.png" />

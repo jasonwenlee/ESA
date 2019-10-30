@@ -20,6 +20,9 @@ namespace ESA.Views
         // Don't remove :)
         //Procedure holdProcedure;
 
+        // ProcedureViewModel
+        ProcedureViewModel procedureViewModel;
+
         // DetailViewModel
         DetailViewModel detailViewModel;
 
@@ -37,14 +40,17 @@ namespace ESA.Views
         Rectangle scrollViewExpandLocation;
         Rectangle scrollViewCollapseLocation;
         Rectangle playerCollapseLocation;
+        private double initialScrollViewHeight;
 
-        public DetailsPage()
+        public DetailsPage(int id)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
-            // View Model
+            // View Models
+            procedureViewModel = new ProcedureViewModel(id);
             detailViewModel = new DetailViewModel();
+            BindingContext = procedureViewModel;
 
             // Fade Timer
             fadeTimer.Interval = 2000;
@@ -56,7 +62,7 @@ namespace ESA.Views
             fadeTimer.Start();
 
             // Content Row
-            StepsView view = new StepsView(detailViewModel);
+            StepsView view = new StepsView(detailViewModel, procedureViewModel);
             contentRow.Children.Clear();
             contentRow.Children.Add(view);
             contentRow.LayoutChanged += (s, e) =>
@@ -106,7 +112,7 @@ namespace ESA.Views
             collapsableHeight = 42;
             playerHeight = Width * 0.57;
             playerExpandLocation = new Rectangle(0, 0, Width, playerHeight);
-            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, (Height - (videoPlayer.Height)) - 50);
+            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, initialScrollViewHeight);
             scrollViewCollapseLocation = new Rectangle(scrollView.X, collapsableHeight, scrollView.Width, scrollView.Height + (videoPlayer.Height - collapsableHeight));
             playerCollapseLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
         }
@@ -171,6 +177,7 @@ namespace ESA.Views
 
         private void playerCollapse()
         {
+            initialScrollViewHeight = scrollView.Height;
             // Scroll View
             scrollView.LayoutTo(scrollViewCollapseLocation, 500, Easing.Linear);
             //Collapsable
@@ -185,6 +192,8 @@ namespace ESA.Views
             videoControls.FadeTo(0, 500, Easing.Linear);
             videoControls.TranslateTo(0, (-videoPlayer.Height), 500, Easing.Linear);
             scrollView.Layout(scrollViewCollapseLocation);
+
+            UpdateVideoPlayerLayout();
         }
 
         private void playerExpand()
@@ -207,6 +216,8 @@ namespace ESA.Views
             scrollView.LayoutTo(scrollViewExpandLocation, 500, Easing.Linear);
             scrollView.Layout(scrollViewExpandLocation);
             // Set Video Player new position
+
+            UpdateVideoPlayerLayout();
         }
         public async void PlayButtonAnimation(object sender)
         {
@@ -370,7 +381,7 @@ namespace ESA.Views
             if (!(content.First() == null || content.First() is StepsView))
             {
                 refreshIcons("step", content.First().GetType().Name);
-                StepsView view = new StepsView(detailViewModel);
+                StepsView view = new StepsView(detailViewModel, procedureViewModel);
                 //view.LoadStepsView();
                 content.Clear();
                 content.Add(view);

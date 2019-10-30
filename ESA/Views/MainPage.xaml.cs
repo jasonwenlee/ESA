@@ -21,6 +21,8 @@ namespace ESA
         //LoadProcedureViewModel loadOneProc;
         //Procedure testEye;
 
+        MainViewModel mainViewModel;
+
         public MainPage()
         {
             InitializeComponent();
@@ -28,6 +30,9 @@ namespace ESA
             // This procedure loads after mainpage is initialised.
             // Don't remove:)
             //loadOneProc = new LoadProcedureViewModel();
+
+            // MainViewModel
+            mainViewModel = new MainViewModel();
         }
         protected override void OnAppearing()
         {
@@ -49,8 +54,8 @@ namespace ESA
         {
             // Don't think this is a good idea to push object from page to another. Don't remove :)
             //Navigation.PushAsync(new DetailsPage(testEye));
-
-            Navigation.PushAsync(new DetailsPage());
+            int i = new Random().Next(0, 3);
+            Navigation.PushAsync(new DetailsPage(mainViewModel.Procedures[i]));
         }
 
         private async void AboutUs_Clicked(object sender, EventArgs e)
