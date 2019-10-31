@@ -160,7 +160,6 @@ namespace ESA.Views
                 scrollView.Layout(scrollViewCollapseLocation);
                 // Collapsable
                 collapsablePlayer.IsVisible = true;
-                AdjustViews();
             }
             else
             {
@@ -193,7 +192,6 @@ namespace ESA.Views
             videoControls.TranslateTo(0, (-videoPlayer.Height), 500, Easing.Linear);
             scrollView.Layout(scrollViewCollapseLocation);
 
-            UpdateVideoPlayerLayout();
         }
 
         private void playerExpand()
@@ -217,7 +215,6 @@ namespace ESA.Views
             scrollView.Layout(scrollViewExpandLocation);
             // Set Video Player new position
 
-            UpdateVideoPlayerLayout();
         }
         public async void PlayButtonAnimation(object sender)
         {
@@ -386,8 +383,8 @@ namespace ESA.Views
                 content.Clear();
                 content.Add(view);
 
-                UpdateVideoPlayerLayout();
                 PlayButtonAnimation(sender);
+                AdjustViews();
             }
         }
 
@@ -401,7 +398,7 @@ namespace ESA.Views
                 content.Add(new KeyPointsView());
 
                 PlayButtonAnimation(sender);
-                UpdateVideoPlayerLayout();
+                AdjustViews();
             }
         }
 
@@ -413,6 +410,8 @@ namespace ESA.Views
                 refreshIcons("vari", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new VariationsView());
+
+                PlayButtonAnimation(sender);
                 AdjustViews();
             }
         }
@@ -425,6 +424,8 @@ namespace ESA.Views
                 refreshIcons("comp", content.First().GetType().Name);
                 content.Clear();
                 content.Add(new ComplicationsView());
+
+                PlayButtonAnimation(sender);
                 AdjustViews();
             }
         }
@@ -439,6 +440,8 @@ namespace ESA.Views
                 // Don't remove :)
                 //contentRow.Children.Add(new InfoView(holdProcedure));
                 content.Add(new InfoView());
+
+                PlayButtonAnimation(sender);
                 AdjustViews();
             }
         }
