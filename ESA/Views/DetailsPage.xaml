@@ -95,7 +95,7 @@
                         <RowDefinition Height="32" />
                     </Grid.RowDefinitions>
                     <Label x:Name="PositionLabel"  Grid.Column="0" Text="{Binding Source={x:Reference videoPlayer}, Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0"/>
-                    <video:PositionSlider x:Name="videoSlider" Grid.Column="1" Duration="{Binding Source={x:Reference videoPlayer}, Path=Duration}" Position="{Binding Position}" ThumbColor="#3399FF" DragStarted="VideoSlider_DragStarted" DragCompleted="VideoSlider_DragCompleted"/>
+                    <video:PositionSlider x:Name="videoSlider" Grid.Column="1" Duration="{Binding Source={x:Reference videoPlayer}, Path=Duration}" Position="{Binding Source={x:Reference videoPlayer}, Path=Position}" ThumbColor="#3399FF" DragStarted="VideoSlider_DragStarted" DragCompleted="VideoSlider_DragCompleted"/>
                     <Label x:Name="TimeToEndLabel" Text="{Binding Source={x:Reference videoPlayer}, Path=TimeToEnd, StringFormat='{0:h\\:mm\\:ss}'}" Grid.Column="2" TextColor="White" VerticalOptions="Center" Margin="0,0,5,0"/>
                     <ImageButton x:Name="enlargeButton" Grid.Column="3" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.enlarge.png}" Clicked="EnlargeButton_Clicked" Style="{StaticResource VideoControlsTop}" />
                 </Grid>

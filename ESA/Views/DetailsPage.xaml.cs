@@ -40,7 +40,6 @@ namespace ESA.Views
         Rectangle scrollViewExpandLocation;
         Rectangle scrollViewCollapseLocation;
         Rectangle playerCollapseLocation;
-        private double initialScrollViewHeight;
 
         public DetailsPage(int id)
         {
@@ -81,21 +80,20 @@ namespace ESA.Views
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    source.Path = "Videos/eye_surgery.mp4";
+                    source.Path = "Videos/" + procedureViewModel.Procedure.VideoSource;
                     //source.Path = "Videos/Brain_Eyes_Vid.mp4";                    
                     break;
                 case Device.Android:
-                    source.Path = "eye_surgery.mp4";
+                    source.Path = procedureViewModel.Procedure.VideoSource;
                     //source.Path = "Brain_Eyes_Vid.mp4";
                     break;
                 case Device.UWP:
-                    source.Path = "Videos/eye_surgery.mp4";
+                    source.Path = "Videos/" + procedureViewModel.Procedure.VideoSource;
                     //source.Path = "Videos/Brain_Eyes_Vid.mp4";
                     break;
             }
 
             videoPlayer.Source = source;
-            UpdateVideoPlayerLayout();
 
             videoPlayer.Position = detailViewModel.videoPosition;
         }
@@ -112,7 +110,7 @@ namespace ESA.Views
             collapsableHeight = 42;
             playerHeight = Width * 0.57;
             playerExpandLocation = new Rectangle(0, 0, Width, playerHeight);
-            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, initialScrollViewHeight);
+            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, Height - playerHeight- footer.Height);
             scrollViewCollapseLocation = new Rectangle(scrollView.X, collapsableHeight, scrollView.Width, scrollView.Height + (videoPlayer.Height - collapsableHeight));
             playerCollapseLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
         }
@@ -176,7 +174,6 @@ namespace ESA.Views
 
         private void playerCollapse()
         {
-            initialScrollViewHeight = scrollView.Height;
             // Scroll View
             scrollView.LayoutTo(scrollViewCollapseLocation, 500, Easing.Linear);
             //Collapsable
@@ -309,10 +306,11 @@ namespace ESA.Views
 
         private void EnlargeButton_Clicked(object sender, EventArgs e)
         {
+            // TODO: remove detailViewModel
             videoPlayer.Stop();
             detailViewModel.videoPosition = videoPlayer.Position;
             detailViewModel.videoIsProcedure = true;
-            detailViewModel.videoName = "eye_surgery.mp4";
+            detailViewModel.videoName = procedureViewModel.Procedure.VideoSource;
             Navigation.PushAsync(new VideoPage(detailViewModel));
         }
 

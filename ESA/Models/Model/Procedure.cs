@@ -9,6 +9,7 @@ namespace ESA.Models.Model
         public int Id { get; set; }
         public string LongName { get; set; }
         public string ShortName { get; set; }
+        public string VideoSource { get; set; }
         public Detail Details { get; set; }
         public List<Step> Steps { get; set; }
         public List<KeyPoint> KeyPoints { get; set; }
@@ -30,6 +31,7 @@ namespace ESA.Models.Model
                         Id = 0,
                         LongName = "Tarsonconjunctival (Hughes) Flap - Stage I",
                         ShortName = "Hughes Flap - Stage I",
+                        VideoSource = "eye_surgery.mp4",
                         Details = new Detail().GetDetails(id),
                         Steps = new Step().GetSteps(id),
                         KeyPoints = new KeyPoint().GetKeyPoints(id),
@@ -48,6 +50,7 @@ namespace ESA.Models.Model
                         Id = 1,
                         LongName = "Semicircular (Tenzel) advancement Flap using Lateral Recruitment",
                         ShortName = "Tenzel Flap",
+                        VideoSource = "Brain_Eyes_Vid.mp4",
                         Details = new Detail().GetDetails(id),
                         Steps = new Step().GetSteps(id),
                         KeyPoints = new KeyPoint().GetKeyPoints(id),
@@ -66,6 +69,7 @@ namespace ESA.Models.Model
                         Id = 2,
                         LongName = "Full Thickness Skin Graft securred with Dermabond glue",
                         ShortName = "FT Skin Graft",
+                        VideoSource = "eye_surgery.mp4",
                         Details = new Detail().GetDetails(id),
                         Steps = new Step().GetSteps(id),
                         KeyPoints = new KeyPoint().GetKeyPoints(id),
