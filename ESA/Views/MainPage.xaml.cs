@@ -32,6 +32,7 @@ namespace ESA
             //loadOneProc = new LoadProcedureViewModel();
 
             // MainViewModel
+            
             mainViewModel = new MainViewModel();
         }
         protected override void OnAppearing()
