@@ -85,9 +85,31 @@ namespace ESA.Models.Model
             return p;
         }
 
-        internal List<int> GetProcedureIds()
+        internal List<Procedure> GetProcedureNames()
         {
-            return new List<int>() { 0, 1, 2 };
+            return new List<Procedure>(){
+                new Procedure(){
+                    Id = 0,
+                        LongName = "Tarsonconjunctival (Hughes) Flap - Stage I",
+                        ShortName = "Hughes Flap - Stage I",
+                        VideoSource = "eye_surgery.mp4",
+                },
+
+                new Procedure(){
+                    Id = 1,
+                        LongName = "Semicircular (Tenzel) advancement Flap using Lateral Recruitment",
+                        ShortName = "Tenzel Flap",
+                        VideoSource = "Brain_Eyes_Vid.mp4",
+                },
+
+                new Procedure(){
+                    Id = 2,
+                        LongName = "Full Thickness Skin Graft securred with Dermabond glue",
+                        ShortName = "FT Skin Graft",
+                        VideoSource = "eye_surgery.mp4",
+                }
+                // add additional procedures here
+            };
         }
     }
 }

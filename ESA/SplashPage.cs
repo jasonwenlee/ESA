@@ -44,7 +44,7 @@ namespace ESA
             await splashImage.ScaleTo(0.8, 200, Easing.Linear); // REC: Animation effect: reducing image
             await splashImage.ScaleTo(3.0, 200, Easing.Linear); // REC: Animation effect: augmenting image
 
-            Application.Current.MainPage = new NavigationPage(new MainPageTest());
+            Application.Current.MainPage = new NavigationPage(new MainPage());
         }
     }
 }
