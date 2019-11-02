@@ -18,9 +18,9 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="MainListView" ItemsSource="{Binding ProcedureNames}" >
+            <ListView x:Name="MainListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected">
                 <ListView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate >
                         <TextCell Text="{Binding LongName}" Detail="{Binding ShortName}" TextColor="Red" DetailColor="Blue"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>

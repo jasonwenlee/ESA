@@ -93,5 +93,11 @@ namespace ESA
         {
             await Navigation.PushAsync(new CreateProcedure());
         }
+
+        private async void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            //Procedure p = MainListView.SelectedItem;
+            //await Navigation.PushAsync(new DetailsPage(p.ID));
+        }
     }
 }
