@@ -10,23 +10,17 @@
              mc:Ignorable="d"
              x:Class="ESA.Views.KeyPointsView"
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-
-
-
     
-
-<ContentView.Content>
+    <ContentView.Content>
         <StackLayout>
             <Label Text="Key Points" Style="{StaticResource ViewTitle}"/>
-            <StackLayout x:Name="stepsFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding KeyPoints}" >
+            <StackLayout x:Name="pointsLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding KeyPoints}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Vertical">
                             <StackLayout Orientation="Horizontal" >
                                 <!--Step Text-->
-
-                                <Label Text="{Binding Importance}" Style="{StaticResource Number}"/>
-                                <Label Text="{Binding Point}" Style="{StaticResource Content}"/>
+                                <Label Text="{Binding Point}" Style="{StaticResource KeyPoint2}" />
                                 <Image Source="{mrkupExt:ImageResource ESA.Resources.Icons.expand_more.png}" Style="{StaticResource DropImage}" >
                                     <Image.Triggers>
                                         <DataTrigger TargetType="Image" Binding="{Binding HasDiagram}" Value="False">
@@ -85,6 +79,23 @@
                 <Setter Property="HeightRequest" Value="25" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <!--Key Text-->
+            <Style x:Key="KeyPoint1" TargetType="Label" >
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+            <Style x:Key="KeyPoint2" TargetType="Label" >
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+            </Style>
+            <Style x:Key="KeyPoint3" TargetType="Label" >
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="Margin" Value="20,0,0,0" />
+            </Style>
+            <Style x:Key="KeyPoint4" TargetType="Label" >
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="Margin" Value="30,0,0,0" />
             </Style>
         </ResourceDictionary>
     </ContentView.Resources>

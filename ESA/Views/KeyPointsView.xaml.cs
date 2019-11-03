@@ -31,59 +31,40 @@ namespace ESA.Views
             procedureViewModel = pvm;
             BindingContext = procedureViewModel.Procedure;
             currentStep = 1;
-
-
         }
 
         private void KeyPointsContent_TapEventHandler(object sender, EventArgs e)
         {
             // get the current step
-            KeyPoint prevStep = procedureViewModel.Procedure.KeyPoints.First(s => s.Importance == this.currentStep);
+            KeyPoint prevStep = procedureViewModel.Procedure.KeyPoints.ElementAt(this.currentStep);
             // get the step clicked
-            KeyPoint currStep = procedureViewModel.Procedure.KeyPoints.First(s => s.Importance == int.Parse(((Label)((StackLayout)sender).Children.First()).Text));
-            this.currentStep = currStep.Importance;
+            KeyPoint currStep = (KeyPoint)((StackLayout)sender).BindingContext;
+            this.currentStep = currStep.Number;
 
-            // Set the previous step labels to gray
-            StackLayout prevStepLayout = ((StackLayout)stepsFlexLayout.Children.ElementAt(prevStep.Importance - 1));
-            StackLayout prevStepContentLayout = ((StackLayout)prevStepLayout.Children.First());
-            ((Label)prevStepContentLayout.Children.First()).TextColor = Color.FromHex("#3f3f3f");
-            ((Label)prevStepContentLayout.Children.ElementAt(1)).TextColor = Color.FromHex("#3f3f3f");
-
-            // set the current step labels to green
-            StackLayout currStepLayout = ((StackLayout)stepsFlexLayout.Children.ElementAt(currStep.Importance - 1));
-            StackLayout currentStepContentLayout = ((StackLayout)currStepLayout.Children.First());
-            ((Label)currentStepContentLayout.Children.First()).TextColor = Color.FromHex("#00BF9D");
-            ((Label)currentStepContentLayout.Children.ElementAt(1)).TextColor = Color.FromHex("#00BF9D");
+            // get the current point layout
+            StackLayout currPointLayout = ((StackLayout)pointsLayout.Children.ElementAt(currStep.Number));
+            StackLayout currentPointContentLayout = ((StackLayout)currPointLayout.Children.First());
 
             // Diagram drop down
             if (currStep.HasDiagram)
             {
-                ImageButton btn = ((ImageButton)currStepLayout.Children.Last());
+                ImageButton btn = ((ImageButton)currPointLayout.Children.Last());
                 bool visibility = true;
 
                 if (btn.IsVisible)
                 {
                     // Rotate expandable icon
-                    currentStepContentLayout.Children.Last().RotateTo(0, 500, Easing.CubicInOut);
+                    currentPointContentLayout.Children.Last().RotateTo(0, 500, Easing.CubicInOut);
                     visibility = false;
-
                 }
                 else
                 {
                     // Rotate expandable icon
-                    currentStepContentLayout.Children.Last().RotateTo(-180, 500, Easing.CubicInOut);
+                    currentPointContentLayout.Children.Last().RotateTo(-180, 500, Easing.CubicInOut);
                 }
-
-
                 btn.IsVisible = visibility;
             }
-
-
-
-          
         }
-
-     
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {

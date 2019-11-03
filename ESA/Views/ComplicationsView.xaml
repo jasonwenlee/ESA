@@ -15,7 +15,7 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal" >
+                            <StackLayout Orientation="Vertical" >
                                 <!--Step Text-->
                                 <Label Text="{Binding Number}" Style="{StaticResource CompNumber}"/>
                                 <Label Text="{Binding Name}" Style="{StaticResource CompContent}"/>
@@ -57,9 +57,7 @@
                 <Setter Property="Aspect" Value="AspectFill" />
                 <Setter Property="HeightRequest" Value="100" />
                 <Setter Property="WidthRequest" Value="260" />
-             
                 <Setter Property="HorizontalOptions" Value="Center" />
-          
             </Style>
          
         </ResourceDictionary>
