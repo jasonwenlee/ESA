@@ -1,6 +1,8 @@
 ﻿using ESA.Models;
 using ESA.Models.PageModels;
+
 using ESA.ViewModels;
+using ESA.ViewModels.InfoView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,73 +27,32 @@ namespace ESA
         {
             InitializeComponent();
             referenceList = new ReferencesModel();
-            referenceList.LoadRefList();
-            BindingContext = new InfoViewModel(Navigation);
+            referenceList.GetReferences();
+  //          BindingContext = new InfoViewModel(Navigation);
+            BindingContext = new ReferencesViewModel();
+ //           BindingContext = new HistoryViewModel();
         }
 
         private void HistoryButton_Clicked(object sender, EventArgs e)
         {
 
-            if (historyView.IsVisible == false)
-            {
-                historyView.IsVisible = true;
-                if (!referenceOpen)
-                {
-                    referencesView.IsVisible = false;
-                }
-                //if (extractInfo == null)
-                //{
-                //    historyEditor.Text = "Empty";
-                //    return;
-                //}
-            }
-            else if (historyView.IsVisible == true)
-            {
-                historyView.IsVisible = false;
-            }
+            Grid2.IsVisible = true;
+            Grid1.IsVisible = false;
         }
 
         private void ReferencesButton_Clicked(object sender, EventArgs e)
         {
-            if (storeReferencesEditor == null)
-            {
-                PrintRefToEditor();
-            }
-            if (referencesView.IsVisible == false)
-            {
-                referencesView.IsVisible = true;
-                if (!historyOpen)
-                {
-                    historyView.IsVisible = false;
-                }
-            }
-            else if (referencesView.IsVisible == true)
-            {
-                referencesView.IsVisible = false;
-            }
+            Grid2.IsVisible = false;
+            Grid1.IsVisible = true;
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            if (storeReferencesEditor == null)
-            {
-                PrintRefToEditor();
-            }
-            if (historyView.IsVisible)
-            {
-                referencesView.IsVisible = true;
-                historyView.IsVisible = false;
-            }
+            Grid2.IsVisible = true;
+            Grid1.IsVisible = false;
         }
 
-        private void PrintRefToEditor()
-        {
-            foreach (var item in referenceList.RefList)
-            {
-                referencesEditor.Text = referencesEditor.Text + item.number + " " + item.details + "\n\n";
-                storeReferencesEditor = referencesEditor;
-            }
-        }
+      
     }
 }
 
