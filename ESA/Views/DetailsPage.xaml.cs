@@ -393,7 +393,7 @@ namespace ESA.Views
             {
                 refreshIcons("keyp", content.First().GetType().Name);
                 content.Clear();
-                content.Add(new KeyPointsView());
+                content.Add(new KeyPointsView(detailViewModel, procedureViewModel));
 
                 PlayButtonAnimation(sender);
                 AdjustViews();
@@ -421,7 +421,7 @@ namespace ESA.Views
             {
                 refreshIcons("comp", content.First().GetType().Name);
                 content.Clear();
-                content.Add(new ComplicationsView());
+                content.Add(new ComplicationsView(detailViewModel, procedureViewModel));
 
                 PlayButtonAnimation(sender);
                 AdjustViews();

@@ -14,13 +14,13 @@ namespace ESA.Models.Model
         internal List<KeyPoint> GetKeyPoints(int id)
         {
             List<Model.Diagram> diagrams = new Model.Diagram().GetDiagrams(id);
-            List<KeyPoint> keyPoints = new List<KeyPoint>();
+            List<KeyPoint> keyPointsList = new List<KeyPoint>();
 
             switch (id)
             {
                 case 0:
                     // Tarso
-                    keyPoints = new List<KeyPoint>()
+                    keyPointsList = new List<KeyPoint>()
                     {
                         new KeyPoint()
                         {
@@ -41,7 +41,7 @@ namespace ESA.Models.Model
                         new KeyPoint()
                         {
                             Point = "Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities: see Tarsoconjunctival flap – stage 2",
-                            Importance = 2,
+                            Importance = 3,
                             HasDiagram = false,
                             Diagram = null,
                             RelatedProcedure = 2
@@ -49,7 +49,7 @@ namespace ESA.Models.Model
                         new KeyPoint()
                         {
                             Point = "Tips/Pitfalls",
-                            Importance = 1,
+                            Importance = 4,
                             HasDiagram = false,
                             Diagram = null,
                             RelatedProcedure = -1
@@ -57,7 +57,7 @@ namespace ESA.Models.Model
                         new KeyPoint()
                         {
                             Point = "Dissection",
-                            Importance = 2,
+                            Importance = 5,
                             HasDiagram = true,
                             Diagram = diagrams[0],
                             RelatedProcedure = -1
@@ -65,7 +65,7 @@ namespace ESA.Models.Model
                         new KeyPoint()
                         {
                             Point = "It is easier to dissect conjunctiva and Mullers rather than just dissecting conjunctiva alone​",
-                            Importance = 3,
+                            Importance = 6,
                             HasDiagram = false,
                             Diagram = null,
                             RelatedProcedure = -1
@@ -106,7 +106,7 @@ namespace ESA.Models.Model
                     break;
                 case 1:
                     // Tenzel
-                    keyPoints = new List<KeyPoint>()
+                    keyPointsList = new List<KeyPoint>()
                     {
                         new KeyPoint()
                         {
@@ -120,7 +120,7 @@ namespace ESA.Models.Model
                     break;
                 case 2:
                     // Graft
-                    keyPoints = new List<KeyPoint>()
+                    keyPointsList = new List<KeyPoint>()
                     {
                         new KeyPoint()
                         {
@@ -350,7 +350,16 @@ namespace ESA.Models.Model
                     break;
             }
 
-            return keyPoints;
+            foreach (KeyPoint keyp in keyPointsList)
+            {
+                keyp.HasDiagram = false;
+                if (keyp.Diagram != null)
+                {
+                    keyp.HasDiagram = true;
+                }
+            }
+
+            return keyPointsList;
         }
     }
 }

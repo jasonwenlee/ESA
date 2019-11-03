@@ -21,7 +21,7 @@ namespace ESA.Models
             {
                 new ComplicationsModel()
                 {
-                    DescPhotoText = "1. Upper eyelid retraction",
+                    DescPhotoText = "1. Upper eyelid retraction666666",
                     ImageUrl = "eyeRetraction01.jpeg"
                 },
                 new ComplicationsModel()

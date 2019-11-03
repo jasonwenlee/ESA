@@ -74,6 +74,8 @@ namespace ESA
                 btn.IsVisible = visibility;
             }
 
+        
+
             
 
             // Move Video transport position
