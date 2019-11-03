@@ -5,8 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
               x:Class="ESA.MainPage" Title="Oculoplastics" 
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
-             BackgroundColor="#1f1f1f">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA" >
+    <!--BackgroundColor="#1f1f1f"-->
     <!--assembly reference is used to include the class(es) in the MarkupExtensions File-->
 
     <ContentPage.ToolbarItems>
@@ -21,7 +21,7 @@
             <ListView x:Name="MainListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate >
-                        <TextCell Text="{Binding LongName}" Detail="{Binding ShortName}" TextColor="Red" DetailColor="Blue"/>
+                        <TextCell Text="{Binding LongName}" Detail="{Binding ShortName}" TextColor="Black" DetailColor="Gray"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
