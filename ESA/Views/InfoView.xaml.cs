@@ -20,17 +20,20 @@ namespace ESA
         private readonly bool historyOpen;
         private readonly bool referenceOpen;
 
-        private ReferencesModel referenceList;
         private Editor storeReferencesEditor;
 
-        public InfoView()
+        public ProcedureViewModel procedureViewModel;
+
+        public InfoView(ProcedureViewModel pvm)
         {
             InitializeComponent();
-            referenceList = new ReferencesModel();
-            referenceList.GetReferences();
-  //          BindingContext = new InfoViewModel(Navigation);
-            BindingContext = new ReferencesViewModel();
- //           BindingContext = new HistoryViewModel();
+            //referenceList = new ReferencesModel();
+            //referenceList.GetReferences();
+            //          BindingContext = new InfoViewModel(Navigation);
+            //           BindingContext = new HistoryViewModel();
+
+            procedureViewModel = pvm;
+            BindingContext = procedureViewModel;
         }
 
         private void HistoryButton_Clicked(object sender, EventArgs e)

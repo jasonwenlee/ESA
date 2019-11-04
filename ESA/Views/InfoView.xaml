@@ -27,14 +27,14 @@
             <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
                 <StackLayout>
                     <Label Text="Reference" Style="{StaticResource ViewTitle}"/>
-                    <StackLayout x:Name="FlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding RefList}" >
+                    <StackLayout x:Name="FlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.References}" >
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout Spacing="0" Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal" >
                                         <!--Reference Text-->
                                         <Label Text="{Binding Number}" />
-                                        <Label Text="{Binding RefDetails}" />
+                                        <Label Text="{Binding Body}" />
                                     </StackLayout>
                                 </StackLayout>
                             </DataTemplate>
@@ -43,18 +43,18 @@
                 </StackLayout>
             </Grid>
         </Grid>
-        <!-- History-->
-        <Grid x:Name="Grid2" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <!-- History--
+        <Grid x:Name="Grid2" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
                     <StackLayout>
                         <Label Text="History" Style="{StaticResource ViewTitle}"/>
-                    <StackLayout x:Name="History" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding RefList}" >
+                    <StackLayout x:Name="History" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.History}" >
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout Spacing="0" Orientation="Vertical">
                                         <StackLayout Orientation="Horizontal" >
                                             <!--Reference Text-->
-                                        <Label Text="{Binding HistoryDetails}" />
+                                        <Label Text="{Binding Body}" />
                                         </StackLayout>
                                     </StackLayout>
                                 </DataTemplate>
