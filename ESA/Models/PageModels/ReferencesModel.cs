@@ -8,6 +8,7 @@ namespace ESA.Models.PageModels
     {
         public int Number { get; set; }
         public string RefDetails { get; set; }
+        public string RefLink { get; set; }
         public string HistoryDetails { get; set; }
 
 
