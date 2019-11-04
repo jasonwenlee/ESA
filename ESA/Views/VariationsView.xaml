@@ -14,7 +14,7 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Vertical">
-                            <Label Text="{Binding Dot}" Style="{StaticResource VarDot}" />
+                            <!--<Label Text="{Binding Dot}" Style="{StaticResource VarDot}" />-->
                             <Label Text="{Binding VContent}" Style="{StaticResource VarContent}"/>
                         </StackLayout>
                     </DataTemplate>
@@ -27,7 +27,7 @@
                     <DataTemplate>
                         <StackLayout>
                             <Label Text="{Binding ProcedureName}" TextColor="Black" />
-                            <Image Source="{Binding Image}" WidthRequest="150" VerticalOptions="Start" Grid.Column="0" />
+                            <Image Source="{Binding Thumbnail}" WidthRequest="150" VerticalOptions="Start" Grid.Column="0" />
                         </StackLayout>
                         <!--<Grid Margin="0,5">
                             <Grid.ColumnDefinitions>
