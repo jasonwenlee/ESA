@@ -6,7 +6,8 @@ namespace ESA.Models.Model
 {
     public class Variation
     {
-        public string Dot { get; set; }
+        public string VHeading { get; set; }
+        public string VSHeading { get; set; }
         public string VContent { get; set; }
 
         internal List<Variation> GetVariations(int id)
@@ -20,12 +21,12 @@ namespace ESA.Models.Model
                     // Tarso Hughes
                     varsd = new List<Variation>()
                     {
-                        new Variation() { /*Dot = "-",*/ VContent = " Variations in steps" },
-                        new Variation() { VContent = "  - Size of flap" },
-                        new Variation() { VContent = "      -Wider flap may need a straighter horizonal incision without vertical relieving incisions."},
-                        new Variation() { VContent = "  - Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap​."},
-                        new Variation() { VContent = "      - Conjunctiva and Mullers together allow better vascularsation of the flap."},
-                        new Variation() { VContent = "      - If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction that advancing conjunctiva alone."},
+                        new Variation() { /*Dot = "-",*/ VHeading = " Variations in steps" },
+                        new Variation() { VSHeading = "- Size of flap" },
+                        new Variation() { VContent = "- Wider flap may need a straighter horizonal incision without vertical relieving incisions."},
+                        new Variation() { VSHeading = "- Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap​."},
+                        new Variation() { VContent = "- Conjunctiva and Mullers together allow better vascularsation of the flap."},
+                        new Variation() { VContent = "- If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction that advancing conjunctiva alone."},
                     };   
                     break;
                 case 1:

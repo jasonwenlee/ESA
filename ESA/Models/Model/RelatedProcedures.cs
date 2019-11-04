@@ -22,13 +22,14 @@ namespace ESA.Models.Model
                     {
                         new RelatedProcedures()
                         {
-                            ProcedureName = "Tarsoconjunctival (Hughes) Flap - Stage 2",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            ProcedureName = "Tarsoconjunctival (Hughes) Flap - Stage 2"
+                            
                         },
                         new RelatedProcedures()
                         {
                             ProcedureName = "Hewes Flap",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage4.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         }
                     };
                     break;
@@ -38,12 +39,12 @@ namespace ESA.Models.Model
                         new RelatedProcedures()
                         {
                             ProcedureName = "Periosteal flaps",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         },
                         new RelatedProcedures()
                         {
                             ProcedureName = "Direct closure",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage4.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         }
                     };
                     break;
@@ -53,17 +54,17 @@ namespace ESA.Models.Model
                         new RelatedProcedures()
                         {
                             ProcedureName = "Split thickness skin graft",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         },
                         new RelatedProcedures()
                         {
                             ProcedureName = "Free tarsal graft",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage4.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         },
                         new RelatedProcedures()
                         {
                             ProcedureName = "Full thickness mucosal graft",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage3.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         }
                     };
                     break;
