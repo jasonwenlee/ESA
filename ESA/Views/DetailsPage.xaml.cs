@@ -407,7 +407,7 @@ namespace ESA.Views
             {
                 refreshIcons("vari", content.First().GetType().Name);
                 content.Clear();
-                content.Add(new VariationsView());
+                content.Add(new VariationsView(procedureViewModel));
 
                 PlayButtonAnimation(sender);
                 AdjustViews();

@@ -14,11 +14,14 @@ namespace ESA.ViewModels
 
         public List<VariationsModel> VariationList { get; set; }
 
+        
+
 
         public VariationPageViewModel()
         {
             VariationList = new VariationsModel().GetVariationList();
-
+            
+            
         }
 
     }

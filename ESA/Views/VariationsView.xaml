@@ -9,43 +9,53 @@
     <ContentView.Content>
         <StackLayout>
             <Label Text="Variations" Style="{StaticResource ViewTitle}" />
-            <StackLayout Orientation="Horizontal">
-                <Label Style="{StaticResource Point}" Text="&#x2022;" />
-                <Label Style="{StaticResource KeyPoint}" Text="Wider flap may need a straighter horizontal incision without vertical relieving incisions." />
+            <!--Variations-->
+            <StackLayout x:Name="varsFlexLayout" BindableLayout.ItemsSource="{Binding Procedure.Variations}" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="0" Orientation="Vertical">
+                            <Label Text="{Binding Dot}" Style="{StaticResource VarDot}" />
+                            <Label Text="{Binding VContent}" Style="{StaticResource VarContent}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Style="{StaticResource Point}" Text="&#x2022;" />
-                <Label Style="{StaticResource KeyPoint}" Text="Tarsoconjunctival-based or Tars conjunctival-Muller based flaps; Conjunctival and Muller together allow better vascularisation of the flap." />
+            <!--List Related procedure-->
+            <Label Text="Related Procedures" Style="{StaticResource ViewTitle}" />
+            <StackLayout BindableLayout.ItemsSource="{Binding Procedure.RelatedProcedures}" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding ProcedureName}" TextColor="Black" />
+                            <Image Source="{Binding Image}" WidthRequest="150" VerticalOptions="Start" Grid.Column="0" />
+                        </StackLayout>
+                        <!--<Grid Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding RelatedProcedures.Image}" WidthRequest="150" VerticalOptions="Start" Grid.Column="0" />
+                            <StackLayout Grid.Column="1" Spacing="2">
+                                <Label Text="{Binding RelatedProcedures.Name}" FontSize="14" TextColor="Black" />
+                                <Label Text="{Binding Details.Description}" FontSize="14" TextColor="#BDBDBD" />
+                                <StackLayout>
+                                    <Label Text="{Binding Details.UploadDate}" FontSize="12" TextColor="#3399FF" />
+                                    <Label Text="{Binding Details.ViewCount}" FontSize="12" TextColor="#3399FF" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>-->
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Style="{StaticResource Point}" Text="&#x2022;" />
-                <Label Style="{StaticResource KeyPoint}" Text="If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post-operative eyelid retraction than advancing conjunctiva alone." />
-            </StackLayout>
-            <StackLayout>
-                <Label Text="Related Procedures" Style="{StaticResource Subtitle}" />
-                <ListView  x:Name="VariationList" ItemsSource="{Binding VariationList}" HasUnevenRows="true">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell IsEnabled="False">
-                                <ViewCell.View>
-                                    <Grid Margin="0,5">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="150"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Image Source="{Binding VariationImage}" WidthRequest="150" VerticalOptions="Start" Grid.Column="0" />
-                                        <StackLayout Grid.Column="1" Spacing="2">
-                                            <Label Text="{Binding Name}" FontSize="14" TextColor="White" />
-                                            <Label Text="{Binding Details}" FontSize="14" TextColor="#BDBDBD" />
-                                            <Label Text="{Binding Info}" FontSize="12" TextColor="#3399FF" />
-                                        </StackLayout>
-                                    </Grid>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
+            
         </StackLayout>
     </ContentView.Content>
+    <ContentView.Resources>
+        <Style TargetType="Label" x:Key="VarDot">
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+        <Style TargetType="Label" x:Key="VarContent">
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+    </ContentView.Resources>
 </ContentView>
