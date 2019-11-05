@@ -11,56 +11,35 @@
 
     <ContentView.Content>
         <StackLayout>
+            <!-- Steps Title -->
             <Label Text="Steps" Style="{StaticResource ViewTitle}"/>
+            <!-- Steps Content -->
             <StackLayout x:Name="stepsFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Steps}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <extensions:ExtExpandableView x:Name="expandableView" IsTouchToExpandEnabled="False" >
+                            <!-- Primary View Contains Step Number and Step Text -->
                             <extensions:ExtExpandableView.PrimaryView>
                                 <StackLayout Orientation="Horizontal" >
                                     <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
                                     <Label Text="{Binding Content}" Style="{StaticResource StepContent}"/>
+                                    <!-- Tap Gesture when a step is tapped -->
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="DropdownContent_Tapped"/>
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </extensions:ExtExpandableView.PrimaryView>
 
+                            <!-- Secondary View Contains Diagram Image -->
                             <extensions:ExtExpandableView.SecondaryViewTemplate>
                                 <DataTemplate>
                                     <StackLayout>
-                                      <!--<Image Source="{Binding Diagram.Thumbnail}" />-->
-                                      <ImageButton x:Name="diagramBtn" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" BackgroundColor="Transparent"/>
-                                        <!--<ImageButton.Triggers>
-                                            <DataTrigger TargetType="ImageButton" Binding="{Binding HasDiagram}" Value="False">
-                                                <Setter Property="HeightRequest" Value="0" />
-                                            </DataTrigger>
-                                        </ImageButton.Triggers>-->
-                                            
+                                        <!-- Height Request of 200 ensures the view expands on first try, means thumbnails should be set to 200 height to ensure proper viewing -->
+                                        <ImageButton x:Name="diagramBtn" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" BackgroundColor="Transparent" HeightRequest="200"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </extensions:ExtExpandableView.SecondaryViewTemplate>
-
                         </extensions:ExtExpandableView>
-                        <!--<StackLayout Spacing="0" Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal" >
-                                --><!--Step Text--><!--
-                                <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
-                                <Label Text="{Binding Content}" Style="{StaticResource StepContent}"/>
-                                <Image Source="{mrkupExt:ImageResource ESA.Resources.Icons.expand_more.png}" Style="{StaticResource StepDropImage}" >
-                                    <Image.Triggers>
-                                        <DataTrigger TargetType="Image" Binding="{Binding HasDiagram}" Value="False">
-                                            <Setter Property="IsVisible" Value="False" />
-                                        </DataTrigger>
-                                    </Image.Triggers>
-                                </Image>
-                                --><!--Timestamp Tap--><!--
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="StepsContent_TapEventHandler" />
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
-                            <ImageButton x:Name="diagramBtn" Style="{StaticResource StepDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />
-                        </StackLayout>-->
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
