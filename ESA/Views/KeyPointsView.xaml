@@ -20,7 +20,7 @@
                         <StackLayout Spacing="0" Orientation="Vertical">
                             <StackLayout Orientation="Horizontal" >
                                 <!--Step Text-->
-                                <Label Text="{Binding Point}" Style="{StaticResource KeyPoint2}" />
+                                <Label Text="{Binding Point}" Style="{StaticResource KeyPoint}" />
                                 <Image Source="{mrkupExt:ImageResource ESA.Resources.Icons.expand_more.png}" Style="{StaticResource DropImage}" >
                                     <Image.Triggers>
                                         <DataTrigger TargetType="Image" Binding="{Binding HasDiagram}" Value="False">
@@ -33,7 +33,7 @@
                                     <TapGestureRecognizer Tapped="KeyPointsContent_TapEventHandler" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
-                            <ImageButton x:Name="diagramBtn" Style="{StaticResource KeypDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />
+                            <ImageButton x:Name="diagramBtn" Style="{StaticResource KeyPointDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
@@ -46,56 +46,22 @@
             <Style x:Key="FlexLayout" TargetType="StackLayout">
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
-              <Style x:Key="Number" TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="WidthRequest" Value="30" />
-                <Setter Property="MinimumWidthRequest" Value="30" />
-                <Setter Property="Margin" Value="0,0,5,0" />
-                <Setter Property="VerticalOptions" Value="Start" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style> 
-            <Style x:Key="Content" TargetType="Label">
-                <Setter Property="TextColor" Value="#3f3f3f" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="LineBreakMode" Value="WordWrap" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            </Style>
             <Style x:Key="DropImage" TargetType="Image">
                 <Setter Property="WidthRequest" Value="20" />
                 <Setter Property="HorizontalOptions" Value="End" />
                 <Setter Property="VerticalOptions" Value="Fill" />
             </Style>
-            <Style x:Key="KeypDiagram" TargetType="ImageButton">
+            <Style x:Key="KeyPointDiagram" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="IsVisible" Value="False" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="Margin" Value="0,10" />
             </Style>
-            <Style x:Key="DiagramText" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#828282" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HeightRequest" Value="25" />
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            </Style>
             <!--Key Text-->
-            <Style x:Key="KeyPoint1" TargetType="Label" >
-                <Setter Property="FontAttributes" Value="Bold" />
+            <Style x:Key="KeyPoint" TargetType="Label" >
+                <Setter Property="TextColor" Value="#404040" />
+                <Setter Property="FontSize" Value="Small" />
                 <Setter Property="Margin" Value="0,0,0,0" />
-            </Style>
-            <Style x:Key="KeyPoint2" TargetType="Label" >
-                <Setter Property="FontAttributes" Value="None" />
-                <Setter Property="Margin" Value="10,0,0,0" />
-            </Style>
-            <Style x:Key="KeyPoint3" TargetType="Label" >
-                <Setter Property="FontAttributes" Value="None" />
-                <Setter Property="Margin" Value="20,0,0,0" />
-            </Style>
-            <Style x:Key="KeyPoint4" TargetType="Label" >
-                <Setter Property="FontAttributes" Value="None" />
-                <Setter Property="Margin" Value="30,0,0,0" />
             </Style>
         </ResourceDictionary>
     </ContentView.Resources>
