@@ -5,77 +5,65 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.InfoView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-    
-    <!--OLD-->
-    <StackLayout>
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
 
-        <!--BUTTONS-->
+    <ContentView.Content>
         <StackLayout>
+            <!--BUTTONS-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="historyButton" Text="History" HeightRequest="50" Clicked="HistoryButton_Clicked"/>
-                <Button Grid.Column="1" x:Name="referencesButton" Text="References" HeightRequest="50" Clicked="ReferencesButton_Clicked"/>
+                <BoxView Grid.ColumnSpan="2" BackgroundColor="#CCC" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15"/>
+                <BoxView x:Name="activeButtonBox" Grid.Column="0" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15" Margin="2"/>
+                <customButton:CustomButton Grid.Column="0" x:Name="historyButton" Text="History" Style="{StaticResource InfoButton}" Clicked="HistoryButton_Clicked"/>
+                <customButton:CustomButton Grid.Column="1" x:Name="referencesButton" Text="References" Style="{StaticResource InfoButton}" Clicked="ReferencesButton_Clicked"/>
             </Grid>
-        </StackLayout>
-        <!--CONTENT-->
-        <!-- Reference-->
-        <Grid x:Name="Grid1" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
-                <StackLayout>
-                    <Label Text="Reference" Style="{StaticResource ViewTitle}"/>
-                    <StackLayout x:Name="FlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.References}" >
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout Spacing="0" Orientation="Vertical">
-                                    <StackLayout Orientation="Horizontal" >
-                                        <!--Reference Text-->
-                                        <Label Text="{Binding Number}" />
-                                        <Label Text="{Binding Body}" />
-                                    </StackLayout>
-                                </StackLayout>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </StackLayout>
+            <!--CONTENT-->
+            <!-- History-->
+            <Grid x:Name="HistoryGrid" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout x:Name="History" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.History}" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Spacing="0" Orientation="Vertical">
+                                <!--History Text-->
+                                <Label Text="{Binding Body}" />
+                                <Label Text="{Binding References}" TextColor="#5070E0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="HistoryReference_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
                 </StackLayout>
             </Grid>
-        </Grid>
-        <!-- History-->
-        <Grid x:Name="Grid2" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
-                    <StackLayout>
-                        <Label Text="History" Style="{StaticResource ViewTitle}"/>
-                    <StackLayout x:Name="History" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.History}" >
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout Spacing="0" Orientation="Vertical">
-                                        <StackLayout Orientation="Horizontal" >
-                                            <!--Reference Text-->
-                                        <Label Text="{Binding Body}" />
-                                        </StackLayout>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
-                    </StackLayout>
-                </Grid>
+            <!-- Reference-->
+            <Grid x:Name="ReferenceGrid" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout x:Name="FlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.References}" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" >
+                                <!--Reference Text-->
+                                <Label Text="{Binding Number}" Style="{StaticResource ReferenceNumber}" />
+                                <Label Text="{Binding Body}" Style="{StaticResource ReferenceContent}" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
             </Grid>
+
         <!--EXTERNAL LINKS-->
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <ContentView HorizontalOptions="Center">
                 <Label HorizontalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Oculoplastic Info"
-                            TextColor="#3399FF"
-                            TextDecorations="Underline"
-                                  FontSize="20">
+                            <Span Text="Oculoplastic Info" TextColor="#3399FF" TextDecorations="Underline" FontSize="20" >
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="http://oculoplastics.info/" />
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}" CommandParameter="http://oculoplastics.info/" />
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
@@ -86,13 +74,9 @@
                 <Label HorizontalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Oculoplastic Surgery Techniques"
-                            TextColor="#3399FF"
-                            TextDecorations="Underline"
-                                  FontSize="20">
+                            <Span Text="Oculoplastic Surgery Techniques" TextColor="#3399FF" TextDecorations="Underline" FontSize="20" >
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://webeye.ophth.uiowa.edu/eyeforum/video/plastics/plastics.htm" />
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}" CommandParameter="https://webeye.ophth.uiowa.edu/eyeforum/video/plastics/plastics.htm" />
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
@@ -100,6 +84,25 @@
                 </Label>
             </ContentView>
         </StackLayout>
-
     </StackLayout>
+    </ContentView.Content>
+
+    <ContentView.Resources>
+        <Style x:Key="ReferenceNumber" TargetType="Label">
+            <Setter Property="TextColor" Value="#404040" />
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="WidthRequest" Value="25" />
+            <Setter Property="MinimumWidthRequest" Value="25" />
+            <Setter Property="Margin" Value="0,0,5,0" />
+            <Setter Property="VerticalOptions" Value="Start" />
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="ReferenceContent" TargetType="Label">
+            <Setter Property="TextColor" Value="#404040" />
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="LineBreakMode" Value="WordWrap" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        </Style>
+    </ContentView.Resources>
 </ContentView>

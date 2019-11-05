@@ -93,6 +93,11 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="5,0,0,0" />
             </Style>
+            <!--Info-->
+            <Style x:Key="InfoButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="30" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
