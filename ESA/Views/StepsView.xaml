@@ -22,7 +22,14 @@
                             <extensions:ExtExpandableView.PrimaryView>
                                 <StackLayout Orientation="Horizontal" >
                                     <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
-                                    <Label Text="{Binding Content}" Style="{StaticResource StepContent}"/>
+                                    <Label Text="{Binding Content}" Style="{StaticResource StepContent}" Margin="0,0,20,0"/>
+                                    <Image Source="{mrkupExt:ImageResource ESA.Resources.Icons.arrow.png}" Style="{StaticResource StepDropImage}" >
+                                        <Image.Triggers>
+                                            <DataTrigger TargetType="Image" Binding="{Binding HasDiagram}" Value="False">
+                                                <Setter Property="IsVisible" Value="False" />
+                                            </DataTrigger>
+                                        </Image.Triggers>
+                                    </Image>
                                     <!-- Tap Gesture when a step is tapped -->
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="DropdownContent_Tapped"/>
