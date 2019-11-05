@@ -14,50 +14,32 @@
             <StackLayout x:Name="compFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Complications}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Spacing="0" Orientation="Vertical">
-                            <StackLayout Orientation="Vertical" >
-                                <!--Step Text-->
-                                <Label Text="{Binding Number}" Style="{StaticResource CompNumber}"/>
-                                <Label Text="{Binding Name}" Style="{StaticResource CompContent}"/>
-                                <Image Source="{Binding Image}" Style="{StaticResource CompImage}"/>
-
-
-                                <!--Timestamp Tap-->
-                              
-                            </StackLayout>
-                          
+                        <StackLayout Orientation="Vertical" >
+                            <!--Step Text-->
+                            <Label Text="{Binding Name}" Style="{StaticResource CompContent}"/>
+                            <ImageButton Source="{Binding Image}" Style="{StaticResource CompImage}" Clicked="ComplicationImage_Clicked"/>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
         </StackLayout>
     </ContentView.Content>
+    
     <ContentView.Resources>
         <ResourceDictionary>
             <Style x:Key="FlexLayout" TargetType="StackLayout">
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
-            <Style x:Key="CompNumber" TargetType="Label">
-                <Setter Property="TextColor" Value="#3f3f3f" />
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="WidthRequest" Value="30" />
-                <Setter Property="MinimumWidthRequest" Value="30" />
-                <Setter Property="Margin" Value="0,0,5,0" />
-                <Setter Property="VerticalOptions" Value="Start" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
             <Style x:Key="CompContent" TargetType="Label">
                 <Setter Property="TextColor" Value="#3f3f3f" />
-                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontSize" Value="Small" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
-            <Style x:Key="CompImage" TargetType="Image">
-                <Setter Property="Aspect" Value="AspectFill" />
-                <Setter Property="HeightRequest" Value="100" />
-                <Setter Property="WidthRequest" Value="260" />
-                <Setter Property="HorizontalOptions" Value="Center" />
+            <Style x:Key="CompImage" TargetType="ImageButton">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
          
         </ResourceDictionary>

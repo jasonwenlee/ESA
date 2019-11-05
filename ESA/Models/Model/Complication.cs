@@ -24,7 +24,7 @@ namespace ESA.Models.Model
                         {
                             Number = 1,
                             Name = "Upper eyelid retraction",
-                            Image = ImageSource.FromResource("ESA.Resources.Complications.LidMarginGranuloma.jpg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Image = ImageSource.FromResource("ESA.Resources.Complications.UpperEyelidRetraction.jpeg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         },
                         new Complication()
                         {
@@ -48,7 +48,7 @@ namespace ESA.Models.Model
                         {
                             Number = 5,
                             Name = "Conjunctiva advancing anteriorly over lid margin",
-                            Image = ImageSource.FromResource("ESA.Resources.Complications.LidMarginGranuloma.jpg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Image = ImageSource.FromResource("ESA.Resources.Complications.UpperEyelidRetraction.jpeg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         }
                     };
                     break;
@@ -59,7 +59,7 @@ namespace ESA.Models.Model
                             new Complication()
                             {   Number=1,
                                 Name = "Ectropion",
-                                Image = ImageSource.FromResource("ESA.Resources.Complications.LidMarginGranuloma.jpg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                                Image = ImageSource.FromResource("ESA.Resources.Complications.UpperEyelidRetraction.jpeg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                             },
                             new Complication()
                             { Number=2,
@@ -86,7 +86,7 @@ namespace ESA.Models.Model
                         new Complication()
                         { Number=1,
                             Name = "Wound Dehiscence",
-                            Image = ImageSource.FromResource("ESA.Resources.Complications.LidMarginGranuloma.jpg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Image = ImageSource.FromResource("ESA.Resources.Complications.UpperEyelidRetraction.jpeg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         },
                         new Complication()
                         { Number=2,

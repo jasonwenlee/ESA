@@ -421,7 +421,7 @@ namespace ESA.Views
             {
                 refreshIcons("comp", content.First().GetType().Name);
                 content.Clear();
-                content.Add(new ComplicationsView(detailViewModel, procedureViewModel));
+                content.Add(new ComplicationsView(procedureViewModel));
 
                 PlayButtonAnimation(sender);
                 AdjustViews();

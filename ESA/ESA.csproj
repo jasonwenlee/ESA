@@ -69,11 +69,6 @@
     <None Remove="Resources\Icons\variations_icon_dark_active1.png" />
     <None Remove="Resources\Icons\variations_icon_light_active.png" />
     <None Remove="Resources\ivision.png" />
-    <None Remove="Resources\mountains.jpg" />
-    <None Remove="Resources\mountains1.jpg" />
-    <None Remove="Resources\mountains2.jpg" />
-    <None Remove="Resources\mountains3.jpg" />
-    <None Remove="Resources\mountains4.jpg" />
     <None Remove="Resources\Thumbnails\eye1.jpg" />
     <None Remove="Resources\Thumbnails\eye2.jpg" />
     <None Remove="Resources\Thumbnails\eye3.jpg" />
@@ -148,11 +143,6 @@
     <EmbeddedResource Include="Resources\Icons\variations_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon_dark_active1.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon_light_active.png" />
-    <EmbeddedResource Include="Resources\mountains.jpg" />
-    <EmbeddedResource Include="Resources\mountains1.jpg" />
-    <EmbeddedResource Include="Resources\mountains2.jpg" />
-    <EmbeddedResource Include="Resources\mountains3.jpg" />
-    <EmbeddedResource Include="Resources\mountains4.jpg" />
     <EmbeddedResource Include="Resources\saul.png" />
     <EmbeddedResource Include="Resources\search48.png" />
   </ItemGroup>
@@ -160,7 +150,6 @@
   <ItemGroup>
     <None Remove="Resources\about.png" />
     <None Remove="Resources\about48.png" />
-    <None Remove="Resources\aboutph.jpg" />
     <None Remove="Resources\close.png" />
     <None Remove="Resources\eyelid.png" />
     <None Remove="Resources\lacrimal.png" />
@@ -173,7 +162,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\about.png" />
-    <EmbeddedResource Include="Resources\aboutph.jpg" />
     <EmbeddedResource Include="Resources\close.png" />
     <EmbeddedResource Include="Resources\eyelid.png" />
     <EmbeddedResource Include="Resources\orbital.png" />
@@ -221,6 +209,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ImagePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\InfoView.xaml">
@@ -278,5 +269,10 @@
     <EmbeddedResource Update="Views\VideoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Diagrams\" />
+    <Folder Include="Resources\Variations\" />
   </ItemGroup>
 </Project>

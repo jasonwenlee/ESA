@@ -18,26 +18,18 @@ namespace ESA.Views
     public partial class ComplicationsView : ContentView
     {
         public ProcedureViewModel procedureViewModel;
-        public DetailViewModel detailViewModel;
-      //  public StepsViewModel viewModel;
-        public int currentStep;
 
-
-
-        public ComplicationsView(DetailViewModel dvm, ProcedureViewModel pvm)
+        public ComplicationsView(ProcedureViewModel pvm)
         {
             InitializeComponent();
 
-            detailViewModel = dvm;
             procedureViewModel = pvm;
             BindingContext = procedureViewModel.Procedure;
-           
+        }
 
-
+        private void ComplicationImage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ImagePage(((ImageButton)sender).Source));
         }
     }
-
-      
-
-       
-    }
+}

@@ -61,13 +61,6 @@ namespace ESA.Views
             fadeTimer.Start();
         }
 
-        protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height);
-
-            
-        }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();

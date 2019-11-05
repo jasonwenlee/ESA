@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESA.Views.ImagePage"
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             BackgroundColor="#1f1f1f">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--IMAGE-->
+            <Image x:Name="image" />
+            <!--BACK CONTROL-->
+            <Grid x:Name="videoControls" RowSpacing="0" ColumnSpacing="0" Grid.Row="0" Margin="5" IsVisible="True" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="32" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                    </Grid.RowDefinitions>
+                    <!--BACK BUTTON-->
+                    <ImageButton x:Name="backButton" Grid.Column="0" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.back.png}" Clicked="BackButton_Clicked" Style="{StaticResource VideoControlsTop}" />
+                </Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="VideoControls_Tapped" />
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
