@@ -37,13 +37,26 @@ namespace ESA
             Step chosenStep = procedureViewModel.Procedure.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)sender).Children.First()).Text));
             // get the expandable view
             ExtExpandableView extExpandableView = (ExtExpandableView)((StackLayout)sender).Parent;
+            // get the arrow image
+            Image arrow = ((Image)((StackLayout)sender).Children.Last());
             // set expanded to chosen step has diagram
             if (chosenStep.HasDiagram)
             {
                 extExpandableView.IsExpanded = !extExpandableView.IsExpanded;
                 extExpandableView.ForceUpdateSize();
+
+                if(extExpandableView.IsExpanded)
+                {
+                    arrow.RotateTo(180, 200, Easing.CubicInOut);
+                }
+                else
+                {
+                    arrow.RotateTo(0, 200, Easing.CubicInOut);
+                }
+
             }
         }
+
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {
