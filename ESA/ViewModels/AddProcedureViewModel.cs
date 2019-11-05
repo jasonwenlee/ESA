@@ -1,5 +1,5 @@
 ﻿using ESA.Data;
-using ESA.Models;
+using ESA.Models.Model;
 using ESA.Validator;
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace ESA.ViewModels
             if (validationResults.IsValid)
             {
                 //await Task.Run(async() => await CategoriseProcedureAsync(_procedure.Category));
-                await CategoriseProcedureAsync(_procedure.Category);
+                await CategoriseProcedureAsync(_procedure.LongName);
             }
             else
             {
@@ -47,63 +47,63 @@ namespace ESA.ViewModels
 
         internal async Task CategoriseProcedureAsync(string Category)
         {
-            if (Category.ToLower().Trim().Equals("lacrimal"))
-            {
-                Lacrimal thisProcedure = new Lacrimal();
-                if (_procedure.ID == 0)
-                {
-                    thisProcedure.Category = _procedure.Category;
-                    thisProcedure.Name = _procedure.Name;
-                    thisProcedure.Details = _procedure.Details;
-                    thisProcedure.Steps = _procedure.Steps;
-                    thisProcedure.Variations = _procedure.Variations;
-                    thisProcedure.KeyPoints = _procedure.KeyPoints;
-                    thisProcedure.Complications = _procedure.Complications;
-                    thisProcedure.History = _procedure.History;
-                    thisProcedure.References = _procedure.References;
-                    _procedureRepository.SaveProcedure(thisProcedure);
-                    await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Lacrimal", "Ok");
-                    await _navigation.PopAsync();
-                }
-            }
-            else if (Category.ToLower().Trim().Equals("orbital"))
-            {
-                Orbital thisProcedure = new Orbital();
-                if (_procedure.ID == 0)
-                {
-                    thisProcedure.Category = _procedure.Category;
-                    thisProcedure.Name = _procedure.Name;
-                    thisProcedure.Details = _procedure.Details;
-                    thisProcedure.Steps = _procedure.Steps;
-                    thisProcedure.Variations = _procedure.Variations;
-                    thisProcedure.KeyPoints = _procedure.KeyPoints;
-                    thisProcedure.Complications = _procedure.Complications;
-                    thisProcedure.History = _procedure.History;
-                    thisProcedure.References = _procedure.References;
-                    _procedureRepository.SaveProcedure(thisProcedure);
-                    await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Orbital", "Ok");
-                    await _navigation.PopAsync();
-                }
-            }
-            else if (Category.ToLower().Trim().Equals("eyelid"))
-            {
-                Eyelid thisProcedure = new Eyelid();
-                if (_procedure.ID == 0)
-                {
-                    thisProcedure.Category = _procedure.Category;
-                    thisProcedure.Name = _procedure.Name;
-                    thisProcedure.Details = _procedure.Details;
-                    thisProcedure.Steps = _procedure.Steps;
-                    thisProcedure.Variations = _procedure.Variations;
-                    thisProcedure.KeyPoints = _procedure.KeyPoints;
-                    thisProcedure.Complications = _procedure.Complications;
-                    thisProcedure.History = _procedure.History;
-                    thisProcedure.References = _procedure.References;
-                    _procedureRepository.SaveProcedure(thisProcedure);
-                    await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Eyelid", "Ok");
-                    await _navigation.PopAsync();
-                }
-            }
+            //if (Category.ToLower().Trim().Equals("lacrimal"))
+            //{
+            //    Lacrimal thisProcedure = new Lacrimal();
+            //    if (_procedure.ID == 0)
+            //    {
+            //        thisProcedure.Category = _procedure.Category;
+            //        thisProcedure.Name = _procedure.Name;
+            //        thisProcedure.Details = _procedure.Details;
+            //        thisProcedure.Steps = _procedure.Steps;
+            //        thisProcedure.Variations = _procedure.Variations;
+            //        thisProcedure.KeyPoints = _procedure.KeyPoints;
+            //        thisProcedure.Complications = _procedure.Complications;
+            //        thisProcedure.History = _procedure.History;
+            //        thisProcedure.References = _procedure.References;
+            //        _procedureRepository.SaveProcedure(thisProcedure);
+            //        await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Lacrimal", "Ok");
+            //        await _navigation.PopAsync();
+            //    }
+            //}
+            //else if (Category.ToLower().Trim().Equals("orbital"))
+            //{
+            //    Orbital thisProcedure = new Orbital();
+            //    if (_procedure.ID == 0)
+            //    {
+            //        thisProcedure.Category = _procedure.Category;
+            //        thisProcedure.Name = _procedure.Name;
+            //        thisProcedure.Details = _procedure.Details;
+            //        thisProcedure.Steps = _procedure.Steps;
+            //        thisProcedure.Variations = _procedure.Variations;
+            //        thisProcedure.KeyPoints = _procedure.KeyPoints;
+            //        thisProcedure.Complications = _procedure.Complications;
+            //        thisProcedure.History = _procedure.History;
+            //        thisProcedure.References = _procedure.References;
+            //        _procedureRepository.SaveProcedure(thisProcedure);
+            //        await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Orbital", "Ok");
+            //        await _navigation.PopAsync();
+            //    }
+            //}
+            //else if (Category.ToLower().Trim().Equals("eyelid"))
+            //{
+            //    Eyelid thisProcedure = new Eyelid();
+            //    if (_procedure.ID == 0)
+            //    {
+            //        thisProcedure.Category = _procedure.Category;
+            //        thisProcedure.Name = _procedure.Name;
+            //        thisProcedure.Details = _procedure.Details;
+            //        thisProcedure.Steps = _procedure.Steps;
+            //        thisProcedure.Variations = _procedure.Variations;
+            //        thisProcedure.KeyPoints = _procedure.KeyPoints;
+            //        thisProcedure.Complications = _procedure.Complications;
+            //        thisProcedure.History = _procedure.History;
+            //        thisProcedure.References = _procedure.References;
+            //        _procedureRepository.SaveProcedure(thisProcedure);
+            //        await Application.Current.MainPage.DisplayAlert("New Procedure!", "Added new procedure to Eyelid", "Ok");
+            //        await _navigation.PopAsync();
+            //    }
+            //}
         }
     }
 }

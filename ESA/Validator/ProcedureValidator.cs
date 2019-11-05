@@ -1,4 +1,4 @@
-﻿using ESA.Models;
+﻿using ESA.Models.Model;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -12,8 +12,8 @@ namespace ESA.Validator
     {
         public ProcedureValidator()
         {
-            RuleFor(x => x.Category).NotNull().WithMessage("Procedure category required");
-            RuleFor(x => x.Name).NotNull().WithMessage("Procedure name required");
+            //RuleFor(x => x.Category).NotNull().WithMessage("Procedure category required");
+            //RuleFor(x => x.Name).NotNull().WithMessage("Procedure name required");
             RuleFor(x => x.Details).NotNull().WithMessage("Procedure details required");
         }
     }

@@ -1,5 +1,5 @@
 ﻿using ESA.Data;
-using ESA.Models;
+using ESA.Models.Model;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -23,25 +23,25 @@ namespace ESA.ViewModels
 
         public string Category
         {
-            get => _procedure.Category;
+            get => _procedure.LongName;
             set
             {
-                _procedure.Category = value;
+                _procedure.LongName = value;
                 NotifyPropertyChanged("Category");
             }
         }
 
         public string Name
         {
-            get => _procedure.Name;
+            get => _procedure.ShortName;
             set
             {
-                _procedure.Name = value;
+                _procedure.ShortName = value;
                 NotifyPropertyChanged("Name");
             }
         }
 
-        public string Details
+        public Detail Details
         {
             get => _procedure.Details;
             set
@@ -51,7 +51,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public string Steps
+        public List<Step> Steps
         {
             get => _procedure.Steps;
             set
@@ -61,7 +61,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public string KeyPoints
+        public List<KeyPoint> KeyPoints
         {
             get => _procedure.KeyPoints;
             set
@@ -71,7 +71,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public string Variations
+        public List<Variation> Variations
         {
             get => _procedure.Variations;
             set
@@ -81,7 +81,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public string Complications
+        public List<Complication> Complications
         {
             get => _procedure.Complications;
             set
@@ -91,7 +91,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public string History
+        public List<History> History
         {
             get => _procedure.History;
             set
@@ -101,13 +101,23 @@ namespace ESA.ViewModels
             }
         }
 
-        public string References
+        public List<Reference> References
         {
             get => _procedure.References;
             set
             {
                 _procedure.References = value;
                 NotifyPropertyChanged("References");
+            }
+        }
+
+        public List<RelatedProcedures> RelatedProcedure
+        {
+            get => _procedure.RelatedProcedures;
+            set
+            {
+                _procedure.RelatedProcedures = value;
+                NotifyPropertyChanged("RelatedProcedures");
             }
         }
 

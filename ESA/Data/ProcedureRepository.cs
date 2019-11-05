@@ -1,4 +1,4 @@
-﻿using ESA.Models;
+﻿using ESA.Models.Model;
 using SQLite;
 using SQLiteNetExtensions.Extensions;
 using System;
@@ -33,56 +33,56 @@ namespace ESA.Data
             //database.DropTable<Orbital>();
             //database.DropTable<Eyelid>();
             //Create lacrimal table
-            database.CreateTable<Lacrimal>();
+            //database.CreateTable<Lacrimal>();
             // Create orbital table
-            database.CreateTable<Orbital>();
+            //database.CreateTable<Orbital>();
             // Create eyelid table
-            database.CreateTable<Eyelid>();
+            //database.CreateTable<Eyelid>();
         }
 
         //-----------------------------------------------------------------------------//
         // Get a list of procedures depending on the category
-        public List<Lacrimal>GetListLacrimalProcedures()
+        public List<Procedure> GetListLacrimalProcedures()
         {
-            return database.Table<Lacrimal>().ToList();
+            return database.Table<Procedure>().ToList();
         }
-        public List<Orbital> GetListOrbitalProcedures()
+        public List<Procedure> GetListOrbitalProcedures()
         {
-            return database.Table<Orbital>().ToList();
+            return database.Table<Procedure>().ToList();
         }
-        public List<Eyelid> GetListEyelidProcedures()
+        public List<Procedure> GetListEyelidProcedures()
         {
-            return database.Table<Eyelid>().ToList();
+            return database.Table<Procedure>().ToList();
         }
 
         //-----------------------------------------------------------------------------//
         // Get a procedure based on id and category. 
-        public Lacrimal GetLacrimalByID(int id)
+        public Procedure GetLacrimalByID(int id)
         {
-            return database.Table<Lacrimal>().Where(i => i.ID == id).FirstOrDefault();
+            return database.Table<Procedure>().Where(i => i.Id == id).FirstOrDefault();
         }
-        public Orbital GetOrbitalByID(int id)
+        public Procedure GetOrbitalByID(int id)
         {
-            return database.Table<Orbital>().Where(i => i.ID == id).FirstOrDefault();
+            return database.Table<Procedure>().Where(i => i.Id == id).FirstOrDefault();
         }
-        public Eyelid GetEyelidByID(int id)
+        public Procedure GetEyelidByID(int id)
         {
-            return database.Table<Eyelid>().Where(i => i.ID == id).FirstOrDefault();
+            return database.Table<Procedure>().Where(i => i.Id == id).FirstOrDefault();
         }
 
         //-----------------------------------------------------------------------------//
         // Get a procedure based on name and category
-        public Lacrimal GetLacrimalByName(Lacrimal proc)
+        public Procedure GetLacrimalByName(Procedure proc)
         {
-            return database.GetWithChildren<Lacrimal>(proc.ID);
+            return database.GetWithChildren<Procedure>(proc.Id);
         }
-        public Orbital GetOrbitalByName(Orbital proc)
+        public Procedure GetOrbitalByName(Procedure proc)
         {
-            return database.GetWithChildren<Orbital>(proc.ID);
+            return database.GetWithChildren<Procedure>(proc.Id);
         }
-        public Eyelid GetEyelidByName(Eyelid proc)
+        public Procedure GetEyelidByName(Procedure proc)
         {
-            return database.GetWithChildren<Eyelid>(proc.ID);
+            return database.GetWithChildren<Procedure>(proc.Id);
         }
 
         //-----------------------------------------------------------------------------//
@@ -106,19 +106,19 @@ namespace ESA.Data
         {
             if (item != null)
             {
-                if (item is Lacrimal)
+                if (item is Procedure)
                 {
-                    Lacrimal lac = (Lacrimal)item;
+                    Procedure lac = (Procedure)item;
                     return database.Delete(item);
                 }
-                else if (item is Orbital)
+                else if (item is Procedure)
                 {
-                    Orbital orb = (Orbital)item;
+                    Procedure orb = (Procedure)item;
                     return database.Delete(orb);
                 }
-                else if (item is Eyelid)
+                else if (item is Procedure)
                 {
-                    Eyelid eye = (Eyelid)item;
+                    Procedure eye = (Procedure)item;
                     return database.Delete(eye);
                 }
                 else

@@ -12,7 +12,6 @@ namespace ESA.ViewModels
 
         public ProcedureViewModel(int id)
         {
-            ProcedureNames = new Procedure().GetProcedureNames();
             Procedure = new Procedure().GetProcedure(id);
         }
 

@@ -1,4 +1,4 @@
-﻿using ESA.Models;
+﻿using ESA.Models.Model;
 using ESA.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace ESA
 
         private void LoadChosenProcedure(Procedure proc)
         {
-            BindingContext = LoadProcVM.LoadProcedureByName(proc);
+            //BindingContext = LoadProcVM.LoadProcedureByName(proc);
         }
 
         private void EditButton_Clicked(object sender, EventArgs e)

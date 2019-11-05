@@ -1,4 +1,4 @@
-﻿using ESA.Models;
+﻿using ESA.Models.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -108,31 +108,31 @@ namespace ESA.ViewModels
         }
         public Procedure LoadProcedureByName(Procedure proc)
         {
-            if (proc is Lacrimal)
+            if (proc is Procedure)
             {
-                return _procedureRepository.GetLacrimalByName((Lacrimal)proc);
+                return _procedureRepository.GetLacrimalByName((Procedure)proc);
             }
-            else if (proc is Orbital)
+            else if (proc is Procedure)
             {
-                return _procedureRepository.GetOrbitalByName((Orbital)proc);
+                return _procedureRepository.GetOrbitalByName((Procedure)proc);
             }
-            else if (proc is Eyelid)
+            else if (proc is Procedure)
             {
-                return _procedureRepository.GetEyelidByName((Eyelid)proc);
+                return _procedureRepository.GetEyelidByName((Procedure)proc);
             }
             return null;
         }
         public Procedure LoadProcedureByID(Procedure procedureType, int ID)
         {
-            if (procedureType is Lacrimal)
+            if (procedureType is Procedure)
             {
                 return _procedureRepository.GetLacrimalByID(ID);
             }
-            else if (procedureType is Orbital)
+            else if (procedureType is Procedure)
             {
                 return _procedureRepository.GetOrbitalByID(ID);
             }
-            else if (procedureType is Eyelid)
+            else if (procedureType is Procedure)
             {
                 return _procedureRepository.GetEyelidByID(ID);
             }
