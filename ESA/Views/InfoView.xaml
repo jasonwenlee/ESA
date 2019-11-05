@@ -29,8 +29,8 @@
                         <DataTemplate>
                             <StackLayout Spacing="0" Orientation="Vertical">
                                 <!--History Text-->
-                                <Label Text="{Binding Body}" />
-                                <Label Text="{Binding References}" TextColor="#5070E0">
+                                <Label Text="{Binding Body}" Style="{StaticResource HistoryBody}" />
+                                <Label Text="{Binding References}" Style="{StaticResource HistoryReferences}" >
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="HistoryReference_Tapped" />
                                     </Label.GestureRecognizers>
@@ -88,6 +88,14 @@
     </ContentView.Content>
 
     <ContentView.Resources>
+        <Style x:Key="HistoryBody" TargetType="Label">
+            <Setter Property="TextColor" Value="#404040" />
+            <Setter Property="FontSize" Value="Small" />
+        </Style>
+        <Style x:Key="HistoryReferences" TargetType="Label">
+            <Setter Property="TextColor" Value="#5070E0" />
+            <Setter Property="FontSize" Value="Small" />
+        </Style>
         <Style x:Key="ReferenceNumber" TargetType="Label">
             <Setter Property="TextColor" Value="#404040" />
             <Setter Property="FontSize" Value="Small" />
