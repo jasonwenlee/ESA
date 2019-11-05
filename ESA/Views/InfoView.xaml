@@ -43,7 +43,7 @@
                 </StackLayout>
             </Grid>
         </Grid>
-        <!-- History--
+        <!-- History-->
         <Grid x:Name="Grid2" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
                     <StackLayout>

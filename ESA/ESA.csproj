@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Model\RelatedProcedures.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ExpandableView" Version="1.0.9" />
     <PackageReference Include="FluentValidation" Version="8.5.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
