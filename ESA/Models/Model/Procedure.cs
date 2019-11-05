@@ -17,7 +17,7 @@ namespace ESA.Models.Model
         public List<Complication> Complications { get; set; }
         public List<History> History { get; set; }
         public List<Reference> References { get; set; }
-        public List<RelatedProcedures> RelatedProcedures { get; set; }
+        public List<RelatedProcedure> RelatedProcedures { get; set; }
 
         public Procedure GetProcedure(int id)
         {
@@ -39,7 +39,7 @@ namespace ESA.Models.Model
                         Complications = new Complication().GetComplications(id),
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
-                        RelatedProcedures = new RelatedProcedures().GetRelatedProcedures(id)
+                        RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
                     };
                     break;
 
@@ -58,7 +58,7 @@ namespace ESA.Models.Model
                         Complications = new Complication().GetComplications(id),
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
-                        RelatedProcedures = new RelatedProcedures().GetRelatedProcedures(id)
+                        RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
         };
                     break;
 
@@ -77,7 +77,7 @@ namespace ESA.Models.Model
                         Complications = new Complication().GetComplications(id),
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
-                        RelatedProcedures = new RelatedProcedures().GetRelatedProcedures(id)
+                        RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
         };
                     break;
             }

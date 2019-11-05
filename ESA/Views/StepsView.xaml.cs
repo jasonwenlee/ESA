@@ -19,7 +19,6 @@ namespace ESA
     {
         public ProcedureViewModel procedureViewModel;
         public DetailViewModel detailViewModel;
-        public StepsViewModel viewModel;
         public int currentStep;
 
         public StepsView(DetailViewModel dvm, ProcedureViewModel pvm)

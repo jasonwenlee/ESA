@@ -22,6 +22,13 @@
             <Style x:Key="FlexLayout" TargetType="StackLayout">
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
+            <Style x:Key="RelatedProcedureButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="TextColor" Value="#5070ff" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
             <!--Procedure Info-->
             <Style x:Key="ProcedureTitle" TargetType="Label" >
                 <Setter Property="FontSize" Value="Medium"/>

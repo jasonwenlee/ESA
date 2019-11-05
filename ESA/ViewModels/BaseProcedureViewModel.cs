@@ -111,7 +111,7 @@ namespace ESA.ViewModels
             }
         }
 
-        public List<RelatedProcedures> RelatedProcedure
+        public List<RelatedProcedure> RelatedProcedure
         {
             get => _procedure.RelatedProcedures;
             set

@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.StepsView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
 
     <ContentView.Content>
         <StackLayout>
@@ -30,6 +31,13 @@
                                     <TapGestureRecognizer Tapped="StepsContent_TapEventHandler" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
+                            <customButton:CustomButton Text="{Binding RelatedProcedure.ProcedureLink}" Style="{StaticResource RelatedProcedureButton}" >
+                                <customButton:CustomButton.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding HasRelatedProcedure}" Value="False" >
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+                                </customButton:CustomButton.Triggers>
+                            </customButton:CustomButton>
                             <ImageButton x:Name="diagramBtn" Style="{StaticResource StepDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />
                         </StackLayout>
                     </DataTemplate>
@@ -39,7 +47,8 @@
     </ContentView.Content>
 
     <ContentView.Resources>
-        <ResourceDictionary>            <Style x:Key="FlexLayout" TargetType="StackLayout">
+        <ResourceDictionary>
+            <Style x:Key="FlexLayout" TargetType="StackLayout">
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
             <Style x:Key="StepNumber" TargetType="Label">
