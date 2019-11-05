@@ -1,4 +1,4 @@
-﻿using ESA.Models.Model;
+﻿using ESA.Models;
 using ESA.ViewModels;
 using ESA.Views;
 using System;
@@ -33,8 +33,6 @@ namespace ESA
 
             // MainViewModel
             mainViewModel = new MainViewModel();
-            BindingContext = mainViewModel;
-            MainListView.ItemsSource = mainViewModel.ProcedureNames;
         }
         protected override void OnAppearing()
         {
@@ -57,7 +55,7 @@ namespace ESA
             // Don't think this is a good idea to push object from page to another. Don't remove :)
             //Navigation.PushAsync(new DetailsPage(testEye));
             int i = new Random().Next(0, 3);
-            Navigation.PushAsync(new DetailsPage(0));
+            Navigation.PushAsync(new DetailsPage(mainViewModel.Procedures[0]));
         }
 
         private async void AboutUs_Clicked(object sender, EventArgs e)
@@ -92,21 +90,6 @@ namespace ESA
         private async void Database_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CreateProcedure());
-        }
-
-        private async void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem == null) return;
-            //Procedure p = MainListView.SelectedItem;
-            //await Navigation.PushAsync(new DetailsPage(p.ID));
-
-            //Changed using ESA.Models to ESA.Models.Model (was using the wrong Procedure)
-            //Only works for the first procedure, not sure how to get it to work properly
-            Procedure p = ((Procedure)(MainListView.SelectedItem));
-            await Navigation.PushAsync(new DetailsPage(p.Id));
-
-            ((ListView)sender).SelectedItem = null;
-
         }
     }
 }

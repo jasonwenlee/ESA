@@ -15,10 +15,11 @@ namespace ESA.Views
     public partial class VariationsView : ContentView
     {
         //    VariationPageViewModel vm;
-        public VariationsView()
+        public VariationsView(ProcedureViewModel viewModel)
         {
             InitializeComponent();
-            BindingContext = new VariationPageViewModel();
+            BindingContext = viewModel;
+            //BindingContext = new VariationPageViewModel();
             //          vm = new VariationPageViewModel();
 
             //       VariationList.ItemsSource = vm.VariationsView;
