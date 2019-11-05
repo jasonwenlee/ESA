@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Windows.Input;
+using Expandable;
 
 namespace ESA
 {
@@ -21,6 +23,20 @@ namespace ESA
         public DetailViewModel detailViewModel;
         public StepsViewModel viewModel;
         public int currentStep;
+        private ICommand _tapCommand;
+
+        public ICommand TapCommand => _tapCommand ?? (_tapCommand = new Command(p =>
+       {
+           // get the current step
+           Step cStep = procedureViewModel.Procedure.Steps.First(s => s.Number == this.currentStep);
+
+           if(cStep.HasDiagram)
+           {
+
+           }
+
+
+       }));
 
         public StepsView(DetailViewModel dvm, ProcedureViewModel pvm)
         {

@@ -19,6 +19,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Hello" TextColor="Red" />
+            <Button Text="Video" Clicked="StepsPageBtn_Clicked" />
             <!--<ListView x:Name="MainListView" BackgroundColor="Black">
             <ListView.ItemTemplate>
                 <DataTemplate>

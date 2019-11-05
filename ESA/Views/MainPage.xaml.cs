@@ -55,7 +55,8 @@ namespace ESA
         {
             // Don't think this is a good idea to push object from page to another. Don't remove :)
             //Navigation.PushAsync(new DetailsPage(testEye));
-            int i = new Random().Next(0, 3);
+            //int i = new Random().Next(0, 3);
+            int i = 0;
             Navigation.PushAsync(new DetailsPage(mainViewModel.Procedures[i]));
         }
 
