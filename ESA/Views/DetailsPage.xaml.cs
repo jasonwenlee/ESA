@@ -437,7 +437,7 @@ namespace ESA.Views
                 content.Clear();
                 // Don't remove :)
                 //contentRow.Children.Add(new InfoView(holdProcedure));
-                content.Add(new InfoView());
+                content.Add(new InfoView(procedureViewModel));
 
                 PlayButtonAnimation(sender);
                 AdjustViews();

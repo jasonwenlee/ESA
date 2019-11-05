@@ -27,6 +27,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell IsEnabled="False">
+                                
                                 <ViewCell.View>
                                     <Grid Margin="0,5">
                                         <Grid.ColumnDefinitions>
