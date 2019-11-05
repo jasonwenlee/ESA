@@ -1,14 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace ESA.MarkupExtensions
 {
-    class ExtExpandableView : Expandable.ExpandableView
+    public class ExtExpandableView : Expandable.ExpandableView
     {
+        // when tapped
+        // if has diagram
+        // forceupdate size
+        // update is expanded
 
 
+        // AreTransportControlsEnabled property (Transport controls are (play, pause, stop, etc.))
+        public static readonly BindableProperty ForceUpdateSizeIfHasDiagramProperty =
+            BindableProperty.Create(nameof(ForceUpdateSizeIfHasDiagram), typeof(bool), typeof(ExtExpandableView), false);
 
+        public bool ForceUpdateSizeIfHasDiagram
+        {
+            set 
+            { 
+                SetValue(ForceUpdateSizeIfHasDiagramProperty, value);
+                if (value) // has diagram
+                {
+                    ForceUpdateSize();
+                    IsExpanded = true;
+                }
+            }
+            get { return (bool)GetValue(ForceUpdateSizeIfHasDiagramProperty); }
+        }
 
 
 

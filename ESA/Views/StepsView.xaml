@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
+             xmlns:extensions="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
              mc:Ignorable="d"
              x:Class="ESA.StepsView"
              x:Name="stepsView"
@@ -15,19 +15,22 @@
             <StackLayout x:Name="stepsFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Steps}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <expandable:ExpandableView x:Name="expandableView" Command="{Binding Path=TapCommand, Source={x:Reference stepsView}}" IsTouchToExpandEnabled="False">
-                            <expandable:ExpandableView.PrimaryView>
-                                <StackLayout Orientation="Horizontal">
+                        <extensions:ExtExpandableView x:Name="expandableView" IsTouchToExpandEnabled="False" >
+                            <extensions:ExtExpandableView.PrimaryView>
+                                <StackLayout Orientation="Horizontal" >
                                     <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
                                     <Label Text="{Binding Content}" Style="{StaticResource StepContent}"/>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="DropdownContent_Tapped"/>
+                                    </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                            </expandable:ExpandableView.PrimaryView>
+                            </extensions:ExtExpandableView.PrimaryView>
 
-                            <expandable:ExpandableView.SecondaryViewTemplate>
+                            <extensions:ExtExpandableView.SecondaryViewTemplate>
                                 <DataTemplate>
                                     <StackLayout>
                                       <!--<Image Source="{Binding Diagram.Thumbnail}" />-->
-                                      <ImageButton x:Name="diagramBtn" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" HeightRequest="200" BackgroundColor="Transparent"/>
+                                      <ImageButton x:Name="diagramBtn" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" BackgroundColor="Transparent"/>
                                         <!--<ImageButton.Triggers>
                                             <DataTrigger TargetType="ImageButton" Binding="{Binding HasDiagram}" Value="False">
                                                 <Setter Property="HeightRequest" Value="0" />
@@ -36,9 +39,9 @@
                                             
                                     </StackLayout>
                                 </DataTemplate>
-                            </expandable:ExpandableView.SecondaryViewTemplate>
+                            </extensions:ExtExpandableView.SecondaryViewTemplate>
 
-                        </expandable:ExpandableView>
+                        </extensions:ExtExpandableView>
                         <!--<StackLayout Spacing="0" Orientation="Vertical">
                             <StackLayout Orientation="Horizontal" >
                                 --><!--Step Text--><!--
