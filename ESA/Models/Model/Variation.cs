@@ -6,9 +6,7 @@ namespace ESA.Models.Model
 {
     public class Variation
     {
-        public string VHeading { get; set; }
-        public string VSHeading { get; set; }
-        public string VContent { get; set; }
+        public string Content { get; set; }
 
         internal List<Variation> GetVariations(int id)
         {
@@ -21,31 +19,31 @@ namespace ESA.Models.Model
                     // Tarso Hughes
                     varsd = new List<Variation>()
                     {
-                        new Variation() { /*Dot = "-",*/ VHeading = " Variations in steps" },
-                        new Variation() { VSHeading = "- Size of flap" },
-                        new Variation() { VContent = "- Wider flap may need a straighter horizonal incision without vertical relieving incisions."},
-                        new Variation() { VSHeading = "- Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap​."},
-                        new Variation() { VContent = "- Conjunctiva and Mullers together allow better vascularsation of the flap."},
-                        new Variation() { VContent = "- If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction that advancing conjunctiva alone."},
+                        new Variation() { Content = "Variations in steps" },
+                        new Variation() { Content = "Size of flap" },
+                        new Variation() { Content = "Wider flap may need a straighter horizonal incision without vertical relieving incisions."},
+                        new Variation() { Content = "Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap​."},
+                        new Variation() { Content = "Conjunctiva and Mullers together allow better vascularsation of the flap."},
+                        new Variation() { Content = "If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction that advancing conjunctiva alone."},
                     };   
                     break;
                 case 1:
                     // Tenzel
                     varsd = new List<Variation>()
                     {
-                        new Variation() { VContent = "  - Defects greater on the lower than upper eyelid" },
-                        new Variation() { VContent = "  - Any lid defect - Lateral/Central/Medial"},
-                        new Variation() { VContent = "      - Central to Medial"},
-                        new Variation() { VContent = "  - Moving eyelid from lateral to Medial"},
+                        new Variation() { Content = "Defects greater on the lower than upper eyelid" },
+                        new Variation() { Content = "Any lid defect - Lateral/Central/Medial"},
+                        new Variation() { Content = "Central to Medial"},
+                        new Variation() { Content = "Moving eyelid from lateral to Medial"},
                     };
                     break;
                 case 2:
                     // Graft
                     varsd = new List<Variation>()
                     {
-                        new Variation() { VContent = " Variations in steps" },
-                        new Variation() { VContent = "  - Donor site – upper eyelid, post auricular, supraclavicular, inner arm"},
-                        new Variation() { VContent = "  - Large grafts – small perforations can be made into the graft to reduce the risk of haematoma collection and graft failure"},
+                        new Variation() { Content = "Variations in steps" },
+                        new Variation() { Content = "Donor site – upper eyelid, post auricular, supraclavicular, inner arm"},
+                        new Variation() { Content = "Large grafts – small perforations can be made into the graft to reduce the risk of haematoma collection and graft failure"},
                         
                     };
                     break;

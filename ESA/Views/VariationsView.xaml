@@ -15,9 +15,7 @@
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Horizontal">
                             <!--<Label Text="{Binding Dot}" Style="{StaticResource VarDot}" />-->
-                            <Label Text="{Binding VHeading}" Style="{StaticResource VarHeading}"/>
-                            <Label Text="{Binding VSHeading}" Style="{StaticResource VarSHeading}"/>
-                            <Label Text="{Binding VContent}" Style="{StaticResource VarContent}"/>
+                            <Label Text="{Binding Content}" Style="{StaticResource VariationContent}"/>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
@@ -27,10 +25,13 @@
             <StackLayout BindableLayout.ItemsSource="{Binding Procedure.RelatedProcedures}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Spacing="0" Orientation="Horizontal">
-                            <Image Source="{Binding Thumbnail}" WidthRequest="150" VerticalOptions="StartAndExpand" Grid.Column="0" Style="{StaticResource Thumbnail}"/>
-                            <Label Text="{Binding ProcedureName}" Style="{StaticResource ProcedureName}" />
-                            
+                        <StackLayout Spacing="5" Orientation="Horizontal">
+                            <Image Source="{Binding Thumbnail}" Style="{StaticResource Thumbnail}"/>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="{Binding ProcedureName}" Style="{StaticResource ProcedureName}" />
+                                <Label Text="{Binding Details.UploadDate, StringFormat='{}{0:dd MMM, yyyy}'}" Style="{StaticResource ProcedureName}" />
+                                <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ProcedureName}" />
+                            </StackLayout>
                         </StackLayout>
                         <!--<Grid Margin="0,5">
                             <Grid.ColumnDefinitions>
@@ -54,48 +55,20 @@
         </StackLayout>
     </ContentView.Content>
     <ContentView.Resources>
-        <Style TargetType="Label" x:Key="VarDot">
-            <Setter Property="TextColor" Value="Black" />
-        </Style>
-        <Style TargetType="Label" x:Key="VarHeading">
-            <!--<Setter Property="TextColor" Value="Black" />
-            <Setter Property="LineBreakMode" Value="WordWrap" />
-            <Setter Property="HorizontalOptions" Value="FillAndExpand" />-->
+        <Style TargetType="Label" x:Key="VariationContent">
             <Setter Property="TextColor" Value="#3f3f3f" />
-            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontSize" Value="Small" />
             <Setter Property="LineBreakMode" Value="WordWrap" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         </Style>
-        <Style TargetType="Label" x:Key="VarSHeading">
-            <!--<Setter Property="TextColor" Value="Black" />
-            <Setter Property="LineBreakMode" Value="WordWrap" />
-            <Setter Property="HorizontalOptions" Value="FillAndExpand" />-->
-            <Setter Property="TextColor" Value="#3f3f3f" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="LineBreakMode" Value="WordWrap" />
-            
-            
-        </Style>
-        
-        <Style TargetType="Label" x:Key="VarContent">
-            <!--<Setter Property="TextColor" Value="Black" />
-            <Setter Property="LineBreakMode" Value="WordWrap" />
-            <Setter Property="HorizontalOptions" Value="FillAndExpand" />-->
-            <Setter Property="TextColor" Value="#3f3f3f" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="LineBreakMode" Value="WordWrap" />
-         </Style>
         <Style TargetType="Image" x:Key="Thumbnail">
-            <!--<Setter Property="TextColor" Value="Black" />
-            <Setter Property="LineBreakMode" Value="WordWrap" />
-            <Setter Property="HorizontalOptions" Value="FillAndExpand" />-->
-            
+            <Setter Property="Aspect" Value="AspectFill" />
+            <Setter Property="WidthRequest" Value="150" />
+            <Setter Property="HorizontalOptions" Value="Start" />
         </Style>
-
         <Style TargetType="Label" x:Key="ProcedureName">
             <Setter Property="TextColor" Value="#3f3f3f" />
-            <Setter Property="FontSize" Value="14" />
-            
-
+            <Setter Property="FontSize" Value="Small" />
         </Style>
     </ContentView.Resources>
 </ContentView>

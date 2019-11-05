@@ -24,7 +24,7 @@ namespace ESA.Models.Model
                     {
                         new RelatedProcedure()
                         {
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             ProcedureName = "Tarsoconjunctival (Hughes) Flap - Stage 2",
                             Details = new Detail()
                             {
@@ -36,7 +36,7 @@ namespace ESA.Models.Model
                         new RelatedProcedure()
                         {
                             ProcedureName = "Hewes Flap",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage4.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail2.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             Details = new Detail()
                             {
                                 Description = "",
@@ -52,7 +52,7 @@ namespace ESA.Models.Model
                         new RelatedProcedure()
                         {
                             ProcedureName = "Periosteal flaps",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             Details = new Detail()
                             {
                                 Description = "",
@@ -63,7 +63,7 @@ namespace ESA.Models.Model
                         new RelatedProcedure()
                         {
                             ProcedureName = "Direct closure",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage4.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail2.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             Details = new Detail()
                             {
                                 Description = "",
@@ -79,7 +79,7 @@ namespace ESA.Models.Model
                         new RelatedProcedure()
                         {
                             ProcedureName = "Split thickness skin graft",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             Details = new Detail()
                             {
                                 Description = "",
@@ -90,7 +90,7 @@ namespace ESA.Models.Model
                         new RelatedProcedure()
                         {
                             ProcedureName = "Free tarsal graft",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage4.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail2.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             Details = new Detail()
                             {
                                 Description = "",
@@ -101,7 +101,7 @@ namespace ESA.Models.Model
                         new RelatedProcedure()
                         {
                             ProcedureName = "Full thickness mucosal graft",
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.variationImage3.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail3.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             Details = new Detail()
                             {
                                 Description = "",

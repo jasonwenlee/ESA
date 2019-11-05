@@ -85,6 +85,10 @@
     <None Remove="Resources\variationImage2.png" />
     <None Remove="Resources\variationImage3.png" />
     <None Remove="Resources\variationImage4.png" />
+    <None Remove="Resources\Variations\Thumbnail1.png" />
+    <None Remove="Resources\Variations\Thumbnail2.png" />
+    <None Remove="Resources\Variations\Thumbnail3.png" />
+    <None Remove="Resources\Variations\Thumbnail4.png" />
     <None Remove="Resources\VideoPlayer\back.png" />
     <None Remove="Resources\VideoPlayer\backward.png" />
     <None Remove="Resources\VideoPlayer\collapse.png" />
@@ -178,10 +182,10 @@
     <EmbeddedResource Include="Resources\Thumbnails\orb2.jpg" />
     <EmbeddedResource Include="Resources\Thumbnails\orb3.jpg" />
     <EmbeddedResource Include="Resources\valerie.png" />
-    <EmbeddedResource Include="Resources\variationImage1.png" />
-    <EmbeddedResource Include="Resources\variationImage2.png" />
-    <EmbeddedResource Include="Resources\variationImage3.png" />
-    <EmbeddedResource Include="Resources\variationImage4.png" />
+    <EmbeddedResource Include="Resources\Variations\Thumbnail1.png" />
+    <EmbeddedResource Include="Resources\Variations\Thumbnail2.png" />
+    <EmbeddedResource Include="Resources\Variations\Thumbnail3.png" />
+    <EmbeddedResource Include="Resources\Variations\Thumbnail4.png" />
     <EmbeddedResource Include="Resources\videoph.jpg" />
     <EmbeddedResource Include="Resources\VideoPlayer\back.png" />
     <EmbeddedResource Include="Resources\VideoPlayer\backward.png" />
@@ -273,6 +277,5 @@
 
   <ItemGroup>
     <Folder Include="Resources\Diagrams\" />
-    <Folder Include="Resources\Variations\" />
   </ItemGroup>
 </Project>
