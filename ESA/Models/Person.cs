@@ -73,9 +73,9 @@ namespace ESA.Models
                 ShortDesc ="Akihide is an assistant professor of Department of Ophthalmology, Kyoto Prefectural University of Medicine, Japan. Akihide underwent his Ophthalmology training in Kyoto and completed oculoplastic fellowships at Seirei Hamamatsu Hospital, Japan. Akihide also studied as short term oculoplastic fellow in 2011 & 2013 in Adelaide, Australia. ",
                 Image = ImageSource.FromResource("ESA.Resources.akihide.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly) },
                 new Person(){
-                PersonName ="iVision Team",
-                ShortDesc ="iVision is a Multicultural and Multinational team of software Developers -all living in the beautiful city of Adelaide Australia-, who enjoy learning and applying our knowledge for creating meaningful applications which contribute to reach innovative, faster, easier and better ways of doing things. We just love programming and seeing how our coding magic helps transforming improvement ideas into reality through technology. ",
-                Image = ImageSource.FromResource("ESA.Resources.ivision.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)}
+                PersonName ="Adelaide Advanced Applications",
+                ShortDesc ="Adelaide Advanced Applications is a Multicultural and Multinational team of software Developers -all living in the beautiful city of Adelaide Australia-, who enjoy learning and applying our knowledge for creating meaningful applications which contribute to reach innovative, faster, easier and better ways of doing things. We just love programming and seeing how our coding magic helps transforming improvement ideas into reality through technology. ",
+                Image = ImageSource.FromResource("ESA.Resources.3A.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly)}
 
             };
             return people;

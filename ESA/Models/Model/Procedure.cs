@@ -39,7 +39,7 @@ namespace ESA.Models.Model
                         Complications = new Complication().GetComplications(id),
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
-                        RelatedProcedures = new List<string>() { "Tarsonconjunctival Flap - Satge 2", "Hewes flap" }
+                        RelatedProcedures = new List<string>() { "Tarsonconjunctival Flap - Satge 2", "Hewes flap" },
                     };
                     break;
 
@@ -58,7 +58,7 @@ namespace ESA.Models.Model
                         Complications = new Complication().GetComplications(id),
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
-                        RelatedProcedures = new List<string>() { "Periosteal flaps", "Direct closure" }
+                        RelatedProcedures = new List<string>() { "Periosteal flaps", "Direct closure" },
                     };
                     break;
 
@@ -77,7 +77,7 @@ namespace ESA.Models.Model
                         Complications = new Complication().GetComplications(id),
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
-                        RelatedProcedures = new List<string>() { "Split thickness skin graft", "Free tarsal graft", "Full thickness mucosal graft", "Split thickness mucosal graft", "Hard palate mucosal graft", "Nasal mucosal graft", "Ear cartilage graft", "Alloderm" }
+                        RelatedProcedures = new List<string>() { "Split thickness skin graft", "Free tarsal graft", "Full thickness mucosal graft", "Split thickness mucosal graft", "Hard palate mucosal graft", "Nasal mucosal graft", "Ear cartilage graft", "Alloderm" },
                     };
                     break;
             }

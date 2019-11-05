@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ESA.Views.AboutPage" BackgroundColor="#222222" Title="About Us" >
+             x:Class="ESA.Views.AboutPage" BackgroundColor="White" Title="About Us" >
     <ContentPage.Content>
         <ListView x:Name="ListViewAbout" ItemsSource="{Binding People}" HasUnevenRows="True" >
             <ListView.ItemTemplate>
@@ -20,9 +20,9 @@
                                     <Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150"/>
                                 </StackLayout>
                                 <StackLayout Grid.Row="1" Orientation="Vertical">
-                                    <Label Text="{Binding PersonName}" FontSize="20" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                    <Label Text="{Binding ShortDesc}" FontSize="14" TextColor="LightGray" Margin="10,0,10,0" HorizontalTextAlignment="Center" />
-                                    <BoxView HeightRequest="1" Color="Black" />
+                                    <Label Text="{Binding PersonName}" FontSize="20" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding ShortDesc}" FontSize="14" TextColor="Gray" Margin="10,0,10,0" HorizontalTextAlignment="Center" />
+                                    <BoxView HeightRequest="1" Color="Gray" />
                                 </StackLayout>
                             </Grid>
                         </ViewCell.View>

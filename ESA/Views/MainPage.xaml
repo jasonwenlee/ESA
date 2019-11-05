@@ -18,10 +18,21 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="MainListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected">
+            <Label Text="Procedures" TextColor="Black" FontSize="16" Margin="5,0,0,0" />
+            <BoxView HeightRequest="1" Color="Gray"/>
+            <ListView x:Name="MainListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" Margin="0,0,0,0">
                 <ListView.ItemTemplate>
                     <DataTemplate >
-                        <TextCell Text="{Binding LongName}" Detail="{Binding ShortName}" TextColor="Black" DetailColor="Gray"/>
+                        <TextCell Text="{Binding LongName}" Detail="AUTHOR, 23/10/2018, 1064 views" TextColor="Black" DetailColor="Gray"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Clinical Scenarios" TextColor="Black" FontSize="16" Margin="5,0,0,0" />
+            <BoxView HeightRequest="1" Color="Gray"/>
+            <ListView x:Name="MainListView2"  HasUnevenRows="True" Margin="0,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

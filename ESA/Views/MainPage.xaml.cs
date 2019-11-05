@@ -96,13 +96,16 @@ namespace ESA
 
         private async void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if (e.SelectedItem == null) return;
             //Procedure p = MainListView.SelectedItem;
             //await Navigation.PushAsync(new DetailsPage(p.ID));
 
             //Changed using ESA.Models to ESA.Models.Model (was using the wrong Procedure)
             //Only works for the first procedure, not sure how to get it to work properly
-            Procedure p = ((Procedure)(MainListView.SelectedItem)).GetProcedure(0);
+            Procedure p = ((Procedure)(MainListView.SelectedItem));
             await Navigation.PushAsync(new DetailsPage(p.Id));
+
+            ((ListView)sender).SelectedItem = null;
 
         }
     }
