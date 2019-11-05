@@ -10,9 +10,9 @@ namespace ESA.ViewModels
 {
    public class ComplicationViewModel
     {
-        public List<ComplicationsModel> ComplicationList { get; set; }
+       public List<ComplicationsModel> ComplicationList { get; set; }
 
-        public ComplicationViewModel()
+       public ComplicationViewModel()
         {
             ComplicationList = new ComplicationsModel().GetComplicationsList();
         }

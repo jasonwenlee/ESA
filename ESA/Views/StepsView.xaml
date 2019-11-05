@@ -39,8 +39,7 @@
     </ContentView.Content>
 
     <ContentView.Resources>
-        <ResourceDictionary>
-            <Style x:Key="FlexLayout" TargetType="StackLayout">
+        <ResourceDictionary>            <Style x:Key="FlexLayout" TargetType="StackLayout">
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
             <Style x:Key="StepNumber" TargetType="Label">

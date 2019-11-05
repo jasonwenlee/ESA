@@ -6,59 +6,61 @@
              mc:Ignorable="d"
              x:Class="ESA.Views.ComplicationsView" 
     xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-  <ContentView.Content>
-        <!--Put whatever layout you need in here-->
 
-        <!--CONTENT-->
-       
-            <StackLayout>
-                <Label Text="Complications:" TextColor="White"/>
 
-                <ListView x:Name="ComplicationList"
-                      ItemsSource="{Binding  ComplicationList}"
-                      HasUnevenRows="True">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell IsEnabled="False">
-                                <Grid Padding="5">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
+    <ContentView.Content>
+        <StackLayout>
+            <Label Text="Complications" Style="{StaticResource ViewTitle}"/>
+            <StackLayout x:Name="compFlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Complications}" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="0" Orientation="Vertical">
+                            <StackLayout Orientation="Vertical" >
+                                <!--Step Text-->
+                                <Label Text="{Binding Number}" Style="{StaticResource CompNumber}"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource CompContent}"/>
+                                <Image Source="{Binding Image}" Style="{StaticResource CompImage}"/>
 
-                                <StackLayout Grid.Row="1" Orientation="Horizontal" Margin="5" HorizontalOptions="Center" >
-                                    <Image Source="{Binding ImageUrl}"
-                                           Grid.RowSpan="2"
-                                        
-                                       Aspect="AspectFill"
-                                       HeightRequest="120"
-                                       WidthRequest="360"
-                                            />
-                                    </StackLayout>
-                               
-                                <StackLayout Grid.Row="0" Orientation="Horizontal"   VerticalOptions="Center"  >
-                                    <Label 
-                                    VerticalTextAlignment="Center" 
-                                    FontAttributes="Bold"
-                                    FontSize="14"
-                                    TextColor="White"
-                                    Grid.Column="1"
-                                    Text="{Binding DescPhotoText}"
-                                       />
 
-                                </StackLayout>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-
-                </ListView>
-
+                                <!--Timestamp Tap-->
+                              
+                            </StackLayout>
+                          
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </StackLayout>
-      
+        </StackLayout>
     </ContentView.Content>
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FlexLayout" TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            </Style>
+            <Style x:Key="CompNumber" TargetType="Label">
+                <Setter Property="TextColor" Value="#3f3f3f" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="MinimumWidthRequest" Value="30" />
+                <Setter Property="Margin" Value="0,0,5,0" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="CompContent" TargetType="Label">
+                <Setter Property="TextColor" Value="#3f3f3f" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="CompImage" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="WidthRequest" Value="260" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+         
+        </ResourceDictionary>
+    </ContentView.Resources>
+
 </ContentView>
