@@ -122,15 +122,10 @@ namespace ESA.Models.Model
                         UploadDate = DateTime.Parse("2015/10/27"),
                         ViewCount = 810
                     }
-                }
+                },
                 // add additional procedures here
-            };
-        }
-        internal List<Procedure> GetExampleProcedureNames()
-        {
-            return new List<Procedure>(){
-                new Procedure(){
-                    Id = 0,
+                                new Procedure(){
+                    Id = -1,
                     LongName = "Lower lid island flap - Nasofacial sulcus",
                     ShortName = "Lower lid island",
                     Details = new Detail()
@@ -142,7 +137,7 @@ namespace ESA.Models.Model
                 },
 
                 new Procedure(){
-                    Id = 1,
+                    Id = -1,
                     LongName = "Propeller flap, Tarsal graft, Periosteal flap",
                     ShortName = "Propeller, Tarsal...",
                     Details = new Detail()
@@ -154,7 +149,7 @@ namespace ESA.Models.Model
                 },
 
                 new Procedure(){
-                    Id = 2,
+                    Id = -1,
                     LongName = "Lateral canthotomy and inferior cantholysis",
                     ShortName = "Lateral cantho...",
                     Details = new Detail()
@@ -165,7 +160,7 @@ namespace ESA.Models.Model
                     }
                 },
                 new Procedure(){
-                    Id = 3,
+                    Id = -1,
                     LongName = "Direct closure / wedge excision",
                     ShortName = "Direct closure",
                     Details = new Detail()
@@ -177,7 +172,7 @@ namespace ESA.Models.Model
                 },
 
                 new Procedure(){
-                    Id = 4,
+                    Id = -1,
                     LongName = "Sliding tarsonconjunctival flap",
                     ShortName = "Sliding tarsocon...",
                     Details = new Detail()
@@ -189,7 +184,7 @@ namespace ESA.Models.Model
                 },
 
                 new Procedure(){
-                    Id = 5,
+                    Id = -1,
                     LongName = "Full thickness eyelid composite graft",
                     ShortName = "Composite graft",
                     Details = new Detail()
@@ -198,7 +193,7 @@ namespace ESA.Models.Model
                         UploadDate = DateTime.Parse("2015/10/27"),
                         ViewCount = 810
                     }
-                },
+                }
             };
         }
     }

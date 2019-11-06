@@ -8,13 +8,11 @@ namespace ESA.ViewModels
     public class MainViewModel
     {
         public List<Procedure> ProcedureNames;
-        public List<Procedure> ExampleProcedureNames;
         public List<Person> People;
 
         public MainViewModel()
         {
             ProcedureNames = new Procedure().GetProcedureNames();
-            ExampleProcedureNames = new Procedure().GetExampleProcedureNames();
             People = new Person().GetPeople();
         }
     }

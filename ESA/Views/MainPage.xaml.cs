@@ -41,6 +41,7 @@ namespace ESA
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
             // Don't remove:)
             //loadOneProc.LoadEyelidList();
             //ObservableCollection<Procedure> eyes = loadOneProc.EyelidProcedures;
@@ -57,7 +58,7 @@ namespace ESA
         private async void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) return;
-            Procedure p = ((Procedure)(MainListView.SelectedItem));
+            Procedure p = ((Procedure)(ProcedureListView.SelectedItem));
             await Navigation.PushAsync(new DetailsPage(p.Id));
             ((ListView)sender).SelectedItem = null;
         }
@@ -76,6 +77,5 @@ namespace ESA
         {
             await Navigation.PushAsync(new CreateProcedure());
         }
-
     }
 }

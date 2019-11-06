@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-              x:Class="ESA.MainPage" Title="Oculoplastics" 
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA" >
+             x:Class="ESA.MainPage" Title="Oculoplastics" 
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" Clicked="AboutUs_Clicked" />
@@ -19,18 +19,23 @@
             <!--Procedures-->
             <Label Text="Procedures" Style="{StaticResource ItemHeader}" />
             <BoxView HeightRequest="1" Color="Gray"/>
-            <ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True"  >
+            <ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <ViewCell IsEnabled="{Binding Id, Converter={StaticResource enabledConverter}, ConverterParameter=-1}">
                             <ViewCell.View>
-                                <StackLayout Orientation="Vertical" Spacing="0" Margin="5">
+                                <StackLayout Orientation="Vertical" Spacing="0" Padding="5">
                                     <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
                                     <StackLayout Orientation="Horizontal" Spacing="0">
                                         <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.UploadDate, StringFormat='{} - {0:dd MMM, yyyy  - }'}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ItemDetail}" />
                                     </StackLayout>
+                                    <StackLayout.Triggers>
+                                        <DataTrigger TargetType="StackLayout" Binding="{Binding Id}" Value="-1">
+                                            <Setter Property="BackgroundColor" Value="#EEE"/>
+                                        </DataTrigger>
+                                    </StackLayout.Triggers>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
@@ -42,10 +47,10 @@
             <BoxView HeightRequest="1" Color="Gray"/>
             <ListView x:Name="ClinicalListView"  HasUnevenRows="True" >
                 <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <ViewCell>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="False">
                             <ViewCell.View>
-                                <StackLayout Orientation="Vertical" Spacing="0" Margin="5">
+                                <StackLayout Orientation="Vertical" Spacing="0" Padding="5" BackgroundColor="#EEE" >
                                     <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
                                     <StackLayout Orientation="Horizontal" Spacing="0">
                                         <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
@@ -63,6 +68,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <mrkupExt:IdToBoolConverter x:Key="enabledConverter" />
             <Style x:Key="ItemHeader" TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontSize" Value="16" />
