@@ -60,10 +60,9 @@ namespace ESA
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {
-            DetailViewModel dvm = new DetailViewModel();
-            dvm.videoName = "Brain_Eyes_Vid.mp4";
-            dvm.videoIsProcedure = false;
-            Navigation.PushAsync(new VideoPage(dvm));
+            procedureViewModel.VideoName = "Brain_Eyes_Vid.mp4";
+            procedureViewModel.VideoIsProcedure = false;
+            Navigation.PushAsync(new VideoPage(procedureViewModel));
             //source.Path = "eye_surgery.mp4";
             //source.Path = "Brain_Eyes_Vid.mp4";
         }

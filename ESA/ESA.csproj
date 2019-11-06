@@ -105,8 +105,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\3A.png" />
-    <EmbeddedResource Include="Resources\about48.png" />
-    <EmbeddedResource Include="Resources\akihide.png" />
     <EmbeddedResource Include="Resources\Icons\arrow.png" />
     <EmbeddedResource Include="Resources\Complications\LidMarginGranuloma.jpg" />
     <EmbeddedResource Include="Resources\Complications\LidMarginIrregularity.jpg" />
