@@ -12,12 +12,12 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : ContentPage
     {
-        PersonViewModel pvm;
-        public AboutPage()
+        MainViewModel mainViewModel;
+        public AboutPage(MainViewModel mvm)
         {
             InitializeComponent();
-            pvm = new PersonViewModel();
-            BindingContext = pvm;
+            mainViewModel = mvm;
+            BindingContext = mainViewModel;
         }
     }
 }

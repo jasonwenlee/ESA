@@ -9,45 +9,70 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.about48.png}" Clicked="AboutUs_Clicked" />
-        <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" Clicked="Search_Clicked" />
+        <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.search48.png}" /> <!--Clicked="Search_Clicked"--> 
+        <ToolbarItem x:Name="Database" Text="Login" /> <!--Clicked="Database_Clicked"-->
         <!--Don't remove this db toolbar item please :)-->
-        <ToolbarItem x:Name="Database" Text="Login" Clicked="Database_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="0">
             <!--Procedures-->
-            <Label Text="Procedures" TextColor="Black" FontSize="16" Margin="5,5,0,0" />
+            <Label Text="Procedures" Style="{StaticResource ItemHeader}" />
             <BoxView HeightRequest="1" Color="Gray"/>
-            <ListView x:Name="MainListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" Margin="0,0,0,0">
+            <ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True"  >
                 <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <TextCell Text="{Binding LongName}" Detail="AUTHOR, 23/10/2018, 1064 views" TextColor="Black" DetailColor="Gray"/>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Vertical" Spacing="0" Margin="5">
+                                    <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
+                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                        <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
+                                        <Label Text="{Binding Details.UploadDate, StringFormat='{} - {0:dd MMM, yyyy  - }'}" Style="{StaticResource ItemDetail}" />
+                                        <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ItemDetail}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <!--Clinical Scenarios-->
-            <Label Text="Clinical Scenarios" TextColor="Black" FontSize="16" Margin="5,5,0,0" />
+            <Label Text="Clinical Scenarios" Style="{StaticResource ItemHeader}" />
             <BoxView HeightRequest="1" Color="Gray"/>
-            <ListView x:Name="MainListView2"  HasUnevenRows="True" Margin="0,0,0,0">
+            <ListView x:Name="ClinicalListView"  HasUnevenRows="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate >
-                        
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Vertical" Spacing="0" Margin="5">
+                                    <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
+                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                        <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
+                                        <Label Text="{Binding Details.UploadDate, StringFormat='{} - {0:dd MMM, yyyy  - }'}" Style="{StaticResource ItemDetail}" />
+                                        <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ItemDetail}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="Thumbnail" TargetType="ImageButton">
-                <Setter Property="BackgroundColor" Value="Transparent" />
+            <Style x:Key="ItemHeader" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Margin" Value="5" />
             </Style>
-            <Style x:Key="ProcedureLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="#BDBDBD" />
-                <Setter Property="FontSize" Value="Small" />
-                <Setter Property="Margin" Value="3,0,0,0" />
+            <Style x:Key="ItemTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style x:Key="ItemDetail" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>

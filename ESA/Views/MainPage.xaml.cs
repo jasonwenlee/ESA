@@ -34,7 +34,9 @@ namespace ESA
             // MainViewModel
             mainViewModel = new MainViewModel();
             BindingContext = mainViewModel;
-            MainListView.ItemsSource = mainViewModel.ProcedureNames;
+            ProcedureListView.ItemsSource = mainViewModel.ProcedureNames;
+            ClinicalListView.ItemsSource = mainViewModel.ProcedureNames;
+            //ExampleListView.ItemsSource = mainViewModel.ExampleProcedureNames;
         }
         protected override void OnAppearing()
         {
@@ -52,36 +54,17 @@ namespace ESA
             //}
         }
 
-        private void StepsPageBtn_Clicked(object sender, EventArgs e)
+        private async void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            // Don't think this is a good idea to push object from page to another. Don't remove :)
-            //Navigation.PushAsync(new DetailsPage(testEye));
-            int i = new Random().Next(0, 3);
-            Navigation.PushAsync(new DetailsPage(mainViewModel.Procedures[0]));
+            if (e.SelectedItem == null) return;
+            Procedure p = ((Procedure)(MainListView.SelectedItem));
+            await Navigation.PushAsync(new DetailsPage(p.Id));
+            ((ListView)sender).SelectedItem = null;
         }
 
         private async void AboutUs_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AboutPage());
-        }
-
-        private void Video_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new VideoPage("eye_surgery.mp4", TimeSpan.Zero));
-        }
-
-        private async void Lacrimal_Click(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CategoriesPage());
-        }
-        private async void Orbital_Click(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CategoriesPage());
-        }
-
-        private async void Eyelid_Click(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CategoriesPage());
+            await Navigation.PushAsync(new AboutPage(mainViewModel));
         }
 
         private async void Search_Clicked(object sender, EventArgs e)
@@ -94,19 +77,5 @@ namespace ESA
             await Navigation.PushAsync(new CreateProcedure());
         }
 
-        private async void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem == null) return;
-            //Procedure p = MainListView.SelectedItem;
-            //await Navigation.PushAsync(new DetailsPage(p.ID));
-
-            //Changed using ESA.Models to ESA.Models.Model (was using the wrong Procedure)
-            //Only works for the first procedure, not sure how to get it to work properly
-            Procedure p = ((Procedure)(MainListView.SelectedItem));
-            await Navigation.PushAsync(new DetailsPage(p.Id));
-
-            ((ListView)sender).SelectedItem = null;
-
-        }
     }
 }

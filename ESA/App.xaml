@@ -29,6 +29,24 @@
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="Margin" Value="0" />
             </Style>
+            <!--About Page-->
+            <Style x:Key="PersonImage" TargetType="Image" >
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="150" />
+            </Style>
+            <Style x:Key="PersonName" TargetType="Label" >
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="PersonDescription" TargetType="Label" >
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="Margin" Value="10,0,10,0" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
             <!--Procedure Info-->
             <Style x:Key="ProcedureTitle" TargetType="Label" >
                 <Setter Property="FontSize" Value="Medium"/>
