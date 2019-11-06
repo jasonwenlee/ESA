@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-
   <style name="MainTheme" parent="MainTheme.Base">
   </style>
   <!-- Base theme applied no matter what API -->
@@ -22,7 +21,17 @@
     <item name="windowActionModeOverlay">true</item>
 
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+
+
+    <item name="android:colorPressedHighlight">@color/ListViewSelected</item>
+    <item name="android:colorLongPressedHighlight">@color/ListViewHighlighted</item>
+    <item name="android:colorFocusedHighlight">@color/ListViewSelected</item>
+    <item name="android:colorActivatedHighlight">@color/ListViewSelected</item>
+    <item name="android:activatedBackgroundIndicator">@color/ListViewSelected</item>
   </style>
+  <color name="ListViewSelected">#96BCE3</color>
+  <color name="ListViewHighlighted">#E39696</color>
+
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>

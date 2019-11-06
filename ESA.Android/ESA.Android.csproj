@@ -166,9 +166,6 @@
     <AndroidResource Include="Resources\drawable\eyeLidMarginIrregularity05.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\eyeRetraction01.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\eyeRetraction01.jpeg" />
   </ItemGroup>
   <ItemGroup>
