@@ -31,6 +31,7 @@
     <None Remove="Resources\dinesh.png" />
     <None Remove="Resources\garry.png" />
     <None Remove="Resources\history.png" />
+    <None Remove="Resources\Icons\about48.png" />
     <None Remove="Resources\Icons\back_icon.png" />
     <None Remove="Resources\Icons\back_icon_dark_active.png" />
     <None Remove="Resources\Icons\back_icon_light_active.png" />
@@ -70,6 +71,7 @@
     <None Remove="Resources\Icons\variations_icon_dark_active1.png" />
     <None Remove="Resources\Icons\variations_icon_light_active.png" />
     <None Remove="Resources\ivision.png" />
+    <None Remove="Resources\People\akihide.png" />
     <None Remove="Resources\Thumbnails\eye1.jpg" />
     <None Remove="Resources\Thumbnails\eye2.jpg" />
     <None Remove="Resources\Thumbnails\eye3.jpg" />
@@ -105,6 +107,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\3A.png" />
+    <EmbeddedResource Include="Resources\Icons\about48.png" />
     <EmbeddedResource Include="Resources\Icons\arrow.png" />
     <EmbeddedResource Include="Resources\Complications\LidMarginGranuloma.jpg" />
     <EmbeddedResource Include="Resources\Complications\LidMarginIrregularity.jpg" />
@@ -250,6 +253,10 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Diagrams\lacrimal.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\People\akihide.png" />
   </ItemGroup>
 
   <ItemGroup>
