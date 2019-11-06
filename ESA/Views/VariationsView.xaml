@@ -13,9 +13,10 @@
             <StackLayout x:Name="varsFlexLayout" BindableLayout.ItemsSource="{Binding Procedure.Variations}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Spacing="0" Orientation="Horizontal">
+                        <StackLayout Spacing="0" Orientation="Horizontal" >
                             <!--<Label Text="{Binding Dot}" Style="{StaticResource VarDot}" />-->
-                            <Label Text="{Binding Content}" Style="{StaticResource VariationContent}"/>
+                            <Label FormattedText="{Binding Content}"/>
+                            <!--Style="{StaticResource VariationContent}"/>-->
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>

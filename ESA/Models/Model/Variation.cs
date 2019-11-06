@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace ESA.Models.Model
 {
     public class Variation
     {
-        public string Content { get; set; }
+        public FormattedString Content { get; set; }
 
         internal List<Variation> GetVariations(int id)
         {
@@ -17,15 +18,17 @@ namespace ESA.Models.Model
             {
                 case 0:
                     // Tarso Hughes
-                    varsd = new List<Variation>()
-                    {
-                        new Variation() { Content = "Variations in steps" },
-                        new Variation() { Content = "Size of flap" },
-                        new Variation() { Content = "Wider flap may need a straighter horizonal incision without vertical relieving incisions."},
-                        new Variation() { Content = "Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap​."},
-                        new Variation() { Content = "Conjunctiva and Mullers together allow better vascularsation of the flap."},
-                        new Variation() { Content = "If advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction that advancing conjunctiva alone."},
-                    };   
+                    FormattedString fString = new FormattedString();
+                    fString.Spans.Add(new Span() { Text = "Size of flap", Style = (Style)Application.Current.Resources["VariationHeader"] });
+                    fString.Spans.Add(new Span() { Text = "\nWider flap may need a straighter horizonal incision without vertical relieving incisions.", Style = (Style)Application.Current.Resources["VariationSubHeader"] });
+                    varsd.Add(new Variation() { Content = fString });
+
+                    fString = new FormattedString();
+                    fString.Spans.Add(new Span() { Text = "Tarsoconjunctival-based or Tarsoconjunctival-Muller-based flap​.", Style = (Style)Application.Current.Resources["VariationHeader"] });
+                    fString.Spans.Add(new Span() { Text = "\nConjunctiva and Mullers together allow better vascularsation of the flap.", Style = (Style)Application.Current.Resources["VariationSubHeader"] });
+                    fString.Spans.Add(new Span() { Text = "\nIf advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction that advancing conjunctiva alone.", Style = (Style)Application.Current.Resources["VariationSubHeader"] });
+                    varsd.Add(new Variation() { Content = fString });
+  
                     break;
                 case 1:
                     // Tenzel
@@ -44,7 +47,7 @@ namespace ESA.Models.Model
                         new Variation() { Content = "Variations in steps" },
                         new Variation() { Content = "Donor site – upper eyelid, post auricular, supraclavicular, inner arm"},
                         new Variation() { Content = "Large grafts – small perforations can be made into the graft to reduce the risk of haematoma collection and graft failure"},
-                        
+
                     };
                     break;
 
@@ -52,7 +55,7 @@ namespace ESA.Models.Model
 
 
             }
-            
+
             //    // Tarso
             //    new List<Variation>()
             //    {
