@@ -26,7 +26,7 @@ namespace ESA.Models.Model
                         new RelatedProcedure()
                         {
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
-                            ProcedureName = "Tarsoconjunctival (Hughes) Flap - Stage 2",
+                            ProcedureName = "Tarsoconjunctival (Hughes) Flap - Stage II",
                             Id = 1,
                             Details = new Detail()
                             {

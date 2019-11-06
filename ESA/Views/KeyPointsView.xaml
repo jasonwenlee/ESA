@@ -18,7 +18,7 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal" Spacing="0" >
+                            <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="StartAndExpand">
                                 <!--KeyPoint Text-->
                                 <Label FormattedText="{Binding Point}"/>
                                 <Image Source="{mrkupExt:ImageResource ESA.Resources.Icons.expand_more.png}" Style="{StaticResource DropImage}" >
