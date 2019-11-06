@@ -23,9 +23,6 @@ namespace ESA.Views
         // ProcedureViewModel
         ProcedureViewModel procedureViewModel;
 
-        // DetailViewModel
-        DetailViewModel detailViewModel;
-
         // Video Control bools
         private bool videoControlsVisible = true;
         private bool controlsAreCollapsed = false;
@@ -48,7 +45,6 @@ namespace ESA.Views
 
             // View Models
             procedureViewModel = new ProcedureViewModel(id);
-            detailViewModel = new DetailViewModel();
             BindingContext = procedureViewModel;
 
             // Fade Timer
@@ -61,7 +57,7 @@ namespace ESA.Views
             fadeTimer.Start();
 
             // Content Row
-            StepsView view = new StepsView(detailViewModel, procedureViewModel);
+            StepsView view = new StepsView(procedureViewModel);
             contentRow.Children.Clear();
             contentRow.Children.Add(view);
             contentRow.LayoutChanged += (s, e) =>
@@ -71,8 +67,7 @@ namespace ESA.Views
             // Don't remove :)
             //holdProcedure = proc;
         }
-
-        private void DetailsPage_Appearing(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
@@ -95,7 +90,15 @@ namespace ESA.Views
 
             videoPlayer.Source = source;
 
-            videoPlayer.Position = detailViewModel.videoPosition;
+            videoPlayer.Play();
+            videoPlayer.Position = procedureViewModel.VideoPosition;
+            playPauseButton.Source = ImageSource.FromResource("ESA.Resources.VideoPlayer.pause.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            procedureViewModel.VideoPosition = videoPlayer.Position;
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -308,10 +311,10 @@ namespace ESA.Views
         {
             // TODO: remove detailViewModel
             videoPlayer.Stop();
-            detailViewModel.videoPosition = videoPlayer.Position;
-            detailViewModel.videoIsProcedure = true;
-            detailViewModel.videoName = procedureViewModel.Procedure.VideoSource;
-            Navigation.PushAsync(new VideoPage(detailViewModel));
+            procedureViewModel.VideoPosition = videoPlayer.Position;
+            procedureViewModel.VideoIsProcedure = true;
+            procedureViewModel.VideoName = procedureViewModel.Procedure.VideoSource;
+            Navigation.PushAsync(new VideoPage(procedureViewModel));
         }
 
         private async void VideoControls_Tapped(object sender, EventArgs e)
@@ -376,7 +379,7 @@ namespace ESA.Views
             if (!(content.First() == null || content.First() is StepsView))
             {
                 refreshIcons("step", content.First().GetType().Name);
-                StepsView view = new StepsView(detailViewModel, procedureViewModel);
+                StepsView view = new StepsView(procedureViewModel);
                 //view.LoadStepsView();
                 content.Clear();
                 content.Add(view);
@@ -393,7 +396,7 @@ namespace ESA.Views
             {
                 refreshIcons("keyp", content.First().GetType().Name);
                 content.Clear();
-                content.Add(new KeyPointsView(detailViewModel, procedureViewModel));
+                content.Add(new KeyPointsView(procedureViewModel));
 
                 PlayButtonAnimation(sender);
                 AdjustViews();

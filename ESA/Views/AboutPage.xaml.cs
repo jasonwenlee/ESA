@@ -18,6 +18,7 @@ namespace ESA.Views
             InitializeComponent();
             mainViewModel = mvm;
             BindingContext = mainViewModel;
+            ListViewAbout.ItemsSource = mainViewModel.People;
         }
     }
 }

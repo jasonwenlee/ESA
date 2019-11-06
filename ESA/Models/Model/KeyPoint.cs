@@ -9,12 +9,12 @@ namespace ESA.Models.Model
         public string Importance { get; set; }
         public bool HasDiagram { get; set; }
         public int Number { get; set; }
-        public Model.Diagram Diagram { get; set; }
+        public Diagram Diagram { get; set; }
         public int RelatedProcedure { get; set; }
 
         internal List<KeyPoint> GetKeyPoints(int id)
         {
-            List<Model.Diagram> diagrams = new Model.Diagram().GetDiagrams(id);
+            List<Diagram> diagrams = new Diagram().GetDiagrams(id);
             List<KeyPoint> keyPointsList = new List<KeyPoint>();
 
             switch (id)

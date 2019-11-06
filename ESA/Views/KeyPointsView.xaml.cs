@@ -19,14 +19,12 @@ namespace ESA.Views
     public partial class KeyPointsView : ContentView
     {
         public ProcedureViewModel procedureViewModel;
-        public DetailViewModel detailViewModel;
         public int currentStep;
 
 
-        public KeyPointsView(DetailViewModel dvm, ProcedureViewModel pvm)
+        public KeyPointsView(ProcedureViewModel pvm)
         {
             InitializeComponent();
-            detailViewModel = dvm;
             procedureViewModel = pvm;
             BindingContext = procedureViewModel.Procedure;
             currentStep = 1;
@@ -67,9 +65,9 @@ namespace ESA.Views
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {
-            detailViewModel.videoName = "Brain_Eyes_Vid.mp4";
-            detailViewModel.videoIsProcedure = false;
-            Navigation.PushAsync(new VideoPage(detailViewModel));
+            procedureViewModel.VideoName = "Brain_Eyes_Vid.mp4";
+            procedureViewModel.VideoIsProcedure = false;
+            Navigation.PushAsync(new VideoPage(procedureViewModel));
          
         }
     }

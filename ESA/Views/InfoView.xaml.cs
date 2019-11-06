@@ -1,14 +1,5 @@
-﻿using ESA.Models;
-using ESA.Models.PageModels;
-
-using ESA.ViewModels;
-using ESA.ViewModels.InfoView;
+﻿using ESA.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

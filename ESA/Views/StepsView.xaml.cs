@@ -18,13 +18,11 @@ namespace ESA
     public partial class StepsView : ContentView
     {
         public ProcedureViewModel procedureViewModel;
-        public DetailViewModel detailViewModel;
         public int currentStep;
 
-        public StepsView(DetailViewModel dvm, ProcedureViewModel pvm)
+        public StepsView(ProcedureViewModel pvm)
         {
             InitializeComponent();
-            detailViewModel  = dvm;
             procedureViewModel = pvm;
             BindingContext = procedureViewModel.Procedure;
             currentStep = 1;
@@ -99,9 +97,9 @@ namespace ESA
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {
-            detailViewModel.videoName = "Brain_Eyes_Vid.mp4";
-            detailViewModel.videoIsProcedure = false;
-            Navigation.PushAsync(new VideoPage(detailViewModel));
+            procedureViewModel.VideoName = "Brain_Eyes_Vid.mp4";
+            procedureViewModel.VideoIsProcedure = false;
+            Navigation.PushAsync(new VideoPage(procedureViewModel));
             //source.Path = "eye_surgery.mp4";
             //source.Path = "Brain_Eyes_Vid.mp4";
         }

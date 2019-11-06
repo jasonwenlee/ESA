@@ -25,17 +25,17 @@ namespace ESA.Models.Model
                     {
                         new Diagram()
                         {
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Diagrams.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             VideoSource = "eye_surgery.mp4"
                         },
                         new Diagram()
                         {
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Diagrams.history.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             VideoSource = "eye_surgery.mp4"
                         },
                         new Diagram()
                         {
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Diagrams.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             VideoSource = "eye_surgery.mp4"
                         }
                     };
@@ -47,7 +47,7 @@ namespace ESA.Models.Model
                     {
                         new Diagram()
                         {
-                            Thumbnail = ImageSource.FromResource("ESA.Resources.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Thumbnail = ImageSource.FromResource("ESA.Resources.Diagrams.diagram.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             VideoSource = "Brain_Eyes_Vid.mp4"
                         }
                     };

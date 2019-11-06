@@ -8,7 +8,6 @@
              mc:Ignorable="d"
              x:Class="ESA.Views.DetailsPage"
              x:Name="StepPage_Instance"
-             Appearing="DetailsPage_Appearing"
              Style="{StaticResource DetailsPage}">
 
     <ContentPage.Content>

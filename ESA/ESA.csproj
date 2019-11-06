@@ -104,16 +104,16 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\3A.png" />
-    <EmbeddedResource Include="Resources\about48.png" />
-    <EmbeddedResource Include="Resources\akihide.png" />
+    <EmbeddedResource Include="Resources\Icons\about48.png" />
+    <EmbeddedResource Include="Resources\People\akihide.png" />
     <EmbeddedResource Include="Resources\Complications\LidMarginGranuloma.jpg" />
     <EmbeddedResource Include="Resources\Complications\LidMarginIrregularity.jpg" />
     <EmbeddedResource Include="Resources\Complications\SkinAdvancingOver.jpeg" />
     <EmbeddedResource Include="Resources\Complications\UpperEyelidRetraction.jpeg" />
-    <EmbeddedResource Include="Resources\diagram.png" />
-    <EmbeddedResource Include="Resources\dinesh.png" />
-    <EmbeddedResource Include="Resources\garry.png" />
-    <EmbeddedResource Include="Resources\history.png" />
+    <EmbeddedResource Include="Resources\Diagrams\diagram.png" />
+    <EmbeddedResource Include="Resources\People\dinesh.png" />
+    <EmbeddedResource Include="Resources\People\garry.png" />
+    <EmbeddedResource Include="Resources\Diagrams\history.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\back_icon_light_active.png" />
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="Resources\Icons\variations_icon_dark_active.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon_dark_active1.png" />
     <EmbeddedResource Include="Resources\Icons\variations_icon_light_active.png" />
-    <EmbeddedResource Include="Resources\saul.png" />
-    <EmbeddedResource Include="Resources\search48.png" />
+    <EmbeddedResource Include="Resources\People\saul.png" />
+    <EmbeddedResource Include="Resources\Icons\search48.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -158,19 +158,17 @@
     <None Remove="Resources\eyelid.png" />
     <None Remove="Resources\lacrimal.png" />
     <None Remove="Resources\orbital.png" />
-    <None Remove="Resources\plus.png" />
     <None Remove="Resources\search.png" />
     <None Remove="Resources\search48.png" />
     <None Remove="Resources\videoph.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\about.png" />
-    <EmbeddedResource Include="Resources\close.png" />
-    <EmbeddedResource Include="Resources\eyelid.png" />
-    <EmbeddedResource Include="Resources\orbital.png" />
-    <EmbeddedResource Include="Resources\plus.png" />
-    <EmbeddedResource Include="Resources\search.png" />
+    <EmbeddedResource Include="Resources\Icons\about.png" />
+    <EmbeddedResource Include="Resources\Icons\close.png" />
+    <EmbeddedResource Include="Resources\Diagrams\eyelid.png" />
+    <EmbeddedResource Include="Resources\Diagrams\orbital.png" />
+    <EmbeddedResource Include="Resources\Icons\search.png" />
     <EmbeddedResource Include="Resources\Thumbnails\eye1.jpg" />
     <EmbeddedResource Include="Resources\Thumbnails\eye2.jpg" />
     <EmbeddedResource Include="Resources\Thumbnails\eye3.jpg" />
@@ -181,12 +179,12 @@
     <EmbeddedResource Include="Resources\Thumbnails\orb1.jpg" />
     <EmbeddedResource Include="Resources\Thumbnails\orb2.jpg" />
     <EmbeddedResource Include="Resources\Thumbnails\orb3.jpg" />
-    <EmbeddedResource Include="Resources\valerie.png" />
+    <EmbeddedResource Include="Resources\People\valerie.png" />
     <EmbeddedResource Include="Resources\Variations\Thumbnail1.png" />
     <EmbeddedResource Include="Resources\Variations\Thumbnail2.png" />
     <EmbeddedResource Include="Resources\Variations\Thumbnail3.png" />
     <EmbeddedResource Include="Resources\Variations\Thumbnail4.png" />
-    <EmbeddedResource Include="Resources\videoph.jpg" />
+    <EmbeddedResource Include="Resources\Thumbnails\videoph.jpg" />
     <EmbeddedResource Include="Resources\VideoPlayer\back.png" />
     <EmbeddedResource Include="Resources\VideoPlayer\backward.png" />
     <EmbeddedResource Include="Resources\VideoPlayer\collapse.png" />
@@ -251,7 +249,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\lacrimal.png" />
+    <EmbeddedResource Include="Resources\Diagrams\lacrimal.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -273,9 +271,5 @@
     <EmbeddedResource Update="Views\VideoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\Diagrams\" />
   </ItemGroup>
 </Project>

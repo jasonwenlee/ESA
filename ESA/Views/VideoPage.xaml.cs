@@ -16,19 +16,19 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VideoPage : ContentPage
     {
-        DetailViewModel viewModel;
+        ProcedureViewModel viewModel;
         private bool videoControlsVisible = true;
 
         // Video Controls Fade Timer
         Timer fadeTimer = new Timer();
 
-        public VideoPage(DetailViewModel dvm)
+        public VideoPage(ProcedureViewModel dvm)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
             viewModel = dvm;
-            string videoName = viewModel.videoName;
+            string videoName = viewModel.VideoName;
 
             ResourceVideoSource source = new ResourceVideoSource();
             switch (Device.RuntimePlatform)
@@ -46,10 +46,7 @@ namespace ESA.Views
                     source.Path = "Videos/" + videoName;
                     break;
             }
-
             player.Source = source;
-
-            
 
             // Fade Timer
             fadeTimer.Interval = 2000;
@@ -64,15 +61,19 @@ namespace ESA.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            // Refresh player
-            player.Refresh();
-            player.Position = viewModel.videoPosition;
+
+            if (viewModel.VideoIsProcedure)
+                player.Position = viewModel.VideoPosition;
+            else
+                player.Position = TimeSpan.Zero;
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            viewModel.videoPosition = player.Position;
+
+            if (viewModel.VideoIsProcedure)
+                viewModel.VideoPosition = player.Position;
         }
         // VIDEO PLAYER
         public async void PlayButtonAnimation(object sender)
@@ -151,8 +152,6 @@ namespace ESA.Views
 
         private void EnlargeButton_Clicked(object sender, EventArgs e)
         {
-            if (viewModel.videoIsProcedure)
-                viewModel.videoPosition = player.Position;
             Navigation.PopAsync();
         }
 
