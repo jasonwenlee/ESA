@@ -32,22 +32,31 @@ namespace ESA.Models.Model
                     break;
                 case 1:
                     // Tenzel
-                    varsd = new List<Variation>()
+                    
                     {
-                        new Variation() { Content = "Defects greater on the lower than upper eyelid" },
-                        new Variation() { Content = "Any lid defect - Lateral/Central/Medial"},
-                        new Variation() { Content = "Central to Medial"},
-                        new Variation() { Content = "Moving eyelid from lateral to Medial"},
+                        FormattedString gString = new FormattedString();
+                        gString.Spans.Add(new Span() { Text = "Defects greater on the lower than upper eyelid"});
+                        varsd.Add(new Variation() { Content = gString });
+
+                        gString = new FormattedString();
+                        gString.Spans.Add(new Span() { Text = "Any lid defect - Lateral/Central/Medial", Style = (Style)Application.Current.Resources["VariationHeader"] });
+                        gString.Spans.Add(new Span() { Text = "\nCentral to Medial", Style = (Style)Application.Current.Resources["VariationSubHeader"] });
+                        varsd.Add(new Variation() { Content = gString });
+
+                        gString = new FormattedString();
+                        gString.Spans.Add(new Span() { Text = "Moving eyelid from lateral to Medial"});
+                        varsd.Add(new Variation() { Content = gString });
                     };
                     break;
                 case 2:
                     // Graft
-                    varsd = new List<Variation>()
+                    
                     {
-                        new Variation() { Content = "Variations in steps" },
-                        new Variation() { Content = "Donor site – upper eyelid, post auricular, supraclavicular, inner arm"},
-                        new Variation() { Content = "Large grafts – small perforations can be made into the graft to reduce the risk of haematoma collection and graft failure"},
-
+                        FormattedString hString = new FormattedString();
+                        hString.Spans.Add(new Span() { Text = "Variations in steps", Style = (Style)Application.Current.Resources["VariationHeader"] });
+                        hString.Spans.Add(new Span() { Text = "\nDonor site – upper eyelid, post auricular, supraclavicular, inner arm" , Style = (Style)Application.Current.Resources["VariationSubHeader"] });
+                        hString.Spans.Add(new Span() { Text = "\nLarge grafts – small perforations can be made into the graft to reduce the risk of haematoma collection and graft failure" , Style = (Style)Application.Current.Resources["VariationSubHeader"] });
+                        varsd.Add(new Variation() { Content = hString });
                     };
                     break;
 
