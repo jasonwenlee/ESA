@@ -61,7 +61,7 @@ namespace ESA.Views
             fadeTimer.Start();
 
             // Content Row
-            StepsView view = new StepsView(detailViewModel, procedureViewModel);
+            StepsView view = new StepsView(procedureViewModel);
             contentRow.Children.Clear();
             contentRow.Children.Add(view);
             contentRow.LayoutChanged += (s, e) =>
@@ -376,7 +376,7 @@ namespace ESA.Views
             if (!(content.First() == null || content.First() is StepsView))
             {
                 refreshIcons("step", content.First().GetType().Name);
-                StepsView view = new StepsView(detailViewModel, procedureViewModel);
+                StepsView view = new StepsView(procedureViewModel);
                 //view.LoadStepsView();
                 content.Clear();
                 content.Add(view);
