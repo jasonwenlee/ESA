@@ -36,16 +36,16 @@ namespace ESA
             // get first step using the number text associated with layout content
             Step chosenStep = procedureViewModel.Procedure.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)sender).Children.First()).Text));
             // get the expandable view
-            ExtExpandableView extExpandableView = (ExtExpandableView)((StackLayout)sender).Parent;
+            ExpandableView expandableView = NamedSize layout, d(ExpandableView)((StackLayout)((StackLayout)sender).Parent).Parent;
             // get the arrow image
             Image arrow = ((Image)((StackLayout)sender).Children.Last());
             // set expanded to chosen step has diagram
             if (chosenStep.HasDiagram)
             {
-                extExpandableView.IsExpanded = !extExpandableView.IsExpanded;
-                extExpandableView.ForceUpdateSize();
+                expandableView.IsExpanded = !expandableView.IsExpanded;
+                expandableView.ForceUpdateSize();
 
-                if(extExpandableView.IsExpanded)
+                if(expandableView.IsExpanded)
                 {
                     arrow.RotateTo(180, 200, Easing.CubicInOut);
                 }
