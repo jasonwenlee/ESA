@@ -7,7 +7,8 @@
              mc:Ignorable="d"
              x:Class="ESA.StepsView"
              x:Name="stepsView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
 
     <ContentView.Content>
         <StackLayout>
@@ -20,20 +21,29 @@
                         <extensions:ExtExpandableView x:Name="expandableView" IsTouchToExpandEnabled="False" >
                             <!-- Primary View Contains Step Number and Step Text -->
                             <extensions:ExtExpandableView.PrimaryView>
-                                <StackLayout Orientation="Horizontal" >
-                                    <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
-                                    <Label Text="{Binding Content}" Style="{StaticResource StepContent}" Margin="0,0,20,0"/>
-                                    <Image x:Name="arrow" Source="{mrkupExt:ImageResource ESA.Resources.Icons.arrow.png}" Style="{StaticResource StepDropImage}" >
-                                        <Image.Triggers>
-                                            <DataTrigger TargetType="Image" Binding="{Binding HasDiagram}" Value="False">
+                                <StackLayout Orientation="Vertical" Spacing="0">
+                                    <StackLayout Orientation="Horizontal" >
+                                        <Label Text="{Binding Number}" Style="{StaticResource StepNumber}"/>
+                                        <Label Text="{Binding Content}" Style="{StaticResource StepContent}" Margin="0,0,20,0"/>
+                                        <Image x:Name="arrow" Source="{mrkupExt:ImageResource ESA.Resources.Icons.arrow.png}" Style="{StaticResource StepDropImage}" >
+                                            <Image.Triggers>
+                                                <DataTrigger TargetType="Image" Binding="{Binding HasDiagram}" Value="False">
+                                                    <Setter Property="IsVisible" Value="False" />
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                        <!-- Tap Gesture when a step is tapped -->
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="DropdownContent_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                    <customButton:CustomButton Text="{Binding RelatedProcedure.ProcedureLink}" Style="{StaticResource RelatedProcedureButton}" Clicked="RelatedProcedureButton_Clicked" >
+                                        <customButton:CustomButton.Triggers>
+                                            <DataTrigger TargetType="Button" Binding="{Binding HasRelatedProcedure}" Value="False" >
                                                 <Setter Property="IsVisible" Value="False" />
                                             </DataTrigger>
-                                        </Image.Triggers>
-                                    </Image>
-                                    <!-- Tap Gesture when a step is tapped -->
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="DropdownContent_Tapped"/>
-                                    </StackLayout.GestureRecognizers>
+                                        </customButton:CustomButton.Triggers>
+                                    </customButton:CustomButton>
                                 </StackLayout>
                             </extensions:ExtExpandableView.PrimaryView>
 
@@ -41,6 +51,7 @@
                             <extensions:ExtExpandableView.SecondaryViewTemplate>
                                 <DataTemplate>
                                     <StackLayout>
+                                        
                                         <!-- Height Request of 200 ensures the view expands on first try, means thumbnails should be set to 200 height to ensure proper viewing -->
                                         <ImageButton x:Name="diagramBtn" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" BackgroundColor="Transparent" HeightRequest="200"/>
                                     </StackLayout>

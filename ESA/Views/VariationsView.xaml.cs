@@ -14,24 +14,15 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VariationsView : ContentView
     {
-        //    VariationPageViewModel vm;
         public VariationsView(ProcedureViewModel viewModel)
         {
             InitializeComponent();
             BindingContext = viewModel;
-            //BindingContext = new VariationPageViewModel();
-            //          vm = new VariationPageViewModel();
-
-            //       VariationList.ItemsSource = vm.VariationsView;
-
-            //        BindingContext = vm;
         }
 
-        ListView HeaderList = new ListView()
+        private void RelatedProcedureButton_Tapped(object sender, EventArgs e)
         {
-            Header = "Related Procedure",
-            Footer = "Footer"
-        };
-
+            Navigation.PushAsync(new DetailsPage(1));
+        }
     }
 }

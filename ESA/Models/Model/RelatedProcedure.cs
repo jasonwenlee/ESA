@@ -12,6 +12,7 @@ namespace ESA.Models.Model
         public ImageSource Thumbnail { get; set; }
         public Detail Details { get; set; }
         public string ProcedureLink { get; set; } = null;
+        public int Id { get; set; }
 
         internal List<RelatedProcedure> GetRelatedProcedures(int id)
         {
@@ -26,6 +27,7 @@ namespace ESA.Models.Model
                         {
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
                             ProcedureName = "Tarsoconjunctival (Hughes) Flap - Stage 2",
+                            Id = 1,
                             Details = new Detail()
                             {
                                 Description = "",
@@ -37,6 +39,7 @@ namespace ESA.Models.Model
                         {
                             ProcedureName = "Hewes Flap",
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail2.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Id = 1,
                             Details = new Detail()
                             {
                                 Description = "",
@@ -53,6 +56,7 @@ namespace ESA.Models.Model
                         {
                             ProcedureName = "Periosteal flaps",
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Id = 2,
                             Details = new Detail()
                             {
                                 Description = "",
@@ -64,6 +68,7 @@ namespace ESA.Models.Model
                         {
                             ProcedureName = "Direct closure",
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail2.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Id = 2,
                             Details = new Detail()
                             {
                                 Description = "",
@@ -80,6 +85,7 @@ namespace ESA.Models.Model
                         {
                             ProcedureName = "Split thickness skin graft",
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail1.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Id = 0,
                             Details = new Detail()
                             {
                                 Description = "",
@@ -91,6 +97,7 @@ namespace ESA.Models.Model
                         {
                             ProcedureName = "Free tarsal graft",
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail2.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Id = 0,
                             Details = new Detail()
                             {
                                 Description = "",
@@ -102,6 +109,7 @@ namespace ESA.Models.Model
                         {
                             ProcedureName = "Full thickness mucosal graft",
                             Thumbnail = ImageSource.FromResource("ESA.Resources.Variations.Thumbnail3.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly),
+                            Id = 0,
                             Details = new Detail()
                             {
                                 Description = "",

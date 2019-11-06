@@ -33,6 +33,9 @@
                                 <Label Text="{Binding Details.UploadDate, StringFormat='{}{0:dd MMM, yyyy}'}" Style="{StaticResource ProcedureName}" />
                                 <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ProcedureName}" />
                             </StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RelatedProcedureButton_Tapped"/>
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
                         <!--<Grid Margin="0,5">
                             <Grid.ColumnDefinitions>

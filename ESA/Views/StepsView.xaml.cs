@@ -66,5 +66,11 @@ namespace ESA
             //source.Path = "eye_surgery.mp4";
             //source.Path = "Brain_Eyes_Vid.mp4";
         }
+
+        private void RelatedProcedureButton_Clicked(object sender, EventArgs e)
+        {
+            int procedureId = procedureViewModel.Procedure.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)((StackLayout)((CustomButton)sender).Parent).Children.First()).Children.First()).Text)).RelatedProcedure.Id;
+            Navigation.PushAsync(new DetailsPage(procedureId));
+        }
     }
 }

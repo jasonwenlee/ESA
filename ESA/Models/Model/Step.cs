@@ -41,9 +41,10 @@ namespace ESA.Models.Model
                         new Step() { Number = 14, Content = "Pressure Pad." },
                         new Step() { Number = 15, Content = "The flap is divided in a secondary procedure;", RelatedProcedure = new RelatedProcedure()
                             {
-                                ProcedureLink = "see Tarsoconjuntival (Hughes) flap - stage II",
+                                ProcedureLink = "See Tarsoconjuntival (Hughes) flap - stage II",
                                 Details = new Detail(){ UploadDate = DateTime.Parse("2015/09/24"), ViewCount = 467 },
-                                ProcedureName = "Tarsonconjunctical (Hughes) Flap - Stage II"
+                                ProcedureName = "Tarsonconjunctical (Hughes) Flap - Stage II",
+                                Id = 1
                             }
                         }
                     };
