@@ -43,7 +43,7 @@ namespace ESA
         {
             base.OnAppearing();
             
-            await splashImage.ScaleTo(1.0, 500); // REC: Setting up the initial eye image (size,time). 
+            await splashImage.ScaleTo(1.0, 1000); // REC: Setting up the initial eye image (size,time). 
             // await splashImage.ScaleTo(0.8, 200, Easing.Linear); // REC: Animation effect: reducing image. Eliminated to avoid "bouncing".
             await splashImage.ScaleTo(2.5, 500, Easing.Linear); // REC: Animation effect: augmenting image. Final (size,time).
 
