@@ -23,15 +23,18 @@ namespace ESA
             var sub = new AbsoluteLayout();
             splashImage = new Image
             {
-                Source = "sqEye.png",
+                //Source = "sqEye.png", // REC: Substitution of original "squared" eye.
+                Source = "circEye_v3.png", // REC: Circular eye
                 WidthRequest = 100,
                 HeightRequest = 100
             };
             AbsoluteLayout.SetLayoutFlags(splashImage, AbsoluteLayoutFlags.PositionProportional);
+            // AbsoluteLayout.SetLayoutBounds(splashImage, new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
             AbsoluteLayout.SetLayoutBounds(splashImage, new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 
             sub.Children.Add(splashImage);
-            this.BackgroundColor = Color.FromHex("#429de3");
+            // this.BackgroundColor = Color.FromHex("#429de3"); //Original blue color.
+            this.BackgroundColor = Color.FromHex("#000000"); // Black color requested by Valerie.
             this.Content = sub;
         }
 
@@ -40,9 +43,9 @@ namespace ESA
         {
             base.OnAppearing();
             
-            await splashImage.ScaleTo(1.5, 100); // REC: Setting up the initial size of the Icon. 
-            await splashImage.ScaleTo(0.8, 200, Easing.Linear); // REC: Animation effect: reducing image
-            await splashImage.ScaleTo(3.0, 200, Easing.Linear); // REC: Animation effect: augmenting image
+            await splashImage.ScaleTo(1.0, 500); // REC: Setting up the initial eye image (size,time). 
+            // await splashImage.ScaleTo(0.8, 200, Easing.Linear); // REC: Animation effect: reducing image. Eliminated to avoid "bouncing".
+            await splashImage.ScaleTo(2.5, 500, Easing.Linear); // REC: Animation effect: augmenting image. Final (size,time).
 
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
