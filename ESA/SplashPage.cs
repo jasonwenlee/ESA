@@ -44,7 +44,11 @@ namespace ESA
             await splashImage.ScaleTo(0.8, 200, Easing.Linear); // REC: Animation effect: reducing image
             await splashImage.ScaleTo(3.0, 200, Easing.Linear); // REC: Animation effect: augmenting image
 
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current.MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#1f1f1f"),
+                BarTextColor = Color.FromHex("#1f1f1f")
+            };
         }
     }
 }
