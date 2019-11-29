@@ -4,13 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ESA.MainPage" Title="Oculoplastics" 
+             x:Class="ESA.MainPage" Title="Eye Surgery Application" 
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Icons.about48.png}" Clicked="AboutUs_Clicked" />
         <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Icons.search48.png}" /> <!--Clicked="Search_Clicked"--> 
-        <ToolbarItem x:Name="Database" Text="Login" /> <!--Clicked="Database_Clicked"-->
+        <!--<ToolbarItem x:Name="Database" Text="Login" />--> <!--Clicked="Database_Clicked"-->
         <!--Don't remove this db toolbar item please :)-->
     </ContentPage.ToolbarItems>
 
@@ -24,13 +24,13 @@
                     <DataTemplate>
                         <ViewCell IsEnabled="{Binding Id, Converter={StaticResource enabledConverter}, ConverterParameter=-1}">
                             <ViewCell.View>
-                                <StackLayout Orientation="Vertical" Spacing="0" Padding="5">
+                                <StackLayout Orientation="Vertical" Spacing="0" Padding="8">
                                     <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
-                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <!--<StackLayout Orientation="Horizontal" Spacing="0">
                                         <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.UploadDate, StringFormat='{} - {0:dd MMM, yyyy  - }'}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ItemDetail}" />
-                                    </StackLayout>
+                                    </StackLayout>-->
                                     <StackLayout.Triggers>
                                         <DataTrigger TargetType="StackLayout" Binding="{Binding Id}" Value="-1">
                                             <Setter Property="BackgroundColor" Value="#EEE"/>
@@ -50,13 +50,13 @@
                     <DataTemplate>
                         <ViewCell IsEnabled="False">
                             <ViewCell.View>
-                                <StackLayout Orientation="Vertical" Spacing="0" Padding="5" BackgroundColor="#EEE" >
+                                <StackLayout Orientation="Vertical" Spacing="0" Padding="8" BackgroundColor="#EEE" >
                                     <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
-                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <!--<StackLayout Orientation="Horizontal" Spacing="0">
                                         <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.UploadDate, StringFormat='{} - {0:dd MMM, yyyy  - }'}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ItemDetail}" />
-                                    </StackLayout>
+                                    </StackLayout>-->
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
