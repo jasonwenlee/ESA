@@ -121,14 +121,13 @@
             <!--Variations-->
             <Style x:Key="VariationHeader" TargetType="Span">
                 <Setter Property="TextColor" Value="#404040" />
-                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style x:Key="VariationSubHeader" TargetType="Span">
                 <Setter Property="TextColor" Value="#606060" />
                 <Setter Property="FontAttributes" Value="Italic" />
             </Style>
             <Style x:Key="VariationContent" TargetType="Span">
-                <Setter Property="TextColor" Value="#808080" />
+                <Setter Property="TextColor" Value="#606060" />
             </Style>
             <!--Info-->
             <Style x:Key="InfoButton" TargetType="Button">

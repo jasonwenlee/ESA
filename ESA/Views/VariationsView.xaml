@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.Views.VariationsView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
     <ContentView.Content>
         <StackLayout>
             <Label Text="Variations" Style="{StaticResource ViewTitle}" />
@@ -23,44 +24,25 @@
             </StackLayout>
             <!--List Related procedure-->
             <Label Text="Related Procedures" Style="{StaticResource ViewTitle}" />
-            <StackLayout BindableLayout.ItemsSource="{Binding Procedure.RelatedProcedures}" >
+            <StackLayout BindableLayout.ItemsSource="{Binding Procedure.Variations}" >
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Spacing="5" Orientation="Horizontal">
-                            <Image Source="{Binding Thumbnail}" Style="{StaticResource Thumbnail}"/>
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="{Binding ProcedureName}" Style="{StaticResource ProcedureName}" />
-                                <Label Text="{Binding Details.UploadDate, StringFormat='{}{0:dd MMM, yyyy}'}" Style="{StaticResource ProcedureName}" />
-                                <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ProcedureName}" />
-                            </StackLayout>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="RelatedProcedureButton_Tapped"/>
-                            </StackLayout.GestureRecognizers>
+                        <StackLayout BindableLayout.ItemsSource="{Binding RelatedProcedures}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Spacing="5" Orientation="Horizontal">
+                                        <customButton:CustomButton Text="{Binding ProcedureLink}" Style="{StaticResource RelatedProcedureButton}" Clicked="RelatedProcedureButton_Clicked" />
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
                         </StackLayout>
-                        <!--<Grid Margin="0,5">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image Source="{Binding RelatedProcedures.Image}" WidthRequest="150" VerticalOptions="Start" Grid.Column="0" />
-                            <StackLayout Grid.Column="1" Spacing="2">
-                                <Label Text="{Binding RelatedProcedures.Name}" FontSize="14" TextColor="Black" />
-                                <Label Text="{Binding Details.Description}" FontSize="14" TextColor="#BDBDBD" />
-                                <StackLayout>
-                                    <Label Text="{Binding Details.UploadDate}" FontSize="12" TextColor="#3399FF" />
-                                    <Label Text="{Binding Details.ViewCount}" FontSize="12" TextColor="#3399FF" />
-                                </StackLayout>
-                            </StackLayout>
-                        </Grid>-->
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            
         </StackLayout>
     </ContentView.Content>
     <ContentView.Resources>
         <Style TargetType="Label" x:Key="VariationContent">
-            <Setter Property="TextColor" Value="#3f3f3f" />
             <Setter Property="FontSize" Value="Small" />
             <Setter Property="LineBreakMode" Value="WordWrap" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
