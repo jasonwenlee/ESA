@@ -34,7 +34,7 @@ namespace ESA.Models.Model
                             {
                                 ProcedureLink = "Tarsoconjuntival (Hughes) flap - stage II",
                                 Details = new Detail() { UploadDate = DateTime.Parse("2015/09/24"), ViewCount = 467 },
-                                ProcedureName = "Tarsonconjunctical (Hughes) Flap - Stage II",
+                                ProcedureName = "Tarsoconjuntival (Hughes) Flap - Stage II",
                                 Id = 1
                             },
                             new RelatedProcedure()

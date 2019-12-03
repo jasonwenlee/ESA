@@ -427,6 +427,7 @@ namespace ESA.Views
                 content.Add(new ComplicationsView(procedureViewModel));
 
                 PlayButtonAnimation(sender);
+                playerCollapse();
                 AdjustViews();
             }
         }
@@ -443,6 +444,7 @@ namespace ESA.Views
                 content.Add(new InfoView(procedureViewModel));
 
                 PlayButtonAnimation(sender);
+                playerCollapse();
                 AdjustViews();
             }
         }

@@ -29,21 +29,21 @@ namespace ESA.Models.Model
                         new Step() { Number = 2, Content = "Assess width of lower lid defect by stretching the remaining lower lid edges centrally using forceps."},
                         new Step() { Number = 3, Content = "Mark the horizontal incision line 4mm above the lid margin, following the curve of the lid margin." },
                         new Step() { Number = 4, Content = "Make a full thickness cut through the conjunctiva and the tarsus at the incision line with a no 15 Bard Parker blade." },
-                        new Step() { Number = 5, Content = "Make two vertical relieving incisions at the ends of the horizontal incision line (unless a full width flap is required, where the relieving incisions are not needed)" },
-                        new Step() { Number = 6, Content = "Raise the tarsus from the overlying orbicularis using Westcott spring. " },
-                        new Step() { Number = 7, Content = "For Tarsonconjunctival-based flap: Dissect in plane between conjunctiva and Muller.", Diagram = diagrams[0] },
-                        new Step() { Number = 8, Content = "For Tarsonconjunctival-Muller-based flap: Dissect in plane between Mullers and lavator.", Diagram = diagrams[1] },
+                        new Step() { Number = 5, Content = "Make two vertical relieving incisions at the ends of the horizontal incision line (unless a full width flap is required, where the relieving incisions are not needed)​" },
+                        new Step() { Number = 6, Content = "Raise the tarsus from the overlying orbicularis using Westcott spring scissors​. " },
+                        new Step() { Number = 7, Content = "For tarsoconjunctival-based flap: Dissect in plane between conjunctiva and Muller.", Diagram = diagrams[0] },
+                        new Step() { Number = 8, Content = "For tarsoconjunctival-Muller-based flap: Dissect in plane between Mullers and levator.", Diagram = diagrams[1] },
                         new Step() { Number = 9, Content = "Continue to dissect superiorly up to the white line." },
-                        new Step() { Number = 10, Content = "Mobilise the tarsonconjunctival flap into the lower lid defect." },
-                        new Step() { Number = 11, Content = "Suture each corner of the tarsal edges of the flap into the corresponding corners of the lower lid tarsus with partial thickness, interrupted vicryl 6-0 sutures.", Diagram = diagrams[2] },
+                        new Step() { Number = 10, Content = "Mobilise the tarsoconjunctival flap into the lower lid defect​." },
+                        new Step() { Number = 11, Content = "Suture each corner of the tarsal edges of the flap into the corresponding corners of the lower lid tarsus with partial thickness, interrupted vicryl 6-0 sutures​.", Diagram = diagrams[2] },
                         new Step() { Number = 12, Content = "Suture the inferior edge of the tarsal flap to the lower lid conjunctival edge with continuous vicryl 6-0 suture." },
-                        new Step() { Number = 13, Content = "Anterior lamella can be constructed using an advancement flap or free skin graft." },
+                        new Step() { Number = 13, Content = "Anterior lamella can be constructed using an advancement flap or a free skin graft." },
                         new Step() { Number = 14, Content = "Pressure Pad." },
-                        new Step() { Number = 15, Content = "The flap is divided in a secondary procedure;", RelatedProcedure = new RelatedProcedure()
+                        new Step() { Number = 15, Content = "The flap is divided in a secondary procedure:", RelatedProcedure = new RelatedProcedure()
                             {
                                 ProcedureLink = "See Tarsoconjuntival (Hughes) flap - stage II",
                                 Details = new Detail(){ UploadDate = DateTime.Parse("2015/09/24"), ViewCount = 467 },
-                                ProcedureName = "Tarsonconjunctical (Hughes) Flap - Stage II",
+                                ProcedureName = "Tarsoconjuntival (Hughes) Flap - Stage II",
                                 Id = 1
                             }
                         }
@@ -82,7 +82,7 @@ namespace ESA.Models.Model
                         new Step() { Number = 7, Content = "Tailor the graft to fit the defect​." },
                         new Step() { Number = 8, Content = "Place graft over defect​." },
                         new Step() { Number = 9, Content = "Suture graft into defect with interrupted absorbable sutures​." },
-                        new Step() { Number = 10, Content = "Graft can be placed on tension with a Frost suture and/or packed with a moist dressing for 48 hours​" }
+                        new Step() { Number = 10, Content = "Graft can be placed on tension with a Frost suture and/or packed with a moist dressing for 48 hours.​" }
                     };
                     break;
             }

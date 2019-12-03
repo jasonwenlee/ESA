@@ -10,7 +10,8 @@ namespace ESA.Models.Model
         public bool HasDiagram { get; set; }
         public int Number { get; set; }
         public Diagram Diagram { get; set; }
-        public int RelatedProcedure { get; set; }
+        public RelatedProcedure RelatedProcedure { get; set; }
+        public bool HasRelatedProcedure { get; set; } = false;
 
         internal List<KeyPoint> GetKeyPoints(int id)
         {
@@ -30,7 +31,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 0,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -39,16 +39,16 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 1,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
-                            Point = "Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities: see Tarsoconjunctival flap – stage 2",
+                            Point = "Second procedure for division of Hughes flap requires the patient to return to the operating theatre, which may not be practical or possible if the patient has other comorbidities:",
                             Importance = "KeyPoint2",
                             HasDiagram = false,
                             Diagram = null,
                             Number = 2,
-                            RelatedProcedure = 2
+                            RelatedProcedure = new RelatedProcedure(){ Id = 1, ProcedureName = "Tarsoconjunctival (Hughes) flap – Stage II", ProcedureLink = "see Tarsoconjunctival (Hughes) flap – Stage II"},
+                            HasRelatedProcedure = true
                         },
                         new KeyPoint()
                         {
@@ -57,7 +57,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 3,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -66,7 +65,6 @@ namespace ESA.Models.Model
                             HasDiagram = true,
                             Diagram = diagrams[0],
                             Number = 4,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -75,7 +73,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 5,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -84,7 +81,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 6,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -93,7 +89,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 7,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -102,7 +97,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 8,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -111,7 +105,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 9,
-                            RelatedProcedure = -1
                         },
                     };
                     break;
@@ -125,7 +118,6 @@ namespace ESA.Models.Model
                             Importance = "KeyPoint1",
                             HasDiagram = false,
                             Diagram = null,
-                            RelatedProcedure = -1
                         }
                     };
                     break;
@@ -140,7 +132,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 0,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -149,7 +140,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 1,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -158,7 +148,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 2,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -167,7 +156,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 3,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -176,7 +164,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 4,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -185,7 +172,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 5,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -194,7 +180,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 6,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -203,7 +188,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 7,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -212,7 +196,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 8,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -221,7 +204,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 9,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -230,7 +212,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 10,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -239,7 +220,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 11,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -248,7 +228,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 12,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -257,7 +236,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 13,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -266,7 +244,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 14,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -275,7 +252,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 15,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -284,7 +260,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 16,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -293,7 +268,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 17,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -302,7 +276,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 18,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -311,7 +284,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 19,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -320,7 +292,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 20,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -329,7 +300,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 21,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -338,7 +308,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 22,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -347,7 +316,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 23,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -356,7 +324,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 24,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -365,7 +332,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 25,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -374,7 +340,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 26,
-                            RelatedProcedure = -1
                         },
                         new KeyPoint()
                         {
@@ -383,7 +348,6 @@ namespace ESA.Models.Model
                             HasDiagram = false,
                             Diagram = null,
                             Number = 27,
-                            RelatedProcedure = -1
                         }
                     };
                     break;

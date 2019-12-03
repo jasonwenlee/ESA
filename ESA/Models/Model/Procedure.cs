@@ -29,7 +29,7 @@ namespace ESA.Models.Model
                     p = new Procedure()
                     {
                         Id = 0,
-                        LongName = "Tarsonconjunctival (Hughes) Flap - Stage I",
+                        LongName = "Tarsoconjunctival (Hughes) Flap - Stage I",
                         ShortName = "Hughes Flap - Stage I",
                         VideoSource = "eye_surgery.mp4",
                         Details = new Detail().GetDetails(id),
@@ -90,7 +90,7 @@ namespace ESA.Models.Model
             return new List<Procedure>(){
                 new Procedure(){
                     Id = 0,
-                    LongName = "Tarsonconjunctival (Hughes) Flap - Stage I",
+                    LongName = "Tarsoconjunctival (Hughes) Flap - Stage I",
                     ShortName = "Hughes Flap - Stage I",
                     Details = new Detail()
                     {
@@ -173,7 +173,7 @@ namespace ESA.Models.Model
 
                 new Procedure(){
                     Id = -1,
-                    LongName = "Sliding tarsonconjunctival flap",
+                    LongName = "Sliding tarsoconjunctival flap",
                     ShortName = "Sliding tarsocon...",
                     Details = new Detail()
                     {
