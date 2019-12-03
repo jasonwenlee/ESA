@@ -26,6 +26,9 @@
     <None Remove="Resources\Complications\LidMarginIrregularity.jpg" />
     <None Remove="Resources\Complications\SkinAdvancingOver.jpeg" />
     <None Remove="Resources\Complications\UpperEyelidRetraction.jpeg" />
+    <None Remove="Resources\Complications\wound dehiscence.jpg" />
+    <None Remove="Resources\Complications\WoundDehiscence.jpg" />
+    <None Remove="Resources\Complications\WoundHaematoma.jpg" />
     <None Remove="Resources\Diagram.jpeg" />
     <None Remove="Resources\diagram.png" />
     <None Remove="Resources\dinesh.png" />
@@ -107,6 +110,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\3A.png" />
+    <EmbeddedResource Include="Resources\Complications\WoundDehiscence.jpg" />
+    <EmbeddedResource Include="Resources\Complications\WoundHaematoma.jpg" />
     <EmbeddedResource Include="Resources\Icons\about48.png" />
     <EmbeddedResource Include="Resources\Icons\arrow.png" />
     <EmbeddedResource Include="Resources\Complications\LidMarginGranuloma.jpg" />

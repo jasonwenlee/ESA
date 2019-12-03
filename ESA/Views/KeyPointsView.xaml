@@ -9,8 +9,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.Views.KeyPointsView"
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
-    
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
+
     <ContentView.Content>
         <StackLayout>
             <Label Text="Key Points" Style="{StaticResource ViewTitle}"/>
@@ -19,7 +20,8 @@
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Vertical">
                             <StackLayout Orientation="Horizontal" >
-                                <!--Step Text-->
+                                <!--Key Point Text-->
+                                <Label Text="{Binding PointBold}" Style="{StaticResource KeyPointBold}" />
                                 <Label Text="{Binding Point}" Style="{StaticResource KeyPoint}" />
                                 <Image Source="{mrkupExt:ImageResource ESA.Resources.Icons.expand_more.png}" Style="{StaticResource DropImage}" >
                                     <Image.Triggers>
@@ -33,6 +35,15 @@
                                     <TapGestureRecognizer Tapped="KeyPointsContent_TapEventHandler" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
+                            <!--Procedure Link-->
+                            <customButton:CustomButton Text="{Binding RelatedProcedure.ProcedureLink}" Style="{StaticResource RelatedProcedureButton}" Clicked="RelatedProcedureButton_Clicked" >
+                                <customButton:CustomButton.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding HasRelatedProcedure}" Value="False" >
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+                                </customButton:CustomButton.Triggers>
+                            </customButton:CustomButton>
+                            <!--Diagram Dropdown-->
                             <ImageButton x:Name="diagramBtn" Style="{StaticResource KeyPointDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />
                         </StackLayout>
                     </DataTemplate>
@@ -58,11 +69,7 @@
                 <Setter Property="Margin" Value="0,10" />
             </Style>
             <!--Key Text-->
-            <Style x:Key="KeyPoint" TargetType="Label" >
-                <Setter Property="TextColor" Value="#404040" />
-                <Setter Property="FontSize" Value="Small" />
-                <Setter Property="Margin" Value="0,0,0,0" />
-            </Style>
+            
         </ResourceDictionary>
     </ContentView.Resources>
 </ContentView>

@@ -23,6 +23,7 @@
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
             <Style x:Key="RelatedProcedureButton" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Start"/>
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="TextColor" Value="#5070ff" />
@@ -75,18 +76,15 @@
                 <Setter Property="TextColor" Value="Black" />
             </Style>
             <!--Key Point-->
-            <Style x:Key="Point" TargetType="Label">
+            <Style x:Key="KeyPoint" TargetType="Label" >
+                <Setter Property="TextColor" Value="#404040" />
                 <Setter Property="FontSize" Value="Small" />
-                <Setter Property="TextColor" Value="#3d3d3d" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="WidthRequest" Value="20" />
-                <Setter Property="Margin" Value="0,0,5,0" />
+                <Setter Property="Margin" Value="0,0,0,0" />
             </Style>
-            <Style x:Key="KeyPoint" TargetType="Label">
+            <Style x:Key="KeyPointBold" TargetType="Label" >
+                <Setter Property="TextColor" Value="#303030" />
+                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Small" />
-                <Setter Property="LineBreakMode" Value="WordWrap" />
-                <Setter Property="TextColor" Value="#3d3d3d" />
             </Style>
             <Style x:Key="ProcedureLink" TargetType="Button">
                 <Setter Property="TextColor" Value="#3399FF" />
@@ -121,13 +119,14 @@
             <!--Variations-->
             <Style x:Key="VariationHeader" TargetType="Span">
                 <Setter Property="TextColor" Value="#404040" />
+                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style x:Key="VariationSubHeader" TargetType="Span">
                 <Setter Property="TextColor" Value="#606060" />
                 <Setter Property="FontAttributes" Value="Italic" />
             </Style>
             <Style x:Key="VariationContent" TargetType="Span">
-                <Setter Property="TextColor" Value="#606060" />
+                <Setter Property="TextColor" Value="#404040" />
             </Style>
             <!--Info-->
             <Style x:Key="InfoButton" TargetType="Button">

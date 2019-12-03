@@ -86,12 +86,12 @@ namespace ESA.Models.Model
                         new Complication()
                         { Number=1,
                             Name = "Wound Dehiscence",
-                            Image = ImageSource.FromResource("ESA.Resources.Complications.UpperEyelidRetraction.jpeg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Image = ImageSource.FromResource("ESA.Resources.Complications.WoundDehiscence.jpg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         },
                         new Complication()
                         { Number=2,
                             Name = "Wound Haematoma",
-                            Image = ImageSource.FromResource("ESA.Resources.Complications.SkinAdvancingOver.jpeg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
+                            Image = ImageSource.FromResource("ESA.Resources.Complications.WoundHaematoma.jpg", typeof(ImageResourceExtension).GetTypeInfo().Assembly)
                         }
                      };
                     break;

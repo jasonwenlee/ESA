@@ -16,8 +16,7 @@
                     <DataTemplate>
                         <StackLayout Spacing="0" Orientation="Horizontal" >
                             <!--<Label Text="{Binding Dot}" Style="{StaticResource VarDot}" />-->
-                            <Label FormattedText="{Binding Content}"/>
-                            <!--Style="{StaticResource VariationContent}"/>-->
+                            <Label FormattedText="{Binding Content}" Style="{StaticResource VariationContent}"/>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
@@ -45,7 +44,13 @@
         <Style TargetType="Label" x:Key="VariationContent">
             <Setter Property="FontSize" Value="Small" />
             <Setter Property="LineBreakMode" Value="WordWrap" />
-            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="TextColor" Value="#3f3f3f" />
+        </Style>
+        <Style TargetType="Label" x:Key="VariationContentBold">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="LineBreakMode" Value="WordWrap" />
+            <Setter Property="TextColor" Value="#3f3f3f" />
         </Style>
         <Style TargetType="Image" x:Key="Thumbnail">
             <Setter Property="Aspect" Value="AspectFill" />
