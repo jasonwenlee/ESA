@@ -42,6 +42,7 @@
             </Grid>
             <!-- Reference-->
             <Grid x:Name="ReferenceGrid" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout>
                 <StackLayout x:Name="FlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.References}" >
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
@@ -53,38 +54,35 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
+                <!--EXTERNAL LINKS-->
+                <StackLayout HorizontalOptions="StartAndExpand"  VerticalOptions="CenterAndExpand">
+                        <ContentView HorizontalOptions="StartAndExpand">
+                            <Label HorizontalOptions="StartAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                        <Span Text="More videos on eyelid, lacrimal and orbital surgery from the ocuplastic website"  FontSize="14" >
+                                        </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </ContentView>
+                        <ContentView HorizontalOptions="StartAndExpand">
+                            <Label HorizontalOptions="StartAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="https://oculoplastic.eyesurgeryvideos.net" TextColor="#3399FF" TextDecorations="Underline" FontSize="14" >
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ExternalLink_Tapped" CommandParameter="https://oculoplastic.eyesurgeryvideos.net/" />
+                                            </Span.GestureRecognizers>
+                                        </Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </ContentView>
+                    </StackLayout>
+                </StackLayout>
             </Grid>
-
-        <!--EXTERNAL LINKS-->
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <ContentView HorizontalOptions="Center">
-                <Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Oculoplastic Info" TextColor="#3399FF" TextDecorations="Underline" FontSize="20" >
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}" CommandParameter="http://oculoplastics.info/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </ContentView>
-            <ContentView HorizontalOptions="Center">
-                <Label HorizontalOptions="CenterAndExpand">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Oculoplastic Surgery Techniques" TextColor="#3399FF" TextDecorations="Underline" FontSize="20" >
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}" CommandParameter="https://webeye.ophth.uiowa.edu/eyeforum/video/plastics/plastics.htm" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </ContentView>
         </StackLayout>
-    </StackLayout>
     </ContentView.Content>
 
     <ContentView.Resources>

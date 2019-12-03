@@ -1,5 +1,6 @@
 ﻿using ESA.ViewModels;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -46,10 +47,11 @@ namespace ESA
             await activeButtonBox.LayoutTo(rectangle, 500, Easing.CubicInOut);
         }
 
-        private void ExternalLink_Tapped(object sender, EventArgs e)
+        private async void ExternalLink_Tapped(object sender, EventArgs e)
         {
             //Grid2.IsVisible = true;
             //Grid1.IsVisible = false;
+            await Browser.OpenAsync("https://oculoplastic.eyesurgeryvideos.net/");
         }
 
         private void HistoryReference_Tapped(object sender, EventArgs e)
