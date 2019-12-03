@@ -16,13 +16,13 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VideoPage : ContentPage
     {
-        ProcedureViewModel viewModel;
+        DetailsViewModel viewModel;
         private bool videoControlsVisible = true;
 
         // Video Controls Fade Timer
         Timer fadeTimer = new Timer();
 
-        public VideoPage(ProcedureViewModel dvm)
+        public VideoPage(DetailsViewModel dvm)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();

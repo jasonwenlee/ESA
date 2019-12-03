@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ESA.Converter;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,17 +8,34 @@ namespace ESA.Models.Model
 {
     public class Procedure
     {
+        [JsonProperty("$id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonConverter(typeof(ParseStringConverter))]
+        public int JsonId { get; set; }
+        [JsonProperty("procedureID", NullValueHandling = NullValueHandling.Ignore)]
         public int Id { get; set; }
+        [JsonProperty("longName", NullValueHandling = NullValueHandling.Ignore)]
         public string LongName { get; set; }
+        [JsonProperty("shortName", NullValueHandling = NullValueHandling.Ignore)]
         public string ShortName { get; set; }
+        [JsonProperty("videoSource", NullValueHandling = NullValueHandling.Ignore)]
         public string VideoSource { get; set; }
         public Detail Details { get; set; }
+        [JsonProperty("steps", NullValueHandling = NullValueHandling.Ignore)]
         public List<Step> Steps { get; set; }
+        [JsonProperty("keypoints", NullValueHandling = NullValueHandling.Ignore)]
         public List<KeyPoint> KeyPoints { get; set; }
+        [JsonProperty("variations", NullValueHandling = NullValueHandling.Ignore)]
         public List<Variation> Variations { get; set; }
+        [JsonProperty("complications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Complication> Complications { get; set; }
+        [JsonProperty("histories", NullValueHandling = NullValueHandling.Ignore)]
         public List<History> History { get; set; }
+        [JsonProperty("references", NullValueHandling = NullValueHandling.Ignore)]
         public List<Reference> References { get; set; }
+        [JsonProperty("procedures", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Procedure> Procedures { get; set; }
+        // Have to check
+        [JsonProperty("procedure1", NullValueHandling = NullValueHandling.Ignore)]
         public List<RelatedProcedure> RelatedProcedures { get; set; }
 
         public Procedure GetProcedure(int id)
@@ -29,16 +48,16 @@ namespace ESA.Models.Model
                     p = new Procedure()
                     {
                         Id = 0,
-                        LongName = "Tarsoconjunctival (Hughes) Flap - Stage I",
-                        ShortName = "Hughes Flap - Stage I",
+                        LongName = "",
+                        ShortName = "",
                         VideoSource = "eye_surgery.mp4",
                         Details = new Detail().GetDetails(id),
-                        Steps = new Step().GetSteps(id),
-                        KeyPoints = new KeyPoint().GetKeyPoints(id),
-                        Variations = new Variation().GetVariations(id),
-                        Complications = new Complication().GetComplications(id),
-                        History = new History().GetHistory(id),
-                        References = new Reference().GetReferences(id),
+                        Steps = null,
+                        KeyPoints = null,
+                        Variations = null,
+                        Complications = null,
+                        History = null,
+                        References = null,
                         RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
                     };
                     break;
@@ -48,18 +67,18 @@ namespace ESA.Models.Model
                     p = new Procedure()
                     {
                         Id = 1,
-                        LongName = "Semicircular (Tenzel) advancement Flap using Lateral Recruitment",
-                        ShortName = "Tenzel Flap",
+                        LongName = "",
+                        ShortName = "",
                         VideoSource = "Brain_Eyes_Vid.mp4",
                         Details = new Detail().GetDetails(id),
-                        Steps = new Step().GetSteps(id),
-                        KeyPoints = new KeyPoint().GetKeyPoints(id),
-                        Variations = new Variation().GetVariations(id),
-                        Complications = new Complication().GetComplications(id),
-                        History = new History().GetHistory(id),
-                        References = new Reference().GetReferences(id),
+                        Steps = null,
+                        KeyPoints = null,
+                        Variations = null,
+                        Complications = null,
+                        History = null,
+                        References = null,
                         RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
-        };
+                    };
                     break;
 
                 case 2:
@@ -67,134 +86,23 @@ namespace ESA.Models.Model
                     p = new Procedure()
                     {
                         Id = 2,
-                        LongName = "Full Thickness Skin Graft securred with Dermabond glue",
-                        ShortName = "FT Skin Graft",
+                        LongName = "",
+                        ShortName = "",
                         VideoSource = "eye_surgery.mp4",
                         Details = new Detail().GetDetails(id),
-                        Steps = new Step().GetSteps(id),
-                        KeyPoints = new KeyPoint().GetKeyPoints(id),
-                        Variations = new Variation().GetVariations(id),
-                        Complications = new Complication().GetComplications(id),
-                        History = new History().GetHistory(id),
-                        References = new Reference().GetReferences(id),
+                        Steps = null,
+                        KeyPoints = null,
+                        Variations = null,
+                        Complications = null,
+                        History = null,
+                        References = null,
                         RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
-        };
+                    };
                     break;
             }
 
             return p;
         }
 
-        internal List<Procedure> GetProcedureNames()
-        {
-            return new List<Procedure>(){
-                new Procedure(){
-                    Id = 0,
-                    LongName = "Tarsoconjunctival (Hughes) Flap - Stage I",
-                    ShortName = "Hughes Flap - Stage I",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Dr Valerie Juniat" },
-                        UploadDate = DateTime.Parse("2016/01/06"),
-                        ViewCount = 634
-                    }
-                },
-
-                new Procedure(){
-                    Id = 1,
-                    LongName = "Semicircular (Tenzel) advancement Flap using Lateral Recruitment",
-                    ShortName = "Tenzel Flap",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Dr Saul Rajak" },
-                        UploadDate = DateTime.Parse("2019/06/27"),
-                        ViewCount = 5385
-                    }
-                },
-
-                new Procedure(){
-                    Id = 2,
-                    LongName = "Full Thickness Skin Graft securred with Dermabond glue",
-                    ShortName = "FT Skin Graft",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Professor Dinesh Selva" },
-                        UploadDate = DateTime.Parse("2015/10/27"),
-                        ViewCount = 810
-                    }
-                },
-                // add additional procedures here
-                                new Procedure(){
-                    Id = -1,
-                    LongName = "Lower lid island flap - Nasofacial sulcus",
-                    ShortName = "Lower lid island",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Dr Valerie Juniat" },
-                        UploadDate = DateTime.Parse("2016/01/06"),
-                        ViewCount = 634
-                    }
-                },
-
-                new Procedure(){
-                    Id = -1,
-                    LongName = "Propeller flap, Tarsal graft, Periosteal flap",
-                    ShortName = "Propeller, Tarsal...",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Dr Saul Rajak" },
-                        UploadDate = DateTime.Parse("2019/06/27"),
-                        ViewCount = 5385
-                    }
-                },
-
-                new Procedure(){
-                    Id = -1,
-                    LongName = "Lateral canthotomy and inferior cantholysis",
-                    ShortName = "Lateral cantho...",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Professor Dinesh Selva" },
-                        UploadDate = DateTime.Parse("2015/10/27"),
-                        ViewCount = 810
-                    }
-                },
-                new Procedure(){
-                    Id = -1,
-                    LongName = "Direct closure / wedge excision",
-                    ShortName = "Direct closure",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Dr Valerie Juniat" },
-                        UploadDate = DateTime.Parse("2016/01/06"),
-                        ViewCount = 634
-                    }
-                },
-
-                new Procedure(){
-                    Id = -1,
-                    LongName = "Sliding tarsoconjunctival flap",
-                    ShortName = "Sliding tarsocon...",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Dr Saul Rajak" },
-                        UploadDate = DateTime.Parse("2019/06/27"),
-                        ViewCount = 5385
-                    }
-                },
-
-                new Procedure(){
-                    Id = -1,
-                    LongName = "Full thickness eyelid composite graft",
-                    ShortName = "Composite graft",
-                    Details = new Detail()
-                    {
-                        Author = new Person(){ PersonName = "Professor Dinesh Selva" },
-                        UploadDate = DateTime.Parse("2015/10/27"),
-                        ViewCount = 810
-                    }
-                }
-            };
-        }
     }
 }

@@ -18,11 +18,11 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class KeyPointsView : ContentView
     {
-        public ProcedureViewModel procedureViewModel;
+        public DetailsViewModel procedureViewModel;
         public int currentStep;
 
 
-        public KeyPointsView(ProcedureViewModel pvm)
+        public KeyPointsView(DetailsViewModel pvm)
         {
             InitializeComponent();
             procedureViewModel = pvm;
@@ -74,7 +74,7 @@ namespace ESA.Views
         private void RelatedProcedureButton_Clicked(object sender, EventArgs e)
         {
             int procedureId = procedureViewModel.Procedure.KeyPoints.First(k => k.Point == ((Label)((StackLayout)((StackLayout)((CustomButton)sender).Parent).Children.First()).Children.ElementAt(1)).Text).RelatedProcedure.Id;
-            Navigation.PushAsync(new DetailsPage(procedureId));
+            //Navigation.PushAsync(new DetailsPage(procedureId));
         }
     }
 }

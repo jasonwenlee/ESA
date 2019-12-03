@@ -12,7 +12,6 @@ namespace ESA.ViewModels
 
         public MainViewModel()
         {
-            ProcedureNames = new Procedure().GetProcedureNames();
             People = new Person().GetPeople();
         }
     }

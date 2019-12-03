@@ -17,9 +17,9 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ComplicationsView : ContentView
     {
-        public ProcedureViewModel procedureViewModel;
+        public DetailsViewModel procedureViewModel;
 
-        public ComplicationsView(ProcedureViewModel pvm)
+        public ComplicationsView(DetailsViewModel pvm)
         {
             InitializeComponent();
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ESA.ViewModels
 {
-    public class ProcedureViewModel
+    public class DetailsViewModel
     {
         public Procedure Procedure { get; set; }
         public List<Procedure> ProcedureNames { get; set; }
@@ -15,10 +15,10 @@ namespace ESA.ViewModels
         public string VideoName { get; set; }
         public bool VideoIsProcedure { get; set; }
 
-        public ProcedureViewModel(int id)
+        public DetailsViewModel(Procedure proc)
         {
-            Procedure = new Procedure().GetProcedure(id);
-
+            //Procedure = new Procedure().GetProcedure(id);
+            Procedure = proc;
             VideoPosition = TimeSpan.Zero;
             VideoName = "Brain_Eyes_Vid.mp4";
             VideoIsProcedure = true;

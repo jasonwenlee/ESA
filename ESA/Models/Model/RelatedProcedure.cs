@@ -1,4 +1,6 @@
-﻿using ESA.MarkupExtensions;
+﻿using ESA.Converter;
+using ESA.MarkupExtensions;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,6 +10,13 @@ namespace ESA.Models.Model
 {
     public class RelatedProcedure
     {
+        #region json
+        [JsonProperty("$ref", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonConverter(typeof(ParseStringConverter))]
+        public int Ref { get; set; }
+        #endregion
+
+
         public string ProcedureName { get; set; }
         public ImageSource Thumbnail { get; set; }
         public Detail Details { get; set; }

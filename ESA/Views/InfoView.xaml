@@ -24,12 +24,12 @@
             <!--CONTENT-->
             <!-- History-->
             <Grid x:Name="HistoryGrid" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <StackLayout x:Name="History" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.History}" >
+                <StackLayout x:Name="History" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding History}" >
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Spacing="0" Orientation="Vertical">
                                 <!--History Text-->
-                                <Label Text="{Binding Body}" Style="{StaticResource HistoryBody}" />
+                                <Label Text="{Binding Content}" Style="{StaticResource HistoryBody}" />
                                 <Label Text="{Binding References}" Style="{StaticResource HistoryReferences}" >
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="HistoryReference_Tapped" />
@@ -42,13 +42,13 @@
             </Grid>
             <!-- Reference-->
             <Grid x:Name="ReferenceGrid" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <StackLayout x:Name="FlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding Procedure.References}" >
+                <StackLayout x:Name="FlexLayout" Style="{StaticResource FlexLayout}" BindableLayout.ItemsSource="{Binding References}" >
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Horizontal" >
                                 <!--Reference Text-->
                                 <Label Text="{Binding Number}" Style="{StaticResource ReferenceNumber}" />
-                                <Label Text="{Binding Body}" Style="{StaticResource ReferenceContent}" />
+                                <Label Text="{Binding Content}" Style="{StaticResource ReferenceContent}" />
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>

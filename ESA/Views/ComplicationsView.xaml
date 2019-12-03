@@ -16,7 +16,7 @@
                     <DataTemplate>
                         <StackLayout Orientation="Vertical" >
                             <!--Step Text-->
-                            <Label Text="{Binding Name}" Style="{StaticResource CompContent}"/>
+                            <Label Text="{Binding ComplicationName}" Style="{StaticResource CompContent}"/>
                             <ImageButton Source="{Binding Image}" Style="{StaticResource CompImage}" Clicked="ComplicationImage_Clicked"/>
                         </StackLayout>
                     </DataTemplate>

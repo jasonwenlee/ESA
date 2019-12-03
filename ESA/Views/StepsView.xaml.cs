@@ -21,9 +21,10 @@ namespace ESA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StepsView : ContentView
     {
-        public ProcedureViewModel procedureViewModel;
+        public DetailsViewModel procedureViewModel;
+        
 
-        public StepsView(ProcedureViewModel pvm)
+        public StepsView(DetailsViewModel pvm)
         {
             InitializeComponent();
 
@@ -70,7 +71,7 @@ namespace ESA
         private void RelatedProcedureButton_Clicked(object sender, EventArgs e)
         {
             int procedureId = procedureViewModel.Procedure.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)((StackLayout)((CustomButton)sender).Parent).Children.First()).Children.First()).Text)).RelatedProcedure.Id;
-            Navigation.PushAsync(new DetailsPage(procedureId));
+            //Navigation.PushAsync(new DetailsPage(procedureId));
         }
     }
 }

@@ -18,6 +18,7 @@
   <ItemGroup>
     <PackageReference Include="ExpandableView" Version="1.0.9" />
     <PackageReference Include="FluentValidation" Version="8.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <None Remove="Resources\3A.png" />
@@ -212,9 +213,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="TestViews\TestView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\ComplicationsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -239,9 +237,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="TestViews\ListProcedures.xaml.cs">
-      <DependentUpon>ListProcedures.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\InfoView.xaml.cs">
       <DependentUpon>InfoView.xaml</DependentUpon>
     </Compile>

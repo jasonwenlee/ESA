@@ -1,5 +1,6 @@
 ﻿using ESA.MarkupExtensions;
 using ESA.Models;
+using ESA.Models.Model;
 using ESA.Models.VideoView;
 using ESA.ViewModels;
 using System;
@@ -17,12 +18,8 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailsPage : ContentPage
     {
-        // Don't remove :)
-        //Procedure holdProcedure;
-
-        // ProcedureViewModel
-        ProcedureViewModel procedureViewModel;
-
+        // DetailsViewModel
+        DetailsViewModel procedureViewModel;
         // Video Control bools
         private bool videoControlsVisible = true;
         private bool controlsAreCollapsed = false;
@@ -38,14 +35,13 @@ namespace ESA.Views
         Rectangle scrollViewCollapseLocation;
         Rectangle playerCollapseLocation;
 
-        public DetailsPage(int id)
+        public DetailsPage(Procedure proc)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
             // View Models
-            procedureViewModel = new ProcedureViewModel(id);
-            BindingContext = procedureViewModel;
+            BindingContext = procedureViewModel = new DetailsViewModel(proc);
 
             // Fade Timer
             fadeTimer.Interval = 2000;
@@ -101,6 +97,7 @@ namespace ESA.Views
             procedureViewModel.VideoPosition = videoPlayer.Position;
         }
 
+        #region VideoPlayer
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
@@ -113,7 +110,7 @@ namespace ESA.Views
             collapsableHeight = 42;
             playerHeight = Width * 0.57;
             playerExpandLocation = new Rectangle(0, 0, Width, playerHeight);
-            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, Height - playerHeight- footer.Height);
+            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, Height - playerHeight - footer.Height);
             scrollViewCollapseLocation = new Rectangle(scrollView.X, collapsableHeight, scrollView.Width, scrollView.Height + (videoPlayer.Height - collapsableHeight));
             playerCollapseLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
         }
@@ -372,6 +369,8 @@ namespace ESA.Views
 
 
         }
+        #endregion
+
         // Footer
         private void StepsBtn_Clicked(object sender, EventArgs e)
         {

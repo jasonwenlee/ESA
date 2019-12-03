@@ -13,8 +13,6 @@
         <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Icons.search48.png}" />
         <!--Clicked="Search_Clicked"-->
         <!--<ToolbarItem x:Name="Database" Text="Login" />-->
-        <!--Clicked="Database_Clicked"-->
-        <!--Don't remove this db toolbar item please :)-->
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -32,7 +30,16 @@
             </Grid>
             <!--Procedures-->
             <Grid x:Name="ProcedureGrid">
-                <ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" >
+                <!--<ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" >-->
+                <ListView x:Name="ProcedureListView"
+                          ItemsSource="{Binding Items}"
+                          VerticalOptions="FillAndExpand"
+                          HasUnevenRows="true"
+                          RefreshCommand="{Binding LoadItemsCommand}"
+                          IsPullToRefreshEnabled="true"
+                          IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                          CachingStrategy="RecycleElement"
+                          ItemSelected="MainListView_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell IsEnabled="{Binding Id, Converter={StaticResource enabledConverter}, ConverterParameter=-1}">
@@ -59,7 +66,15 @@
 
             <!--Clinical Scenarios-->
             <Grid x:Name="ClinicalGrid" IsVisible="False">
-                <ListView x:Name="ClinicalListView"  HasUnevenRows="True" >
+                <ListView x:Name="ClinicalListView"
+                          ItemsSource="{Binding Items}"
+                          VerticalOptions="FillAndExpand"
+                          HasUnevenRows="true"
+                          RefreshCommand="{Binding LoadItemsCommand}"
+                          IsPullToRefreshEnabled="true"
+                          IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                          CachingStrategy="RecycleElement"
+                          ItemSelected="MainListView_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell IsEnabled="False">

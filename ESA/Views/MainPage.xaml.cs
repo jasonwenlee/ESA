@@ -17,49 +17,31 @@ namespace ESA
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        // Don't remove:)
-        //LoadProcedureViewModel loadOneProc;
-        //Procedure testEye;
 
         MainViewModel mainViewModel;
+        AzureProceduresViewModel viewModel;
 
         public MainPage()
         {
             InitializeComponent();
-            // Test for only one eyelid procedure. Will change/remove when more procedures are added.
-            // This procedure loads after mainpage is initialised.
-            // Don't remove:)
-            //loadOneProc = new LoadProcedureViewModel();
-
             // MainViewModel
             mainViewModel = new MainViewModel();
-            BindingContext = mainViewModel;
-            ProcedureListView.ItemsSource = mainViewModel.ProcedureNames;
-            ClinicalListView.ItemsSource = mainViewModel.ProcedureNames;
-            //ExampleListView.ItemsSource = mainViewModel.ExampleProcedureNames;
+            BindingContext = viewModel = new AzureProceduresViewModel();
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            // Don't remove:)
-            //loadOneProc.LoadEyelidList();
-            //ObservableCollection<Procedure> eyes = loadOneProc.EyelidProcedures;
-            //foreach (var eyeProc in eyes)
-            //{
-            //    // testProc is name of label
-            //    if (eyeProc.Name.Equals(testProc.Text))
-            //    {
-            //        testEye = loadOneProc.LoadProcedureByName(eyeProc);
-            //    }
-            //}
+            if (viewModel.Items.Count == 0)
+                viewModel.LoadItemsCommand.Execute(null);
         }
 
         private async void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var proc = e.SelectedItem as Procedure;
             if (e.SelectedItem == null) return;
-            Procedure p = ((Procedure)(ProcedureListView.SelectedItem));
-            await Navigation.PushAsync(new DetailsPage(p.Id));
+            var test = proc.Steps;
+            await Navigation.PushAsync(new DetailsPage(proc));
             ((ListView)sender).SelectedItem = null;
         }
 
@@ -71,11 +53,6 @@ namespace ESA
         private async void Search_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CategoriesPage());
-        }
-
-        private async void Database_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CreateProcedure());
         }
 
         private async void ProceduresButton_Clicked(object sender, EventArgs e)

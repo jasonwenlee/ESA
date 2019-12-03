@@ -8,14 +8,14 @@ namespace ESA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InfoView : ContentView
     {
-        public ProcedureViewModel procedureViewModel;
+        public DetailsViewModel procedureViewModel;
 
-        public InfoView(ProcedureViewModel pvm)
+        public InfoView(DetailsViewModel pvm)
         {
             InitializeComponent();
 
             procedureViewModel = pvm;
-            BindingContext = procedureViewModel;
+            BindingContext = procedureViewModel.Procedure;
         }
 
         private async void HistoryButton_Clicked(object sender, EventArgs e)
