@@ -5,64 +5,79 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ESA.MainPage" Title="Eye Surgery Application" 
-             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA">
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             xmlns:customButton="clr-namespace:ESA.Models.CustomRenderers">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="About" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Icons.about48.png}" Clicked="AboutUs_Clicked" />
-        <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Icons.search48.png}" /> <!--Clicked="Search_Clicked"--> 
-        <!--<ToolbarItem x:Name="Database" Text="Login" />--> <!--Clicked="Database_Clicked"-->
+        <ToolbarItem Name="Search" IconImageSource="{mrkupExt:ImageResource ESA.Resources.Icons.search48.png}" />
+        <!--Clicked="Search_Clicked"-->
+        <!--<ToolbarItem x:Name="Database" Text="Login" />-->
+        <!--Clicked="Database_Clicked"-->
         <!--Don't remove this db toolbar item please :)-->
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Spacing="0">
+        <StackLayout >
+            <!--BUTTONS-->
+            <Grid Margin="10,10,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.ColumnSpan="2" BackgroundColor="#CCC" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15"/>
+                <BoxView x:Name="activeButtonBox" Grid.Column="0" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15" Margin="2"/>
+                <customButton:CustomButton Grid.Column="0" x:Name="ProceduresButton" Text="Procedures" Style="{StaticResource InfoButton}" Clicked="ProceduresButton_Clicked"/>
+                <customButton:CustomButton Grid.Column="1" x:Name="ClinicalScenariosButton" Text="Clinical Scenarios" Style="{StaticResource InfoButton}" Clicked="ClinicalScenariosButton_Clicked"/>
+            </Grid>
             <!--Procedures-->
-            <Label Text="Procedures" Style="{StaticResource ItemHeader}" />
-            <BoxView HeightRequest="1" Color="Gray"/>
-            <ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell IsEnabled="{Binding Id, Converter={StaticResource enabledConverter}, ConverterParameter=-1}">
-                            <ViewCell.View>
-                                <StackLayout Orientation="Vertical" Spacing="0" Padding="8">
-                                    <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
-                                    <!--<StackLayout Orientation="Horizontal" Spacing="0">
+            <Grid x:Name="ProcedureGrid">
+                <ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="{Binding Id, Converter={StaticResource enabledConverter}, ConverterParameter=-1}">
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Vertical" Spacing="0" Padding="8">
+                                        <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
+                                        <!--<StackLayout Orientation="Horizontal" Spacing="0">
                                         <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.UploadDate, StringFormat='{} - {0:dd MMM, yyyy  - }'}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ItemDetail}" />
                                     </StackLayout>-->
-                                    <StackLayout.Triggers>
-                                        <DataTrigger TargetType="StackLayout" Binding="{Binding Id}" Value="-1">
-                                            <Setter Property="BackgroundColor" Value="#EEE"/>
-                                        </DataTrigger>
-                                    </StackLayout.Triggers>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                        <StackLayout.Triggers>
+                                            <DataTrigger TargetType="StackLayout" Binding="{Binding Id}" Value="-1">
+                                                <Setter Property="BackgroundColor" Value="#EEE"/>
+                                            </DataTrigger>
+                                        </StackLayout.Triggers>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
             <!--Clinical Scenarios-->
-            <Label Text="Clinical Scenarios" Style="{StaticResource ItemHeader}" />
-            <BoxView HeightRequest="1" Color="Gray"/>
-            <ListView x:Name="ClinicalListView"  HasUnevenRows="True" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell IsEnabled="False">
-                            <ViewCell.View>
-                                <StackLayout Orientation="Vertical" Spacing="0" Padding="8" BackgroundColor="#EEE" >
-                                    <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
-                                    <!--<StackLayout Orientation="Horizontal" Spacing="0">
+            <Grid x:Name="ClinicalGrid" IsVisible="False">
+                <ListView x:Name="ClinicalListView"  HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="False">
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Vertical" Spacing="0" Padding="8" BackgroundColor="#EEE" >
+                                        <Label Text="{Binding LongName}" Style="{StaticResource ItemTitle}" />
+                                        <!--<StackLayout Orientation="Horizontal" Spacing="0">
                                         <Label Text="{Binding Details.Author.PersonName}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.UploadDate, StringFormat='{} - {0:dd MMM, yyyy  - }'}" Style="{StaticResource ItemDetail}" />
                                         <Label Text="{Binding Details.ViewCount, StringFormat='{}{0:n0} views'}" Style="{StaticResource ItemDetail}" />
                                     </StackLayout>-->
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 

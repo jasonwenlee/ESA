@@ -115,7 +115,7 @@
                     <StackLayout Grid.Row="0" Spacing="2" >
                         <Label Style="{StaticResource ProcedureTitle}" Text="{Binding Procedure.LongName}" />
                         <Label Style="{StaticResource ProcedureDescription}" Text="{Binding Procedure.Details.Description}" />
-                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Procedure.Details.Categories}">
+                        <!--<StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Procedure.Details.Categories}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <Label Style="{StaticResource ProcedureCategories}" Text="{Binding Name}" />
@@ -125,9 +125,7 @@
                         <StackLayout Orientation="Horizontal">
                             <Label Style="{StaticResource ProcedureInfo}" Text="{Binding Procedure.Details.UploadDate, StringFormat='{}{0:dd MMM, yyyy  - }'}" />
                             <Label Style="{StaticResource ProcedureInfo}" Text="{Binding Procedure.Details.ViewCount, StringFormat='{}{0:n0} views'}"/>
-                            <!--Text="{Binding Procedure.Details.ViewCount, StringFormat='{} Views'}" />-->
-                        </StackLayout>
-                        
+                        </StackLayout>-->
                     </StackLayout>
 
                     <!--Content row This is where your view will be displayed (DO NOT PUT YOUR CODE HERE)-->

@@ -77,5 +77,32 @@ namespace ESA
         {
             await Navigation.PushAsync(new CreateProcedure());
         }
+
+        private async void ProceduresButton_Clicked(object sender, EventArgs e)
+        {
+            ClinicalGrid.IsVisible = false;
+            ProcedureGrid.IsVisible = true;
+
+            // update activeButtonBox
+            Rectangle rectangle = ProceduresButton.Bounds;
+            rectangle.Width -= 4;
+            rectangle.Height -= 4;
+            rectangle.Y += 2;
+            rectangle.X += 2;
+            await activeButtonBox.LayoutTo(rectangle, 500, Easing.CubicInOut);
+        }
+
+        private async void ClinicalScenariosButton_Clicked(object sender, EventArgs e)
+        {
+            ProcedureGrid.IsVisible = false;
+            ClinicalGrid.IsVisible = true;
+
+            // update activeButtonBox
+            Rectangle rectangle = ClinicalScenariosButton.Bounds;
+            rectangle.Width -= 2;
+            rectangle.Height -= 4;
+            rectangle.Y += 2;
+            await activeButtonBox.LayoutTo(rectangle, 500, Easing.CubicInOut);
+        }
     }
 }
