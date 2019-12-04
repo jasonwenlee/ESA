@@ -83,6 +83,7 @@ namespace ESA.Droid.VideoView
                 Element.UpdateStatus -= OnUpdateStatus;
             }
 
+            videoView.Dispose();
             base.Dispose(disposing);
         }
 

@@ -376,7 +376,7 @@ namespace ESA.Views
 
         /**
          * FooterBtn_Clicked
-         * Description: Method updates icons and interchanges the current view with the selected.
+         * Description: Method updates icons and interchanges the current view with the selected view.
          */
         private void StepsBtn_Clicked(object sender, EventArgs e)
         {
