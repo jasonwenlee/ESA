@@ -372,17 +372,20 @@ namespace ESA.Views
 
 
         }
-        // Footer
+        // FOOTER
+
+        /**
+         * FooterBtn_Clicked
+         * Description: Method updates icons and interchanges the current view with the selected.
+         */
         private void StepsBtn_Clicked(object sender, EventArgs e)
         {
             IList<View> content = contentRow.Children;
             if (!(content.First() == null || content.First() is StepsView))
             {
                 refreshIcons("step", content.First().GetType().Name);
-                StepsView view = new StepsView(procedureViewModel);
-                //view.LoadStepsView();
                 content.Clear();
-                content.Add(view);
+                content.Add(new StepsView(procedureViewModel));
 
                 PlayButtonAnimation(sender);
                 AdjustViews();

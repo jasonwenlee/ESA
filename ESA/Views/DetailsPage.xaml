@@ -128,8 +128,7 @@
                         </StackLayout>-->
                     </StackLayout>
 
-                    <!--Content row This is where your view will be displayed (DO NOT PUT YOUR CODE HERE)-->
-                    <!--Use the content views i have provided to bulid your feature-->
+                    <!--Content row -->
                     <StackLayout Grid.Row="1" x:Name="contentRow" >
                     </StackLayout>
 
