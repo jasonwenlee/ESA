@@ -14,7 +14,6 @@ using Xamarin.Forms.Xaml;
 using System.Windows.Input;
 using Expandable;
 using ESA.MarkupExtensions;
-using Windows.UI.Popups;
 
 namespace ESA
 {
@@ -56,7 +55,6 @@ namespace ESA
 
             }
         }
-
 
         private void DiagramThumbnail_Clicked(object sender, EventArgs e)
         {

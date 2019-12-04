@@ -11,6 +11,8 @@ using System.Text;
 using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+//ios
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace ESA.Views
 {
@@ -40,7 +42,15 @@ namespace ESA.Views
 
         public DetailsPage(int id)
         {
-            NavigationPage.SetHasNavigationBar(this, false);
+            //ios
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                var safeInsets = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+                safeInsets.Top = 24;
+            }
+            
+
+            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
             // View Models
