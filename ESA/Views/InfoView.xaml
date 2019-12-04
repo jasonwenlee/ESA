@@ -57,7 +57,7 @@
 
         <!--EXTERNAL LINKS-->
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <ContentView HorizontalOptions="Center">
+            <!--<ContentView HorizontalOptions="Center">
                 <Label HorizontalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>
@@ -82,7 +82,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-            </ContentView>
+            </ContentView>-->
         </StackLayout>
     </StackLayout>
     </ContentView.Content>
