@@ -20,7 +20,8 @@ namespace ESA.Models.Model
         public string ShortName { get; set; }
         [JsonProperty("videoSource", NullValueHandling = NullValueHandling.Ignore)]
         public string VideoSource { get; set; }
-        public Detail Details { get; set; }
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
         [JsonProperty("steps", NullValueHandling = NullValueHandling.Ignore)]
         public List<Step> Steps { get; set; }
         [JsonProperty("keypoints", NullValueHandling = NullValueHandling.Ignore)]
@@ -39,72 +40,77 @@ namespace ESA.Models.Model
         [JsonProperty("procedure1", NullValueHandling = NullValueHandling.Ignore)]
         public List<RelatedProcedure> RelatedProcedures { get; set; }
         #endregion
+        //public Detail Details { get; set; }
 
-        public Procedure GetProcedure(int id)
-        {
-            Procedure p = new Procedure();
-            switch (id)
-            {
-                case 0:
-                    // Tarso hughes flap
-                    p = new Procedure()
-                    {
-                        Id = 0,
-                        LongName = "",
-                        ShortName = "",
-                        VideoSource = "",
-                        Details = new Detail().GetDetails(id),
-                        Steps = null,
-                        KeyPoints = null,
-                        Variations = null,
-                        Complications = null,
-                        History = null,
-                        References = null,
-                        RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
-                    };
-                    break;
 
-                case 1:
-                    // Tenzel
-                    p = new Procedure()
-                    {
-                        Id = 1,
-                        LongName = "",
-                        ShortName = "",
-                        VideoSource = "",
-                        Details = new Detail().GetDetails(id),
-                        Steps = null,
-                        KeyPoints = null,
-                        Variations = null,
-                        Complications = null,
-                        History = null,
-                        References = null,
-                        RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
-                    };
-                    break;
+        #region OldHardCoded
+        //public Procedure GetProcedure(int id)
+        //{
+        //    Procedure p = new Procedure();
+        //    switch (id)
+        //    {
+        //        case 0:
+        //            // Tarso hughes flap
+        //            p = new Procedure()
+        //            {
+        //                Id = 0,
+        //                LongName = "",
+        //                ShortName = "",
+        //                VideoSource = "",
+        //                Details = new Detail().GetDetails(id),
+        //                Steps = null,
+        //                KeyPoints = null,
+        //                Variations = null,
+        //                Complications = null,
+        //                History = null,
+        //                References = null,
+        //                RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
+        //            };
+        //            break;
 
-                case 2:
-                    // Full thickness Skin graft
-                    p = new Procedure()
-                    {
-                        Id = 2,
-                        LongName = "",
-                        ShortName = "",
-                        VideoSource = "",
-                        Details = new Detail().GetDetails(id),
-                        Steps = null,
-                        KeyPoints = null,
-                        Variations = null,
-                        Complications = null,
-                        History = null,
-                        References = null,
-                        RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
-                    };
-                    break;
-            }
+        //        case 1:
+        //            // Tenzel
+        //            p = new Procedure()
+        //            {
+        //                Id = 1,
+        //                LongName = "",
+        //                ShortName = "",
+        //                VideoSource = "",
+        //                Details = new Detail().GetDetails(id),
+        //                Steps = null,
+        //                KeyPoints = null,
+        //                Variations = null,
+        //                Complications = null,
+        //                History = null,
+        //                References = null,
+        //                RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
+        //            };
+        //            break;
 
-            return p;
-        }
+        //        case 2:
+        //            // Full thickness Skin graft
+        //            p = new Procedure()
+        //            {
+        //                Id = 2,
+        //                LongName = "",
+        //                ShortName = "",
+        //                VideoSource = "",
+        //                Details = new Detail().GetDetails(id),
+        //                Steps = null,
+        //                KeyPoints = null,
+        //                Variations = null,
+        //                Complications = null,
+        //                History = null,
+        //                References = null,
+        //                RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
+        //            };
+        //            break;
+        //    }
+
+        //    return p;
+        //}        
+        #endregion
+
 
     }
 }

@@ -20,13 +20,12 @@ namespace ESA.Models.Model
         public int StepId { get; set; }
         [JsonProperty("content", NullValueHandling = NullValueHandling.Ignore)]
         public string ContentHere { get; set; }
+        public int Number { get; set; }
         [JsonProperty("hasDiagram", NullValueHandling = NullValueHandling.Ignore)]
         public int HasDiagramHere { get; set; }
         #endregion
 
-
-        public int Number { get; set; }
-        public string Content { get; set; }
+        //public string Content { get; set; }
         public bool HasDiagram { get; set; }
         public Diagram Diagram { get; set; } = null;
         public RelatedProcedure RelatedProcedure { get; set; } = null;

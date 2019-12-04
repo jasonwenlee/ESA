@@ -31,9 +31,9 @@
                                     </Image.Triggers>
                                 </Image>
                                 <!--Timestamp Tap-->
-                                <StackLayout.GestureRecognizers>
+                                <!--<StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="KeyPointsContent_TapEventHandler" />
-                                </StackLayout.GestureRecognizers>
+                                </StackLayout.GestureRecognizers>-->
                             </StackLayout>
                             <!--Procedure Link-->
                             <customButton:CustomButton Text="{Binding RelatedProcedure.ProcedureLink}" Style="{StaticResource RelatedProcedureButton}" Clicked="RelatedProcedureButton_Clicked" >
@@ -44,7 +44,7 @@
                                 </customButton:CustomButton.Triggers>
                             </customButton:CustomButton>
                             <!--Diagram Dropdown-->
-                            <ImageButton x:Name="diagramBtn" Style="{StaticResource KeyPointDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />
+                            <!--<ImageButton x:Name="diagramBtn" Style="{StaticResource KeyPointDiagram}" Source="{Binding Diagram.Thumbnail}" Clicked="DiagramThumbnail_Clicked" />-->
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>

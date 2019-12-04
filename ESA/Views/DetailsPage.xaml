@@ -114,7 +114,7 @@
                     <!--Video Overview information-->
                     <StackLayout Grid.Row="0" Spacing="2" >
                         <Label Style="{StaticResource ProcedureTitle}" Text="{Binding Procedure.LongName}" />
-                        <Label Style="{StaticResource ProcedureDescription}" Text="{Binding Procedure.Details.Description}" />
+                        <Label Style="{StaticResource ProcedureDescription}" Text="{Binding Procedure.Description}" />
                         <!--<StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Procedure.Details.Categories}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>

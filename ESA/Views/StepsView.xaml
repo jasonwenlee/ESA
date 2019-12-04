@@ -33,9 +33,9 @@
                                             </Image.Triggers>
                                         </Image>
                                         <!-- Tap Gesture when a step is tapped -->
-                                        <StackLayout.GestureRecognizers>
+                                        <!--<StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="DropdownContent_Tapped"/>
-                                        </StackLayout.GestureRecognizers>
+                                        </StackLayout.GestureRecognizers>-->
                                     </StackLayout>
                                     <customButton:CustomButton Text="{Binding RelatedProcedure.ProcedureLink}" Style="{StaticResource RelatedProcedureButton}" Clicked="RelatedProcedureButton_Clicked" >
                                         <customButton:CustomButton.Triggers>
