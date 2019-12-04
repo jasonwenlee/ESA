@@ -73,7 +73,7 @@ namespace ESA.Views
 
         private void RelatedProcedureButton_Clicked(object sender, EventArgs e)
         {
-            int procedureId = procedureViewModel.Procedure.KeyPoints.First(k => k.Point == ((Label)((StackLayout)((StackLayout)((CustomButton)sender).Parent).Children.First()).Children.ElementAt(1)).Text).RelatedProcedure.Id;
+            int procedureId = procedureViewModel.Procedure.KeyPoints.First(k => k.Point == ((Label)((StackLayout)((StackLayout)((CustomButton)sender).Parent).Children.First()).Children.ElementAt(1)).Text).Procedure.Id;
             //Navigation.PushAsync(new DetailsPage(procedureId));
         }
     }

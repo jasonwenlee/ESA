@@ -34,11 +34,10 @@ namespace ESA.Models.Model
         public List<History> History { get; set; }
         [JsonProperty("references", NullValueHandling = NullValueHandling.Ignore)]
         public List<Reference> References { get; set; }
-        [JsonProperty("procedures", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Procedure> Procedures { get; set; }
-        // Have to check
-        [JsonProperty("procedure1", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RelatedProcedure> RelatedProcedures { get; set; }
+        [JsonProperty("relatedProc", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Procedure> RelatedProc { get; set; }
+        [JsonProperty("mainProc", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Procedure> MainProc { get; set; }
         #endregion
         //public Detail Details { get; set; }
 
