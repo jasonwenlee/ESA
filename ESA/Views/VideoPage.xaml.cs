@@ -16,7 +16,7 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VideoPage : ContentPage
     {
-        DetailsViewModel viewModel;
+        DetailsViewModel procedureViewModel;
         private bool videoControlsVisible = true;
 
         // Video Controls Fade Timer
@@ -27,26 +27,29 @@ namespace ESA.Views
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
-            viewModel = dvm;
-            string videoName = viewModel.VideoName;
+            procedureViewModel = dvm;
+            string videoName = procedureViewModel.VideoName;
 
             ResourceVideoSource source = new ResourceVideoSource();
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    // source.Path = "Videos/eye_surgery.mp4";
-                    source.Path = "Videos/" + videoName;
-                    break;
-                case Device.Android:
-                    // source.Path = "eye_surgery.mp4";
-                    source.Path = videoName;
-                    break;
-                case Device.UWP:
-                    // source.Path = "Videos/eye_surgery.mp4";
-                    source.Path = "Videos/" + videoName;
-                    break;
-            }
-            player.Source = source;
+            UriVideoSource uriSource = new UriVideoSource();
+            uriSource.Uri = procedureViewModel.Procedure.VideoSource;
+
+            //switch (Device.RuntimePlatform)
+            //{
+            //    case Device.iOS:
+            //        // source.Path = "Videos/eye_surgery.mp4";
+            //        source.Path = "Videos/" + videoName;
+            //        break;
+            //    case Device.Android:
+            //        // source.Path = "eye_surgery.mp4";
+            //        source.Path = videoName;
+            //        break;
+            //    case Device.UWP:
+            //        // source.Path = "Videos/eye_surgery.mp4";
+            //        source.Path = "Videos/" + videoName;
+            //        break;
+            //}
+            player.Source = uriSource;
 
             // Fade Timer
             fadeTimer.Interval = 2000;
@@ -62,8 +65,8 @@ namespace ESA.Views
         {
             base.OnAppearing();
 
-            if (viewModel.VideoIsProcedure)
-                player.Position = viewModel.VideoPosition;
+            if (procedureViewModel.VideoIsProcedure)
+                player.Position = procedureViewModel.VideoPosition;
             else
                 player.Position = TimeSpan.Zero;
         }
@@ -72,8 +75,8 @@ namespace ESA.Views
         {
             base.OnDisappearing();
 
-            if (viewModel.VideoIsProcedure)
-                viewModel.VideoPosition = player.Position;
+            if (procedureViewModel.VideoIsProcedure)
+                procedureViewModel.VideoPosition = player.Position;
         }
         // VIDEO PLAYER
         public async void PlayButtonAnimation(object sender)

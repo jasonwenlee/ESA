@@ -8,6 +8,7 @@ namespace ESA.Models.Model
 {
     public class Procedure
     {
+        #region json
         [JsonProperty("$id", NullValueHandling = NullValueHandling.Ignore)]
         [JsonConverter(typeof(ParseStringConverter))]
         public int JsonId { get; set; }
@@ -37,6 +38,7 @@ namespace ESA.Models.Model
         // Have to check
         [JsonProperty("procedure1", NullValueHandling = NullValueHandling.Ignore)]
         public List<RelatedProcedure> RelatedProcedures { get; set; }
+        #endregion
 
         public Procedure GetProcedure(int id)
         {
@@ -50,7 +52,7 @@ namespace ESA.Models.Model
                         Id = 0,
                         LongName = "",
                         ShortName = "",
-                        VideoSource = "eye_surgery.mp4",
+                        VideoSource = "",
                         Details = new Detail().GetDetails(id),
                         Steps = null,
                         KeyPoints = null,
@@ -69,7 +71,7 @@ namespace ESA.Models.Model
                         Id = 1,
                         LongName = "",
                         ShortName = "",
-                        VideoSource = "Brain_Eyes_Vid.mp4",
+                        VideoSource = "",
                         Details = new Detail().GetDetails(id),
                         Steps = null,
                         KeyPoints = null,
@@ -88,7 +90,7 @@ namespace ESA.Models.Model
                         Id = 2,
                         LongName = "",
                         ShortName = "",
-                        VideoSource = "eye_surgery.mp4",
+                        VideoSource = "",
                         Details = new Detail().GetDetails(id),
                         Steps = null,
                         KeyPoints = null,

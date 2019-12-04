@@ -60,31 +60,32 @@ namespace ESA.Views
             {
                 UpdateVideoPlayerLayout();
             };
-            // Don't remove :)
-            //holdProcedure = proc;
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
             ResourceVideoSource source = new ResourceVideoSource();
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    source.Path = "Videos/" + procedureViewModel.Procedure.VideoSource;
-                    //source.Path = "Videos/Brain_Eyes_Vid.mp4";                    
-                    break;
-                case Device.Android:
-                    source.Path = procedureViewModel.Procedure.VideoSource;
-                    //source.Path = "Brain_Eyes_Vid.mp4";
-                    break;
-                case Device.UWP:
-                    source.Path = "Videos/" + procedureViewModel.Procedure.VideoSource;
-                    //source.Path = "Videos/Brain_Eyes_Vid.mp4";
-                    break;
-            }
+            UriVideoSource uriSource = new UriVideoSource();
+            uriSource.Uri = procedureViewModel.Procedure.VideoSource;
 
-            videoPlayer.Source = source;
+            //switch (Device.RuntimePlatform)
+            //{
+            //    case Device.iOS:
+            //        uriSource.Uri = procedureViewModel.Procedure.VideoSource;
+            //        //source.Path = "Videos/Brain_Eyes_Vid.mp4";                    
+            //        break;
+            //    case Device.Android:
+            //        uriSource.Uri = procedureViewModel.Procedure.VideoSource;
+            //        //source.Path = "Brain_Eyes_Vid.mp4";
+            //        break;
+            //    case Device.UWP:
+            //        uriSource.Uri = procedureViewModel.Procedure.VideoSource;
+            //        //source.Path = "Videos/Brain_Eyes_Vid.mp4";
+            //        break;
+            //}
+
+            videoPlayer.Source = uriSource;
 
             videoPlayer.Play();
             videoPlayer.Position = procedureViewModel.VideoPosition;
