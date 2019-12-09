@@ -81,5 +81,10 @@ namespace ESA
             rectangle.Y += 2;
             await activeButtonBox.LayoutTo(rectangle, 500, Easing.CubicInOut);
         }
+
+        private void Database_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

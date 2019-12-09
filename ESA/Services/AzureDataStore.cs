@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using ESA.Models.Model;
+using System.Diagnostics;
 
 namespace ESA.Services
 {
@@ -27,10 +28,24 @@ namespace ESA.Services
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
         public async Task<IEnumerable<Procedure>> GetItemsAsync(bool forceRefresh = false)
         {
+            //try
+            //{
+            //    var response = await client.GetAsync($"api/procedures");
+            //}
+            //catch (Exception e)
+            //{
+            //    Debug.WriteLine(e);
+            //    throw;
+            //}
+
             if (forceRefresh && IsConnected)
             {
+                HttpResponseMessage response = await client.GetAsync($"api/procedures");
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
                 var json = await client.GetStringAsync($"api/procedures");
-                items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Procedure>>(json));
+                items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Procedure>>(responseBody));
             }
 
             return items;
@@ -63,7 +78,9 @@ namespace ESA.Services
 
         public async Task<bool> UpdateItemAsync(Procedure item)
         {
+#pragma warning disable CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
             if (item == null || item.Id == null || !IsConnected)
+#pragma warning restore CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
                 return false;
 
             var serializedItem = JsonConvert.SerializeObject(item);
