@@ -58,6 +58,6 @@ namespace ESA
         {
             ReferencesButton_Clicked(sender, e);
         }
-      
+
     }
 }

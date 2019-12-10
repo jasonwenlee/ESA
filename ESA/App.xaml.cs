@@ -1,8 +1,5 @@
 ﻿using ESA.Data;
-using ESA.ViewModels;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ESA
 {

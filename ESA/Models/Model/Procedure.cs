@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ESA.Models.Model
 {
@@ -59,7 +58,7 @@ namespace ESA.Models.Model
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
                         RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
-        };
+                    };
                     break;
 
                 case 2:
@@ -78,7 +77,7 @@ namespace ESA.Models.Model
                         History = new History().GetHistory(id),
                         References = new Reference().GetReferences(id),
                         RelatedProcedures = new RelatedProcedure().GetRelatedProcedures(id)
-        };
+                    };
                     break;
             }
 

@@ -1,11 +1,9 @@
 ﻿using ESA.Data;
 using ESA.Models.Model;
 using FluentValidation;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using Xamarin.Forms;
 
 namespace ESA.ViewModels

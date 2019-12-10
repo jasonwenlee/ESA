@@ -1,14 +1,11 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
-using System.Threading.Tasks;
 using Android.Content;
-using Android.Views.InputMethods;
+using Android.Content.PM;
+using Android.OS;
+using Android.Runtime;
+using System.Security;
+using System.Threading.Tasks;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace ESA.Droid
@@ -17,6 +14,7 @@ namespace ESA.Droid
     [Activity(Label = "ESA", Icon = "@drawable/circEye", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        [SecuritySafeCritical]
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;

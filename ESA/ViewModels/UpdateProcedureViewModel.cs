@@ -1,8 +1,4 @@
-﻿using ESA.Models;
-using ESA.Validator;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ESA.Validator;
 
 namespace ESA.ViewModels
 {

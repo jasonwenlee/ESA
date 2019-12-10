@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace ESA.Models.Model
@@ -20,13 +19,14 @@ namespace ESA.Models.Model
             {
                 case 0:
                     // Tarso Hughes
-                    
+
                     fString.Spans.Add(new Span() { Text = "Size of flap", Style = (Style)Application.Current.Resources["VariationHeader"] });
                     fString.Spans.Add(new Span() { Text = "\nWider flap may need a straighter horizonal incision without vertical relieving incisions.", Style = (Style)Application.Current.Resources["VariationContent"] });
                     fString.Spans.Add(new Span() { Text = "\nTarsoconjunctival-based or Tarsoconjunctival-Muller-based flap​.", Style = (Style)Application.Current.Resources["VariationHeader"] });
                     fString.Spans.Add(new Span() { Text = "\nConjunctiva and Mullers together allow better vascularsation of the flap.", Style = (Style)Application.Current.Resources["VariationContent"] });
                     fString.Spans.Add(new Span() { Text = "\nIf advancing Mullers, which is an eyelid retractor, there may be a higher risk of post operative eyelid retraction that advancing conjunctiva alone.", Style = (Style)Application.Current.Resources["VariationContent"] });
-                    varsd.Add(new Variation() { 
+                    varsd.Add(new Variation()
+                    {
                         Content = fString,
                         RelatedProcedures = new List<RelatedProcedure>()
                         {
@@ -49,9 +49,9 @@ namespace ESA.Models.Model
                     break;
                 case 1:
                     // Tenzel
-                    
+
                     {
-                        fString.Spans.Add(new Span() { Text = "Defects greater on the lower than upper eyelid"});
+                        fString.Spans.Add(new Span() { Text = "Defects greater on the lower than upper eyelid" });
                         fString.Spans.Add(new Span() { Text = "\nAny lid defect - Lateral/Central/Medial", Style = (Style)Application.Current.Resources["VariationHeader"] });
                         fString.Spans.Add(new Span() { Text = "\nCentral to Medial", Style = (Style)Application.Current.Resources["VariationContent"] });
                         fString.Spans.Add(new Span() { Text = "\nMoving eyelid from lateral to Medial", Style = (Style)Application.Current.Resources["VariationContent"] });
@@ -80,11 +80,11 @@ namespace ESA.Models.Model
                     break;
                 case 2:
                     // Graft
-                    
+
                     {
                         fString.Spans.Add(new Span() { Text = "Variations in steps", Style = (Style)Application.Current.Resources["VariationHeader"] });
-                        fString.Spans.Add(new Span() { Text = "\nDonor site – upper eyelid, post auricular, supraclavicular, inner arm" , Style = (Style)Application.Current.Resources["VariationContent"] });
-                        fString.Spans.Add(new Span() { Text = "\nLarge grafts – small perforations can be made into the graft to reduce the risk of haematoma collection and graft failure" , Style = (Style)Application.Current.Resources["VariationContent"] });
+                        fString.Spans.Add(new Span() { Text = "\nDonor site – upper eyelid, post auricular, supraclavicular, inner arm", Style = (Style)Application.Current.Resources["VariationContent"] });
+                        fString.Spans.Add(new Span() { Text = "\nLarge grafts – small perforations can be made into the graft to reduce the risk of haematoma collection and graft failure", Style = (Style)Application.Current.Resources["VariationContent"] });
                         varsd.Add(new Variation()
                         {
                             Content = fString,

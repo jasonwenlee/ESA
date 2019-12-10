@@ -1,15 +1,9 @@
 ﻿
-using ESA.Models.Model;
 using ESA.Models.CustomRenderers;
+using ESA.Models.Model;
 using ESA.ViewModels;
-using ESA.Views;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -68,7 +62,7 @@ namespace ESA.Views
             procedureViewModel.VideoName = "Brain_Eyes_Vid.mp4";
             procedureViewModel.VideoIsProcedure = false;
             Navigation.PushAsync(new VideoPage(procedureViewModel));
-         
+
         }
 
         private void RelatedProcedureButton_Clicked(object sender, EventArgs e)

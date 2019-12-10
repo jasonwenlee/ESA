@@ -1,14 +1,12 @@
-﻿using System;
-using System.ComponentModel;
-using System.IO;
-
-using AVFoundation;
+﻿using AVFoundation;
 using AVKit;
 using CoreMedia;
 using ESA.Models.VideoView;
 using Foundation;
+using System;
+using System.ComponentModel;
+using System.IO;
 using UIKit;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 

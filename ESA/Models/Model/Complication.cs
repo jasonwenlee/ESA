@@ -1,5 +1,4 @@
 ﻿using ESA.MarkupExtensions;
-using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Xamarin.Forms;

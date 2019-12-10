@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Android.Content;
+using Android.Widget;
+using ESA.Models.VideoView;
+using System;
 using System.ComponentModel;
 using System.IO;
-
-using Android.Content;
-using Android.Widget;
-using ARelativeLayout = Android.Widget.RelativeLayout;
-
+using System.Security;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using ESA.Models.VideoView;
+using ARelativeLayout = Android.Widget.RelativeLayout;
 
 [assembly: ExportRenderer(typeof(ESA.Models.VideoView.VideoPlayer),
                           typeof(ESA.Droid.VideoView.VideoPlayerRenderer))]
@@ -21,10 +20,12 @@ namespace ESA.Droid.VideoView
         MediaController mediaController;    // Used to display transport controls
         bool isPrepared;
 
+        [SecuritySafeCritical]
         public VideoPlayerRenderer(Context context) : base(context)
         {
         }
 
+        [SecuritySafeCritical]
         protected override void OnElementChanged(ElementChangedEventArgs<VideoPlayer> args)
         {
             base.OnElementChanged(args);
@@ -72,6 +73,7 @@ namespace ESA.Droid.VideoView
             }
         }
 
+        [SecuritySafeCritical]
         protected override void Dispose(bool disposing)
         {
             if (Control != null && videoView != null)
@@ -83,16 +85,21 @@ namespace ESA.Droid.VideoView
                 Element.UpdateStatus -= OnUpdateStatus;
             }
 
+            if (mediaController != null)
+                mediaController.Dispose();
+
             videoView.Dispose();
             base.Dispose(disposing);
         }
 
+        [SecuritySafeCritical]
         void OnVideoViewPrepared(object sender, EventArgs args)
         {
             isPrepared = true;
             ((IVideoPlayerController)Element).Duration = TimeSpan.FromMilliseconds(videoView.Duration);
         }
 
+        [SecuritySafeCritical]
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
             base.OnElementPropertyChanged(sender, args);
@@ -114,6 +121,7 @@ namespace ESA.Droid.VideoView
             }
         }
 
+        [SecuritySafeCritical]
         void SetAreTransportControlsEnabled()
         {
             if (Element.AreTransportControlsEnabled)
@@ -134,6 +142,7 @@ namespace ESA.Droid.VideoView
             }
         }
 
+        [SecuritySafeCritical]
         void SetSource()
         {
             isPrepared = false;
@@ -180,6 +189,7 @@ namespace ESA.Droid.VideoView
         }
 
         // Event handler to update status
+        [SecuritySafeCritical]
         void OnUpdateStatus(object sender, EventArgs args)
         {
             VideoStatus status = VideoStatus.NotReady;

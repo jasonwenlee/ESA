@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace ESA.MarkupExtensions
 {
@@ -19,8 +16,8 @@ namespace ESA.MarkupExtensions
 
         public bool ForceUpdateSizeIfHasDiagram
         {
-            set 
-            { 
+            set
+            {
                 SetValue(ForceUpdateSizeIfHasDiagramProperty, value);
                 if (value) // has diagram
                 {

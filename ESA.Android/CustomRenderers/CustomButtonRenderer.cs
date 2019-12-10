@@ -1,11 +1,9 @@
-﻿using System.ComponentModel;
-using System.IO;
-
+﻿
 using Android.Content;
-using Android.Widget;
 
 using ESA.Droid.CustomRenderers;
 using ESA.Models.CustomRenderers;
+using System.Security;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -16,6 +14,7 @@ namespace ESA.Droid.CustomRenderers
     {
         public CustomButtonRenderer(Context context) : base(context) { }
 
+        [SecuritySafeCritical]
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> args)
         {
             base.OnElementChanged(args);

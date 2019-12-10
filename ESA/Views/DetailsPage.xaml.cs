@@ -1,18 +1,15 @@
 ﻿using ESA.MarkupExtensions;
-using ESA.Models;
 using ESA.Models.VideoView;
 using ESA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Timers;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 //ios
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Xamarin.Forms.Xaml;
 
 namespace ESA.Views
 {
@@ -48,7 +45,7 @@ namespace ESA.Views
                 var safeInsets = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
                 safeInsets.Top = 24;
             }
-            
+
 
             Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
@@ -123,7 +120,7 @@ namespace ESA.Views
             collapsableHeight = 42;
             playerHeight = Width * 0.57;
             playerExpandLocation = new Rectangle(0, 0, Width, playerHeight);
-            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, Height - playerHeight- footer.Height);
+            scrollViewExpandLocation = new Rectangle(scrollView.X, playerHeight, scrollView.Width, Height - playerHeight - footer.Height);
             scrollViewCollapseLocation = new Rectangle(scrollView.X, collapsableHeight, scrollView.Width, scrollView.Height + (videoPlayer.Height - collapsableHeight));
             playerCollapseLocation = new Rectangle(collapsableHeight, 0, collapsableHeight * 1.77778, collapsableHeight);
         }

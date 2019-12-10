@@ -1,8 +1,6 @@
 ﻿using ESA.MarkupExtensions;
-using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 using Xamarin.Forms;
 
 namespace ESA.Models.Model

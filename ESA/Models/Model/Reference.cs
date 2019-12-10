@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ESA.Models.Model
 {
@@ -11,7 +10,7 @@ namespace ESA.Models.Model
         internal List<Reference> GetReferences(int id)
         {
             List<Reference> references = new List<Reference>();
-            switch(id)
+            switch (id)
             {
                 case 0:
                     // Tarso

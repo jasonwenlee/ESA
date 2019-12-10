@@ -1,19 +1,12 @@
-﻿using ESA.Models.Model;
+﻿using ESA.MarkupExtensions;
 using ESA.Models.CustomRenderers;
+using ESA.Models.Model;
 using ESA.ViewModels;
 using ESA.Views;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Windows.Input;
-using Expandable;
-using ESA.MarkupExtensions;
 
 namespace ESA
 {
@@ -44,7 +37,7 @@ namespace ESA
                 extExpandableView.IsExpanded = !extExpandableView.IsExpanded;
                 extExpandableView.ForceUpdateSize();
 
-                if(extExpandableView.IsExpanded)
+                if (extExpandableView.IsExpanded)
                 {
                     arrow.RotateTo(180, 200, Easing.CubicInOut);
                 }

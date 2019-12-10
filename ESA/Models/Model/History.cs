@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ESA.Models.Model
 {
@@ -30,9 +29,9 @@ namespace ESA.Models.Model
                         new History()
                         {
                             Body = "Traditionally, flap division occurred 3 to 4 months after the initial stage.  Currently the standard time to flap division is frequently 2 weeks,  but can be carried out from 7 days with good outcome.",
-                            
+
                                 References = "[7,8]"
-                            
+
                         }
                     };
                     break;

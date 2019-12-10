@@ -1,17 +1,11 @@
-﻿using ESA.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using Xamarin.Forms; // REC: Neede for extending as a ContentPage
+﻿using Xamarin.Forms; // REC: Neede for extending as a ContentPage
 
 
 // REC: Reference: https://www.youtube.com/watch?v=y8ce7OyAgYU
 
 namespace ESA
 {
-    class SplashPage : ContentPage 
+    class SplashPage : ContentPage
     {
         Image splashImage;
 
@@ -42,7 +36,7 @@ namespace ESA
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            
+
             await splashImage.ScaleTo(1.0, 800); // REC: Setting up the initial eye image (size,time 1000 = 1 sec). 
             // await splashImage.ScaleTo(0.8, 200, Easing.Linear); // REC: Animation effect: reducing image. Eliminated to avoid "bouncing".
             await splashImage.ScaleTo(2.5, 1000, Easing.CubicInOut); // REC: final state (size,time). CubicInOut = Natural looking choice. 
