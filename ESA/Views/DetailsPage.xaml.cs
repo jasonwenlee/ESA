@@ -96,7 +96,7 @@ namespace ESA.Views
             }
 
             videoPlayer.Source = source;
-
+            videoPlayer.TranslateTo(0, 0, 0);
             videoPlayer.Play();
             videoPlayer.Position = procedureViewModel.VideoPosition;
             playPauseButton.Source = ImageSource.FromResource("ESA.Resources.VideoPlayer.pause.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
@@ -106,6 +106,8 @@ namespace ESA.Views
         {
             base.OnDisappearing();
             procedureViewModel.VideoPosition = videoPlayer.Position;
+            videoPlayer.Stop();
+            videoPlayer.TranslateTo(-1000, -1000, 0);
         }
 
         protected override void OnSizeAllocated(double width, double height)
