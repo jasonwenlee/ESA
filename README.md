@@ -12,4 +12,4 @@ This is an open source encyclopedia-esque mobile application detailing different
 * Setting up work environment to host api and database on a local machine for individual user through IIS. This allows test queries to be executed locally without the need to host the API online. 
 
 ## License
-This project is licensed under the GNU License - see the [LICENSE.md](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
