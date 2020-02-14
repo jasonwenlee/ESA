@@ -1,4 +1,3 @@
-**This is a new repo for ESA**
 # Encyclopedia for oculoplastic surgery and diagnosis
 This is an open source encyclopedia-esque mobile application detailing different oculoplastic surgical procedures and diagnosis. The aim of this application is to also provide a universal template for future medical procedures outside the field of oculoplastic. The application is built using a Model-View-ViewModel (MVVM) structure with an ASP.NET backend framework.
 
