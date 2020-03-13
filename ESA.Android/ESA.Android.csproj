@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -110,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ESA\ESA.csproj">
-      <Project>{B3CA3595-025B-40C4-A448-6CB58EE2C1C9}</Project>
+      <Project>{7B415B97-12AB-4B6A-B00F-0A241F1A16B4}</Project>
       <Name>ESA</Name>
     </ProjectReference>
   </ItemGroup>

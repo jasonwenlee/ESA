@@ -32,7 +32,7 @@
             </Grid>
             <!--Procedures-->
             <Grid x:Name="ProcedureGrid">
-                <ListView x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" >
+                <ListView BackgroundColor="White" x:Name="ProcedureListView" ItemsSource="{Binding ProcedureNames}" ItemSelected="MainListView_ItemSelected" HasUnevenRows="True" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell IsEnabled="{Binding Id, Converter={StaticResource enabledConverter}, ConverterParameter=-1}">
@@ -59,7 +59,7 @@
 
             <!--Clinical Scenarios-->
             <Grid x:Name="ClinicalGrid" IsVisible="False">
-                <ListView x:Name="ClinicalListView"  HasUnevenRows="True" >
+                <ListView BackgroundColor="White" x:Name="ClinicalListView"  HasUnevenRows="True" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell IsEnabled="False">

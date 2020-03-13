@@ -14,7 +14,7 @@
                 <Setter Property="BarTextColor" Value="White"/>
             </Style>
             <Style x:Key="DetailsPage" TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Black"/>
             </Style>
             <Style TargetType="video:VideoPlayer">
                 <Setter Property="BackgroundColor" Value="#111"/>
