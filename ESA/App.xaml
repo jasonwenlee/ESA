@@ -29,6 +29,7 @@
                 <Setter Property="TextColor" Value="#5070ff" />
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="Margin" Value="0" />
+                <Setter Property="FontSize" Value="Small" />
             </Style>
             <!--About Page-->
             <Style x:Key="PersonImage" TargetType="Image" >

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:video="clr-namespace:ESA.Models.VideoView"
+             xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
+             x:Class="ESA.Views.Desktop.DetailsPageDesktop"
+             Style="{StaticResource DetailsPage}"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:views="clr-namespace:ESA.Views"
+             xmlns:esa="clr-namespace:ESA" ios:Page.UseSafeArea="true">
+    <!--ios-->
+
+    <ContentPage.Content>
+        <ScrollView >
+            <Grid Padding="150, 20" RowSpacing="20" ColumnSpacing="20" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="600"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="900" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--VIDEO PLAYER-->
+                <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" Grid.Column="1" AreTransportControlsEnabled="True" />
+
+
+                <StackLayout Grid.Row="1" Grid.Column="1" Spacing="20">
+                    <!--VIDEO DETAILS-->
+                    <StackLayout  Spacing="2" >
+                        <Label Style="{StaticResource ProcedureTitle}" Text="{Binding Procedure.LongName}" />
+                        <Label Style="{StaticResource ProcedureDescription}" Text="{Binding Procedure.Details.Description}" />
+                    </StackLayout>
+                    <!--STEPS-->
+                    <esa:StepsView x:Name="stepsView" BindingContext="{Binding Procedure}"/>
+                    <!--KEYPOINTS-->
+                    <views:KeyPointsView x:Name="keyPointsView"  BindingContext="{Binding Procedure}"/>
+                    <!--COMPLICATIONS-->
+                    <views:ComplicationsView x:Name="complicationsView"  BindingContext="{Binding Procedure}"/>
+                    <!--VARIATIONS-->
+                    <views:VariationsView x:Name="variationsView"  BindingContext="{Binding Procedure}"/>
+                    <!--INFO-->
+                    <esa:InfoView x:Name="infoView"  BindingContext="{Binding}"/>
+                    <!--RELATED PROCEDURES-->
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Footer" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
+            <Style x:Key="FooterButtonGrid" TargetType="Grid">
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
+            <Style x:Key="FooterButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+            </Style>
+            <Style x:Key="FooterLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

@@ -1,6 +1,7 @@
 ﻿using ESA.Models.Model;
 using ESA.ViewModels;
 using ESA.Views;
+using ESA.Views.Desktop;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -54,7 +55,19 @@ namespace ESA
         {
             if (e.SelectedItem == null) return;
             Procedure p = ((Procedure)(ProcedureListView.SelectedItem));
-            await Navigation.PushAsync(new DetailsPage(p.Id));
+            switch (Device.Idiom)
+            {
+                case TargetIdiom.Desktop:
+                    await Navigation.PushAsync(new DetailsPageDesktop(p.Id));
+                    break;
+                case TargetIdiom.Phone:
+                    await Navigation.PushAsync(new DetailsPage(p.Id));
+                    break;
+                case TargetIdiom.Tablet:
+                    // if we ever need to implement
+                    break;
+            }
+            
             ((ListView)sender).SelectedItem = null;
         }
 

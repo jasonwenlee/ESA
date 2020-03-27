@@ -3,6 +3,7 @@ using ESA.Models.CustomRenderers;
 using ESA.Models.Model;
 using ESA.ViewModels;
 using ESA.Views;
+using ESA.Views.Desktop;
 using System;
 using System.Linq;
 using Xamarin.Forms;
@@ -14,6 +15,8 @@ namespace ESA
     public partial class StepsView : ContentView
     {
         public ProcedureViewModel procedureViewModel;
+
+        public StepsView() { InitializeComponent(); }
 
         public StepsView(ProcedureViewModel pvm)
         {
@@ -61,7 +64,18 @@ namespace ESA
         private void RelatedProcedureButton_Clicked(object sender, EventArgs e)
         {
             int procedureId = procedureViewModel.Procedure.Steps.First(s => s.Number == int.Parse(((Label)((StackLayout)((StackLayout)((CustomButton)sender).Parent).Children.First()).Children.First()).Text)).RelatedProcedure.Id;
-            Navigation.PushAsync(new DetailsPage(procedureId));
+
+            switch (Device.Idiom)
+            {
+                case TargetIdiom.Desktop:
+                    Navigation.PushAsync(new DetailsPageDesktop(procedureId));
+                    break;
+                case TargetIdiom.Phone:
+                    Navigation.PushAsync(new DetailsPage(procedureId));
+                    break;
+                case TargetIdiom.Tablet:
+                    break;
+            }
         }
     }
 }

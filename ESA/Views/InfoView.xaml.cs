@@ -11,6 +11,8 @@ namespace ESA
     {
         public ProcedureViewModel procedureViewModel;
 
+        public InfoView() { InitializeComponent(); }
+
         public InfoView(ProcedureViewModel pvm)
         {
             InitializeComponent();

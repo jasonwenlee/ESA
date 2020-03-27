@@ -7,7 +7,6 @@
              xmlns:mrkupExt="clr-namespace:ESA.MarkupExtensions;assembly=ESA"
              mc:Ignorable="d"
              x:Class="ESA.Views.DetailsPage"
-             x:Name="StepPage_Instance"
              Style="{StaticResource DetailsPage}"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"><!--ios-->
 

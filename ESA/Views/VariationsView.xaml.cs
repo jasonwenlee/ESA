@@ -1,6 +1,7 @@
 ﻿using ESA.Models.CustomRenderers;
 using ESA.Models.Model;
 using ESA.ViewModels;
+using ESA.Views.Desktop;
 using System;
 using System.Linq;
 
@@ -12,7 +13,10 @@ namespace ESA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VariationsView : ContentView
     {
-        ProcedureViewModel procedureViewModel;
+        public ProcedureViewModel procedureViewModel;
+
+        public VariationsView() { InitializeComponent(); }
+
         public VariationsView(ProcedureViewModel viewModel)
         {
             InitializeComponent();
@@ -22,7 +26,17 @@ namespace ESA.Views
 
         private void RelatedProcedureButton_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DetailsPage(1));
+            switch (Device.Idiom)
+            {
+                case TargetIdiom.Desktop:
+                    Navigation.PushAsync(new DetailsPageDesktop(1));
+                    break;
+                case TargetIdiom.Phone:
+                    Navigation.PushAsync(new DetailsPage(1));
+                    break;
+                case TargetIdiom.Tablet:
+                    break;
+            }
         }
 
         private void RelatedProcedureButton_Clicked(object sender, EventArgs e)

@@ -46,6 +46,11 @@ namespace ESA.Views
                 safeInsets.Top = 24;
             }
 
+            // uwp
+            if(Device.RuntimePlatform == Device.UWP)
+            {
+
+            }
 
             Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
