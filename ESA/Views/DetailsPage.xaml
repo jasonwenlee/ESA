@@ -21,13 +21,13 @@
             <Grid x:Name="collapsablePlayer" Grid.Row="0" IsVisible="False" HeightRequest="42" ColumnSpacing="0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5" />
-                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="38" />
                     <ColumnDefinition Width="94" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="5" />
-                    <ColumnDefinition Width="32" />
-                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="38" />
                     <ColumnDefinition Width="5" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -45,21 +45,21 @@
             <!--CONTROLS-->
             <Grid x:Name="videoControls" RowSpacing="0" ColumnSpacing="0" Grid.Row="0" Margin="5" IsVisible="True" >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="32" />
+                    <RowDefinition Height="38" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="32" />
+                    <RowDefinition Height="38" />
                 </Grid.RowDefinitions>
                 <!--TOP-->
                 <Grid Grid.Row="0" >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="32" />
+                        <ColumnDefinition Width="38" />
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="32" />
-                        <ColumnDefinition Width="32" />
-                        <ColumnDefinition Width="32" />
+                        <ColumnDefinition Width="38" />
+                        <ColumnDefinition Width="38" />
+                        <ColumnDefinition Width="38" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="32" />
+                        <RowDefinition Height="38" />
                     </Grid.RowDefinitions>
                     <ImageButton x:Name="backButton" Grid.Column="0" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.back.png}" Clicked="BackButton_Clicked" Style="{StaticResource VideoControlsTop}" />
                     <!--<ImageButton x:Name="ShareButton" Grid.Column="2" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.share.png}" Clicked="ShareButton_Clicked" Style="{StaticResource VideoControlsTop}" />
@@ -70,13 +70,13 @@
                 <Grid Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="42" />
-                        <ColumnDefinition Width="42" />
-                        <ColumnDefinition Width="42" />
+                        <ColumnDefinition Width="38" />
+                        <ColumnDefinition Width="38" />
+                        <ColumnDefinition Width="38" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="42" />
+                        <RowDefinition Height="38" />
                     </Grid.RowDefinitions>
                     <ImageButton x:Name="stepBackwardsButton" Grid.Column="1" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.backward.png}" Clicked="StepBackwardsButton_Clicked" Style="{StaticResource VideoControlsTop}" />
                     <ImageButton x:Name="playPauseButton" Grid.Column="2" Source="{mrkupExt:ImageResource ESA.Resources.VideoPlayer.pause.png}" Clicked="PlayPauseButton_Clicked" Style="{StaticResource VideoControlsTop}" />
@@ -91,7 +91,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="32" />
+                        <RowDefinition Height="42" />
                     </Grid.RowDefinitions>
                     <Label x:Name="PositionLabel"  Grid.Column="0" Text="{Binding Source={x:Reference videoPlayer}, Path=Position, StringFormat='{0:h\\:mm\\:ss}'}" TextColor="White" VerticalOptions="Center" Margin="5,0,0,0"/>
                     <video:PositionSlider x:Name="videoSlider" Grid.Column="1" Duration="{Binding Source={x:Reference videoPlayer}, Path=Duration}" Position="{Binding Source={x:Reference videoPlayer}, Path=Position}" ThumbColor="#3399FF" DragStarted="VideoSlider_DragStarted" DragCompleted="VideoSlider_DragCompleted"/>
