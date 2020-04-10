@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>ESA</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.ESA</string>
+	<string>threea.ESA</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>UILaunchStoryboardName</key>

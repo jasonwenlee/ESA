@@ -33,6 +33,27 @@ namespace ESA
             ProcedureListView.ItemsSource = mainViewModel.ProcedureNames;
             ClinicalListView.ItemsSource = mainViewModel.ProcedureNames;
             //ExampleListView.ItemsSource = mainViewModel.ExampleProcedureNames;
+
+            // if the device runtimeplatform is iOS set padding to fix uop
+            if(Device.RuntimePlatform == Device.iOS)
+            {
+                // Create a style variable that references our existing style in MainPage.xaml "ItemTitle"
+                Style itemTitleStyle = (Style)Resources["ItemTitle"];
+                // create a new style based on the old one and add some padding
+                var iOSListItemStyle = new Style(typeof(Label))
+                {
+                    BasedOn = itemTitleStyle, // the variable storing our old style
+                    Setters =
+                    {
+                        new Setter {
+                            Property = Label.PaddingProperty, // the property we with to add
+                            Value = new Thickness(10, 0, 0, 0) // the value we wish to give that property
+                        } 
+                    }
+                };
+                // Set the old style to the new style with the added padding property
+                Resources["ItemTitle"] = iOSListItemStyle;
+            }
         }
         protected override void OnAppearing()
         {
